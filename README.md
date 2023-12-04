@@ -2,7 +2,7 @@
 
 ## Architecture 
 > **HCI** (Human-Computing Interaction)  
-> &nbsp;&nbsp;&nbsp; Form  
+> &nbsp;&nbsp;&nbsp; FormEmployees, FormCustomers, FormOrder, FormStatistic, FormSimulation  
 
 
 > **Services**  
@@ -11,7 +11,7 @@
 
 > **Components**  
 > >**of mapping**  
-> >&nbsp;&nbsp;&nbsp; CLmapEMP/ CLmapCUST / CLmapORDERS / CLmpaSTOCK / CLmapSTAT / CLcalculSIMU
+> >&nbsp;&nbsp;&nbsp; CLmapEMP/ CLmapCUST / CLmapORDER / CLmpaPRODUCT / CLmapSTAT / CLcalculSIMU
 >
 > >**of connexion**  
 > >&nbsp;&nbsp;&nbsp; CLcad  
