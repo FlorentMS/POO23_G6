@@ -128,10 +128,14 @@ private: System::Windows::Forms::Button^ addEmp;
 	private: System::Windows::Forms::Label^ ZIPcodeEmp;
 	private: System::Windows::Forms::Label^ streetNumEmp;
 private: System::Windows::Forms::TabPage^ stockTab;
-private: System::Windows::Forms::Button^ button2;
-private: System::Windows::Forms::Button^ button3;
-private: System::Windows::Forms::Button^ button4;
-private: System::Windows::Forms::Button^ button5;
+private: System::Windows::Forms::Button^ displayOrder;
+private: System::Windows::Forms::Button^ changeOrder;
+private: System::Windows::Forms::Button^ eraseOrder;
+
+
+
+private: System::Windows::Forms::Button^ addOrder;
+
 private: System::Windows::Forms::DataGridView^ dataGridView6;
 private: System::Windows::Forms::Button^ button6;
 private: System::Windows::Forms::Button^ button7;
@@ -191,6 +195,38 @@ private: System::Windows::Forms::TextBox^ text_streetName;
 
 private: System::Windows::Forms::TextBox^ text_streetNumber;
 private: System::Windows::Forms::TextBox^ text_ZIPcode;
+private: System::Windows::Forms::Label^ label6;
+private: System::Windows::Forms::ComboBox^ comboBox_meanOfPayment;
+
+
+private: System::Windows::Forms::Label^ label7;
+private: System::Windows::Forms::TextBox^ text_articleID;
+
+private: System::Windows::Forms::Label^ label9;
+private: System::Windows::Forms::Label^ label8;
+private: System::Windows::Forms::TextBox^ text_paymentDueDate;
+
+private: System::Windows::Forms::TextBox^ text_orderID;
+private: System::Windows::Forms::TextBox^ text_customerID;
+
+
+
+private: System::Windows::Forms::Label^ label10;
+private: System::Windows::Forms::NumericUpDown^ numericUpDown_quantity;
+
+private: System::Windows::Forms::Label^ label11;
+private: System::Windows::Forms::Button^ addPayment;
+private: System::Windows::Forms::Button^ addArticle;
+
+
+private: System::Windows::Forms::Label^ label13;
+private: System::Windows::Forms::TextBox^ text_deliveryDate;
+
+private: System::Windows::Forms::Label^ label12;
+private: System::Windows::Forms::TextBox^ text_completPayementDate;
+
+
+
 
 
 
@@ -285,10 +321,10 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->displayOrder = (gcnew System::Windows::Forms::Button());
+			this->changeOrder = (gcnew System::Windows::Forms::Button());
+			this->eraseOrder = (gcnew System::Windows::Forms::Button());
+			this->addOrder = (gcnew System::Windows::Forms::Button());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->stockTab = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
@@ -350,6 +386,24 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			this->text_streetName = (gcnew System::Windows::Forms::TextBox());
 			this->text_cityName = (gcnew System::Windows::Forms::TextBox());
 			this->text_ZIPcode = (gcnew System::Windows::Forms::TextBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->comboBox_meanOfPayment = (gcnew System::Windows::Forms::ComboBox());
+			this->text_articleID = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->text_paymentDueDate = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->text_orderID = (gcnew System::Windows::Forms::TextBox());
+			this->text_customerID = (gcnew System::Windows::Forms::TextBox());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown_quantity = (gcnew System::Windows::Forms::NumericUpDown());
+			this->addPayment = (gcnew System::Windows::Forms::Button());
+			this->addArticle = (gcnew System::Windows::Forms::Button());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->text_completPayementDate = (gcnew System::Windows::Forms::TextBox());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->text_deliveryDate = (gcnew System::Windows::Forms::TextBox());
 			this->mainTabControl->SuspendLayout();
 			this->customersTab->SuspendLayout();
 			this->socityGroupBox->SuspendLayout();
@@ -362,6 +416,9 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			this->infoEmpGroupBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->BeginInit();
 			this->ordersTab->SuspendLayout();
+			this->groupBox4->SuspendLayout();
+			this->groupBox3->SuspendLayout();
+			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->stockTab->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->BeginInit();
@@ -373,6 +430,7 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			this->margin_groupBox->SuspendLayout();
 			this->VAT_groupBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantity))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// mainTabControl
@@ -858,13 +916,15 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			// 
 			// ordersTab
 			// 
+			this->ordersTab->Controls->Add(this->addArticle);
+			this->ordersTab->Controls->Add(this->addPayment);
 			this->ordersTab->Controls->Add(this->groupBox4);
 			this->ordersTab->Controls->Add(this->groupBox3);
 			this->ordersTab->Controls->Add(this->groupBox2);
-			this->ordersTab->Controls->Add(this->button2);
-			this->ordersTab->Controls->Add(this->button3);
-			this->ordersTab->Controls->Add(this->button4);
-			this->ordersTab->Controls->Add(this->button5);
+			this->ordersTab->Controls->Add(this->displayOrder);
+			this->ordersTab->Controls->Add(this->changeOrder);
+			this->ordersTab->Controls->Add(this->eraseOrder);
+			this->ordersTab->Controls->Add(this->addOrder);
 			this->ordersTab->Controls->Add(this->dataGridView3);
 			this->ordersTab->Location = System::Drawing::Point(4, 25);
 			this->ordersTab->Name = L"ordersTab";
@@ -875,67 +935,83 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			// 
 			// groupBox4
 			// 
-			this->groupBox4->Location = System::Drawing::Point(334, 395);
+			this->groupBox4->Controls->Add(this->label9);
+			this->groupBox4->Controls->Add(this->label8);
+			this->groupBox4->Controls->Add(this->text_paymentDueDate);
+			this->groupBox4->Controls->Add(this->comboBox_meanOfPayment);
+			this->groupBox4->Location = System::Drawing::Point(334, 372);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(387, 85);
+			this->groupBox4->Size = System::Drawing::Size(387, 120);
 			this->groupBox4->TabIndex = 43;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"mean of payment";
 			// 
 			// groupBox3
 			// 
+			this->groupBox3->Controls->Add(this->numericUpDown_quantity);
+			this->groupBox3->Controls->Add(this->label11);
+			this->groupBox3->Controls->Add(this->label7);
+			this->groupBox3->Controls->Add(this->text_articleID);
 			this->groupBox3->Location = System::Drawing::Point(334, 289);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(387, 92);
+			this->groupBox3->Size = System::Drawing::Size(387, 77);
 			this->groupBox3->TabIndex = 42;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Article";
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->label13);
+			this->groupBox2->Controls->Add(this->text_deliveryDate);
+			this->groupBox2->Controls->Add(this->label12);
+			this->groupBox2->Controls->Add(this->text_customerID);
+			this->groupBox2->Controls->Add(this->text_completPayementDate);
+			this->groupBox2->Controls->Add(this->label10);
+			this->groupBox2->Controls->Add(this->text_orderID);
+			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Location = System::Drawing::Point(25, 289);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(283, 191);
+			this->groupBox2->Size = System::Drawing::Size(283, 177);
 			this->groupBox2->TabIndex = 41;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Global info";
 			this->groupBox2->Enter += gcnew System::EventHandler(this, &MyForm::groupBox2_Enter);
 			// 
-			// button2
+			// displayOrder
 			// 
-			this->button2->Location = System::Drawing::Point(25, 511);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(141, 33);
-			this->button2->TabIndex = 40;
-			this->button2->Text = L"Display employees";
-			this->button2->UseVisualStyleBackColor = true;
+			this->displayOrder->Location = System::Drawing::Point(9, 511);
+			this->displayOrder->Name = L"displayOrder";
+			this->displayOrder->Size = System::Drawing::Size(117, 33);
+			this->displayOrder->TabIndex = 40;
+			this->displayOrder->Text = L"Display order";
+			this->displayOrder->UseVisualStyleBackColor = true;
 			// 
-			// button3
+			// changeOrder
 			// 
-			this->button3->Location = System::Drawing::Point(383, 511);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(151, 33);
-			this->button3->TabIndex = 39;
-			this->button3->Text = L"Change employee";
-			this->button3->UseVisualStyleBackColor = true;
+			this->changeOrder->Location = System::Drawing::Point(132, 511);
+			this->changeOrder->Name = L"changeOrder";
+			this->changeOrder->Size = System::Drawing::Size(127, 33);
+			this->changeOrder->TabIndex = 39;
+			this->changeOrder->Text = L"Change order";
+			this->changeOrder->UseVisualStyleBackColor = true;
 			// 
-			// button4
+			// eraseOrder
 			// 
-			this->button4->Location = System::Drawing::Point(583, 511);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(151, 33);
-			this->button4->TabIndex = 38;
-			this->button4->Text = L"Erase employee";
-			this->button4->UseVisualStyleBackColor = true;
+			this->eraseOrder->Location = System::Drawing::Point(264, 511);
+			this->eraseOrder->Name = L"eraseOrder";
+			this->eraseOrder->Size = System::Drawing::Size(127, 33);
+			this->eraseOrder->TabIndex = 38;
+			this->eraseOrder->Text = L"Erase order";
+			this->eraseOrder->UseVisualStyleBackColor = true;
 			// 
-			// button5
+			// addOrder
 			// 
-			this->button5->Location = System::Drawing::Point(196, 511);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(141, 33);
-			this->button5->TabIndex = 37;
-			this->button5->Text = L"Add employee";
-			this->button5->UseVisualStyleBackColor = true;
+			this->addOrder->Location = System::Drawing::Point(399, 511);
+			this->addOrder->Name = L"addOrder";
+			this->addOrder->Size = System::Drawing::Size(117, 33);
+			this->addOrder->TabIndex = 37;
+			this->addOrder->Text = L"Add order";
+			this->addOrder->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView3
 			// 
@@ -1520,6 +1596,164 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			this->text_ZIPcode->Size = System::Drawing::Size(68, 22);
 			this->text_ZIPcode->TabIndex = 40;
 			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(21, 18);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(57, 16);
+			this->label6->TabIndex = 28;
+			this->label6->Text = L"Order ID";
+			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
+			// 
+			// comboBox_meanOfPayment
+			// 
+			this->comboBox_meanOfPayment->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(3) {
+				L"Cash", L"Credit card",
+					L"Bank transfer"
+			});
+			this->comboBox_meanOfPayment->CausesValidation = false;
+			this->comboBox_meanOfPayment->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox_meanOfPayment->FormattingEnabled = true;
+			this->comboBox_meanOfPayment->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->comboBox_meanOfPayment->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cash", L"Credit Card", L"Bank transfer" });
+			this->comboBox_meanOfPayment->Location = System::Drawing::Point(49, 41);
+			this->comboBox_meanOfPayment->Name = L"comboBox_meanOfPayment";
+			this->comboBox_meanOfPayment->Size = System::Drawing::Size(324, 24);
+			this->comboBox_meanOfPayment->TabIndex = 0;
+			// 
+			// text_articleID
+			// 
+			this->text_articleID->Location = System::Drawing::Point(49, 39);
+			this->text_articleID->Name = L"text_articleID";
+			this->text_articleID->Size = System::Drawing::Size(236, 22);
+			this->text_articleID->TabIndex = 0;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(26, 20);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(128, 16);
+			this->label7->TabIndex = 29;
+			this->label7->Text = L"Article ID (reference)";
+			this->label7->Click += gcnew System::EventHandler(this, &MyForm::label7_Click);
+			// 
+			// text_paymentDueDate
+			// 
+			this->text_paymentDueDate->Location = System::Drawing::Point(49, 87);
+			this->text_paymentDueDate->Name = L"text_paymentDueDate";
+			this->text_paymentDueDate->Size = System::Drawing::Size(102, 22);
+			this->text_paymentDueDate->TabIndex = 30;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(30, 68);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(116, 16);
+			this->label8->TabIndex = 29;
+			this->label8->Text = L"Payment due date";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(32, 24);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(110, 16);
+			this->label9->TabIndex = 31;
+			this->label9->Text = L"Mean of payment";
+			// 
+			// text_orderID
+			// 
+			this->text_orderID->Location = System::Drawing::Point(39, 37);
+			this->text_orderID->Name = L"text_orderID";
+			this->text_orderID->Size = System::Drawing::Size(238, 22);
+			this->text_orderID->TabIndex = 32;
+			// 
+			// text_customerID
+			// 
+			this->text_customerID->Location = System::Drawing::Point(39, 83);
+			this->text_customerID->Name = L"text_customerID";
+			this->text_customerID->Size = System::Drawing::Size(238, 22);
+			this->text_customerID->TabIndex = 34;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(21, 64);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(80, 16);
+			this->label10->TabIndex = 33;
+			this->label10->Text = L"Customer ID";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(299, 20);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(55, 16);
+			this->label11->TabIndex = 31;
+			this->label11->Text = L"Quantity";
+			// 
+			// numericUpDown_quantity
+			// 
+			this->numericUpDown_quantity->Location = System::Drawing::Point(327, 37);
+			this->numericUpDown_quantity->Name = L"numericUpDown_quantity";
+			this->numericUpDown_quantity->Size = System::Drawing::Size(46, 22);
+			this->numericUpDown_quantity->TabIndex = 32;
+			// 
+			// addPayment
+			// 
+			this->addPayment->Location = System::Drawing::Point(522, 511);
+			this->addPayment->Name = L"addPayment";
+			this->addPayment->Size = System::Drawing::Size(117, 33);
+			this->addPayment->TabIndex = 44;
+			this->addPayment->Text = L"Add payment";
+			this->addPayment->UseVisualStyleBackColor = true;
+			this->addPayment->Click += gcnew System::EventHandler(this, &MyForm::button17_Click);
+			// 
+			// addArticle
+			// 
+			this->addArticle->Location = System::Drawing::Point(645, 511);
+			this->addArticle->Name = L"addArticle";
+			this->addArticle->Size = System::Drawing::Size(117, 33);
+			this->addArticle->TabIndex = 45;
+			this->addArticle->Text = L"Add article";
+			this->addArticle->UseVisualStyleBackColor = true;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(20, 120);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(150, 16);
+			this->label12->TabIndex = 32;
+			this->label12->Text = L"Complet payement date";
+			// 
+			// text_completPayementDate
+			// 
+			this->text_completPayementDate->Location = System::Drawing::Point(39, 139);
+			this->text_completPayementDate->Name = L"text_completPayementDate";
+			this->text_completPayementDate->Size = System::Drawing::Size(102, 22);
+			this->text_completPayementDate->TabIndex = 33;
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(182, 120);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(87, 16);
+			this->label13->TabIndex = 35;
+			this->label13->Text = L"Delivery date";
+			// 
+			// text_deliveryDate
+			// 
+			this->text_deliveryDate->Location = System::Drawing::Point(201, 139);
+			this->text_deliveryDate->Name = L"text_deliveryDate";
+			this->text_deliveryDate->Size = System::Drawing::Size(76, 22);
+			this->text_deliveryDate->TabIndex = 36;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1546,6 +1780,12 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			this->infoEmpGroupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
 			this->ordersTab->ResumeLayout(false);
+			this->groupBox4->ResumeLayout(false);
+			this->groupBox4->PerformLayout();
+			this->groupBox3->ResumeLayout(false);
+			this->groupBox3->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			this->stockTab->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->EndInit();
@@ -1562,6 +1802,7 @@ private: System::Windows::Forms::TextBox^ text_ZIPcode;
 			this->VAT_groupBox->ResumeLayout(false);
 			this->VAT_groupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantity))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1615,6 +1856,12 @@ private: System::Void textBox6_TextChanged(System::Object^ sender, System::Event
 private: System::Void streetNameDel_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void hireDateEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
