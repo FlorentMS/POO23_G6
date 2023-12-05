@@ -79,7 +79,8 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::DataGridView^ dataGridView4;
 	private: System::Windows::Forms::DataGridView^ dataGridView3;
 	private: System::Windows::Forms::Label^ custID;
-	private: System::Windows::Forms::TextBox^ text_lastName;
+	private: System::Windows::Forms::TextBox^ text_custLastName;
+
 
 
 	private: System::Windows::Forms::Label^ lastName;
@@ -156,8 +157,9 @@ private: System::Windows::Forms::TextBox^ text_serviceNumber;
 
 private: System::Windows::Forms::TextBox^ text_socityName;
 private: System::Windows::Forms::TextBox^ text_birthDate;
+private: System::Windows::Forms::TextBox^ text_custFirstName;
 
-private: System::Windows::Forms::TextBox^ text_firstName;
+
 
 private: System::Windows::Forms::TextBox^ text_custRef;
 private: System::Windows::Forms::TextBox^ text_deliveryStreetName;
@@ -172,6 +174,25 @@ private: System::Windows::Forms::TextBox^ text_bilingCityName;
 private: System::Windows::Forms::TextBox^ text_bilingZIPcode;
 private: System::Windows::Forms::TextBox^ text_bilingStreetName;
 private: System::Windows::Forms::TextBox^ text_bilingStreetN;
+private: System::Windows::Forms::TextBox^ text_hireDate;
+
+private: System::Windows::Forms::TextBox^ text_empLastName;
+private: System::Windows::Forms::TextBox^ text_empFirstName;
+
+
+private: System::Windows::Forms::TextBox^ text_chiefID;
+
+private: System::Windows::Forms::TextBox^ text_employeeID;
+private: System::Windows::Forms::TextBox^ text_cityName;
+
+
+
+private: System::Windows::Forms::TextBox^ text_streetName;
+
+private: System::Windows::Forms::TextBox^ text_streetNumber;
+private: System::Windows::Forms::TextBox^ text_ZIPcode;
+
+
 
 
 
@@ -231,7 +252,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			this->firstName = (gcnew System::Windows::Forms::Label());
 			this->lastName = (gcnew System::Windows::Forms::Label());
 			this->custID = (gcnew System::Windows::Forms::Label());
-			this->text_lastName = (gcnew System::Windows::Forms::TextBox());
+			this->text_custLastName = (gcnew System::Windows::Forms::TextBox());
 			this->BillingGroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->cityNameBil = (gcnew System::Windows::Forms::Label());
 			this->ZipCodeBil = (gcnew System::Windows::Forms::Label());
@@ -310,7 +331,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->execution_button = (gcnew System::Windows::Forms::Button());
 			this->text_custRef = (gcnew System::Windows::Forms::TextBox());
-			this->text_firstName = (gcnew System::Windows::Forms::TextBox());
+			this->text_custFirstName = (gcnew System::Windows::Forms::TextBox());
 			this->text_birthDate = (gcnew System::Windows::Forms::TextBox());
 			this->text_deliveryStreetN = (gcnew System::Windows::Forms::TextBox());
 			this->text_deliveryStreetName = (gcnew System::Windows::Forms::TextBox());
@@ -320,6 +341,15 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			this->text_bilingZIPcode = (gcnew System::Windows::Forms::TextBox());
 			this->text_bilingStreetName = (gcnew System::Windows::Forms::TextBox());
 			this->text_bilingStreetN = (gcnew System::Windows::Forms::TextBox());
+			this->text_employeeID = (gcnew System::Windows::Forms::TextBox());
+			this->text_chiefID = (gcnew System::Windows::Forms::TextBox());
+			this->text_empLastName = (gcnew System::Windows::Forms::TextBox());
+			this->text_empFirstName = (gcnew System::Windows::Forms::TextBox());
+			this->text_hireDate = (gcnew System::Windows::Forms::TextBox());
+			this->text_streetNumber = (gcnew System::Windows::Forms::TextBox());
+			this->text_streetName = (gcnew System::Windows::Forms::TextBox());
+			this->text_cityName = (gcnew System::Windows::Forms::TextBox());
+			this->text_ZIPcode = (gcnew System::Windows::Forms::TextBox());
 			this->mainTabControl->SuspendLayout();
 			this->customersTab->SuspendLayout();
 			this->socityGroupBox->SuspendLayout();
@@ -462,13 +492,13 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// customerGroupBox
 			// 
 			this->customerGroupBox->Controls->Add(this->text_birthDate);
-			this->customerGroupBox->Controls->Add(this->text_firstName);
+			this->customerGroupBox->Controls->Add(this->text_custFirstName);
 			this->customerGroupBox->Controls->Add(this->text_custRef);
 			this->customerGroupBox->Controls->Add(this->birthDateCust);
 			this->customerGroupBox->Controls->Add(this->firstName);
 			this->customerGroupBox->Controls->Add(this->lastName);
 			this->customerGroupBox->Controls->Add(this->custID);
-			this->customerGroupBox->Controls->Add(this->text_lastName);
+			this->customerGroupBox->Controls->Add(this->text_custLastName);
 			this->customerGroupBox->Location = System::Drawing::Point(24, 285);
 			this->customerGroupBox->Name = L"customerGroupBox";
 			this->customerGroupBox->Size = System::Drawing::Size(472, 130);
@@ -515,12 +545,12 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			this->custID->Text = L"custRef";
 			this->custID->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_3);
 			// 
-			// text_lastName
+			// text_custLastName
 			// 
-			this->text_lastName->Location = System::Drawing::Point(23, 49);
-			this->text_lastName->Name = L"text_lastName";
-			this->text_lastName->Size = System::Drawing::Size(191, 22);
-			this->text_lastName->TabIndex = 19;
+			this->text_custLastName->Location = System::Drawing::Point(23, 49);
+			this->text_custLastName->Name = L"text_custLastName";
+			this->text_custLastName->Size = System::Drawing::Size(191, 22);
+			this->text_custLastName->TabIndex = 19;
 			// 
 			// BillingGroupBox
 			// 
@@ -699,13 +729,17 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// 
 			// empAdressGroupBox
 			// 
+			this->empAdressGroupBox->Controls->Add(this->text_ZIPcode);
+			this->empAdressGroupBox->Controls->Add(this->text_cityName);
+			this->empAdressGroupBox->Controls->Add(this->text_streetName);
+			this->empAdressGroupBox->Controls->Add(this->text_streetNumber);
 			this->empAdressGroupBox->Controls->Add(this->cityNameEmp);
 			this->empAdressGroupBox->Controls->Add(this->streetNameEmp);
 			this->empAdressGroupBox->Controls->Add(this->ZIPcodeEmp);
 			this->empAdressGroupBox->Controls->Add(this->streetNumEmp);
 			this->empAdressGroupBox->Location = System::Drawing::Point(398, 298);
 			this->empAdressGroupBox->Name = L"empAdressGroupBox";
-			this->empAdressGroupBox->Size = System::Drawing::Size(323, 164);
+			this->empAdressGroupBox->Size = System::Drawing::Size(304, 123);
 			this->empAdressGroupBox->TabIndex = 20;
 			this->empAdressGroupBox->TabStop = false;
 			this->empAdressGroupBox->Text = L"Adress";
@@ -713,7 +747,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// cityNameEmp
 			// 
 			this->cityNameEmp->AutoSize = true;
-			this->cityNameEmp->Location = System::Drawing::Point(157, 61);
+			this->cityNameEmp->Location = System::Drawing::Point(6, 65);
 			this->cityNameEmp->Name = L"cityNameEmp";
 			this->cityNameEmp->Size = System::Drawing::Size(64, 16);
 			this->cityNameEmp->TabIndex = 30;
@@ -722,7 +756,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// streetNameEmp
 			// 
 			this->streetNameEmp->AutoSize = true;
-			this->streetNameEmp->Location = System::Drawing::Point(131, 45);
+			this->streetNameEmp->Location = System::Drawing::Point(111, 18);
 			this->streetNameEmp->Name = L"streetNameEmp";
 			this->streetNameEmp->Size = System::Drawing::Size(77, 16);
 			this->streetNameEmp->TabIndex = 28;
@@ -731,7 +765,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// ZIPcodeEmp
 			// 
 			this->ZIPcodeEmp->AutoSize = true;
-			this->ZIPcodeEmp->Location = System::Drawing::Point(245, 45);
+			this->ZIPcodeEmp->Location = System::Drawing::Point(210, 65);
 			this->ZIPcodeEmp->Name = L"ZIPcodeEmp";
 			this->ZIPcodeEmp->Size = System::Drawing::Size(61, 16);
 			this->ZIPcodeEmp->TabIndex = 29;
@@ -740,7 +774,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// streetNumEmp
 			// 
 			this->streetNumEmp->AutoSize = true;
-			this->streetNumEmp->Location = System::Drawing::Point(20, 45);
+			this->streetNumEmp->Location = System::Drawing::Point(6, 18);
 			this->streetNumEmp->Name = L"streetNumEmp";
 			this->streetNumEmp->Size = System::Drawing::Size(88, 16);
 			this->streetNumEmp->TabIndex = 27;
@@ -748,11 +782,16 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// 
 			// infoEmpGroupBox
 			// 
-			this->infoEmpGroupBox->Controls->Add(this->chiefIDemp);
+			this->infoEmpGroupBox->Controls->Add(this->text_hireDate);
+			this->infoEmpGroupBox->Controls->Add(this->text_empLastName);
+			this->infoEmpGroupBox->Controls->Add(this->text_empFirstName);
+			this->infoEmpGroupBox->Controls->Add(this->text_chiefID);
 			this->infoEmpGroupBox->Controls->Add(this->lastNameEmp);
 			this->infoEmpGroupBox->Controls->Add(this->hireDateEmp);
-			this->infoEmpGroupBox->Controls->Add(this->IDemp);
+			this->infoEmpGroupBox->Controls->Add(this->chiefIDemp);
 			this->infoEmpGroupBox->Controls->Add(this->firstNameEmp);
+			this->infoEmpGroupBox->Controls->Add(this->IDemp);
+			this->infoEmpGroupBox->Controls->Add(this->text_employeeID);
 			this->infoEmpGroupBox->Location = System::Drawing::Point(49, 298);
 			this->infoEmpGroupBox->Name = L"infoEmpGroupBox";
 			this->infoEmpGroupBox->Size = System::Drawing::Size(299, 164);
@@ -763,7 +802,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// chiefIDemp
 			// 
 			this->chiefIDemp->AutoSize = true;
-			this->chiefIDemp->Location = System::Drawing::Point(108, 71);
+			this->chiefIDemp->Location = System::Drawing::Point(151, 15);
 			this->chiefIDemp->Name = L"chiefIDemp";
 			this->chiefIDemp->Size = System::Drawing::Size(51, 16);
 			this->chiefIDemp->TabIndex = 28;
@@ -773,7 +812,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// lastNameEmp
 			// 
 			this->lastNameEmp->AutoSize = true;
-			this->lastNameEmp->Location = System::Drawing::Point(37, 18);
+			this->lastNameEmp->Location = System::Drawing::Point(4, 65);
 			this->lastNameEmp->Name = L"lastNameEmp";
 			this->lastNameEmp->Size = System::Drawing::Size(65, 16);
 			this->lastNameEmp->TabIndex = 25;
@@ -782,16 +821,17 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// hireDateEmp
 			// 
 			this->hireDateEmp->AutoSize = true;
-			this->hireDateEmp->Location = System::Drawing::Point(195, 55);
+			this->hireDateEmp->Location = System::Drawing::Point(162, 117);
 			this->hireDateEmp->Name = L"hireDateEmp";
 			this->hireDateEmp->Size = System::Drawing::Size(59, 16);
 			this->hireDateEmp->TabIndex = 27;
 			this->hireDateEmp->Text = L"hire date";
+			this->hireDateEmp->Click += gcnew System::EventHandler(this, &MyForm::hireDateEmp_Click);
 			// 
 			// IDemp
 			// 
 			this->IDemp->AutoSize = true;
-			this->IDemp->Location = System::Drawing::Point(18, 55);
+			this->IDemp->Location = System::Drawing::Point(6, 16);
 			this->IDemp->Name = L"IDemp";
 			this->IDemp->Size = System::Drawing::Size(84, 16);
 			this->IDemp->TabIndex = 24;
@@ -800,7 +840,7 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			// firstNameEmp
 			// 
 			this->firstNameEmp->AutoSize = true;
-			this->firstNameEmp->Location = System::Drawing::Point(127, 45);
+			this->firstNameEmp->Location = System::Drawing::Point(6, 117);
 			this->firstNameEmp->Name = L"firstNameEmp";
 			this->firstNameEmp->Size = System::Drawing::Size(60, 16);
 			this->firstNameEmp->TabIndex = 26;
@@ -1346,12 +1386,12 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			this->text_custRef->Size = System::Drawing::Size(207, 22);
 			this->text_custRef->TabIndex = 24;
 			// 
-			// text_firstName
+			// text_custFirstName
 			// 
-			this->text_firstName->Location = System::Drawing::Point(25, 102);
-			this->text_firstName->Name = L"text_firstName";
-			this->text_firstName->Size = System::Drawing::Size(189, 22);
-			this->text_firstName->TabIndex = 25;
+			this->text_custFirstName->Location = System::Drawing::Point(25, 102);
+			this->text_custFirstName->Name = L"text_custFirstName";
+			this->text_custFirstName->Size = System::Drawing::Size(189, 22);
+			this->text_custFirstName->TabIndex = 25;
 			// 
 			// text_birthDate
 			// 
@@ -1416,6 +1456,69 @@ private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 			this->text_bilingStreetN->Name = L"text_bilingStreetN";
 			this->text_bilingStreetN->Size = System::Drawing::Size(48, 22);
 			this->text_bilingStreetN->TabIndex = 31;
+			// 
+			// text_employeeID
+			// 
+			this->text_employeeID->Location = System::Drawing::Point(18, 35);
+			this->text_employeeID->Name = L"text_employeeID";
+			this->text_employeeID->Size = System::Drawing::Size(124, 22);
+			this->text_employeeID->TabIndex = 29;
+			// 
+			// text_chiefID
+			// 
+			this->text_chiefID->Location = System::Drawing::Point(165, 34);
+			this->text_chiefID->Name = L"text_chiefID";
+			this->text_chiefID->Size = System::Drawing::Size(128, 22);
+			this->text_chiefID->TabIndex = 30;
+			// 
+			// text_empLastName
+			// 
+			this->text_empLastName->Location = System::Drawing::Point(18, 84);
+			this->text_empLastName->Name = L"text_empLastName";
+			this->text_empLastName->Size = System::Drawing::Size(266, 22);
+			this->text_empLastName->TabIndex = 32;
+			// 
+			// text_empFirstName
+			// 
+			this->text_empFirstName->Location = System::Drawing::Point(18, 136);
+			this->text_empFirstName->Name = L"text_empFirstName";
+			this->text_empFirstName->Size = System::Drawing::Size(139, 22);
+			this->text_empFirstName->TabIndex = 31;
+			// 
+			// text_hireDate
+			// 
+			this->text_hireDate->Location = System::Drawing::Point(181, 136);
+			this->text_hireDate->Name = L"text_hireDate";
+			this->text_hireDate->Size = System::Drawing::Size(103, 22);
+			this->text_hireDate->TabIndex = 33;
+			// 
+			// text_streetNumber
+			// 
+			this->text_streetNumber->Location = System::Drawing::Point(21, 37);
+			this->text_streetNumber->Name = L"text_streetNumber";
+			this->text_streetNumber->Size = System::Drawing::Size(68, 22);
+			this->text_streetNumber->TabIndex = 37;
+			// 
+			// text_streetName
+			// 
+			this->text_streetName->Location = System::Drawing::Point(128, 37);
+			this->text_streetName->Name = L"text_streetName";
+			this->text_streetName->Size = System::Drawing::Size(163, 22);
+			this->text_streetName->TabIndex = 38;
+			// 
+			// text_cityName
+			// 
+			this->text_cityName->Location = System::Drawing::Point(21, 84);
+			this->text_cityName->Name = L"text_cityName";
+			this->text_cityName->Size = System::Drawing::Size(163, 22);
+			this->text_cityName->TabIndex = 39;
+			// 
+			// text_ZIPcode
+			// 
+			this->text_ZIPcode->Location = System::Drawing::Point(223, 84);
+			this->text_ZIPcode->Name = L"text_ZIPcode";
+			this->text_ZIPcode->Size = System::Drawing::Size(68, 22);
+			this->text_ZIPcode->TabIndex = 40;
 			// 
 			// MyForm
 			// 
@@ -1510,6 +1613,8 @@ private: System::Void ZipCodeDel_Click(System::Object^ sender, System::EventArgs
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void streetNameDel_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void hireDateEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
