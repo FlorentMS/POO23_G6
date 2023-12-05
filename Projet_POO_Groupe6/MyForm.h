@@ -73,7 +73,8 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::GroupBox^ margin_groupBox;
 	private: System::Windows::Forms::GroupBox^ discount_groupBox;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button_turnover;
+
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::DataGridView^ dataGridView5;
 	private: System::Windows::Forms::DataGridView^ dataGridView4;
@@ -149,18 +150,25 @@ private: System::Windows::Forms::GroupBox^ groupBox4;
 private: System::Windows::Forms::GroupBox^ groupBox3;
 private: System::Windows::Forms::GroupBox^ groupBox2;
 private: System::Windows::Forms::GroupBox^ groupBox5;
-private: System::Windows::Forms::Label^ label5;
-private: System::Windows::Forms::Label^ label4;
-private: System::Windows::Forms::Label^ label3;
-private: System::Windows::Forms::Label^ label2;
-private: System::Windows::Forms::Label^ label1;
-private: System::Windows::Forms::Button^ button15;
-private: System::Windows::Forms::Button^ button16;
-private: System::Windows::Forms::Button^ button14;
-private: System::Windows::Forms::Button^ button13;
-private: System::Windows::Forms::Button^ button12;
-private: System::Windows::Forms::Button^ button11;
-private: System::Windows::Forms::Button^ button10;
+private: System::Windows::Forms::Button^ button_commercialValueStock;
+
+
+
+
+
+
+private: System::Windows::Forms::Button^ button_bestSelling;
+private: System::Windows::Forms::Button^ button_customerTotalAmount;
+private: System::Windows::Forms::Button^ button_purchaseValueStock;
+
+
+
+private: System::Windows::Forms::Button^ button_lowestSelling;
+
+private: System::Windows::Forms::Button^ button_averageCart;
+private: System::Windows::Forms::Button^ button_underReorderThreshold;
+
+
 private: System::Windows::Forms::TextBox^ text_serviceNumber;
 
 private: System::Windows::Forms::TextBox^ text_socityName;
@@ -251,6 +259,28 @@ private: System::Windows::Forms::TextBox^ textBox_reorderThreshold;
 
 private: System::Windows::Forms::Label^ label19;
 private: System::Windows::Forms::TextBox^ text_articleColor;
+private: System::Windows::Forms::GroupBox^ groupBox6;
+private: System::Windows::Forms::Label^ label22;
+private: System::Windows::Forms::TextBox^ text_statisticsCustBirthDate;
+
+private: System::Windows::Forms::Label^ label23;
+private: System::Windows::Forms::TextBox^ text_statisticsCustLastName;
+private: System::Windows::Forms::TextBox^ text_statisticsCustFirstName;
+
+
+private: System::Windows::Forms::Label^ label24;
+private: System::Windows::Forms::TextBox^ text_statisticsCustReference;
+
+private: System::Windows::Forms::Label^ label25;
+private: System::Windows::Forms::GroupBox^ groupBox7;
+private: System::Windows::Forms::TextBox^ text_turnoverYear;
+
+private: System::Windows::Forms::Label^ label4;
+private: System::Windows::Forms::TextBox^ text_turnoverMonth;
+
+
+private: System::Windows::Forms::Label^ label5;
+
 
 
 
@@ -364,19 +394,14 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->ereaseProduct = (gcnew System::Windows::Forms::Button());
 			this->addProduct = (gcnew System::Windows::Forms::Button());
 			this->statisticTab = (gcnew System::Windows::Forms::TabPage());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button15 = (gcnew System::Windows::Forms::Button());
-			this->button16 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button_commercialValueStock = (gcnew System::Windows::Forms::Button());
+			this->button_bestSelling = (gcnew System::Windows::Forms::Button());
+			this->button_customerTotalAmount = (gcnew System::Windows::Forms::Button());
+			this->button_purchaseValueStock = (gcnew System::Windows::Forms::Button());
+			this->button_lowestSelling = (gcnew System::Windows::Forms::Button());
+			this->button_averageCart = (gcnew System::Windows::Forms::Button());
+			this->button_underReorderThreshold = (gcnew System::Windows::Forms::Button());
+			this->button_turnover = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->simulationsTab = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
@@ -448,6 +473,20 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->textBox_reorderThreshold = (gcnew System::Windows::Forms::TextBox());
 			this->text_articleColor = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->text_statisticsCustBirthDate = (gcnew System::Windows::Forms::TextBox());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->text_statisticsCustLastName = (gcnew System::Windows::Forms::TextBox());
+			this->text_statisticsCustFirstName = (gcnew System::Windows::Forms::TextBox());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->text_statisticsCustReference = (gcnew System::Windows::Forms::TextBox());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
+			this->text_turnoverYear = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->text_turnoverMonth = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->mainTabControl->SuspendLayout();
 			this->customersTab->SuspendLayout();
 			this->socityGroupBox->SuspendLayout();
@@ -477,6 +516,8 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityArticle))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityProduct))->BeginInit();
+			this->groupBox6->SuspendLayout();
+			this->groupBox7->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// mainTabControl
@@ -644,9 +685,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->custID->AutoSize = true;
 			this->custID->Location = System::Drawing::Point(241, 30);
 			this->custID->Name = L"custID";
-			this->custID->Size = System::Drawing::Size(52, 16);
+			this->custID->Size = System::Drawing::Size(129, 16);
 			this->custID->TabIndex = 20;
-			this->custID->Text = L"custRef";
+			this->custID->Text = L"customenr reference";
 			this->custID->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_3);
 			// 
 			// text_custLastName
@@ -841,9 +882,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->empAdressGroupBox->Controls->Add(this->streetNameEmp);
 			this->empAdressGroupBox->Controls->Add(this->ZIPcodeEmp);
 			this->empAdressGroupBox->Controls->Add(this->streetNumEmp);
-			this->empAdressGroupBox->Location = System::Drawing::Point(398, 298);
+			this->empAdressGroupBox->Location = System::Drawing::Point(379, 298);
 			this->empAdressGroupBox->Name = L"empAdressGroupBox";
-			this->empAdressGroupBox->Size = System::Drawing::Size(304, 123);
+			this->empAdressGroupBox->Size = System::Drawing::Size(323, 123);
 			this->empAdressGroupBox->TabIndex = 20;
 			this->empAdressGroupBox->TabStop = false;
 			this->empAdressGroupBox->Text = L"Adress";
@@ -898,7 +939,7 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->infoEmpGroupBox->Controls->Add(this->text_employeeID);
 			this->infoEmpGroupBox->Location = System::Drawing::Point(49, 298);
 			this->infoEmpGroupBox->Name = L"infoEmpGroupBox";
-			this->infoEmpGroupBox->Size = System::Drawing::Size(299, 164);
+			this->infoEmpGroupBox->Size = System::Drawing::Size(309, 185);
 			this->infoEmpGroupBox->TabIndex = 19;
 			this->infoEmpGroupBox->TabStop = false;
 			this->infoEmpGroupBox->Text = L"Info";
@@ -906,7 +947,7 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			// chiefIDemp
 			// 
 			this->chiefIDemp->AutoSize = true;
-			this->chiefIDemp->Location = System::Drawing::Point(151, 15);
+			this->chiefIDemp->Location = System::Drawing::Point(151, 22);
 			this->chiefIDemp->Name = L"chiefIDemp";
 			this->chiefIDemp->Size = System::Drawing::Size(51, 16);
 			this->chiefIDemp->TabIndex = 28;
@@ -916,7 +957,7 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			// lastNameEmp
 			// 
 			this->lastNameEmp->AutoSize = true;
-			this->lastNameEmp->Location = System::Drawing::Point(4, 65);
+			this->lastNameEmp->Location = System::Drawing::Point(4, 72);
 			this->lastNameEmp->Name = L"lastNameEmp";
 			this->lastNameEmp->Size = System::Drawing::Size(65, 16);
 			this->lastNameEmp->TabIndex = 25;
@@ -925,7 +966,7 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			// hireDateEmp
 			// 
 			this->hireDateEmp->AutoSize = true;
-			this->hireDateEmp->Location = System::Drawing::Point(162, 117);
+			this->hireDateEmp->Location = System::Drawing::Point(162, 124);
 			this->hireDateEmp->Name = L"hireDateEmp";
 			this->hireDateEmp->Size = System::Drawing::Size(59, 16);
 			this->hireDateEmp->TabIndex = 27;
@@ -935,7 +976,7 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			// IDemp
 			// 
 			this->IDemp->AutoSize = true;
-			this->IDemp->Location = System::Drawing::Point(6, 16);
+			this->IDemp->Location = System::Drawing::Point(6, 23);
 			this->IDemp->Name = L"IDemp";
 			this->IDemp->Size = System::Drawing::Size(84, 16);
 			this->IDemp->TabIndex = 24;
@@ -944,7 +985,7 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			// firstNameEmp
 			// 
 			this->firstNameEmp->AutoSize = true;
-			this->firstNameEmp->Location = System::Drawing::Point(6, 117);
+			this->firstNameEmp->Location = System::Drawing::Point(6, 124);
 			this->firstNameEmp->Name = L"firstNameEmp";
 			this->firstNameEmp->Size = System::Drawing::Size(60, 16);
 			this->firstNameEmp->TabIndex = 26;
@@ -1017,7 +1058,7 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Location = System::Drawing::Point(25, 289);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(283, 177);
+			this->groupBox2->Size = System::Drawing::Size(303, 177);
 			this->groupBox2->TabIndex = 41;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Global info";
@@ -1157,19 +1198,16 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			// 
 			// statisticTab
 			// 
-			this->statisticTab->Controls->Add(this->label5);
-			this->statisticTab->Controls->Add(this->label4);
-			this->statisticTab->Controls->Add(this->label3);
-			this->statisticTab->Controls->Add(this->label2);
-			this->statisticTab->Controls->Add(this->label1);
-			this->statisticTab->Controls->Add(this->button15);
-			this->statisticTab->Controls->Add(this->button16);
-			this->statisticTab->Controls->Add(this->button14);
-			this->statisticTab->Controls->Add(this->button13);
-			this->statisticTab->Controls->Add(this->button12);
-			this->statisticTab->Controls->Add(this->button11);
-			this->statisticTab->Controls->Add(this->button10);
-			this->statisticTab->Controls->Add(this->button1);
+			this->statisticTab->Controls->Add(this->groupBox7);
+			this->statisticTab->Controls->Add(this->groupBox6);
+			this->statisticTab->Controls->Add(this->button_commercialValueStock);
+			this->statisticTab->Controls->Add(this->button_bestSelling);
+			this->statisticTab->Controls->Add(this->button_turnover);
+			this->statisticTab->Controls->Add(this->button_customerTotalAmount);
+			this->statisticTab->Controls->Add(this->button_purchaseValueStock);
+			this->statisticTab->Controls->Add(this->button_lowestSelling);
+			this->statisticTab->Controls->Add(this->button_averageCart);
+			this->statisticTab->Controls->Add(this->button_underReorderThreshold);
 			this->statisticTab->Controls->Add(this->dataGridView2);
 			this->statisticTab->Location = System::Drawing::Point(4, 25);
 			this->statisticTab->Name = L"statisticTab";
@@ -1178,123 +1216,81 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->statisticTab->Text = L"Statistics";
 			this->statisticTab->UseVisualStyleBackColor = true;
 			// 
-			// label5
+			// button_commercialValueStock
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(425, 377);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(44, 16);
-			this->label5->TabIndex = 31;
-			this->label5->Text = L"label5";
+			this->button_commercialValueStock->Location = System::Drawing::Point(41, 364);
+			this->button_commercialValueStock->Name = L"button_commercialValueStock";
+			this->button_commercialValueStock->Size = System::Drawing::Size(331, 41);
+			this->button_commercialValueStock->TabIndex = 26;
+			this->button_commercialValueStock->Text = L"Calculate the commercial value of stock";
+			this->button_commercialValueStock->UseVisualStyleBackColor = true;
 			// 
-			// label4
+			// button_bestSelling
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(425, 341);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(44, 16);
-			this->label4->TabIndex = 30;
-			this->label4->Text = L"label4";
+			this->button_bestSelling->Location = System::Drawing::Point(400, 280);
+			this->button_bestSelling->Name = L"button_bestSelling";
+			this->button_bestSelling->Size = System::Drawing::Size(331, 41);
+			this->button_bestSelling->TabIndex = 25;
+			this->button_bestSelling->Text = L"10 best-selling items";
+			this->button_bestSelling->UseVisualStyleBackColor = true;
 			// 
-			// label3
+			// button_customerTotalAmount
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(425, 305);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(44, 16);
-			this->label3->TabIndex = 29;
-			this->label3->Text = L"label3";
+			this->button_customerTotalAmount->Location = System::Drawing::Point(400, 374);
+			this->button_customerTotalAmount->Name = L"button_customerTotalAmount";
+			this->button_customerTotalAmount->Size = System::Drawing::Size(331, 41);
+			this->button_customerTotalAmount->TabIndex = 24;
+			this->button_customerTotalAmount->Text = L"Calculate total amout for customer";
+			this->button_customerTotalAmount->UseVisualStyleBackColor = true;
+			this->button_customerTotalAmount->Click += gcnew System::EventHandler(this, &MyForm::button14_Click);
 			// 
-			// label2
+			// button_purchaseValueStock
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(425, 268);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(44, 16);
-			this->label2->TabIndex = 28;
-			this->label2->Text = L"label2";
+			this->button_purchaseValueStock->Location = System::Drawing::Point(41, 411);
+			this->button_purchaseValueStock->Name = L"button_purchaseValueStock";
+			this->button_purchaseValueStock->Size = System::Drawing::Size(331, 41);
+			this->button_purchaseValueStock->TabIndex = 23;
+			this->button_purchaseValueStock->Text = L"Calculate the purchase value of stock";
+			this->button_purchaseValueStock->UseVisualStyleBackColor = true;
+			this->button_purchaseValueStock->Click += gcnew System::EventHandler(this, &MyForm::button13_Click);
 			// 
-			// label1
+			// button_lowestSelling
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(77, 268);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(44, 16);
-			this->label1->TabIndex = 27;
-			this->label1->Text = L"label1";
+			this->button_lowestSelling->Location = System::Drawing::Point(400, 327);
+			this->button_lowestSelling->Name = L"button_lowestSelling";
+			this->button_lowestSelling->Size = System::Drawing::Size(331, 41);
+			this->button_lowestSelling->TabIndex = 22;
+			this->button_lowestSelling->Text = L"10 lowest-selling items";
+			this->button_lowestSelling->UseVisualStyleBackColor = true;
 			// 
-			// button15
+			// button_averageCart
 			// 
-			this->button15->Location = System::Drawing::Point(428, 521);
-			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(232, 26);
-			this->button15->TabIndex = 26;
-			this->button15->Text = L"button15";
-			this->button15->UseVisualStyleBackColor = true;
+			this->button_averageCart->Location = System::Drawing::Point(41, 270);
+			this->button_averageCart->Name = L"button_averageCart";
+			this->button_averageCart->Size = System::Drawing::Size(331, 41);
+			this->button_averageCart->TabIndex = 21;
+			this->button_averageCart->Text = L"Calculate average cart after discount";
+			this->button_averageCart->UseVisualStyleBackColor = true;
+			this->button_averageCart->Click += gcnew System::EventHandler(this, &MyForm::button11_Click);
 			// 
-			// button16
+			// button_underReorderThreshold
 			// 
-			this->button16->Location = System::Drawing::Point(428, 467);
-			this->button16->Name = L"button16";
-			this->button16->Size = System::Drawing::Size(232, 26);
-			this->button16->TabIndex = 25;
-			this->button16->Text = L"button16";
-			this->button16->UseVisualStyleBackColor = true;
+			this->button_underReorderThreshold->Location = System::Drawing::Point(41, 317);
+			this->button_underReorderThreshold->Name = L"button_underReorderThreshold";
+			this->button_underReorderThreshold->Size = System::Drawing::Size(331, 41);
+			this->button_underReorderThreshold->TabIndex = 20;
+			this->button_underReorderThreshold->Text = L"Products under the reorder threshold";
+			this->button_underReorderThreshold->UseVisualStyleBackColor = true;
 			// 
-			// button14
+			// button_turnover
 			// 
-			this->button14->Location = System::Drawing::Point(428, 414);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(232, 26);
-			this->button14->TabIndex = 24;
-			this->button14->Text = L"Calculate total amout of customer";
-			this->button14->UseVisualStyleBackColor = true;
-			// 
-			// button13
-			// 
-			this->button13->Location = System::Drawing::Point(80, 522);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(232, 26);
-			this->button13->TabIndex = 23;
-			this->button13->Text = L"button13";
-			this->button13->UseVisualStyleBackColor = true;
-			// 
-			// button12
-			// 
-			this->button12->Location = System::Drawing::Point(80, 469);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(232, 26);
-			this->button12->TabIndex = 22;
-			this->button12->Text = L"button12";
-			this->button12->UseVisualStyleBackColor = true;
-			// 
-			// button11
-			// 
-			this->button11->Location = System::Drawing::Point(80, 414);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(232, 26);
-			this->button11->TabIndex = 21;
-			this->button11->Text = L"button11";
-			this->button11->UseVisualStyleBackColor = true;
-			// 
-			// button10
-			// 
-			this->button10->Location = System::Drawing::Point(80, 361);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(232, 26);
-			this->button10->TabIndex = 20;
-			this->button10->Text = L"button10";
-			this->button10->UseVisualStyleBackColor = true;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(80, 305);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(232, 26);
-			this->button1->TabIndex = 19;
-			this->button1->Text = L"Calculate turnover";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->button_turnover->Location = System::Drawing::Point(41, 458);
+			this->button_turnover->Name = L"button_turnover";
+			this->button_turnover->Size = System::Drawing::Size(331, 41);
+			this->button_turnover->TabIndex = 19;
+			this->button_turnover->Text = L"Calculate turnover for a month";
+			this->button_turnover->UseVisualStyleBackColor = true;
+			this->button_turnover->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// dataGridView2
 			// 
@@ -1596,35 +1592,35 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			// 
 			// text_employeeID
 			// 
-			this->text_employeeID->Location = System::Drawing::Point(18, 35);
+			this->text_employeeID->Location = System::Drawing::Point(18, 42);
 			this->text_employeeID->Name = L"text_employeeID";
 			this->text_employeeID->Size = System::Drawing::Size(124, 22);
 			this->text_employeeID->TabIndex = 29;
 			// 
 			// text_chiefID
 			// 
-			this->text_chiefID->Location = System::Drawing::Point(165, 34);
+			this->text_chiefID->Location = System::Drawing::Point(165, 41);
 			this->text_chiefID->Name = L"text_chiefID";
 			this->text_chiefID->Size = System::Drawing::Size(128, 22);
 			this->text_chiefID->TabIndex = 30;
 			// 
 			// text_empLastName
 			// 
-			this->text_empLastName->Location = System::Drawing::Point(18, 84);
+			this->text_empLastName->Location = System::Drawing::Point(18, 91);
 			this->text_empLastName->Name = L"text_empLastName";
 			this->text_empLastName->Size = System::Drawing::Size(266, 22);
 			this->text_empLastName->TabIndex = 32;
 			// 
 			// text_empFirstName
 			// 
-			this->text_empFirstName->Location = System::Drawing::Point(18, 136);
+			this->text_empFirstName->Location = System::Drawing::Point(18, 143);
 			this->text_empFirstName->Name = L"text_empFirstName";
 			this->text_empFirstName->Size = System::Drawing::Size(139, 22);
 			this->text_empFirstName->TabIndex = 31;
 			// 
 			// text_hireDate
 			// 
-			this->text_hireDate->Location = System::Drawing::Point(181, 136);
+			this->text_hireDate->Location = System::Drawing::Point(181, 143);
 			this->text_hireDate->Name = L"text_hireDate";
 			this->text_hireDate->Size = System::Drawing::Size(103, 22);
 			this->text_hireDate->TabIndex = 33;
@@ -1662,9 +1658,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label6->AutoSize = true;
 			this->label6->Location = System::Drawing::Point(21, 18);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(57, 16);
+			this->label6->Size = System::Drawing::Size(55, 16);
 			this->label6->TabIndex = 28;
-			this->label6->Text = L"Order ID";
+			this->label6->Text = L"order ID";
 			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
 			// 
 			// comboBox_meanOfPayment
@@ -1695,9 +1691,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label7->AutoSize = true;
 			this->label7->Location = System::Drawing::Point(26, 20);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(128, 16);
+			this->label7->Size = System::Drawing::Size(127, 16);
 			this->label7->TabIndex = 29;
-			this->label7->Text = L"Article ID (reference)";
+			this->label7->Text = L"article ID (reference)";
 			this->label7->Click += gcnew System::EventHandler(this, &MyForm::label7_Click);
 			// 
 			// text_paymentDueDate
@@ -1712,9 +1708,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label8->AutoSize = true;
 			this->label8->Location = System::Drawing::Point(30, 68);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(116, 16);
+			this->label8->Size = System::Drawing::Size(115, 16);
 			this->label8->TabIndex = 29;
-			this->label8->Text = L"Payment due date";
+			this->label8->Text = L"payment due date";
 			// 
 			// label9
 			// 
@@ -1723,7 +1719,7 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(110, 16);
 			this->label9->TabIndex = 31;
-			this->label9->Text = L"Mean of payment";
+			this->label9->Text = L"mean of payment";
 			// 
 			// text_orderID
 			// 
@@ -1744,18 +1740,18 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label10->AutoSize = true;
 			this->label10->Location = System::Drawing::Point(21, 64);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(80, 16);
+			this->label10->Size = System::Drawing::Size(78, 16);
 			this->label10->TabIndex = 33;
-			this->label10->Text = L"Customer ID";
+			this->label10->Text = L"customer ID";
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
 			this->label11->Location = System::Drawing::Point(299, 20);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(55, 16);
+			this->label11->Size = System::Drawing::Size(53, 16);
 			this->label11->TabIndex = 31;
-			this->label11->Text = L"Quantity";
+			this->label11->Text = L"quantity";
 			// 
 			// numericUpDown_quantityArticle
 			// 
@@ -1788,9 +1784,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label12->AutoSize = true;
 			this->label12->Location = System::Drawing::Point(20, 120);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(150, 16);
+			this->label12->Size = System::Drawing::Size(148, 16);
 			this->label12->TabIndex = 32;
-			this->label12->Text = L"Complet payement date";
+			this->label12->Text = L"complet payement date";
 			// 
 			// text_completPayementDate
 			// 
@@ -1804,9 +1800,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label13->AutoSize = true;
 			this->label13->Location = System::Drawing::Point(182, 120);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(87, 16);
+			this->label13->Size = System::Drawing::Size(85, 16);
 			this->label13->TabIndex = 35;
-			this->label13->Text = L"Delivery date";
+			this->label13->Text = L"delivery date";
 			// 
 			// text_deliveryDate
 			// 
@@ -1827,18 +1823,18 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label14->AutoSize = true;
 			this->label14->Location = System::Drawing::Point(293, 18);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(55, 16);
+			this->label14->Size = System::Drawing::Size(53, 16);
 			this->label14->TabIndex = 35;
-			this->label14->Text = L"Quantity";
+			this->label14->Text = L"quantity";
 			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
 			this->label15->Location = System::Drawing::Point(20, 18);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(128, 16);
+			this->label15->Size = System::Drawing::Size(127, 16);
 			this->label15->TabIndex = 34;
-			this->label15->Text = L"Article ID (reference)";
+			this->label15->Text = L"article ID (reference)";
 			// 
 			// text_stockArticleID
 			// 
@@ -1852,9 +1848,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label16->AutoSize = true;
 			this->label16->Location = System::Drawing::Point(20, 69);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(81, 16);
+			this->label16->Size = System::Drawing::Size(80, 16);
 			this->label16->TabIndex = 38;
-			this->label16->Text = L"Article name";
+			this->label16->Text = L"article name";
 			// 
 			// text_articleName
 			// 
@@ -1868,9 +1864,9 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label17->AutoSize = true;
 			this->label17->Location = System::Drawing::Point(20, 122);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(172, 16);
+			this->label17->Size = System::Drawing::Size(171, 16);
 			this->label17->TabIndex = 40;
-			this->label17->Text = L"Article price excluding taxes";
+			this->label17->Text = L"article price excluding taxes";
 			// 
 			// text_articlePriceExcludingTaxes
 			// 
@@ -1900,18 +1896,18 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->label19->AutoSize = true;
 			this->label19->Location = System::Drawing::Point(298, 69);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(77, 16);
+			this->label19->Size = System::Drawing::Size(76, 16);
 			this->label19->TabIndex = 44;
-			this->label19->Text = L"Article color";
+			this->label19->Text = L"article color";
 			// 
 			// label20
 			// 
 			this->label20->AutoSize = true;
 			this->label20->Location = System::Drawing::Point(298, 122);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(115, 16);
+			this->label20->Size = System::Drawing::Size(109, 16);
 			this->label20->TabIndex = 46;
-			this->label20->Text = L"Reorder threshold";
+			this->label20->Text = L"reorder threshold";
 			// 
 			// textBox_reorderThreshold
 			// 
@@ -1934,6 +1930,133 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->text_articleColor->Name = L"text_articleColor";
 			this->text_articleColor->Size = System::Drawing::Size(151, 22);
 			this->text_articleColor->TabIndex = 48;
+			// 
+			// groupBox6
+			// 
+			this->groupBox6->Controls->Add(this->label22);
+			this->groupBox6->Controls->Add(this->text_statisticsCustBirthDate);
+			this->groupBox6->Controls->Add(this->label23);
+			this->groupBox6->Controls->Add(this->text_statisticsCustLastName);
+			this->groupBox6->Controls->Add(this->text_statisticsCustFirstName);
+			this->groupBox6->Controls->Add(this->label24);
+			this->groupBox6->Controls->Add(this->text_statisticsCustReference);
+			this->groupBox6->Controls->Add(this->label25);
+			this->groupBox6->Location = System::Drawing::Point(400, 429);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(331, 132);
+			this->groupBox6->TabIndex = 42;
+			this->groupBox6->TabStop = false;
+			this->groupBox6->Text = L"Customer";
+			this->groupBox6->Enter += gcnew System::EventHandler(this, &MyForm::groupBox6_Enter);
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Location = System::Drawing::Point(19, 103);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(62, 16);
+			this->label22->TabIndex = 35;
+			this->label22->Text = L"birth date";
+			// 
+			// text_statisticsCustBirthDate
+			// 
+			this->text_statisticsCustBirthDate->Location = System::Drawing::Point(95, 97);
+			this->text_statisticsCustBirthDate->Name = L"text_statisticsCustBirthDate";
+			this->text_statisticsCustBirthDate->Size = System::Drawing::Size(74, 22);
+			this->text_statisticsCustBirthDate->TabIndex = 36;
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Location = System::Drawing::Point(17, 61);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(64, 16);
+			this->label23->TabIndex = 32;
+			this->label23->Text = L"first name";
+			// 
+			// text_statisticsCustLastName
+			// 
+			this->text_statisticsCustLastName->Location = System::Drawing::Point(95, 21);
+			this->text_statisticsCustLastName->Name = L"text_statisticsCustLastName";
+			this->text_statisticsCustLastName->Size = System::Drawing::Size(226, 22);
+			this->text_statisticsCustLastName->TabIndex = 34;
+			// 
+			// text_statisticsCustFirstName
+			// 
+			this->text_statisticsCustFirstName->Location = System::Drawing::Point(95, 58);
+			this->text_statisticsCustFirstName->Name = L"text_statisticsCustFirstName";
+			this->text_statisticsCustFirstName->Size = System::Drawing::Size(226, 22);
+			this->text_statisticsCustFirstName->TabIndex = 33;
+			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->Location = System::Drawing::Point(16, 21);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(65, 16);
+			this->label24->TabIndex = 33;
+			this->label24->Text = L"last name";
+			// 
+			// text_statisticsCustReference
+			// 
+			this->text_statisticsCustReference->Location = System::Drawing::Point(259, 97);
+			this->text_statisticsCustReference->Name = L"text_statisticsCustReference";
+			this->text_statisticsCustReference->Size = System::Drawing::Size(62, 22);
+			this->text_statisticsCustReference->TabIndex = 32;
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Location = System::Drawing::Point(175, 100);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(64, 16);
+			this->label25->TabIndex = 28;
+			this->label25->Text = L"reference";
+			// 
+			// groupBox7
+			// 
+			this->groupBox7->Controls->Add(this->text_turnoverYear);
+			this->groupBox7->Controls->Add(this->label4);
+			this->groupBox7->Controls->Add(this->text_turnoverMonth);
+			this->groupBox7->Controls->Add(this->label5);
+			this->groupBox7->Location = System::Drawing::Point(41, 503);
+			this->groupBox7->Name = L"groupBox7";
+			this->groupBox7->Size = System::Drawing::Size(331, 58);
+			this->groupBox7->TabIndex = 43;
+			this->groupBox7->TabStop = false;
+			this->groupBox7->Text = L"Date";
+			// 
+			// text_turnoverYear
+			// 
+			this->text_turnoverYear->Location = System::Drawing::Point(211, 21);
+			this->text_turnoverYear->Name = L"text_turnoverYear";
+			this->text_turnoverYear->Size = System::Drawing::Size(92, 22);
+			this->text_turnoverYear->TabIndex = 34;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(171, 24);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(34, 16);
+			this->label4->TabIndex = 33;
+			this->label4->Text = L"year";
+			// 
+			// text_turnoverMonth
+			// 
+			this->text_turnoverMonth->Location = System::Drawing::Point(68, 21);
+			this->text_turnoverMonth->Name = L"text_turnoverMonth";
+			this->text_turnoverMonth->Size = System::Drawing::Size(70, 22);
+			this->text_turnoverMonth->TabIndex = 32;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(19, 24);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(43, 16);
+			this->label5->TabIndex = 28;
+			this->label5->Text = L"month";
 			// 
 			// MyForm
 			// 
@@ -1973,7 +2096,6 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			this->groupBox5->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->EndInit();
 			this->statisticTab->ResumeLayout(false);
-			this->statisticTab->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->simulationsTab->ResumeLayout(false);
 			this->groupBox1->ResumeLayout(false);
@@ -1987,6 +2109,10 @@ private: System::Windows::Forms::TextBox^ text_articleColor;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityArticle))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityProduct))->EndInit();
+			this->groupBox6->ResumeLayout(false);
+			this->groupBox6->PerformLayout();
+			this->groupBox7->ResumeLayout(false);
+			this->groupBox7->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -2048,6 +2174,14 @@ private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void groupBox5_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void groupBox6_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
