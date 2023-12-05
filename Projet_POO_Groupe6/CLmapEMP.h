@@ -1,4 +1,5 @@
 #pragma once
+
 namespace NS_Comp
 {
 	ref class CLmapEMP
