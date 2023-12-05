@@ -79,8 +79,9 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::DataGridView^ dataGridView4;
 	private: System::Windows::Forms::DataGridView^ dataGridView3;
 	private: System::Windows::Forms::Label^ custID;
+	private: System::Windows::Forms::TextBox^ text_lastName;
 
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Label^ lastName;
 	private: System::Windows::Forms::Label^ firstName;
 	private: System::Windows::Forms::GroupBox^ deliveryGroupBox;
@@ -151,8 +152,31 @@ private: System::Windows::Forms::Button^ button13;
 private: System::Windows::Forms::Button^ button12;
 private: System::Windows::Forms::Button^ button11;
 private: System::Windows::Forms::Button^ button10;
-private: System::Windows::Forms::TextBox^ textBox3;
+private: System::Windows::Forms::TextBox^ text_serviceNumber;
+
 private: System::Windows::Forms::TextBox^ text_socityName;
+private: System::Windows::Forms::TextBox^ text_birthDate;
+
+private: System::Windows::Forms::TextBox^ text_firstName;
+
+private: System::Windows::Forms::TextBox^ text_custRef;
+private: System::Windows::Forms::TextBox^ text_deliveryStreetName;
+
+
+private: System::Windows::Forms::TextBox^ text_deliveryStreetN;
+private: System::Windows::Forms::TextBox^ text_deliveryCityName;
+
+
+private: System::Windows::Forms::TextBox^ text_deliveryZIPcode;
+private: System::Windows::Forms::TextBox^ text_bilingCityName;
+private: System::Windows::Forms::TextBox^ text_bilingZIPcode;
+private: System::Windows::Forms::TextBox^ text_bilingStreetName;
+private: System::Windows::Forms::TextBox^ text_bilingStreetN;
+
+
+
+
+
 
 
 
@@ -198,6 +222,8 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->eraseCust = (gcnew System::Windows::Forms::Button());
 			this->addCust = (gcnew System::Windows::Forms::Button());
 			this->socityGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->text_serviceNumber = (gcnew System::Windows::Forms::TextBox());
+			this->text_socityName = (gcnew System::Windows::Forms::TextBox());
 			this->serviceNum = (gcnew System::Windows::Forms::Label());
 			this->socityName = (gcnew System::Windows::Forms::Label());
 			this->customerGroupBox = (gcnew System::Windows::Forms::GroupBox());
@@ -205,7 +231,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->firstName = (gcnew System::Windows::Forms::Label());
 			this->lastName = (gcnew System::Windows::Forms::Label());
 			this->custID = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->text_lastName = (gcnew System::Windows::Forms::TextBox());
 			this->BillingGroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->cityNameBil = (gcnew System::Windows::Forms::Label());
 			this->ZipCodeBil = (gcnew System::Windows::Forms::Label());
@@ -235,18 +261,34 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->firstNameEmp = (gcnew System::Windows::Forms::Label());
 			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
 			this->ordersTab = (gcnew System::Windows::Forms::TabPage());
+			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->stockTab = (gcnew System::Windows::Forms::TabPage());
+			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
 			this->dataGridView6 = (gcnew System::Windows::Forms::DataGridView());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->statisticTab = (gcnew System::Windows::Forms::TabPage());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button15 = (gcnew System::Windows::Forms::Button());
+			this->button16 = (gcnew System::Windows::Forms::Button());
+			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->simulationsTab = (gcnew System::Windows::Forms::TabPage());
@@ -267,24 +309,17 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->VAT1 = (gcnew System::Windows::Forms::RadioButton());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->execution_button = (gcnew System::Windows::Forms::Button());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
-			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
-			this->button15 = (gcnew System::Windows::Forms::Button());
-			this->button16 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->text_socityName = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->text_custRef = (gcnew System::Windows::Forms::TextBox());
+			this->text_firstName = (gcnew System::Windows::Forms::TextBox());
+			this->text_birthDate = (gcnew System::Windows::Forms::TextBox());
+			this->text_deliveryStreetN = (gcnew System::Windows::Forms::TextBox());
+			this->text_deliveryStreetName = (gcnew System::Windows::Forms::TextBox());
+			this->text_deliveryZIPcode = (gcnew System::Windows::Forms::TextBox());
+			this->text_deliveryCityName = (gcnew System::Windows::Forms::TextBox());
+			this->text_bilingCityName = (gcnew System::Windows::Forms::TextBox());
+			this->text_bilingZIPcode = (gcnew System::Windows::Forms::TextBox());
+			this->text_bilingStreetName = (gcnew System::Windows::Forms::TextBox());
+			this->text_bilingStreetN = (gcnew System::Windows::Forms::TextBox());
 			this->mainTabControl->SuspendLayout();
 			this->customersTab->SuspendLayout();
 			this->socityGroupBox->SuspendLayout();
@@ -321,7 +356,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->mainTabControl->Location = System::Drawing::Point(-1, 2);
 			this->mainTabControl->Name = L"mainTabControl";
 			this->mainTabControl->SelectedIndex = 0;
-			this->mainTabControl->Size = System::Drawing::Size(782, 615);
+			this->mainTabControl->Size = System::Drawing::Size(782, 690);
 			this->mainTabControl->TabIndex = 0;
 			// 
 			// customersTab
@@ -338,7 +373,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->customersTab->Location = System::Drawing::Point(4, 25);
 			this->customersTab->Name = L"customersTab";
 			this->customersTab->Padding = System::Windows::Forms::Padding(3);
-			this->customersTab->Size = System::Drawing::Size(774, 586);
+			this->customersTab->Size = System::Drawing::Size(774, 661);
 			this->customersTab->TabIndex = 0;
 			this->customersTab->Text = L"Customers";
 			this->customersTab->UseVisualStyleBackColor = true;
@@ -381,7 +416,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// 
 			// socityGroupBox
 			// 
-			this->socityGroupBox->Controls->Add(this->textBox3);
+			this->socityGroupBox->Controls->Add(this->text_serviceNumber);
 			this->socityGroupBox->Controls->Add(this->text_socityName);
 			this->socityGroupBox->Controls->Add(this->serviceNum);
 			this->socityGroupBox->Controls->Add(this->socityName);
@@ -391,6 +426,20 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->socityGroupBox->TabIndex = 28;
 			this->socityGroupBox->TabStop = false;
 			this->socityGroupBox->Text = L"Socity info";
+			// 
+			// text_serviceNumber
+			// 
+			this->text_serviceNumber->Location = System::Drawing::Point(36, 93);
+			this->text_serviceNumber->Name = L"text_serviceNumber";
+			this->text_serviceNumber->Size = System::Drawing::Size(175, 22);
+			this->text_serviceNumber->TabIndex = 27;
+			// 
+			// text_socityName
+			// 
+			this->text_socityName->Location = System::Drawing::Point(36, 44);
+			this->text_socityName->Name = L"text_socityName";
+			this->text_socityName->Size = System::Drawing::Size(175, 22);
+			this->text_socityName->TabIndex = 26;
 			// 
 			// serviceNum
 			// 
@@ -412,11 +461,14 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// 
 			// customerGroupBox
 			// 
+			this->customerGroupBox->Controls->Add(this->text_birthDate);
+			this->customerGroupBox->Controls->Add(this->text_firstName);
+			this->customerGroupBox->Controls->Add(this->text_custRef);
 			this->customerGroupBox->Controls->Add(this->birthDateCust);
 			this->customerGroupBox->Controls->Add(this->firstName);
 			this->customerGroupBox->Controls->Add(this->lastName);
 			this->customerGroupBox->Controls->Add(this->custID);
-			this->customerGroupBox->Controls->Add(this->textBox1);
+			this->customerGroupBox->Controls->Add(this->text_lastName);
 			this->customerGroupBox->Location = System::Drawing::Point(24, 285);
 			this->customerGroupBox->Name = L"customerGroupBox";
 			this->customerGroupBox->Size = System::Drawing::Size(472, 130);
@@ -427,7 +479,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// birthDateCust
 			// 
 			this->birthDateCust->AutoSize = true;
-			this->birthDateCust->Location = System::Drawing::Point(306, 28);
+			this->birthDateCust->Location = System::Drawing::Point(241, 83);
 			this->birthDateCust->Name = L"birthDateCust";
 			this->birthDateCust->Size = System::Drawing::Size(62, 16);
 			this->birthDateCust->TabIndex = 23;
@@ -436,7 +488,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// firstName
 			// 
 			this->firstName->AutoSize = true;
-			this->firstName->Location = System::Drawing::Point(238, 18);
+			this->firstName->Location = System::Drawing::Point(6, 83);
 			this->firstName->Name = L"firstName";
 			this->firstName->Size = System::Drawing::Size(60, 16);
 			this->firstName->TabIndex = 22;
@@ -446,7 +498,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// lastName
 			// 
 			this->lastName->AutoSize = true;
-			this->lastName->Location = System::Drawing::Point(114, 18);
+			this->lastName->Location = System::Drawing::Point(6, 30);
 			this->lastName->Name = L"lastName";
 			this->lastName->Size = System::Drawing::Size(65, 16);
 			this->lastName->TabIndex = 21;
@@ -456,24 +508,28 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// custID
 			// 
 			this->custID->AutoSize = true;
-			this->custID->Location = System::Drawing::Point(26, 33);
+			this->custID->Location = System::Drawing::Point(241, 30);
 			this->custID->Name = L"custID";
 			this->custID->Size = System::Drawing::Size(52, 16);
 			this->custID->TabIndex = 20;
 			this->custID->Text = L"custRef";
 			this->custID->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_3);
 			// 
-			// textBox1
+			// text_lastName
 			// 
-			this->textBox1->Location = System::Drawing::Point(96, 63);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(118, 22);
-			this->textBox1->TabIndex = 19;
+			this->text_lastName->Location = System::Drawing::Point(23, 49);
+			this->text_lastName->Name = L"text_lastName";
+			this->text_lastName->Size = System::Drawing::Size(191, 22);
+			this->text_lastName->TabIndex = 19;
 			// 
 			// BillingGroupBox
 			// 
+			this->BillingGroupBox->Controls->Add(this->text_bilingCityName);
+			this->BillingGroupBox->Controls->Add(this->text_bilingZIPcode);
 			this->BillingGroupBox->Controls->Add(this->cityNameBil);
+			this->BillingGroupBox->Controls->Add(this->text_bilingStreetName);
 			this->BillingGroupBox->Controls->Add(this->ZipCodeBil);
+			this->BillingGroupBox->Controls->Add(this->text_bilingStreetN);
 			this->BillingGroupBox->Controls->Add(this->streetNumBil);
 			this->BillingGroupBox->Controls->Add(this->streetNameBil);
 			this->BillingGroupBox->Location = System::Drawing::Point(371, 431);
@@ -486,7 +542,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// cityNameBil
 			// 
 			this->cityNameBil->AutoSize = true;
-			this->cityNameBil->Location = System::Drawing::Point(163, 47);
+			this->cityNameBil->Location = System::Drawing::Point(283, 21);
 			this->cityNameBil->Name = L"cityNameBil";
 			this->cityNameBil->Size = System::Drawing::Size(64, 16);
 			this->cityNameBil->TabIndex = 26;
@@ -495,7 +551,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// ZipCodeBil
 			// 
 			this->ZipCodeBil->AutoSize = true;
-			this->ZipCodeBil->Location = System::Drawing::Point(251, 31);
+			this->ZipCodeBil->Location = System::Drawing::Point(192, 21);
 			this->ZipCodeBil->Name = L"ZipCodeBil";
 			this->ZipCodeBil->Size = System::Drawing::Size(61, 16);
 			this->ZipCodeBil->TabIndex = 25;
@@ -504,16 +560,16 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// streetNumBil
 			// 
 			this->streetNumBil->AutoSize = true;
-			this->streetNumBil->Location = System::Drawing::Point(26, 31);
+			this->streetNumBil->Location = System::Drawing::Point(8, 21);
 			this->streetNumBil->Name = L"streetNumBil";
-			this->streetNumBil->Size = System::Drawing::Size(88, 16);
+			this->streetNumBil->Size = System::Drawing::Size(54, 16);
 			this->streetNumBil->TabIndex = 23;
-			this->streetNumBil->Text = L"street number";
+			this->streetNumBil->Text = L"street n°";
 			// 
 			// streetNameBil
 			// 
 			this->streetNameBil->AutoSize = true;
-			this->streetNameBil->Location = System::Drawing::Point(137, 31);
+			this->streetNameBil->Location = System::Drawing::Point(80, 21);
 			this->streetNameBil->Name = L"streetNameBil";
 			this->streetNameBil->Size = System::Drawing::Size(77, 16);
 			this->streetNameBil->TabIndex = 24;
@@ -521,6 +577,10 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// 
 			// deliveryGroupBox
 			// 
+			this->deliveryGroupBox->Controls->Add(this->text_deliveryCityName);
+			this->deliveryGroupBox->Controls->Add(this->text_deliveryZIPcode);
+			this->deliveryGroupBox->Controls->Add(this->text_deliveryStreetName);
+			this->deliveryGroupBox->Controls->Add(this->text_deliveryStreetN);
 			this->deliveryGroupBox->Controls->Add(this->cityNameDel);
 			this->deliveryGroupBox->Controls->Add(this->ZipCodeDel);
 			this->deliveryGroupBox->Controls->Add(this->streetNumDel);
@@ -535,7 +595,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// cityNameDel
 			// 
 			this->cityNameDel->AutoSize = true;
-			this->cityNameDel->Location = System::Drawing::Point(163, 47);
+			this->cityNameDel->Location = System::Drawing::Point(260, 21);
 			this->cityNameDel->Name = L"cityNameDel";
 			this->cityNameDel->Size = System::Drawing::Size(64, 16);
 			this->cityNameDel->TabIndex = 26;
@@ -544,29 +604,31 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// ZipCodeDel
 			// 
 			this->ZipCodeDel->AutoSize = true;
-			this->ZipCodeDel->Location = System::Drawing::Point(251, 31);
+			this->ZipCodeDel->Location = System::Drawing::Point(176, 21);
 			this->ZipCodeDel->Name = L"ZipCodeDel";
 			this->ZipCodeDel->Size = System::Drawing::Size(61, 16);
 			this->ZipCodeDel->TabIndex = 25;
 			this->ZipCodeDel->Text = L"ZIP code";
+			this->ZipCodeDel->Click += gcnew System::EventHandler(this, &MyForm::ZipCodeDel_Click);
 			// 
 			// streetNumDel
 			// 
 			this->streetNumDel->AutoSize = true;
-			this->streetNumDel->Location = System::Drawing::Point(26, 31);
+			this->streetNumDel->Location = System::Drawing::Point(3, 21);
 			this->streetNumDel->Name = L"streetNumDel";
-			this->streetNumDel->Size = System::Drawing::Size(88, 16);
+			this->streetNumDel->Size = System::Drawing::Size(54, 16);
 			this->streetNumDel->TabIndex = 23;
-			this->streetNumDel->Text = L"street number";
+			this->streetNumDel->Text = L"street n°";
 			// 
 			// streetNameDel
 			// 
 			this->streetNameDel->AutoSize = true;
-			this->streetNameDel->Location = System::Drawing::Point(137, 31);
+			this->streetNameDel->Location = System::Drawing::Point(74, 21);
 			this->streetNameDel->Name = L"streetNameDel";
 			this->streetNameDel->Size = System::Drawing::Size(77, 16);
 			this->streetNameDel->TabIndex = 24;
 			this->streetNameDel->Text = L"street name";
+			this->streetNameDel->Click += gcnew System::EventHandler(this, &MyForm::streetNameDel_Click);
 			// 
 			// dataGridView5
 			// 
@@ -590,7 +652,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->employeesTab->Location = System::Drawing::Point(4, 25);
 			this->employeesTab->Name = L"employeesTab";
 			this->employeesTab->Padding = System::Windows::Forms::Padding(3);
-			this->employeesTab->Size = System::Drawing::Size(774, 586);
+			this->employeesTab->Size = System::Drawing::Size(774, 661);
 			this->employeesTab->TabIndex = 1;
 			this->employeesTab->Text = L"Employees";
 			this->employeesTab->UseVisualStyleBackColor = true;
@@ -711,7 +773,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			// lastNameEmp
 			// 
 			this->lastNameEmp->AutoSize = true;
-			this->lastNameEmp->Location = System::Drawing::Point(63, 29);
+			this->lastNameEmp->Location = System::Drawing::Point(37, 18);
 			this->lastNameEmp->Name = L"lastNameEmp";
 			this->lastNameEmp->Size = System::Drawing::Size(65, 16);
 			this->lastNameEmp->TabIndex = 25;
@@ -766,10 +828,38 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->ordersTab->Controls->Add(this->dataGridView3);
 			this->ordersTab->Location = System::Drawing::Point(4, 25);
 			this->ordersTab->Name = L"ordersTab";
-			this->ordersTab->Size = System::Drawing::Size(774, 586);
+			this->ordersTab->Size = System::Drawing::Size(774, 661);
 			this->ordersTab->TabIndex = 2;
 			this->ordersTab->Text = L"Orders";
 			this->ordersTab->UseVisualStyleBackColor = true;
+			// 
+			// groupBox4
+			// 
+			this->groupBox4->Location = System::Drawing::Point(334, 395);
+			this->groupBox4->Name = L"groupBox4";
+			this->groupBox4->Size = System::Drawing::Size(387, 85);
+			this->groupBox4->TabIndex = 43;
+			this->groupBox4->TabStop = false;
+			this->groupBox4->Text = L"mean of payment";
+			// 
+			// groupBox3
+			// 
+			this->groupBox3->Location = System::Drawing::Point(334, 289);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(387, 92);
+			this->groupBox3->TabIndex = 42;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Article";
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Location = System::Drawing::Point(25, 289);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(283, 191);
+			this->groupBox2->TabIndex = 41;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Global info";
+			this->groupBox2->Enter += gcnew System::EventHandler(this, &MyForm::groupBox2_Enter);
 			// 
 			// button2
 			// 
@@ -827,10 +917,19 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->stockTab->Controls->Add(this->button9);
 			this->stockTab->Location = System::Drawing::Point(4, 25);
 			this->stockTab->Name = L"stockTab";
-			this->stockTab->Size = System::Drawing::Size(774, 586);
+			this->stockTab->Size = System::Drawing::Size(774, 661);
 			this->stockTab->TabIndex = 5;
 			this->stockTab->Text = L"Stock";
 			this->stockTab->UseVisualStyleBackColor = true;
+			// 
+			// groupBox5
+			// 
+			this->groupBox5->Location = System::Drawing::Point(51, 280);
+			this->groupBox5->Name = L"groupBox5";
+			this->groupBox5->Size = System::Drawing::Size(672, 191);
+			this->groupBox5->TabIndex = 42;
+			this->groupBox5->TabStop = false;
+			this->groupBox5->Text = L"Product";
 			// 
 			// dataGridView6
 			// 
@@ -897,10 +996,118 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->statisticTab->Controls->Add(this->dataGridView2);
 			this->statisticTab->Location = System::Drawing::Point(4, 25);
 			this->statisticTab->Name = L"statisticTab";
-			this->statisticTab->Size = System::Drawing::Size(774, 586);
+			this->statisticTab->Size = System::Drawing::Size(774, 661);
 			this->statisticTab->TabIndex = 3;
 			this->statisticTab->Text = L"Statistics";
 			this->statisticTab->UseVisualStyleBackColor = true;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(425, 377);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(44, 16);
+			this->label5->TabIndex = 31;
+			this->label5->Text = L"label5";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(425, 341);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(44, 16);
+			this->label4->TabIndex = 30;
+			this->label4->Text = L"label4";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(425, 305);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(44, 16);
+			this->label3->TabIndex = 29;
+			this->label3->Text = L"label3";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(425, 268);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(44, 16);
+			this->label2->TabIndex = 28;
+			this->label2->Text = L"label2";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(77, 268);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(44, 16);
+			this->label1->TabIndex = 27;
+			this->label1->Text = L"label1";
+			// 
+			// button15
+			// 
+			this->button15->Location = System::Drawing::Point(428, 521);
+			this->button15->Name = L"button15";
+			this->button15->Size = System::Drawing::Size(232, 26);
+			this->button15->TabIndex = 26;
+			this->button15->Text = L"button15";
+			this->button15->UseVisualStyleBackColor = true;
+			// 
+			// button16
+			// 
+			this->button16->Location = System::Drawing::Point(428, 467);
+			this->button16->Name = L"button16";
+			this->button16->Size = System::Drawing::Size(232, 26);
+			this->button16->TabIndex = 25;
+			this->button16->Text = L"button16";
+			this->button16->UseVisualStyleBackColor = true;
+			// 
+			// button14
+			// 
+			this->button14->Location = System::Drawing::Point(428, 414);
+			this->button14->Name = L"button14";
+			this->button14->Size = System::Drawing::Size(232, 26);
+			this->button14->TabIndex = 24;
+			this->button14->Text = L"Calculate total amout of customer";
+			this->button14->UseVisualStyleBackColor = true;
+			// 
+			// button13
+			// 
+			this->button13->Location = System::Drawing::Point(80, 522);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(232, 26);
+			this->button13->TabIndex = 23;
+			this->button13->Text = L"button13";
+			this->button13->UseVisualStyleBackColor = true;
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(80, 469);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(232, 26);
+			this->button12->TabIndex = 22;
+			this->button12->Text = L"button12";
+			this->button12->UseVisualStyleBackColor = true;
+			// 
+			// button11
+			// 
+			this->button11->Location = System::Drawing::Point(80, 414);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(232, 26);
+			this->button11->TabIndex = 21;
+			this->button11->Text = L"button11";
+			this->button11->UseVisualStyleBackColor = true;
+			// 
+			// button10
+			// 
+			this->button10->Location = System::Drawing::Point(80, 361);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(232, 26);
+			this->button10->TabIndex = 20;
+			this->button10->Text = L"button10";
+			this->button10->UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
@@ -932,7 +1139,7 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->simulationsTab->Controls->Add(this->execution_button);
 			this->simulationsTab->Location = System::Drawing::Point(4, 25);
 			this->simulationsTab->Name = L"simulationsTab";
-			this->simulationsTab->Size = System::Drawing::Size(774, 586);
+			this->simulationsTab->Size = System::Drawing::Size(774, 661);
 			this->simulationsTab->TabIndex = 4;
 			this->simulationsTab->Text = L"Simulations";
 			this->simulationsTab->UseVisualStyleBackColor = true;
@@ -1132,164 +1339,83 @@ private: System::Windows::Forms::TextBox^ text_socityName;
 			this->execution_button->Text = L"EXECUTE";
 			this->execution_button->UseVisualStyleBackColor = true;
 			// 
-			// groupBox2
+			// text_custRef
 			// 
-			this->groupBox2->Location = System::Drawing::Point(25, 289);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(283, 191);
-			this->groupBox2->TabIndex = 41;
-			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"Global info";
-			this->groupBox2->Enter += gcnew System::EventHandler(this, &MyForm::groupBox2_Enter);
+			this->text_custRef->Location = System::Drawing::Point(254, 49);
+			this->text_custRef->Name = L"text_custRef";
+			this->text_custRef->Size = System::Drawing::Size(207, 22);
+			this->text_custRef->TabIndex = 24;
 			// 
-			// groupBox3
+			// text_firstName
 			// 
-			this->groupBox3->Location = System::Drawing::Point(334, 289);
-			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(387, 92);
-			this->groupBox3->TabIndex = 42;
-			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"Article";
+			this->text_firstName->Location = System::Drawing::Point(25, 102);
+			this->text_firstName->Name = L"text_firstName";
+			this->text_firstName->Size = System::Drawing::Size(189, 22);
+			this->text_firstName->TabIndex = 25;
 			// 
-			// groupBox4
+			// text_birthDate
 			// 
-			this->groupBox4->Location = System::Drawing::Point(334, 395);
-			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(387, 85);
-			this->groupBox4->TabIndex = 43;
-			this->groupBox4->TabStop = false;
-			this->groupBox4->Text = L"mean of payment";
+			this->text_birthDate->Location = System::Drawing::Point(254, 102);
+			this->text_birthDate->Name = L"text_birthDate";
+			this->text_birthDate->Size = System::Drawing::Size(207, 22);
+			this->text_birthDate->TabIndex = 26;
 			// 
-			// groupBox5
+			// text_deliveryStreetN
 			// 
-			this->groupBox5->Location = System::Drawing::Point(51, 280);
-			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(672, 191);
-			this->groupBox5->TabIndex = 42;
-			this->groupBox5->TabStop = false;
-			this->groupBox5->Text = L"Product";
+			this->text_deliveryStreetN->Location = System::Drawing::Point(6, 40);
+			this->text_deliveryStreetN->Name = L"text_deliveryStreetN";
+			this->text_deliveryStreetN->Size = System::Drawing::Size(48, 22);
+			this->text_deliveryStreetN->TabIndex = 27;
+			this->text_deliveryStreetN->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox6_TextChanged);
 			// 
-			// button10
+			// text_deliveryStreetName
 			// 
-			this->button10->Location = System::Drawing::Point(80, 361);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(232, 26);
-			this->button10->TabIndex = 20;
-			this->button10->Text = L"button10";
-			this->button10->UseVisualStyleBackColor = true;
+			this->text_deliveryStreetName->Location = System::Drawing::Point(60, 40);
+			this->text_deliveryStreetName->Name = L"text_deliveryStreetName";
+			this->text_deliveryStreetName->Size = System::Drawing::Size(100, 22);
+			this->text_deliveryStreetName->TabIndex = 28;
 			// 
-			// button11
+			// text_deliveryZIPcode
 			// 
-			this->button11->Location = System::Drawing::Point(80, 414);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(232, 26);
-			this->button11->TabIndex = 21;
-			this->button11->Text = L"button11";
-			this->button11->UseVisualStyleBackColor = true;
+			this->text_deliveryZIPcode->Location = System::Drawing::Point(171, 40);
+			this->text_deliveryZIPcode->Name = L"text_deliveryZIPcode";
+			this->text_deliveryZIPcode->Size = System::Drawing::Size(71, 22);
+			this->text_deliveryZIPcode->TabIndex = 29;
 			// 
-			// button12
+			// text_deliveryCityName
 			// 
-			this->button12->Location = System::Drawing::Point(80, 469);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(232, 26);
-			this->button12->TabIndex = 22;
-			this->button12->Text = L"button12";
-			this->button12->UseVisualStyleBackColor = true;
+			this->text_deliveryCityName->Location = System::Drawing::Point(248, 41);
+			this->text_deliveryCityName->Name = L"text_deliveryCityName";
+			this->text_deliveryCityName->Size = System::Drawing::Size(87, 22);
+			this->text_deliveryCityName->TabIndex = 30;
 			// 
-			// button13
+			// text_bilingCityName
 			// 
-			this->button13->Location = System::Drawing::Point(80, 522);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(232, 26);
-			this->button13->TabIndex = 23;
-			this->button13->Text = L"button13";
-			this->button13->UseVisualStyleBackColor = true;
+			this->text_bilingCityName->Location = System::Drawing::Point(263, 41);
+			this->text_bilingCityName->Name = L"text_bilingCityName";
+			this->text_bilingCityName->Size = System::Drawing::Size(103, 22);
+			this->text_bilingCityName->TabIndex = 34;
 			// 
-			// button14
+			// text_bilingZIPcode
 			// 
-			this->button14->Location = System::Drawing::Point(428, 414);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(232, 26);
-			this->button14->TabIndex = 24;
-			this->button14->Text = L"Calculate total amout of customer";
-			this->button14->UseVisualStyleBackColor = true;
+			this->text_bilingZIPcode->Location = System::Drawing::Point(186, 40);
+			this->text_bilingZIPcode->Name = L"text_bilingZIPcode";
+			this->text_bilingZIPcode->Size = System::Drawing::Size(71, 22);
+			this->text_bilingZIPcode->TabIndex = 33;
 			// 
-			// button15
+			// text_bilingStreetName
 			// 
-			this->button15->Location = System::Drawing::Point(428, 521);
-			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(232, 26);
-			this->button15->TabIndex = 26;
-			this->button15->Text = L"button15";
-			this->button15->UseVisualStyleBackColor = true;
+			this->text_bilingStreetName->Location = System::Drawing::Point(63, 40);
+			this->text_bilingStreetName->Name = L"text_bilingStreetName";
+			this->text_bilingStreetName->Size = System::Drawing::Size(112, 22);
+			this->text_bilingStreetName->TabIndex = 32;
 			// 
-			// button16
+			// text_bilingStreetN
 			// 
-			this->button16->Location = System::Drawing::Point(428, 467);
-			this->button16->Name = L"button16";
-			this->button16->Size = System::Drawing::Size(232, 26);
-			this->button16->TabIndex = 25;
-			this->button16->Text = L"button16";
-			this->button16->UseVisualStyleBackColor = true;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(77, 268);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(44, 16);
-			this->label1->TabIndex = 27;
-			this->label1->Text = L"label1";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(425, 268);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(44, 16);
-			this->label2->TabIndex = 28;
-			this->label2->Text = L"label2";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(425, 305);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(44, 16);
-			this->label3->TabIndex = 29;
-			this->label3->Text = L"label3";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(425, 341);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(44, 16);
-			this->label4->TabIndex = 30;
-			this->label4->Text = L"label4";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(425, 377);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(44, 16);
-			this->label5->TabIndex = 31;
-			this->label5->Text = L"label5";
-			// 
-			// text_socityName
-			// 
-			this->text_socityName->Location = System::Drawing::Point(36, 44);
-			this->text_socityName->Name = L"text_socityName";
-			this->text_socityName->Size = System::Drawing::Size(175, 22);
-			this->text_socityName->TabIndex = 26;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(36, 93);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(175, 22);
-			this->textBox3->TabIndex = 27;
+			this->text_bilingStreetN->Location = System::Drawing::Point(9, 40);
+			this->text_bilingStreetN->Name = L"text_bilingStreetN";
+			this->text_bilingStreetN->Size = System::Drawing::Size(48, 22);
+			this->text_bilingStreetN->TabIndex = 31;
 			// 
 			// MyForm
 			// 
@@ -1378,6 +1504,12 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void ZipCodeDel_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void streetNameDel_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
