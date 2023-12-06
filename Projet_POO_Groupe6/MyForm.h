@@ -106,6 +106,21 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::DataGridView^ StatisticsDataGridView;
 
 	//Groups
+	private: System::Windows::Forms::GroupBox^ DateStatistics_groupBox;
+		private: System::Windows::Forms::Label^ monthStatistics;
+		private: System::Windows::Forms::Label^ yearStatistics;
+		private: System::Windows::Forms::TextBox^ text_turnoverMonth;
+		private: System::Windows::Forms::TextBox^ text_turnoverYear;
+
+	private: System::Windows::Forms::GroupBox^ CustomerStatistics_groupBox;
+		private: System::Windows::Forms::Label^ firstNameStatistics;
+		private: System::Windows::Forms::Label^ lastNameStatistics;
+		private: System::Windows::Forms::Label^ birthDateStatistics;
+		private: System::Windows::Forms::Label^ CustomersReferenceStatistics;
+		private: System::Windows::Forms::TextBox^ text_statisticsCustFirstName;
+		private: System::Windows::Forms::TextBox^ text_statisticsCustLastName;
+		private: System::Windows::Forms::TextBox^ text_statisticsCustBirthDate;
+		private: System::Windows::Forms::TextBox^ text_statisticsCustReference;
 	
 	//Buttons
 	private: System::Windows::Forms::Button^ button_turnover;
@@ -127,6 +142,20 @@ namespace ProjetPOOGroupe6 {
 	
 	//Groups
 	private: System::Windows::Forms::GroupBox^ ItemStock_GroupBox;
+		private: System::Windows::Forms::Label^ itemIdStock;
+		private: System::Windows::Forms::Label^ itemNameStock;
+		private: System::Windows::Forms::Label^ VATrate;
+		private: System::Windows::Forms::Label^ itemPriceETStock;
+		private: System::Windows::Forms::Label^ quantityStock;
+		private: System::Windows::Forms::Label^ reorderThreshold;
+		private: System::Windows::Forms::Label^ itemColorStock;
+		private: System::Windows::Forms::TextBox^ text_stockArticleID;
+		private: System::Windows::Forms::TextBox^ text_articleName;
+		private: System::Windows::Forms::TextBox^ textBox_vatRate;
+		private: System::Windows::Forms::TextBox^ text_articlePriceExcludingTaxes;
+		private: System::Windows::Forms::NumericUpDown^ numericUpDown_quantityProductStock;
+		private: System::Windows::Forms::TextBox^ textBox_reorderThreshold;
+		private: System::Windows::Forms::TextBox^ text_articleColor;
 	
 	//Buttons
 	private: System::Windows::Forms::Button^ displayProducts;
@@ -146,8 +175,12 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::GroupBox^ GlobalInfoOrder_GroupBox;
 		private: System::Windows::Forms::Label^ orderID;
 		private: System::Windows::Forms::Label^ customerIdOrders;
+		private: System::Windows::Forms::Label^ completPaymentDate;
+		private: System::Windows::Forms::Label^ deliveryDate;
 		private: System::Windows::Forms::TextBox^ text_orderID;
 		private: System::Windows::Forms::TextBox^ text_customerIdOrders;
+		private: System::Windows::Forms::TextBox^ text_completPayementDate;
+		private: System::Windows::Forms::TextBox^ text_deliveryDate;
 
 	private: System::Windows::Forms::GroupBox^ meanOfPaymentGroupBox;
 		private: System::Windows::Forms::Label^ meanOfPayment;
@@ -157,18 +190,17 @@ namespace ProjetPOOGroupe6 {
 	
 	private: System::Windows::Forms::GroupBox^ ItemOrder_GroupeBox;
 		private: System::Windows::Forms::Label^ itemID;
+		private: System::Windows::Forms::Label^ quantityItemsOrders;
 		private: System::Windows::Forms::TextBox^ text_ordersArticleID;
-
-
+		private: System::Windows::Forms::NumericUpDown^ numericUpDown_quantityItemOrders;
 
 	//Buttons
 	private: System::Windows::Forms::Button^ displayOrder;
 	private: System::Windows::Forms::Button^ changeOrder;
 	private: System::Windows::Forms::Button^ eraseOrder;
 	private: System::Windows::Forms::Button^ addOrder;
-
-
-
+	private: System::Windows::Forms::Button^ addPayment;
+	private: System::Windows::Forms::Button^ addItem;
 
 
 	
@@ -216,8 +248,6 @@ namespace ProjetPOOGroupe6 {
 		private: System::Windows::Forms::TextBox^ text_bilingStreetName;
 		private: System::Windows::Forms::TextBox^ text_bilingStreetN;
 
-
-
 	//Buttons
 	private: System::Windows::Forms::Button^ addCust;
 	private: System::Windows::Forms::Button^ displayCust;
@@ -262,119 +292,10 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::Button^ addEmp;
 
 
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-private: System::Windows::Forms::NumericUpDown^ numericUpDown_quantityArticle;
-
-
-private: System::Windows::Forms::Label^ quantity;
-private: System::Windows::Forms::Button^ addPayment;
-private: System::Windows::Forms::Button^ addArticle;
-
-
-private: System::Windows::Forms::Label^ deliveryDate;
-private: System::Windows::Forms::TextBox^ text_deliveryDate;
-
-private: System::Windows::Forms::Label^ completPaymentDate;
-private: System::Windows::Forms::TextBox^ text_completPayementDate;
-private: System::Windows::Forms::Label^ VATrate;
-private: System::Windows::Forms::TextBox^ textBox_vatRate;
-private: System::Windows::Forms::Label^ itemPriceETStock;
-
-
-private: System::Windows::Forms::TextBox^ text_articlePriceExcludingTaxes;
-private: System::Windows::Forms::Label^ itemNameStock;
-
-
-private: System::Windows::Forms::TextBox^ text_articleName;
-private: System::Windows::Forms::NumericUpDown^ numericUpDown_quantityProduct;
-private: System::Windows::Forms::Label^ quantityStock;
-
-
-
-private: System::Windows::Forms::Label^ itemIdStock;
-
-private: System::Windows::Forms::TextBox^ text_stockArticleID;
-
-
-private: System::Windows::Forms::Label^ reorderThreshold;
-private: System::Windows::Forms::TextBox^ textBox_reorderThreshold;
-private: System::Windows::Forms::Label^ itemColorStock;
-
-
-private: System::Windows::Forms::TextBox^ text_articleColor;
-private: System::Windows::Forms::GroupBox^ groupBox6;
-private: System::Windows::Forms::Label^ label22;
-private: System::Windows::Forms::TextBox^ text_statisticsCustBirthDate;
-
-private: System::Windows::Forms::Label^ label23;
-private: System::Windows::Forms::TextBox^ text_statisticsCustLastName;
-private: System::Windows::Forms::TextBox^ text_statisticsCustFirstName;
-
-
-private: System::Windows::Forms::Label^ label24;
-private: System::Windows::Forms::TextBox^ text_statisticsCustReference;
-
-private: System::Windows::Forms::Label^ reference;
-private: System::Windows::Forms::GroupBox^ groupBox7;
-private: System::Windows::Forms::TextBox^ text_turnoverYear;
-
-private: System::Windows::Forms::Label^ label4;
-private: System::Windows::Forms::TextBox^ text_turnoverMonth;
-
-
-private: System::Windows::Forms::Label^ label5;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 	protected:
-
-
-
-
 
 	private:
 		/// <summary>
@@ -456,7 +377,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_employeeID = (gcnew System::Windows::Forms::TextBox());
 			this->employeesDataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->ordersTab = (gcnew System::Windows::Forms::TabPage());
-			this->addArticle = (gcnew System::Windows::Forms::Button());
+			this->addItem = (gcnew System::Windows::Forms::Button());
 			this->addPayment = (gcnew System::Windows::Forms::Button());
 			this->meanOfPaymentGroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->meanOfPayment = (gcnew System::Windows::Forms::Label());
@@ -464,8 +385,8 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_paymentDueDate = (gcnew System::Windows::Forms::TextBox());
 			this->comboBox_meanOfPayment = (gcnew System::Windows::Forms::ComboBox());
 			this->ItemOrder_GroupeBox = (gcnew System::Windows::Forms::GroupBox());
-			this->numericUpDown_quantityArticle = (gcnew System::Windows::Forms::NumericUpDown());
-			this->quantity = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown_quantityItemOrders = (gcnew System::Windows::Forms::NumericUpDown());
+			this->quantityItemsOrders = (gcnew System::Windows::Forms::Label());
 			this->itemID = (gcnew System::Windows::Forms::Label());
 			this->text_ordersArticleID = (gcnew System::Windows::Forms::TextBox());
 			this->GlobalInfoOrder_GroupBox = (gcnew System::Windows::Forms::GroupBox());
@@ -494,7 +415,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_articlePriceExcludingTaxes = (gcnew System::Windows::Forms::TextBox());
 			this->itemNameStock = (gcnew System::Windows::Forms::Label());
 			this->text_articleName = (gcnew System::Windows::Forms::TextBox());
-			this->numericUpDown_quantityProduct = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown_quantityProductStock = (gcnew System::Windows::Forms::NumericUpDown());
 			this->quantityStock = (gcnew System::Windows::Forms::Label());
 			this->itemIdStock = (gcnew System::Windows::Forms::Label());
 			this->text_stockArticleID = (gcnew System::Windows::Forms::TextBox());
@@ -504,20 +425,20 @@ private: System::Windows::Forms::Label^ label5;
 			this->ereaseProduct = (gcnew System::Windows::Forms::Button());
 			this->addProduct = (gcnew System::Windows::Forms::Button());
 			this->statisticTab = (gcnew System::Windows::Forms::TabPage());
-			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
+			this->DateStatistics_groupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->text_turnoverYear = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->yearStatistics = (gcnew System::Windows::Forms::Label());
 			this->text_turnoverMonth = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
-			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->monthStatistics = (gcnew System::Windows::Forms::Label());
+			this->CustomerStatistics_groupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->birthDateStatistics = (gcnew System::Windows::Forms::Label());
 			this->text_statisticsCustBirthDate = (gcnew System::Windows::Forms::TextBox());
-			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->firstNameStatistics = (gcnew System::Windows::Forms::Label());
 			this->text_statisticsCustLastName = (gcnew System::Windows::Forms::TextBox());
 			this->text_statisticsCustFirstName = (gcnew System::Windows::Forms::TextBox());
-			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->lastNameStatistics = (gcnew System::Windows::Forms::Label());
 			this->text_statisticsCustReference = (gcnew System::Windows::Forms::TextBox());
-			this->reference = (gcnew System::Windows::Forms::Label());
+			this->CustomersReferenceStatistics = (gcnew System::Windows::Forms::Label());
 			this->button_commercialValueStock = (gcnew System::Windows::Forms::Button());
 			this->button_bestSelling = (gcnew System::Windows::Forms::Button());
 			this->button_turnover = (gcnew System::Windows::Forms::Button());
@@ -559,16 +480,16 @@ private: System::Windows::Forms::Label^ label5;
 			this->ordersTab->SuspendLayout();
 			this->meanOfPaymentGroupBox->SuspendLayout();
 			this->ItemOrder_GroupeBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityArticle))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityItemOrders))->BeginInit();
 			this->GlobalInfoOrder_GroupBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ordersDataGridView))->BeginInit();
 			this->stockTab->SuspendLayout();
 			this->ItemStock_GroupBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityProduct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityProductStock))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->stockDataGridView))->BeginInit();
 			this->statisticTab->SuspendLayout();
-			this->groupBox7->SuspendLayout();
-			this->groupBox6->SuspendLayout();
+			this->DateStatistics_groupBox->SuspendLayout();
+			this->CustomerStatistics_groupBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->StatisticsDataGridView))->BeginInit();
 			this->simulationsTab->SuspendLayout();
 			this->markdown_groupBox->SuspendLayout();
@@ -1200,7 +1121,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// ordersTab
 			// 
-			this->ordersTab->Controls->Add(this->addArticle);
+			this->ordersTab->Controls->Add(this->addItem);
 			this->ordersTab->Controls->Add(this->addPayment);
 			this->ordersTab->Controls->Add(this->meanOfPaymentGroupBox);
 			this->ordersTab->Controls->Add(this->ItemOrder_GroupeBox);
@@ -1217,14 +1138,14 @@ private: System::Windows::Forms::Label^ label5;
 			this->ordersTab->Text = L"Orders";
 			this->ordersTab->UseVisualStyleBackColor = true;
 			// 
-			// addArticle
+			// addItem
 			// 
-			this->addArticle->Location = System::Drawing::Point(645, 511);
-			this->addArticle->Name = L"addArticle";
-			this->addArticle->Size = System::Drawing::Size(117, 33);
-			this->addArticle->TabIndex = 45;
-			this->addArticle->Text = L"Add article";
-			this->addArticle->UseVisualStyleBackColor = true;
+			this->addItem->Location = System::Drawing::Point(645, 511);
+			this->addItem->Name = L"addItem";
+			this->addItem->Size = System::Drawing::Size(117, 33);
+			this->addItem->TabIndex = 45;
+			this->addItem->Text = L"Add item";
+			this->addItem->UseVisualStyleBackColor = true;
 			// 
 			// addPayment
 			// 
@@ -1291,8 +1212,8 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// ItemOrder_GroupeBox
 			// 
-			this->ItemOrder_GroupeBox->Controls->Add(this->numericUpDown_quantityArticle);
-			this->ItemOrder_GroupeBox->Controls->Add(this->quantity);
+			this->ItemOrder_GroupeBox->Controls->Add(this->numericUpDown_quantityItemOrders);
+			this->ItemOrder_GroupeBox->Controls->Add(this->quantityItemsOrders);
 			this->ItemOrder_GroupeBox->Controls->Add(this->itemID);
 			this->ItemOrder_GroupeBox->Controls->Add(this->text_ordersArticleID);
 			this->ItemOrder_GroupeBox->Location = System::Drawing::Point(334, 289);
@@ -1302,21 +1223,21 @@ private: System::Windows::Forms::Label^ label5;
 			this->ItemOrder_GroupeBox->TabStop = false;
 			this->ItemOrder_GroupeBox->Text = L"Item";
 			// 
-			// numericUpDown_quantityArticle
+			// numericUpDown_quantityItemOrders
 			// 
-			this->numericUpDown_quantityArticle->Location = System::Drawing::Point(327, 37);
-			this->numericUpDown_quantityArticle->Name = L"numericUpDown_quantityArticle";
-			this->numericUpDown_quantityArticle->Size = System::Drawing::Size(46, 22);
-			this->numericUpDown_quantityArticle->TabIndex = 32;
+			this->numericUpDown_quantityItemOrders->Location = System::Drawing::Point(327, 37);
+			this->numericUpDown_quantityItemOrders->Name = L"numericUpDown_quantityItemOrders";
+			this->numericUpDown_quantityItemOrders->Size = System::Drawing::Size(46, 22);
+			this->numericUpDown_quantityItemOrders->TabIndex = 32;
 			// 
-			// quantity
+			// quantityItemsOrders
 			// 
-			this->quantity->AutoSize = true;
-			this->quantity->Location = System::Drawing::Point(299, 20);
-			this->quantity->Name = L"quantity";
-			this->quantity->Size = System::Drawing::Size(53, 16);
-			this->quantity->TabIndex = 31;
-			this->quantity->Text = L"quantity";
+			this->quantityItemsOrders->AutoSize = true;
+			this->quantityItemsOrders->Location = System::Drawing::Point(299, 20);
+			this->quantityItemsOrders->Name = L"quantityItemsOrders";
+			this->quantityItemsOrders->Size = System::Drawing::Size(53, 16);
+			this->quantityItemsOrders->TabIndex = 31;
+			this->quantityItemsOrders->Text = L"quantity";
 			// 
 			// itemID
 			// 
@@ -1488,7 +1409,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->ItemStock_GroupBox->Controls->Add(this->text_articlePriceExcludingTaxes);
 			this->ItemStock_GroupBox->Controls->Add(this->itemNameStock);
 			this->ItemStock_GroupBox->Controls->Add(this->text_articleName);
-			this->ItemStock_GroupBox->Controls->Add(this->numericUpDown_quantityProduct);
+			this->ItemStock_GroupBox->Controls->Add(this->numericUpDown_quantityProductStock);
 			this->ItemStock_GroupBox->Controls->Add(this->quantityStock);
 			this->ItemStock_GroupBox->Controls->Add(this->itemIdStock);
 			this->ItemStock_GroupBox->Controls->Add(this->text_stockArticleID);
@@ -1587,12 +1508,12 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_articleName->Size = System::Drawing::Size(236, 22);
 			this->text_articleName->TabIndex = 37;
 			// 
-			// numericUpDown_quantityProduct
+			// numericUpDown_quantityProductStock
 			// 
-			this->numericUpDown_quantityProduct->Location = System::Drawing::Point(321, 35);
-			this->numericUpDown_quantityProduct->Name = L"numericUpDown_quantityProduct";
-			this->numericUpDown_quantityProduct->Size = System::Drawing::Size(46, 22);
-			this->numericUpDown_quantityProduct->TabIndex = 36;
+			this->numericUpDown_quantityProductStock->Location = System::Drawing::Point(321, 35);
+			this->numericUpDown_quantityProductStock->Name = L"numericUpDown_quantityProductStock";
+			this->numericUpDown_quantityProductStock->Size = System::Drawing::Size(46, 22);
+			this->numericUpDown_quantityProductStock->TabIndex = 36;
 			// 
 			// quantityStock
 			// 
@@ -1667,8 +1588,8 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// statisticTab
 			// 
-			this->statisticTab->Controls->Add(this->groupBox7);
-			this->statisticTab->Controls->Add(this->groupBox6);
+			this->statisticTab->Controls->Add(this->DateStatistics_groupBox);
+			this->statisticTab->Controls->Add(this->CustomerStatistics_groupBox);
 			this->statisticTab->Controls->Add(this->button_commercialValueStock);
 			this->statisticTab->Controls->Add(this->button_bestSelling);
 			this->statisticTab->Controls->Add(this->button_turnover);
@@ -1685,18 +1606,18 @@ private: System::Windows::Forms::Label^ label5;
 			this->statisticTab->Text = L"Statistics";
 			this->statisticTab->UseVisualStyleBackColor = true;
 			// 
-			// groupBox7
+			// DateStatistics_groupBox
 			// 
-			this->groupBox7->Controls->Add(this->text_turnoverYear);
-			this->groupBox7->Controls->Add(this->label4);
-			this->groupBox7->Controls->Add(this->text_turnoverMonth);
-			this->groupBox7->Controls->Add(this->label5);
-			this->groupBox7->Location = System::Drawing::Point(41, 503);
-			this->groupBox7->Name = L"groupBox7";
-			this->groupBox7->Size = System::Drawing::Size(331, 58);
-			this->groupBox7->TabIndex = 43;
-			this->groupBox7->TabStop = false;
-			this->groupBox7->Text = L"Date";
+			this->DateStatistics_groupBox->Controls->Add(this->text_turnoverYear);
+			this->DateStatistics_groupBox->Controls->Add(this->yearStatistics);
+			this->DateStatistics_groupBox->Controls->Add(this->text_turnoverMonth);
+			this->DateStatistics_groupBox->Controls->Add(this->monthStatistics);
+			this->DateStatistics_groupBox->Location = System::Drawing::Point(41, 503);
+			this->DateStatistics_groupBox->Name = L"DateStatistics_groupBox";
+			this->DateStatistics_groupBox->Size = System::Drawing::Size(331, 58);
+			this->DateStatistics_groupBox->TabIndex = 43;
+			this->DateStatistics_groupBox->TabStop = false;
+			this->DateStatistics_groupBox->Text = L"Date";
 			// 
 			// text_turnoverYear
 			// 
@@ -1705,14 +1626,14 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_turnoverYear->Size = System::Drawing::Size(92, 22);
 			this->text_turnoverYear->TabIndex = 34;
 			// 
-			// label4
+			// yearStatistics
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(171, 24);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(34, 16);
-			this->label4->TabIndex = 33;
-			this->label4->Text = L"year";
+			this->yearStatistics->AutoSize = true;
+			this->yearStatistics->Location = System::Drawing::Point(171, 24);
+			this->yearStatistics->Name = L"yearStatistics";
+			this->yearStatistics->Size = System::Drawing::Size(34, 16);
+			this->yearStatistics->TabIndex = 33;
+			this->yearStatistics->Text = L"year";
 			// 
 			// text_turnoverMonth
 			// 
@@ -1721,40 +1642,40 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_turnoverMonth->Size = System::Drawing::Size(70, 22);
 			this->text_turnoverMonth->TabIndex = 32;
 			// 
-			// label5
+			// monthStatistics
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(19, 24);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(43, 16);
-			this->label5->TabIndex = 28;
-			this->label5->Text = L"month";
+			this->monthStatistics->AutoSize = true;
+			this->monthStatistics->Location = System::Drawing::Point(19, 24);
+			this->monthStatistics->Name = L"monthStatistics";
+			this->monthStatistics->Size = System::Drawing::Size(43, 16);
+			this->monthStatistics->TabIndex = 28;
+			this->monthStatistics->Text = L"month";
 			// 
-			// groupBox6
+			// CustomerStatistics_groupBox
 			// 
-			this->groupBox6->Controls->Add(this->label22);
-			this->groupBox6->Controls->Add(this->text_statisticsCustBirthDate);
-			this->groupBox6->Controls->Add(this->label23);
-			this->groupBox6->Controls->Add(this->text_statisticsCustLastName);
-			this->groupBox6->Controls->Add(this->text_statisticsCustFirstName);
-			this->groupBox6->Controls->Add(this->label24);
-			this->groupBox6->Controls->Add(this->text_statisticsCustReference);
-			this->groupBox6->Controls->Add(this->reference);
-			this->groupBox6->Location = System::Drawing::Point(400, 429);
-			this->groupBox6->Name = L"groupBox6";
-			this->groupBox6->Size = System::Drawing::Size(331, 132);
-			this->groupBox6->TabIndex = 42;
-			this->groupBox6->TabStop = false;
-			this->groupBox6->Text = L"Customer";
+			this->CustomerStatistics_groupBox->Controls->Add(this->birthDateStatistics);
+			this->CustomerStatistics_groupBox->Controls->Add(this->text_statisticsCustBirthDate);
+			this->CustomerStatistics_groupBox->Controls->Add(this->firstNameStatistics);
+			this->CustomerStatistics_groupBox->Controls->Add(this->text_statisticsCustLastName);
+			this->CustomerStatistics_groupBox->Controls->Add(this->text_statisticsCustFirstName);
+			this->CustomerStatistics_groupBox->Controls->Add(this->lastNameStatistics);
+			this->CustomerStatistics_groupBox->Controls->Add(this->text_statisticsCustReference);
+			this->CustomerStatistics_groupBox->Controls->Add(this->CustomersReferenceStatistics);
+			this->CustomerStatistics_groupBox->Location = System::Drawing::Point(400, 429);
+			this->CustomerStatistics_groupBox->Name = L"CustomerStatistics_groupBox";
+			this->CustomerStatistics_groupBox->Size = System::Drawing::Size(331, 132);
+			this->CustomerStatistics_groupBox->TabIndex = 42;
+			this->CustomerStatistics_groupBox->TabStop = false;
+			this->CustomerStatistics_groupBox->Text = L"Customer";
 			// 
-			// label22
+			// birthDateStatistics
 			// 
-			this->label22->AutoSize = true;
-			this->label22->Location = System::Drawing::Point(19, 103);
-			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(62, 16);
-			this->label22->TabIndex = 35;
-			this->label22->Text = L"birth date";
+			this->birthDateStatistics->AutoSize = true;
+			this->birthDateStatistics->Location = System::Drawing::Point(19, 103);
+			this->birthDateStatistics->Name = L"birthDateStatistics";
+			this->birthDateStatistics->Size = System::Drawing::Size(62, 16);
+			this->birthDateStatistics->TabIndex = 35;
+			this->birthDateStatistics->Text = L"birth date";
 			// 
 			// text_statisticsCustBirthDate
 			// 
@@ -1763,14 +1684,14 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_statisticsCustBirthDate->Size = System::Drawing::Size(74, 22);
 			this->text_statisticsCustBirthDate->TabIndex = 36;
 			// 
-			// label23
+			// firstNameStatistics
 			// 
-			this->label23->AutoSize = true;
-			this->label23->Location = System::Drawing::Point(17, 61);
-			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(64, 16);
-			this->label23->TabIndex = 32;
-			this->label23->Text = L"first name";
+			this->firstNameStatistics->AutoSize = true;
+			this->firstNameStatistics->Location = System::Drawing::Point(17, 61);
+			this->firstNameStatistics->Name = L"firstNameStatistics";
+			this->firstNameStatistics->Size = System::Drawing::Size(64, 16);
+			this->firstNameStatistics->TabIndex = 32;
+			this->firstNameStatistics->Text = L"first name";
 			// 
 			// text_statisticsCustLastName
 			// 
@@ -1786,14 +1707,14 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_statisticsCustFirstName->Size = System::Drawing::Size(226, 22);
 			this->text_statisticsCustFirstName->TabIndex = 33;
 			// 
-			// label24
+			// lastNameStatistics
 			// 
-			this->label24->AutoSize = true;
-			this->label24->Location = System::Drawing::Point(16, 21);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(65, 16);
-			this->label24->TabIndex = 33;
-			this->label24->Text = L"last name";
+			this->lastNameStatistics->AutoSize = true;
+			this->lastNameStatistics->Location = System::Drawing::Point(16, 21);
+			this->lastNameStatistics->Name = L"lastNameStatistics";
+			this->lastNameStatistics->Size = System::Drawing::Size(65, 16);
+			this->lastNameStatistics->TabIndex = 33;
+			this->lastNameStatistics->Text = L"last name";
 			// 
 			// text_statisticsCustReference
 			// 
@@ -1802,14 +1723,14 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_statisticsCustReference->Size = System::Drawing::Size(62, 22);
 			this->text_statisticsCustReference->TabIndex = 32;
 			// 
-			// reference
+			// CustomersReferenceStatistics
 			// 
-			this->reference->AutoSize = true;
-			this->reference->Location = System::Drawing::Point(175, 100);
-			this->reference->Name = L"reference";
-			this->reference->Size = System::Drawing::Size(64, 16);
-			this->reference->TabIndex = 28;
-			this->reference->Text = L"reference";
+			this->CustomersReferenceStatistics->AutoSize = true;
+			this->CustomersReferenceStatistics->Location = System::Drawing::Point(175, 100);
+			this->CustomersReferenceStatistics->Name = L"CustomersReferenceStatistics";
+			this->CustomersReferenceStatistics->Size = System::Drawing::Size(64, 16);
+			this->CustomersReferenceStatistics->TabIndex = 28;
+			this->CustomersReferenceStatistics->Text = L"reference";
 			// 
 			// button_commercialValueStock
 			// 
@@ -2130,20 +2051,20 @@ private: System::Windows::Forms::Label^ label5;
 			this->meanOfPaymentGroupBox->PerformLayout();
 			this->ItemOrder_GroupeBox->ResumeLayout(false);
 			this->ItemOrder_GroupeBox->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityArticle))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityItemOrders))->EndInit();
 			this->GlobalInfoOrder_GroupBox->ResumeLayout(false);
 			this->GlobalInfoOrder_GroupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ordersDataGridView))->EndInit();
 			this->stockTab->ResumeLayout(false);
 			this->ItemStock_GroupBox->ResumeLayout(false);
 			this->ItemStock_GroupBox->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityProduct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityProductStock))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->stockDataGridView))->EndInit();
 			this->statisticTab->ResumeLayout(false);
-			this->groupBox7->ResumeLayout(false);
-			this->groupBox7->PerformLayout();
-			this->groupBox6->ResumeLayout(false);
-			this->groupBox6->PerformLayout();
+			this->DateStatistics_groupBox->ResumeLayout(false);
+			this->DateStatistics_groupBox->PerformLayout();
+			this->CustomerStatistics_groupBox->ResumeLayout(false);
+			this->CustomerStatistics_groupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->StatisticsDataGridView))->EndInit();
 			this->simulationsTab->ResumeLayout(false);
 			this->markdown_groupBox->ResumeLayout(false);
