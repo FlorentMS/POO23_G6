@@ -1,9 +1,24 @@
 #include "pch.h"
 #include "CLmapCUST.h"
 
-System::String^ NS_NS_Comp::CLmapCUST::selectCustomers()
+System::String^ NS_Comp::CLmapCUST::selectCustomers()
 {
-	return "";
+	return "SELECT [Projet_POO_G6].[dbo].[Customers].[custNumber], [lastName], [firstName], [birthDate], [firstBuyDate],\
+		[Projet_POO_G6].[dbo].[Socities].[socityID], [socity],\
+		[addrDel].[streetNumber] AS[delStreetNumber],\
+		[addrDel].[StreetName] AS[delStreetName],\
+		[CitiesDel].[cityZipCode] AS[delCityZipCode],\
+		[CitiesDel].[cityName] AS[delCityName],\
+		[addrBill].[streetNumber] AS[billStreetNumber],\
+		[addrBill].[StreetName] AS[billStreetName],\
+		[CitiesBill].[cityZipCode] AS[billCityZipCode],\
+		[CitiesBill].[cityName] AS[billCityName]\
+		FROM[Projet_POO_G6].[dbo].[Customers]\
+		JOIN[Projet_POO_G6].[dbo].[Socities] ON[Projet_POO_G6].[dbo].[Customers].[socityID] = [Projet_POO_G6].[dbo].[Socities].[socityID]\
+		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrDel] ON[Projet_POO_G6].[dbo].[Customers].[addrDel] = [addrDel].[addrID]\
+		JOIN[Projet_POO_G6].[dbo].[Cities] AS[CitiesDel] ON[addrDel].[cityID] = [CitiesDel].[cityID]\
+		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrBill] ON[Projet_POO_G6].[dbo].[Customers].[addrBill] = [addrBill].[addrID]\
+		JOIN[Projet_POO_G6].[dbo].[Cities] AS[CitiesBill] ON[addrBill].[cityID] = [CitiesBill].[cityID]";
 }
 
 System::String^ NS_Comp::CLmapCUST::insertCustomer()

@@ -1,4 +1,5 @@
 #pragma once
+#include "CLcustomers.h"
 
 namespace ProjetPOOGroupe6 {
 
@@ -102,6 +103,8 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::Label^ birthDateCust;
 	private: System::Windows::Forms::Button^ addCust;
 
+	private: NS_Svc::CLcustomers^ oSvc;
+	private: System::Data::DataSet^ oDs;
 	private: System::Windows::Forms::GroupBox^ socityGroupBox;
 	private: System::Windows::Forms::Label^ serviceNum;
 	private: System::Windows::Forms::Label^ socityName;
@@ -313,6 +316,7 @@ private: System::Windows::Forms::Label^ label5;
 
 
 
+
 	protected:
 
 
@@ -336,6 +340,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->customersTab = (gcnew System::Windows::Forms::TabPage());
 			this->displayCust = (gcnew System::Windows::Forms::Button());
 			this->changeCust = (gcnew System::Windows::Forms::Button());
+			this->text_custRef = (gcnew System::Windows::Forms::TextBox());
 			this->eraseCust = (gcnew System::Windows::Forms::Button());
 			this->addCust = (gcnew System::Windows::Forms::Button());
 			this->socityGroupBox = (gcnew System::Windows::Forms::GroupBox());
@@ -346,12 +351,11 @@ private: System::Windows::Forms::Label^ label5;
 			this->customerGroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->text_birthDate = (gcnew System::Windows::Forms::TextBox());
 			this->text_custFirstName = (gcnew System::Windows::Forms::TextBox());
-			this->text_custRef = (gcnew System::Windows::Forms::TextBox());
 			this->birthDateCust = (gcnew System::Windows::Forms::Label());
 			this->firstName = (gcnew System::Windows::Forms::Label());
 			this->lastName = (gcnew System::Windows::Forms::Label());
-			this->custID = (gcnew System::Windows::Forms::Label());
 			this->text_custLastName = (gcnew System::Windows::Forms::TextBox());
+			this->custID = (gcnew System::Windows::Forms::Label());
 			this->BillingGroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->text_bilingCityName = (gcnew System::Windows::Forms::TextBox());
 			this->text_bilingZIPcode = (gcnew System::Windows::Forms::TextBox());
@@ -536,7 +540,6 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// customersTab
 			// 
-			this->customersTab->Controls->Add(this->displayCust);
 			this->customersTab->Controls->Add(this->changeCust);
 			this->customersTab->Controls->Add(this->text_custRef);
 			this->customersTab->Controls->Add(this->eraseCust);
@@ -557,25 +560,33 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// displayCust
 			// 
-			this->displayCust->Location = System::Drawing::Point(797, 753);
+			this->displayCust->Location = System::Drawing::Point(279, 30);
 			this->displayCust->Name = L"displayCust";
 			this->displayCust->Size = System::Drawing::Size(141, 33);
 			this->displayCust->TabIndex = 32;
 			this->displayCust->Text = L"Display customers";
 			this->displayCust->UseVisualStyleBackColor = true;
+			this->displayCust->Click += gcnew System::EventHandler(this, &MyForm::displayCust_Click);
 			// 
 			// changeCust
 			// 
-			this->changeCust->Location = System::Drawing::Point(325, 547);
+			this->changeCust->Location = System::Drawing::Point(303, 537);
 			this->changeCust->Name = L"changeCust";
 			this->changeCust->Size = System::Drawing::Size(151, 33);
 			this->changeCust->TabIndex = 31;
 			this->changeCust->Text = L"Change customer";
 			this->changeCust->UseVisualStyleBackColor = true;
 			// 
+			// text_custRef
+			// 
+			this->text_custRef->Location = System::Drawing::Point(944, 764);
+			this->text_custRef->Name = L"text_custRef";
+			this->text_custRef->Size = System::Drawing::Size(207, 22);
+			this->text_custRef->TabIndex = 24;
+			// 
 			// eraseCust
 			// 
-			this->eraseCust->Location = System::Drawing::Point(570, 547);
+			this->eraseCust->Location = System::Drawing::Point(536, 537);
 			this->eraseCust->Name = L"eraseCust";
 			this->eraseCust->Size = System::Drawing::Size(151, 33);
 			this->eraseCust->TabIndex = 30;
@@ -584,7 +595,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// addCust
 			// 
-			this->addCust->Location = System::Drawing::Point(101, 547);
+			this->addCust->Location = System::Drawing::Point(84, 537);
 			this->addCust->Name = L"addCust";
 			this->addCust->Size = System::Drawing::Size(141, 33);
 			this->addCust->TabIndex = 29;
@@ -638,6 +649,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// customerGroupBox
 			// 
+			this->customerGroupBox->Controls->Add(this->displayCust);
 			this->customerGroupBox->Controls->Add(this->text_birthDate);
 			this->customerGroupBox->Controls->Add(this->text_custFirstName);
 			this->customerGroupBox->Controls->Add(this->birthDateCust);
@@ -664,13 +676,6 @@ private: System::Windows::Forms::Label^ label5;
 			this->text_custFirstName->Name = L"text_custFirstName";
 			this->text_custFirstName->Size = System::Drawing::Size(189, 22);
 			this->text_custFirstName->TabIndex = 25;
-			// 
-			// text_custRef
-			// 
-			this->text_custRef->Location = System::Drawing::Point(944, 764);
-			this->text_custRef->Name = L"text_custRef";
-			this->text_custRef->Size = System::Drawing::Size(207, 22);
-			this->text_custRef->TabIndex = 24;
 			// 
 			// birthDateCust
 			// 
@@ -701,6 +706,13 @@ private: System::Windows::Forms::Label^ label5;
 			this->lastName->Text = L"last name";
 			this->lastName->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_4);
 			// 
+			// text_custLastName
+			// 
+			this->text_custLastName->Location = System::Drawing::Point(23, 49);
+			this->text_custLastName->Name = L"text_custLastName";
+			this->text_custLastName->Size = System::Drawing::Size(191, 22);
+			this->text_custLastName->TabIndex = 19;
+			// 
 			// custID
 			// 
 			this->custID->AutoSize = true;
@@ -710,13 +722,6 @@ private: System::Windows::Forms::Label^ label5;
 			this->custID->TabIndex = 20;
 			this->custID->Text = L"customenr reference";
 			this->custID->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_3);
-			// 
-			// text_custLastName
-			// 
-			this->text_custLastName->Location = System::Drawing::Point(23, 49);
-			this->text_custLastName->Name = L"text_custLastName";
-			this->text_custLastName->Size = System::Drawing::Size(191, 22);
-			this->text_custLastName->TabIndex = 19;
 			// 
 			// BillingGroupBox
 			// 
@@ -2062,7 +2067,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(772, 608);
+			this->ClientSize = System::Drawing::Size(775, 609);
 			this->Controls->Add(this->mainTabControl);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
@@ -2183,6 +2188,13 @@ private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void groupBox6_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void displayCust_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	this->dataGridView5->Refresh();
+	this->oDs = this->oSvc->displayCustomers("Rsl");
+	this->dataGridView5->DataSource = this->oDs;
+	this->dataGridView5->DataMember = "Rsl";
 }
 };
 }
