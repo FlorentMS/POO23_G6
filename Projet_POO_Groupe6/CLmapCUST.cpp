@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CLmapCUST.h"
 
-System::String^ NS_NS_Comp::CLmapCUST::selectCustomers()
+System::String^ NS_Comp::CLmapCUST::selectCustomers()
 {
 	return "";
 }

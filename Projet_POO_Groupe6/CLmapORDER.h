@@ -13,6 +13,7 @@ namespace NS_Comp
 		System::String^ meanOfPayment;
 		System::String^ paymentDate;
 		int productRef;
+		System::String^ colorProd;
 		int copyNumber;
 	public:
 		System::String^ selectOrders(void);
@@ -22,20 +23,24 @@ namespace NS_Comp
 		System::String^ insertPayment(void);
 		System::String^ deleteOrder(void);
 		System::String^ updateOrder(void);
+
 		void setCustID(int);
 		void setOrderRef(System::String^);
 		void setDeliveryDate(System::String^);
 		void setCompletePaymentDate(System::String^);
 		void setMeanOfPayment(System::String^);
 		void setPaymentDate(System::String^);
+		void setProductColor(System::String^);
 		void setProductRef(int);
 		void setCopyNumber(int);
+
 		int getCustID(void);
 		System::String^ getOrderRef(void);
 		System::String^ getDeliveryDate(void);
 		System::String^ getCompletePaymentDate(void);
 		System::String^ getMeanOfPayment(void);
 		System::String^ getPaymentDate(void);
+		System::String^ getProductColor(void);
 		int getProductRef(void);
 		int getCopyNumber(void);
 
