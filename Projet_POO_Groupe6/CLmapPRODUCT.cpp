@@ -3,8 +3,12 @@
 
 System::String^ NS_Comp::CLmapPRODUCT::selectProduct(void)
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "SELECT [Projet_POO_G6].[dbo].[Products].[productRef], [productName], \
+        [Projet_POO_G6].[dbo].[characteristicsProd].[color], [colorProductID] AS specificID, [stockQuantity],\
+        [Projet_POO_G6].[dbo].[Products].[reorderThreshold], [VATrate], [priceET]\
+        FROM[Projet_POO_G6].[dbo].[Products]\
+        RIGHT JOIN[Projet_POO_G6].[dbo].[characteristicsProd]\
+        ON[Projet_POO_G6].[dbo].[Products].[productRef] = [Projet_POO_G6].[dbo].[characteristicsProd].[productRef]; ";
 }
 
 System::String^ NS_Comp::CLmapPRODUCT::insertProduct(void)
