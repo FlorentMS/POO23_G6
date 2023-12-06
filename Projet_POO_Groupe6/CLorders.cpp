@@ -21,6 +21,7 @@ void NS_Svc::CLorders::addOrder(System::String^ orderRef, System::String^ delive
 	System::String^ MeanOfPay, System::String^ PayDate, System::String^ ProductRef, System::String^ color, System::String^ copyNum)
 {
 	System::String^ sql; 
+
 	this->oOrder->setCustID(System::Convert::ToInt32(CustID)) ;
 	this->oOrder->setDeliveryDate(deliveryDate);
 	this->oOrder->setCompletePaymentDate(CompletePayDate); //May be can be delete
@@ -49,19 +50,40 @@ void NS_Svc::CLorders::addOrder(System::String^ orderRef, System::String^ delive
 	this->oCad->actionRows(sql);
 }
 
-void NS_Svc::CLorders::addItem(System::String^, System::String^, System::String^)
+void NS_Svc::CLorders::addItem(System::String^ ProductRef, System::String^ color, System::String^ copyNum)
 {
-	throw gcnew System::NotImplementedException();
+	System::String^ sql;
+
+	this->oOrder->setProductRef(System::Convert::ToInt32(ProductRef));
+	this->oOrder->setProductColor(color);
+	this->oOrder->setCopyNumber(System::Convert::ToInt32(copyNum));
+
+	sql = this->oOrder->insertItem();
+	
+	this->oCad->actionRows(sql);
 }
 
-void NS_Svc::CLorders::addPayment(System::String^, System::String^, System::String^)
+void NS_Svc::CLorders::addPayment(System::String^ MeanOfPay, System::String^ PayDate)
 {
-	throw gcnew System::NotImplementedException();
+	System::String^ sql;
+
+	this->oOrder->setMeanOfPayment(MeanOfPay);
+	this->oOrder->setPaymentDate(PayDate);
+
+	sql = this->oOrder->insertPayment();
+
+	this->oCad->actionRows(sql);
 }
 
-void NS_Svc::CLorders::eraseOrder(System::String^, System::String^, System::String^)
+void NS_Svc::CLorders::eraseOrder(System::String^ orderRefrence)
 {
-	throw gcnew System::NotImplementedException();
+	System::String^ sql;
+
+	this->oOrder->setOrderRef(orderRefrence);
+
+	sql = this->oOrder->insertPayment();
+
+	this->oCad->actionRows(sql);
 }
 
 void NS_Svc::CLorders::changeOrder(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^)

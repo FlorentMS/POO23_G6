@@ -13,10 +13,10 @@ System::String^ NS_Comp::CLmapORDER::selectOrder(void)
 
 System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 {
-	return "declare @IdCust as int; set @IdCust = "+ this->custID +";																																													\
-			declare @Refprod as int; set @Refprod = "+ this->productRef +";																																													\
-			declare @nbcopy as int; set @nbcopy = "+ this->copyNumber +";																																													\
-			declare @colorProd as char(12); set @colorProd = "+ this->colorProd +";																																									\
+	return "declare @IdCust as int; set @IdCust = "+ this->custID +";																																									\
+			declare @Refprod as int; set @Refprod = "+ this->productRef +";																																								\
+			declare @nbcopy as int; set @nbcopy = "+ this->copyNumber +";																																								\
+			declare @colorProd as char(12); set @colorProd = "+ this->colorProd +";																																						\
 																																																										\
 			declare @NumberOrderCust as int; set @NumberOrderCust = (select CONVERT(int, SUBSTRING(orderRef, 12, 3))																													\
 				From Projet_POO_G6.dbo.Orders																																															\
@@ -33,6 +33,9 @@ System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 				From Projet_POO_G6.dbo.Customers left join Projet_POO_G6.dbo.Addresses on(addrDel = addrID)																																\
 				left join Projet_POO_G6.dbo.Cities on(Addresses.cityID = Cities.cityID)																																					\
 				Where Customers.custNumber = @IdCust);																																													\
+			drop table if exists ##tempOrder; 																																															\
+			create table ##tempOrder(orderRefrence varchar(20));																																										\
+			insert into ##tempOrder(orderRefrence) values(@orderID);																																									\
 																																																										\
 			declare @colorID as int; declare @VAT as decimal(3, 2); declare @reducePrice as decimal(15, 2);																													            \
 																																																										\
@@ -50,10 +53,10 @@ System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 			where Products.productRef = @Refprod);																																														\
 																																																										\
 			Insert into[Projet_POO_G6].[dbo].[Orders](orderRef, deliveryDate, orderDate, completPaymentDate, custNumber)																												\
-				values(@orderID, " + this->deliveryDate + ", GETDATE(), "+ this->completePaymentDate +", @IdCust);																																						\
+				values(@orderID, " + this->deliveryDate + ", GETDATE(), "+ this->completePaymentDate +", @IdCust);																														\
 																																																										\
 			Insert into[Projet_POO_G6].[dbo].[Payments](orderRef, meanOfPayment, paymentDate)																																			\
-				values(@orderID, "+ this->meanOfPayment +", "+ this->paymentDate +");																																										\
+				values(@orderID, "+ this->meanOfPayment +", "+ this->paymentDate +");																																					\
 																																																										\
 			Insert into[Projet_POO_G6].[dbo].[order_product](orderRef, colorProductID, productVAT, reduceProductPrice, copyNumber)																										\
 				values(@orderID, @colorID, @VAT, @reducePrice, @nbcopy);																																								\
@@ -66,17 +69,46 @@ System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 
 System::String^ NS_Comp::CLmapORDER::insertItem(void)
 {
-    return "";
+    return "declare @Refprod as int; set @Refprod = "+ this->productRef +";																					\
+			declare @orderID as varchar(20); set @orderID = (Select * From ##tempOrder);																	\
+			declare @nbcopy as int; set @nbcopy = "+ this->copyNumber +";																					\
+			declare @colorProd as char(12); set @colorProd = " + this->colorProd + ";																		\
+																																							\
+			declare @colorID as int; declare @VAT as decimal(3, 2); declare @reducePrice as decimal(15, 2);													\
+																																							\
+			set @colorID = (Select colorProductID																											\
+				From Projet_POO_G6.dbo.Products inner join Projet_POO_G6.dbo.characteristicsProd as cp														\
+				on(Products.productRef = cp.productRef)																										\
+				Where Products.productRef = @Refprod and cp.color = @colorProd);																			\
+																																							\
+			set @VAT = (Select VATrate																														\
+				From Projet_POO_G6.dbo.Products																												\
+			where productRef = @Refprod);																													\
+																																							\
+			set @reducePrice = (Select PriceEt																												\
+				From Projet_POO_G6.dbo.Products																												\
+			where Products.productRef = @Refprod);																											\
+																																							\
+			Insert into[Projet_POO_G6].[dbo].[order_product](orderRef, colorProductID, productVAT, reduceProductPrice, copyNumber)							\
+				values(@orderID, @colorID, @VAT, @reducePrice, @nbcopy);																					\
+																																							\
+			/*Calculate the priceET of commande*/																											\
+			Update Projet_POO_G6.dbo.Orders																													\
+				set Orders.totalET = (Select SUM(reduceProductPrice) From Projet_POO_G6.dbo.order_product where orderRef = @orderID group by orderRef)		\
+			where orderRef = @orderID; ";
 }
 
 System::String^ NS_Comp::CLmapORDER::insertPayment(void)
 {
-    return "";
+    return "declare @OrderID as varchar(20); set @OrderID = (Select * From ##tempOrder);		\
+																								\
+			Insert into[Projet_POO_G6].[dbo].[Payments](orderRef, meanOfPayment, paymentDate)	\
+			values(@OrderID, "+ this->meanOfPayment +", "+ this->paymentDate +");";
 }
 
 System::String^ NS_Comp::CLmapORDER::deleteOrder(void)
 {
-    return "";
+	return "delete From Projet_POO_G6.dbo.Orders where orderRef="+ this->orderRef +";";
 }
 
 System::String^ NS_Comp::CLmapORDER::updateOrder(void)
