@@ -15,7 +15,6 @@ namespace NS_Comp
 		System::String^ color;
 
 	public:
-		System::String^ selectProducts(void);
 		System::String^ selectProduct(void);
 		System::String^ insertProduct(void);
 		System::String^ deleteProduct(void);

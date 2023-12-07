@@ -85,7 +85,7 @@ void NS_Comp::CLmapORDER::setCopyNumber(int CpNbr)
 
 
 
-int NS_Comp::CLmapORDER::getCustID(void) { return this->custID; }
+int NS_Comp::CLmapORDER::getCustID(void) { return this->custID;  }
 
 System::String^ NS_Comp::CLmapORDER::getOrderRef(void) { return this->orderRef; }
 
@@ -97,6 +97,6 @@ System::String^ NS_Comp::CLmapORDER::getMeanOfPayment(void) { return this->meanO
 
 System::String^ NS_Comp::CLmapORDER::getPaymentDate(void) { return this->paymentDate; }
 
-int NS_Comp::CLmapORDER::getProductRef(void) { return this->productRef; }
+int NS_Comp::CLmapORDER::getProductRef(void) { return this->productRef;  }
 
 int NS_Comp::CLmapORDER::getCopyNumber(void) { return this->copyNumber; }
