@@ -434,6 +434,8 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::Button^ changeEmp;
 	private: System::Windows::Forms::Button^ eraseEmp;
 	private: System::Windows::Forms::Button^ addEmp;
+private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::Label^ label1;
 
 
 
@@ -459,6 +461,11 @@ namespace ProjetPOOGroupe6 {
 			this->mainTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->homeTab = (gcnew System::Windows::Forms::TabPage());
 			this->customersTab = (gcnew System::Windows::Forms::TabPage());
+			this->socityChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->text_serviceNumberChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->text_socityNameChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->serviceNumberChangeCust = (gcnew System::Windows::Forms::Label());
+			this->socityNameChangeCust = (gcnew System::Windows::Forms::Label());
 			this->InfoSearchCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->birthSearchCust_datePicker = (gcnew System::Windows::Forms::DateTimePicker());
 			this->displayCust = (gcnew System::Windows::Forms::Button());
@@ -468,7 +475,34 @@ namespace ProjetPOOGroupe6 {
 			this->eraseCust = (gcnew System::Windows::Forms::Button());
 			this->lastNameSearchCust = (gcnew System::Windows::Forms::Label());
 			this->text_lastNameSearchCust = (gcnew System::Windows::Forms::TextBox());
+			this->infoChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->customerIdChangeCust = (gcnew System::Windows::Forms::Label());
+			this->text_customerIdChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->birthChangeCust_datePicker = (gcnew System::Windows::Forms::DateTimePicker());
+			this->text_firstNameChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->birthDateChangeCust = (gcnew System::Windows::Forms::Label());
+			this->firstNameChangeCust = (gcnew System::Windows::Forms::Label());
+			this->lastNameChangeCust = (gcnew System::Windows::Forms::Label());
+			this->text_lastNameChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->BillingChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->text_cityNameBillingChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->text_ZipCodeBillingChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->cityNameBillingChangeCust = (gcnew System::Windows::Forms::Label());
+			this->text_streetNameBillingChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->ZipCodeBillingChangeCust = (gcnew System::Windows::Forms::Label());
+			this->text_streetNumBillingChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->streetNumBillingChangeCust = (gcnew System::Windows::Forms::Label());
+			this->streetNameBillingChangeCust = (gcnew System::Windows::Forms::Label());
 			this->changeCust = (gcnew System::Windows::Forms::Button());
+			this->DelChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->text_cityNameDelChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->text_ZipCodeDelChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->text_streetNameDelChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->text_streetNumDelChangeCust = (gcnew System::Windows::Forms::TextBox());
+			this->cityNameDelChangeCust = (gcnew System::Windows::Forms::Label());
+			this->ZipCodeDelChangeCust = (gcnew System::Windows::Forms::Label());
+			this->streetNumDelChangeCust = (gcnew System::Windows::Forms::Label());
+			this->streetNameDelChangeCust = (gcnew System::Windows::Forms::Label());
 			this->text_custRef = (gcnew System::Windows::Forms::TextBox());
 			this->addCust = (gcnew System::Windows::Forms::Button());
 			this->socityGroupBox = (gcnew System::Windows::Forms::GroupBox());
@@ -504,7 +538,9 @@ namespace ProjetPOOGroupe6 {
 			this->streetNameDel = (gcnew System::Windows::Forms::Label());
 			this->dgv_cust = (gcnew System::Windows::Forms::DataGridView());
 			this->employeesTab = (gcnew System::Windows::Forms::TabPage());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->AddressChangeEmp_groupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->text_ZipCodeChangeEmp = (gcnew System::Windows::Forms::TextBox());
 			this->text_cityNameChangeEmp = (gcnew System::Windows::Forms::TextBox());
 			this->text_streetNameChangeEmp = (gcnew System::Windows::Forms::TextBox());
@@ -691,41 +727,13 @@ namespace ProjetPOOGroupe6 {
 			this->VAT1 = (gcnew System::Windows::Forms::RadioButton());
 			this->dgv_simu = (gcnew System::Windows::Forms::DataGridView());
 			this->execution_button = (gcnew System::Windows::Forms::Button());
-			this->socityChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
-			this->text_serviceNumberChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->text_socityNameChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->serviceNumberChangeCust = (gcnew System::Windows::Forms::Label());
-			this->socityNameChangeCust = (gcnew System::Windows::Forms::Label());
-			this->infoChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
-			this->birthChangeCust_datePicker = (gcnew System::Windows::Forms::DateTimePicker());
-			this->text_firstNameChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->birthDateChangeCust = (gcnew System::Windows::Forms::Label());
-			this->firstNameChangeCust = (gcnew System::Windows::Forms::Label());
-			this->lastNameChangeCust = (gcnew System::Windows::Forms::Label());
-			this->text_lastNameChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->BillingChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
-			this->text_cityNameBillingChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->text_ZipCodeBillingChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->cityNameBillingChangeCust = (gcnew System::Windows::Forms::Label());
-			this->text_streetNameBillingChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->ZipCodeBillingChangeCust = (gcnew System::Windows::Forms::Label());
-			this->text_streetNumBillingChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->streetNumBillingChangeCust = (gcnew System::Windows::Forms::Label());
-			this->streetNameBillingChangeCust = (gcnew System::Windows::Forms::Label());
-			this->DelChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
-			this->text_cityNameDelChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->text_ZipCodeDelChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->text_streetNameDelChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->text_streetNumDelChangeCust = (gcnew System::Windows::Forms::TextBox());
-			this->cityNameDelChangeCust = (gcnew System::Windows::Forms::Label());
-			this->ZipCodeDelChangeCust = (gcnew System::Windows::Forms::Label());
-			this->streetNumDelChangeCust = (gcnew System::Windows::Forms::Label());
-			this->streetNameDelChangeCust = (gcnew System::Windows::Forms::Label());
-			this->customerIdChangeCust = (gcnew System::Windows::Forms::Label());
-			this->text_customerIdChangeCust = (gcnew System::Windows::Forms::TextBox());
 			this->mainTabControl->SuspendLayout();
 			this->customersTab->SuspendLayout();
+			this->socityChangeCust_groupBox->SuspendLayout();
 			this->InfoSearchCust_groupBox->SuspendLayout();
+			this->infoChangeCust_groupBox->SuspendLayout();
+			this->BillingChangeCust_groupBox->SuspendLayout();
+			this->DelChangeCust_groupBox->SuspendLayout();
 			this->socityGroupBox->SuspendLayout();
 			this->customerGroupBox->SuspendLayout();
 			this->BillingGroupBox->SuspendLayout();
@@ -768,10 +776,6 @@ namespace ProjetPOOGroupe6 {
 			this->margin_groupBox->SuspendLayout();
 			this->VAT_groupBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_simu))->BeginInit();
-			this->socityChangeCust_groupBox->SuspendLayout();
-			this->infoChangeCust_groupBox->SuspendLayout();
-			this->BillingChangeCust_groupBox->SuspendLayout();
-			this->DelChangeCust_groupBox->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// mainTabControl
@@ -821,6 +825,51 @@ namespace ProjetPOOGroupe6 {
 			this->customersTab->TabIndex = 0;
 			this->customersTab->Text = L"Customers";
 			this->customersTab->UseVisualStyleBackColor = true;
+			// 
+			// socityChangeCust_groupBox
+			// 
+			this->socityChangeCust_groupBox->Controls->Add(this->text_serviceNumberChangeCust);
+			this->socityChangeCust_groupBox->Controls->Add(this->text_socityNameChangeCust);
+			this->socityChangeCust_groupBox->Controls->Add(this->serviceNumberChangeCust);
+			this->socityChangeCust_groupBox->Controls->Add(this->socityNameChangeCust);
+			this->socityChangeCust_groupBox->Location = System::Drawing::Point(573, 432);
+			this->socityChangeCust_groupBox->Name = L"socityChangeCust_groupBox";
+			this->socityChangeCust_groupBox->Size = System::Drawing::Size(472, 85);
+			this->socityChangeCust_groupBox->TabIndex = 32;
+			this->socityChangeCust_groupBox->TabStop = false;
+			this->socityChangeCust_groupBox->Text = L"Socity info";
+			// 
+			// text_serviceNumberChangeCust
+			// 
+			this->text_serviceNumberChangeCust->Location = System::Drawing::Point(300, 44);
+			this->text_serviceNumberChangeCust->Name = L"text_serviceNumberChangeCust";
+			this->text_serviceNumberChangeCust->Size = System::Drawing::Size(148, 22);
+			this->text_serviceNumberChangeCust->TabIndex = 27;
+			// 
+			// text_socityNameChangeCust
+			// 
+			this->text_socityNameChangeCust->Location = System::Drawing::Point(36, 44);
+			this->text_socityNameChangeCust->Name = L"text_socityNameChangeCust";
+			this->text_socityNameChangeCust->Size = System::Drawing::Size(175, 22);
+			this->text_socityNameChangeCust->TabIndex = 26;
+			// 
+			// serviceNumberChangeCust
+			// 
+			this->serviceNumberChangeCust->AutoSize = true;
+			this->serviceNumberChangeCust->Location = System::Drawing::Point(287, 25);
+			this->serviceNumberChangeCust->Name = L"serviceNumberChangeCust";
+			this->serviceNumberChangeCust->Size = System::Drawing::Size(99, 16);
+			this->serviceNumberChangeCust->TabIndex = 25;
+			this->serviceNumberChangeCust->Text = L"service number";
+			// 
+			// socityNameChangeCust
+			// 
+			this->socityNameChangeCust->AutoSize = true;
+			this->socityNameChangeCust->Location = System::Drawing::Point(23, 24);
+			this->socityNameChangeCust->Name = L"socityNameChangeCust";
+			this->socityNameChangeCust->Size = System::Drawing::Size(79, 16);
+			this->socityNameChangeCust->TabIndex = 24;
+			this->socityNameChangeCust->Text = L"socity name";
 			// 
 			// InfoSearchCust_groupBox
 			// 
@@ -905,6 +954,168 @@ namespace ProjetPOOGroupe6 {
 			this->text_lastNameSearchCust->Size = System::Drawing::Size(220, 22);
 			this->text_lastNameSearchCust->TabIndex = 19;
 			// 
+			// infoChangeCust_groupBox
+			// 
+			this->infoChangeCust_groupBox->Controls->Add(this->customerIdChangeCust);
+			this->infoChangeCust_groupBox->Controls->Add(this->text_customerIdChangeCust);
+			this->infoChangeCust_groupBox->Controls->Add(this->birthChangeCust_datePicker);
+			this->infoChangeCust_groupBox->Controls->Add(this->text_firstNameChangeCust);
+			this->infoChangeCust_groupBox->Controls->Add(this->birthDateChangeCust);
+			this->infoChangeCust_groupBox->Controls->Add(this->firstNameChangeCust);
+			this->infoChangeCust_groupBox->Controls->Add(this->lastNameChangeCust);
+			this->infoChangeCust_groupBox->Controls->Add(this->text_lastNameChangeCust);
+			this->infoChangeCust_groupBox->Location = System::Drawing::Point(573, 296);
+			this->infoChangeCust_groupBox->Name = L"infoChangeCust_groupBox";
+			this->infoChangeCust_groupBox->Size = System::Drawing::Size(472, 130);
+			this->infoChangeCust_groupBox->TabIndex = 30;
+			this->infoChangeCust_groupBox->TabStop = false;
+			this->infoChangeCust_groupBox->Text = L"Customer info";
+			// 
+			// customerIdChangeCust
+			// 
+			this->customerIdChangeCust->AutoSize = true;
+			this->customerIdChangeCust->Location = System::Drawing::Point(297, 24);
+			this->customerIdChangeCust->Name = L"customerIdChangeCust";
+			this->customerIdChangeCust->Size = System::Drawing::Size(78, 16);
+			this->customerIdChangeCust->TabIndex = 28;
+			this->customerIdChangeCust->Text = L"customer ID";
+			// 
+			// text_customerIdChangeCust
+			// 
+			this->text_customerIdChangeCust->Location = System::Drawing::Point(314, 43);
+			this->text_customerIdChangeCust->Name = L"text_customerIdChangeCust";
+			this->text_customerIdChangeCust->Size = System::Drawing::Size(128, 22);
+			this->text_customerIdChangeCust->TabIndex = 27;
+			// 
+			// birthChangeCust_datePicker
+			// 
+			this->birthChangeCust_datePicker->Location = System::Drawing::Point(242, 90);
+			this->birthChangeCust_datePicker->Name = L"birthChangeCust_datePicker";
+			this->birthChangeCust_datePicker->Size = System::Drawing::Size(200, 22);
+			this->birthChangeCust_datePicker->TabIndex = 26;
+			// 
+			// text_firstNameChangeCust
+			// 
+			this->text_firstNameChangeCust->Location = System::Drawing::Point(23, 92);
+			this->text_firstNameChangeCust->Name = L"text_firstNameChangeCust";
+			this->text_firstNameChangeCust->Size = System::Drawing::Size(189, 22);
+			this->text_firstNameChangeCust->TabIndex = 25;
+			// 
+			// birthDateChangeCust
+			// 
+			this->birthDateChangeCust->AutoSize = true;
+			this->birthDateChangeCust->Location = System::Drawing::Point(235, 71);
+			this->birthDateChangeCust->Name = L"birthDateChangeCust";
+			this->birthDateChangeCust->Size = System::Drawing::Size(62, 16);
+			this->birthDateChangeCust->TabIndex = 23;
+			this->birthDateChangeCust->Text = L"birth date";
+			// 
+			// firstNameChangeCust
+			// 
+			this->firstNameChangeCust->AutoSize = true;
+			this->firstNameChangeCust->Location = System::Drawing::Point(4, 73);
+			this->firstNameChangeCust->Name = L"firstNameChangeCust";
+			this->firstNameChangeCust->Size = System::Drawing::Size(60, 16);
+			this->firstNameChangeCust->TabIndex = 22;
+			this->firstNameChangeCust->Text = L"fist name";
+			// 
+			// lastNameChangeCust
+			// 
+			this->lastNameChangeCust->AutoSize = true;
+			this->lastNameChangeCust->Location = System::Drawing::Point(6, 24);
+			this->lastNameChangeCust->Name = L"lastNameChangeCust";
+			this->lastNameChangeCust->Size = System::Drawing::Size(65, 16);
+			this->lastNameChangeCust->TabIndex = 21;
+			this->lastNameChangeCust->Text = L"last name";
+			// 
+			// text_lastNameChangeCust
+			// 
+			this->text_lastNameChangeCust->Location = System::Drawing::Point(23, 43);
+			this->text_lastNameChangeCust->Name = L"text_lastNameChangeCust";
+			this->text_lastNameChangeCust->Size = System::Drawing::Size(274, 22);
+			this->text_lastNameChangeCust->TabIndex = 19;
+			// 
+			// BillingChangeCust_groupBox
+			// 
+			this->BillingChangeCust_groupBox->Controls->Add(this->text_cityNameBillingChangeCust);
+			this->BillingChangeCust_groupBox->Controls->Add(this->text_ZipCodeBillingChangeCust);
+			this->BillingChangeCust_groupBox->Controls->Add(this->cityNameBillingChangeCust);
+			this->BillingChangeCust_groupBox->Controls->Add(this->text_streetNameBillingChangeCust);
+			this->BillingChangeCust_groupBox->Controls->Add(this->ZipCodeBillingChangeCust);
+			this->BillingChangeCust_groupBox->Controls->Add(this->text_streetNumBillingChangeCust);
+			this->BillingChangeCust_groupBox->Controls->Add(this->streetNumBillingChangeCust);
+			this->BillingChangeCust_groupBox->Controls->Add(this->streetNameBillingChangeCust);
+			this->BillingChangeCust_groupBox->Location = System::Drawing::Point(573, 523);
+			this->BillingChangeCust_groupBox->Name = L"BillingChangeCust_groupBox";
+			this->BillingChangeCust_groupBox->Size = System::Drawing::Size(472, 72);
+			this->BillingChangeCust_groupBox->TabIndex = 31;
+			this->BillingChangeCust_groupBox->TabStop = false;
+			this->BillingChangeCust_groupBox->Text = L"Billing adress";
+			// 
+			// text_cityNameBillingChangeCust
+			// 
+			this->text_cityNameBillingChangeCust->Location = System::Drawing::Point(318, 40);
+			this->text_cityNameBillingChangeCust->Name = L"text_cityNameBillingChangeCust";
+			this->text_cityNameBillingChangeCust->Size = System::Drawing::Size(149, 22);
+			this->text_cityNameBillingChangeCust->TabIndex = 34;
+			// 
+			// text_ZipCodeBillingChangeCust
+			// 
+			this->text_ZipCodeBillingChangeCust->Location = System::Drawing::Point(238, 40);
+			this->text_ZipCodeBillingChangeCust->Name = L"text_ZipCodeBillingChangeCust";
+			this->text_ZipCodeBillingChangeCust->Size = System::Drawing::Size(71, 22);
+			this->text_ZipCodeBillingChangeCust->TabIndex = 33;
+			// 
+			// cityNameBillingChangeCust
+			// 
+			this->cityNameBillingChangeCust->AutoSize = true;
+			this->cityNameBillingChangeCust->Location = System::Drawing::Point(310, 21);
+			this->cityNameBillingChangeCust->Name = L"cityNameBillingChangeCust";
+			this->cityNameBillingChangeCust->Size = System::Drawing::Size(64, 16);
+			this->cityNameBillingChangeCust->TabIndex = 26;
+			this->cityNameBillingChangeCust->Text = L"city name";
+			// 
+			// text_streetNameBillingChangeCust
+			// 
+			this->text_streetNameBillingChangeCust->Location = System::Drawing::Point(83, 40);
+			this->text_streetNameBillingChangeCust->Name = L"text_streetNameBillingChangeCust";
+			this->text_streetNameBillingChangeCust->Size = System::Drawing::Size(149, 22);
+			this->text_streetNameBillingChangeCust->TabIndex = 32;
+			// 
+			// ZipCodeBillingChangeCust
+			// 
+			this->ZipCodeBillingChangeCust->AutoSize = true;
+			this->ZipCodeBillingChangeCust->Location = System::Drawing::Point(235, 21);
+			this->ZipCodeBillingChangeCust->Name = L"ZipCodeBillingChangeCust";
+			this->ZipCodeBillingChangeCust->Size = System::Drawing::Size(61, 16);
+			this->ZipCodeBillingChangeCust->TabIndex = 25;
+			this->ZipCodeBillingChangeCust->Text = L"ZIP code";
+			// 
+			// text_streetNumBillingChangeCust
+			// 
+			this->text_streetNumBillingChangeCust->Location = System::Drawing::Point(9, 40);
+			this->text_streetNumBillingChangeCust->Name = L"text_streetNumBillingChangeCust";
+			this->text_streetNumBillingChangeCust->Size = System::Drawing::Size(68, 22);
+			this->text_streetNumBillingChangeCust->TabIndex = 31;
+			// 
+			// streetNumBillingChangeCust
+			// 
+			this->streetNumBillingChangeCust->AutoSize = true;
+			this->streetNumBillingChangeCust->Location = System::Drawing::Point(8, 21);
+			this->streetNumBillingChangeCust->Name = L"streetNumBillingChangeCust";
+			this->streetNumBillingChangeCust->Size = System::Drawing::Size(54, 16);
+			this->streetNumBillingChangeCust->TabIndex = 23;
+			this->streetNumBillingChangeCust->Text = L"street n°";
+			// 
+			// streetNameBillingChangeCust
+			// 
+			this->streetNameBillingChangeCust->AutoSize = true;
+			this->streetNameBillingChangeCust->Location = System::Drawing::Point(77, 21);
+			this->streetNameBillingChangeCust->Name = L"streetNameBillingChangeCust";
+			this->streetNameBillingChangeCust->Size = System::Drawing::Size(77, 16);
+			this->streetNameBillingChangeCust->TabIndex = 24;
+			this->streetNameBillingChangeCust->Text = L"street name";
+			// 
 			// changeCust
 			// 
 			this->changeCust->Location = System::Drawing::Point(732, 679);
@@ -913,6 +1124,87 @@ namespace ProjetPOOGroupe6 {
 			this->changeCust->TabIndex = 31;
 			this->changeCust->Text = L"Change customer";
 			this->changeCust->UseVisualStyleBackColor = true;
+			// 
+			// DelChangeCust_groupBox
+			// 
+			this->DelChangeCust_groupBox->Controls->Add(this->text_cityNameDelChangeCust);
+			this->DelChangeCust_groupBox->Controls->Add(this->text_ZipCodeDelChangeCust);
+			this->DelChangeCust_groupBox->Controls->Add(this->text_streetNameDelChangeCust);
+			this->DelChangeCust_groupBox->Controls->Add(this->text_streetNumDelChangeCust);
+			this->DelChangeCust_groupBox->Controls->Add(this->cityNameDelChangeCust);
+			this->DelChangeCust_groupBox->Controls->Add(this->ZipCodeDelChangeCust);
+			this->DelChangeCust_groupBox->Controls->Add(this->streetNumDelChangeCust);
+			this->DelChangeCust_groupBox->Controls->Add(this->streetNameDelChangeCust);
+			this->DelChangeCust_groupBox->Location = System::Drawing::Point(573, 601);
+			this->DelChangeCust_groupBox->Name = L"DelChangeCust_groupBox";
+			this->DelChangeCust_groupBox->Size = System::Drawing::Size(472, 72);
+			this->DelChangeCust_groupBox->TabIndex = 29;
+			this->DelChangeCust_groupBox->TabStop = false;
+			this->DelChangeCust_groupBox->Text = L"Delivery adress";
+			// 
+			// text_cityNameDelChangeCust
+			// 
+			this->text_cityNameDelChangeCust->Location = System::Drawing::Point(313, 40);
+			this->text_cityNameDelChangeCust->Name = L"text_cityNameDelChangeCust";
+			this->text_cityNameDelChangeCust->Size = System::Drawing::Size(149, 22);
+			this->text_cityNameDelChangeCust->TabIndex = 30;
+			// 
+			// text_ZipCodeDelChangeCust
+			// 
+			this->text_ZipCodeDelChangeCust->Location = System::Drawing::Point(238, 40);
+			this->text_ZipCodeDelChangeCust->Name = L"text_ZipCodeDelChangeCust";
+			this->text_ZipCodeDelChangeCust->Size = System::Drawing::Size(71, 22);
+			this->text_ZipCodeDelChangeCust->TabIndex = 29;
+			// 
+			// text_streetNameDelChangeCust
+			// 
+			this->text_streetNameDelChangeCust->Location = System::Drawing::Point(80, 40);
+			this->text_streetNameDelChangeCust->Name = L"text_streetNameDelChangeCust";
+			this->text_streetNameDelChangeCust->Size = System::Drawing::Size(152, 22);
+			this->text_streetNameDelChangeCust->TabIndex = 28;
+			// 
+			// text_streetNumDelChangeCust
+			// 
+			this->text_streetNumDelChangeCust->Location = System::Drawing::Point(6, 40);
+			this->text_streetNumDelChangeCust->Name = L"text_streetNumDelChangeCust";
+			this->text_streetNumDelChangeCust->Size = System::Drawing::Size(68, 22);
+			this->text_streetNumDelChangeCust->TabIndex = 27;
+			// 
+			// cityNameDelChangeCust
+			// 
+			this->cityNameDelChangeCust->AutoSize = true;
+			this->cityNameDelChangeCust->Location = System::Drawing::Point(305, 21);
+			this->cityNameDelChangeCust->Name = L"cityNameDelChangeCust";
+			this->cityNameDelChangeCust->Size = System::Drawing::Size(64, 16);
+			this->cityNameDelChangeCust->TabIndex = 26;
+			this->cityNameDelChangeCust->Text = L"city name";
+			// 
+			// ZipCodeDelChangeCust
+			// 
+			this->ZipCodeDelChangeCust->AutoSize = true;
+			this->ZipCodeDelChangeCust->Location = System::Drawing::Point(235, 21);
+			this->ZipCodeDelChangeCust->Name = L"ZipCodeDelChangeCust";
+			this->ZipCodeDelChangeCust->Size = System::Drawing::Size(61, 16);
+			this->ZipCodeDelChangeCust->TabIndex = 25;
+			this->ZipCodeDelChangeCust->Text = L"ZIP code";
+			// 
+			// streetNumDelChangeCust
+			// 
+			this->streetNumDelChangeCust->AutoSize = true;
+			this->streetNumDelChangeCust->Location = System::Drawing::Point(3, 21);
+			this->streetNumDelChangeCust->Name = L"streetNumDelChangeCust";
+			this->streetNumDelChangeCust->Size = System::Drawing::Size(54, 16);
+			this->streetNumDelChangeCust->TabIndex = 23;
+			this->streetNumDelChangeCust->Text = L"street n°";
+			// 
+			// streetNameDelChangeCust
+			// 
+			this->streetNameDelChangeCust->AutoSize = true;
+			this->streetNameDelChangeCust->Location = System::Drawing::Point(77, 21);
+			this->streetNameDelChangeCust->Name = L"streetNameDelChangeCust";
+			this->streetNameDelChangeCust->Size = System::Drawing::Size(77, 16);
+			this->streetNameDelChangeCust->TabIndex = 24;
+			this->streetNameDelChangeCust->Text = L"street name";
 			// 
 			// text_custRef
 			// 
@@ -1221,6 +1513,7 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// employeesTab
 			// 
+			this->employeesTab->Controls->Add(this->label2);
 			this->employeesTab->Controls->Add(this->AddressChangeEmp_groupBox);
 			this->employeesTab->Controls->Add(this->InfoChangeEmp_groupBox);
 			this->employeesTab->Controls->Add(this->SearchCust_groupBox);
@@ -1237,8 +1530,18 @@ namespace ProjetPOOGroupe6 {
 			this->employeesTab->Text = L"Employees";
 			this->employeesTab->UseVisualStyleBackColor = true;
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(790, 290);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(44, 16);
+			this->label2->TabIndex = 42;
+			this->label2->Text = L"label2";
+			// 
 			// AddressChangeEmp_groupBox
 			// 
+			this->AddressChangeEmp_groupBox->Controls->Add(this->label1);
 			this->AddressChangeEmp_groupBox->Controls->Add(this->text_ZipCodeChangeEmp);
 			this->AddressChangeEmp_groupBox->Controls->Add(this->text_cityNameChangeEmp);
 			this->AddressChangeEmp_groupBox->Controls->Add(this->text_streetNameChangeEmp);
@@ -1253,6 +1556,15 @@ namespace ProjetPOOGroupe6 {
 			this->AddressChangeEmp_groupBox->TabIndex = 41;
 			this->AddressChangeEmp_groupBox->TabStop = false;
 			this->AddressChangeEmp_groupBox->Text = L"Address";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(3, 18);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(44, 16);
+			this->label1->TabIndex = 41;
+			this->label1->Text = L"label1";
 			// 
 			// text_ZipCodeChangeEmp
 			// 
@@ -1472,6 +1784,7 @@ namespace ProjetPOOGroupe6 {
 			this->eraseEmp->TabIndex = 34;
 			this->eraseEmp->Text = L"Erase";
 			this->eraseEmp->UseVisualStyleBackColor = true;
+			this->eraseEmp->Click += gcnew System::EventHandler(this, &MyForm::eraseEmp_Click);
 			// 
 			// text_lastNameSearchEmp
 			// 
@@ -3072,294 +3385,6 @@ namespace ProjetPOOGroupe6 {
 			this->execution_button->Text = L"EXECUTE";
 			this->execution_button->UseVisualStyleBackColor = true;
 			// 
-			// socityChangeCust_groupBox
-			// 
-			this->socityChangeCust_groupBox->Controls->Add(this->text_serviceNumberChangeCust);
-			this->socityChangeCust_groupBox->Controls->Add(this->text_socityNameChangeCust);
-			this->socityChangeCust_groupBox->Controls->Add(this->serviceNumberChangeCust);
-			this->socityChangeCust_groupBox->Controls->Add(this->socityNameChangeCust);
-			this->socityChangeCust_groupBox->Location = System::Drawing::Point(573, 432);
-			this->socityChangeCust_groupBox->Name = L"socityChangeCust_groupBox";
-			this->socityChangeCust_groupBox->Size = System::Drawing::Size(472, 85);
-			this->socityChangeCust_groupBox->TabIndex = 32;
-			this->socityChangeCust_groupBox->TabStop = false;
-			this->socityChangeCust_groupBox->Text = L"Socity info";
-			// 
-			// text_serviceNumberChangeCust
-			// 
-			this->text_serviceNumberChangeCust->Location = System::Drawing::Point(300, 44);
-			this->text_serviceNumberChangeCust->Name = L"text_serviceNumberChangeCust";
-			this->text_serviceNumberChangeCust->Size = System::Drawing::Size(148, 22);
-			this->text_serviceNumberChangeCust->TabIndex = 27;
-			// 
-			// text_socityNameChangeCust
-			// 
-			this->text_socityNameChangeCust->Location = System::Drawing::Point(36, 44);
-			this->text_socityNameChangeCust->Name = L"text_socityNameChangeCust";
-			this->text_socityNameChangeCust->Size = System::Drawing::Size(175, 22);
-			this->text_socityNameChangeCust->TabIndex = 26;
-			// 
-			// serviceNumberChangeCust
-			// 
-			this->serviceNumberChangeCust->AutoSize = true;
-			this->serviceNumberChangeCust->Location = System::Drawing::Point(287, 25);
-			this->serviceNumberChangeCust->Name = L"serviceNumberChangeCust";
-			this->serviceNumberChangeCust->Size = System::Drawing::Size(99, 16);
-			this->serviceNumberChangeCust->TabIndex = 25;
-			this->serviceNumberChangeCust->Text = L"service number";
-			// 
-			// socityNameChangeCust
-			// 
-			this->socityNameChangeCust->AutoSize = true;
-			this->socityNameChangeCust->Location = System::Drawing::Point(23, 24);
-			this->socityNameChangeCust->Name = L"socityNameChangeCust";
-			this->socityNameChangeCust->Size = System::Drawing::Size(79, 16);
-			this->socityNameChangeCust->TabIndex = 24;
-			this->socityNameChangeCust->Text = L"socity name";
-			// 
-			// infoChangeCust_groupBox
-			// 
-			this->infoChangeCust_groupBox->Controls->Add(this->customerIdChangeCust);
-			this->infoChangeCust_groupBox->Controls->Add(this->text_customerIdChangeCust);
-			this->infoChangeCust_groupBox->Controls->Add(this->birthChangeCust_datePicker);
-			this->infoChangeCust_groupBox->Controls->Add(this->text_firstNameChangeCust);
-			this->infoChangeCust_groupBox->Controls->Add(this->birthDateChangeCust);
-			this->infoChangeCust_groupBox->Controls->Add(this->firstNameChangeCust);
-			this->infoChangeCust_groupBox->Controls->Add(this->lastNameChangeCust);
-			this->infoChangeCust_groupBox->Controls->Add(this->text_lastNameChangeCust);
-			this->infoChangeCust_groupBox->Location = System::Drawing::Point(573, 296);
-			this->infoChangeCust_groupBox->Name = L"infoChangeCust_groupBox";
-			this->infoChangeCust_groupBox->Size = System::Drawing::Size(472, 130);
-			this->infoChangeCust_groupBox->TabIndex = 30;
-			this->infoChangeCust_groupBox->TabStop = false;
-			this->infoChangeCust_groupBox->Text = L"Customer info";
-			// 
-			// birthChangeCust_datePicker
-			// 
-			this->birthChangeCust_datePicker->Location = System::Drawing::Point(242, 90);
-			this->birthChangeCust_datePicker->Name = L"birthChangeCust_datePicker";
-			this->birthChangeCust_datePicker->Size = System::Drawing::Size(200, 22);
-			this->birthChangeCust_datePicker->TabIndex = 26;
-			// 
-			// text_firstNameChangeCust
-			// 
-			this->text_firstNameChangeCust->Location = System::Drawing::Point(23, 92);
-			this->text_firstNameChangeCust->Name = L"text_firstNameChangeCust";
-			this->text_firstNameChangeCust->Size = System::Drawing::Size(189, 22);
-			this->text_firstNameChangeCust->TabIndex = 25;
-			// 
-			// birthDateChangeCust
-			// 
-			this->birthDateChangeCust->AutoSize = true;
-			this->birthDateChangeCust->Location = System::Drawing::Point(235, 71);
-			this->birthDateChangeCust->Name = L"birthDateChangeCust";
-			this->birthDateChangeCust->Size = System::Drawing::Size(62, 16);
-			this->birthDateChangeCust->TabIndex = 23;
-			this->birthDateChangeCust->Text = L"birth date";
-			// 
-			// firstNameChangeCust
-			// 
-			this->firstNameChangeCust->AutoSize = true;
-			this->firstNameChangeCust->Location = System::Drawing::Point(4, 73);
-			this->firstNameChangeCust->Name = L"firstNameChangeCust";
-			this->firstNameChangeCust->Size = System::Drawing::Size(60, 16);
-			this->firstNameChangeCust->TabIndex = 22;
-			this->firstNameChangeCust->Text = L"fist name";
-			// 
-			// lastNameChangeCust
-			// 
-			this->lastNameChangeCust->AutoSize = true;
-			this->lastNameChangeCust->Location = System::Drawing::Point(6, 24);
-			this->lastNameChangeCust->Name = L"lastNameChangeCust";
-			this->lastNameChangeCust->Size = System::Drawing::Size(65, 16);
-			this->lastNameChangeCust->TabIndex = 21;
-			this->lastNameChangeCust->Text = L"last name";
-			// 
-			// text_lastNameChangeCust
-			// 
-			this->text_lastNameChangeCust->Location = System::Drawing::Point(23, 43);
-			this->text_lastNameChangeCust->Name = L"text_lastNameChangeCust";
-			this->text_lastNameChangeCust->Size = System::Drawing::Size(274, 22);
-			this->text_lastNameChangeCust->TabIndex = 19;
-			// 
-			// BillingChangeCust_groupBox
-			// 
-			this->BillingChangeCust_groupBox->Controls->Add(this->text_cityNameBillingChangeCust);
-			this->BillingChangeCust_groupBox->Controls->Add(this->text_ZipCodeBillingChangeCust);
-			this->BillingChangeCust_groupBox->Controls->Add(this->cityNameBillingChangeCust);
-			this->BillingChangeCust_groupBox->Controls->Add(this->text_streetNameBillingChangeCust);
-			this->BillingChangeCust_groupBox->Controls->Add(this->ZipCodeBillingChangeCust);
-			this->BillingChangeCust_groupBox->Controls->Add(this->text_streetNumBillingChangeCust);
-			this->BillingChangeCust_groupBox->Controls->Add(this->streetNumBillingChangeCust);
-			this->BillingChangeCust_groupBox->Controls->Add(this->streetNameBillingChangeCust);
-			this->BillingChangeCust_groupBox->Location = System::Drawing::Point(573, 523);
-			this->BillingChangeCust_groupBox->Name = L"BillingChangeCust_groupBox";
-			this->BillingChangeCust_groupBox->Size = System::Drawing::Size(472, 72);
-			this->BillingChangeCust_groupBox->TabIndex = 31;
-			this->BillingChangeCust_groupBox->TabStop = false;
-			this->BillingChangeCust_groupBox->Text = L"Billing adress";
-			// 
-			// text_cityNameBillingChangeCust
-			// 
-			this->text_cityNameBillingChangeCust->Location = System::Drawing::Point(318, 40);
-			this->text_cityNameBillingChangeCust->Name = L"text_cityNameBillingChangeCust";
-			this->text_cityNameBillingChangeCust->Size = System::Drawing::Size(149, 22);
-			this->text_cityNameBillingChangeCust->TabIndex = 34;
-			// 
-			// text_ZipCodeBillingChangeCust
-			// 
-			this->text_ZipCodeBillingChangeCust->Location = System::Drawing::Point(238, 40);
-			this->text_ZipCodeBillingChangeCust->Name = L"text_ZipCodeBillingChangeCust";
-			this->text_ZipCodeBillingChangeCust->Size = System::Drawing::Size(71, 22);
-			this->text_ZipCodeBillingChangeCust->TabIndex = 33;
-			// 
-			// cityNameBillingChangeCust
-			// 
-			this->cityNameBillingChangeCust->AutoSize = true;
-			this->cityNameBillingChangeCust->Location = System::Drawing::Point(310, 21);
-			this->cityNameBillingChangeCust->Name = L"cityNameBillingChangeCust";
-			this->cityNameBillingChangeCust->Size = System::Drawing::Size(64, 16);
-			this->cityNameBillingChangeCust->TabIndex = 26;
-			this->cityNameBillingChangeCust->Text = L"city name";
-			// 
-			// text_streetNameBillingChangeCust
-			// 
-			this->text_streetNameBillingChangeCust->Location = System::Drawing::Point(83, 40);
-			this->text_streetNameBillingChangeCust->Name = L"text_streetNameBillingChangeCust";
-			this->text_streetNameBillingChangeCust->Size = System::Drawing::Size(149, 22);
-			this->text_streetNameBillingChangeCust->TabIndex = 32;
-			// 
-			// ZipCodeBillingChangeCust
-			// 
-			this->ZipCodeBillingChangeCust->AutoSize = true;
-			this->ZipCodeBillingChangeCust->Location = System::Drawing::Point(235, 21);
-			this->ZipCodeBillingChangeCust->Name = L"ZipCodeBillingChangeCust";
-			this->ZipCodeBillingChangeCust->Size = System::Drawing::Size(61, 16);
-			this->ZipCodeBillingChangeCust->TabIndex = 25;
-			this->ZipCodeBillingChangeCust->Text = L"ZIP code";
-			// 
-			// text_streetNumBillingChangeCust
-			// 
-			this->text_streetNumBillingChangeCust->Location = System::Drawing::Point(9, 40);
-			this->text_streetNumBillingChangeCust->Name = L"text_streetNumBillingChangeCust";
-			this->text_streetNumBillingChangeCust->Size = System::Drawing::Size(68, 22);
-			this->text_streetNumBillingChangeCust->TabIndex = 31;
-			// 
-			// streetNumBillingChangeCust
-			// 
-			this->streetNumBillingChangeCust->AutoSize = true;
-			this->streetNumBillingChangeCust->Location = System::Drawing::Point(8, 21);
-			this->streetNumBillingChangeCust->Name = L"streetNumBillingChangeCust";
-			this->streetNumBillingChangeCust->Size = System::Drawing::Size(54, 16);
-			this->streetNumBillingChangeCust->TabIndex = 23;
-			this->streetNumBillingChangeCust->Text = L"street n°";
-			// 
-			// streetNameBillingChangeCust
-			// 
-			this->streetNameBillingChangeCust->AutoSize = true;
-			this->streetNameBillingChangeCust->Location = System::Drawing::Point(77, 21);
-			this->streetNameBillingChangeCust->Name = L"streetNameBillingChangeCust";
-			this->streetNameBillingChangeCust->Size = System::Drawing::Size(77, 16);
-			this->streetNameBillingChangeCust->TabIndex = 24;
-			this->streetNameBillingChangeCust->Text = L"street name";
-			// 
-			// DelChangeCust_groupBox
-			// 
-			this->DelChangeCust_groupBox->Controls->Add(this->text_cityNameDelChangeCust);
-			this->DelChangeCust_groupBox->Controls->Add(this->text_ZipCodeDelChangeCust);
-			this->DelChangeCust_groupBox->Controls->Add(this->text_streetNameDelChangeCust);
-			this->DelChangeCust_groupBox->Controls->Add(this->text_streetNumDelChangeCust);
-			this->DelChangeCust_groupBox->Controls->Add(this->cityNameDelChangeCust);
-			this->DelChangeCust_groupBox->Controls->Add(this->ZipCodeDelChangeCust);
-			this->DelChangeCust_groupBox->Controls->Add(this->streetNumDelChangeCust);
-			this->DelChangeCust_groupBox->Controls->Add(this->streetNameDelChangeCust);
-			this->DelChangeCust_groupBox->Location = System::Drawing::Point(573, 601);
-			this->DelChangeCust_groupBox->Name = L"DelChangeCust_groupBox";
-			this->DelChangeCust_groupBox->Size = System::Drawing::Size(472, 72);
-			this->DelChangeCust_groupBox->TabIndex = 29;
-			this->DelChangeCust_groupBox->TabStop = false;
-			this->DelChangeCust_groupBox->Text = L"Delivery adress";
-			// 
-			// text_cityNameDelChangeCust
-			// 
-			this->text_cityNameDelChangeCust->Location = System::Drawing::Point(313, 40);
-			this->text_cityNameDelChangeCust->Name = L"text_cityNameDelChangeCust";
-			this->text_cityNameDelChangeCust->Size = System::Drawing::Size(149, 22);
-			this->text_cityNameDelChangeCust->TabIndex = 30;
-			// 
-			// text_ZipCodeDelChangeCust
-			// 
-			this->text_ZipCodeDelChangeCust->Location = System::Drawing::Point(238, 40);
-			this->text_ZipCodeDelChangeCust->Name = L"text_ZipCodeDelChangeCust";
-			this->text_ZipCodeDelChangeCust->Size = System::Drawing::Size(71, 22);
-			this->text_ZipCodeDelChangeCust->TabIndex = 29;
-			// 
-			// text_streetNameDelChangeCust
-			// 
-			this->text_streetNameDelChangeCust->Location = System::Drawing::Point(80, 40);
-			this->text_streetNameDelChangeCust->Name = L"text_streetNameDelChangeCust";
-			this->text_streetNameDelChangeCust->Size = System::Drawing::Size(152, 22);
-			this->text_streetNameDelChangeCust->TabIndex = 28;
-			// 
-			// text_streetNumDelChangeCust
-			// 
-			this->text_streetNumDelChangeCust->Location = System::Drawing::Point(6, 40);
-			this->text_streetNumDelChangeCust->Name = L"text_streetNumDelChangeCust";
-			this->text_streetNumDelChangeCust->Size = System::Drawing::Size(68, 22);
-			this->text_streetNumDelChangeCust->TabIndex = 27;
-			// 
-			// cityNameDelChangeCust
-			// 
-			this->cityNameDelChangeCust->AutoSize = true;
-			this->cityNameDelChangeCust->Location = System::Drawing::Point(305, 21);
-			this->cityNameDelChangeCust->Name = L"cityNameDelChangeCust";
-			this->cityNameDelChangeCust->Size = System::Drawing::Size(64, 16);
-			this->cityNameDelChangeCust->TabIndex = 26;
-			this->cityNameDelChangeCust->Text = L"city name";
-			// 
-			// ZipCodeDelChangeCust
-			// 
-			this->ZipCodeDelChangeCust->AutoSize = true;
-			this->ZipCodeDelChangeCust->Location = System::Drawing::Point(235, 21);
-			this->ZipCodeDelChangeCust->Name = L"ZipCodeDelChangeCust";
-			this->ZipCodeDelChangeCust->Size = System::Drawing::Size(61, 16);
-			this->ZipCodeDelChangeCust->TabIndex = 25;
-			this->ZipCodeDelChangeCust->Text = L"ZIP code";
-			// 
-			// streetNumDelChangeCust
-			// 
-			this->streetNumDelChangeCust->AutoSize = true;
-			this->streetNumDelChangeCust->Location = System::Drawing::Point(3, 21);
-			this->streetNumDelChangeCust->Name = L"streetNumDelChangeCust";
-			this->streetNumDelChangeCust->Size = System::Drawing::Size(54, 16);
-			this->streetNumDelChangeCust->TabIndex = 23;
-			this->streetNumDelChangeCust->Text = L"street n°";
-			// 
-			// streetNameDelChangeCust
-			// 
-			this->streetNameDelChangeCust->AutoSize = true;
-			this->streetNameDelChangeCust->Location = System::Drawing::Point(77, 21);
-			this->streetNameDelChangeCust->Name = L"streetNameDelChangeCust";
-			this->streetNameDelChangeCust->Size = System::Drawing::Size(77, 16);
-			this->streetNameDelChangeCust->TabIndex = 24;
-			this->streetNameDelChangeCust->Text = L"street name";
-			// 
-			// customerIdChangeCust
-			// 
-			this->customerIdChangeCust->AutoSize = true;
-			this->customerIdChangeCust->Location = System::Drawing::Point(297, 24);
-			this->customerIdChangeCust->Name = L"customerIdChangeCust";
-			this->customerIdChangeCust->Size = System::Drawing::Size(78, 16);
-			this->customerIdChangeCust->TabIndex = 28;
-			this->customerIdChangeCust->Text = L"customer ID";
-			// 
-			// text_customerIdChangeCust
-			// 
-			this->text_customerIdChangeCust->Location = System::Drawing::Point(314, 43);
-			this->text_customerIdChangeCust->Name = L"text_customerIdChangeCust";
-			this->text_customerIdChangeCust->Size = System::Drawing::Size(128, 22);
-			this->text_customerIdChangeCust->TabIndex = 27;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -3372,8 +3397,16 @@ namespace ProjetPOOGroupe6 {
 			this->mainTabControl->ResumeLayout(false);
 			this->customersTab->ResumeLayout(false);
 			this->customersTab->PerformLayout();
+			this->socityChangeCust_groupBox->ResumeLayout(false);
+			this->socityChangeCust_groupBox->PerformLayout();
 			this->InfoSearchCust_groupBox->ResumeLayout(false);
 			this->InfoSearchCust_groupBox->PerformLayout();
+			this->infoChangeCust_groupBox->ResumeLayout(false);
+			this->infoChangeCust_groupBox->PerformLayout();
+			this->BillingChangeCust_groupBox->ResumeLayout(false);
+			this->BillingChangeCust_groupBox->PerformLayout();
+			this->DelChangeCust_groupBox->ResumeLayout(false);
+			this->DelChangeCust_groupBox->PerformLayout();
 			this->socityGroupBox->ResumeLayout(false);
 			this->socityGroupBox->PerformLayout();
 			this->customerGroupBox->ResumeLayout(false);
@@ -3384,6 +3417,7 @@ namespace ProjetPOOGroupe6 {
 			this->deliveryGroupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_cust))->EndInit();
 			this->employeesTab->ResumeLayout(false);
+			this->employeesTab->PerformLayout();
 			this->AddressChangeEmp_groupBox->ResumeLayout(false);
 			this->AddressChangeEmp_groupBox->PerformLayout();
 			this->InfoChangeEmp_groupBox->ResumeLayout(false);
@@ -3442,14 +3476,6 @@ namespace ProjetPOOGroupe6 {
 			this->VAT_groupBox->ResumeLayout(false);
 			this->VAT_groupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_simu))->EndInit();
-			this->socityChangeCust_groupBox->ResumeLayout(false);
-			this->socityChangeCust_groupBox->PerformLayout();
-			this->infoChangeCust_groupBox->ResumeLayout(false);
-			this->infoChangeCust_groupBox->PerformLayout();
-			this->BillingChangeCust_groupBox->ResumeLayout(false);
-			this->BillingChangeCust_groupBox->PerformLayout();
-			this->DelChangeCust_groupBox->ResumeLayout(false);
-			this->DelChangeCust_groupBox->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -3471,35 +3497,41 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_ord->DataSource = this->oDs_orders;
 		this->dgv_ord->DataMember = "Rsl";
 	}
-private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->dgv_emp->Refresh();
-	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
-	this->dgv_emp->DataSource = this->oDs_employees;
-	this->dgv_emp->DataMember = "Rsl";
-}
-private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-	int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
-	this->dgv_emp->Refresh();
-	this->oSVCemployees->addEmp(this->text_chiefID->Text, this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text, streetNumber, this->text_streetName->Text, this->text_cityName->Text, this->text_ZIPcode->Text);
-	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
-	this->dgv_emp->DataSource = this->oDs_employees;
-	this->dgv_emp->DataMember = "Rsl";
-}
-private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->dgv_emp->Refresh();
-	this->oSVCemployees->eraseEmp(this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text);
-	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
-	this->dgv_emp->DataSource = this->oDs_employees;
-	this->dgv_emp->DataMember = "Rsl";
-}
-private: System::Void changeEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-	int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
-	int employeeID = System::Convert::ToInt64(this->text_employeeID->Text);
-	this->dgv_emp->Refresh();
-	this->oSVCemployees->updateEmp(employeeID, this->text_chiefID->Text, this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text, streetNumber, this->text_streetName->Text, this->text_cityName->Text, this->text_ZIPcode->Text);
-	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
-	this->dgv_emp->DataSource = this->oDs_employees;
-	this->dgv_emp->DataMember = "Rsl";
-}
+	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+////////
+/*Faire un displayEmps pour le placer pour avoir tous et faire un displayEmp pour un employer à l'aide des données dans le search*/
+////////
+		this->dgv_emp->Refresh();
+		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
+		this->dgv_emp->DataSource = this->oDs_employees;
+		this->dgv_emp->DataMember = "Rsl";
+	}
+	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+		int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
+		this->dgv_emp->Refresh();
+////////
+/*Attention le hire date doit être pris automatiquement dans la requête sql avec un GETDATE() car plus aucun champs ne permet de le rentrer*/
+////////
+		this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
+		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
+		this->dgv_emp->DataSource = this->oDs_employees;
+		this->dgv_emp->DataMember = "Rsl";
+	}
+	private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_emp->Refresh();
+		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd");
+		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
+		this->dgv_emp->DataSource = this->oDs_employees;
+		this->dgv_emp->DataMember = "Rsl";
+	}
+	private: System::Void changeEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+		int streetNumber = System::Convert::ToInt64(this->StreetNumChangeEmp->Text);
+		int employeeID = System::Convert::ToInt64(this->text_EmpIdChangeEmp->Text);
+		this->dgv_emp->Refresh();
+		this->oSVCemployees->updateEmp(employeeID, this->text_chiefIdChangeEmp->Text, this->text_fistNameChangeEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameChangeEmp->Text, this->text_cityNameChangeEmp->Text, this->text_ZipCodeChangeEmp->Text);
+		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
+		this->dgv_emp->DataSource = this->oDs_employees;
+		this->dgv_emp->DataMember = "Rsl";
+	}
 };
 }
