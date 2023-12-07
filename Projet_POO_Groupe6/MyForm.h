@@ -307,6 +307,7 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::Button^ changeEmp;
 	private: System::Windows::Forms::Button^ eraseEmp;
 	private: System::Windows::Forms::Button^ addEmp;
+private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 
 
 
@@ -483,6 +484,7 @@ namespace ProjetPOOGroupe6 {
 			this->VAT1 = (gcnew System::Windows::Forms::RadioButton());
 			this->dgv_simu = (gcnew System::Windows::Forms::DataGridView());
 			this->execution_button = (gcnew System::Windows::Forms::Button());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->mainTabControl->SuspendLayout();
 			this->customersTab->SuspendLayout();
 			this->socityGroupBox->SuspendLayout();
@@ -1138,6 +1140,7 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// ordersTab
 			// 
+			this->ordersTab->Controls->Add(this->dateTimePicker1);
 			this->ordersTab->Controls->Add(this->addItem);
 			this->ordersTab->Controls->Add(this->addPayment);
 			this->ordersTab->Controls->Add(this->meanOfPaymentGroupBox);
@@ -1389,6 +1392,7 @@ namespace ProjetPOOGroupe6 {
 			this->addOrder->TabIndex = 37;
 			this->addOrder->Text = L"Add order";
 			this->addOrder->UseVisualStyleBackColor = true;
+			this->addOrder->Click += gcnew System::EventHandler(this, &MyForm::addOrder_Click);
 			// 
 			// dgv_ord
 			// 
@@ -2036,6 +2040,13 @@ namespace ProjetPOOGroupe6 {
 			this->execution_button->Text = L"EXECUTE";
 			this->execution_button->UseVisualStyleBackColor = true;
 			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->Location = System::Drawing::Point(102, 472);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(200, 22);
+			this->dateTimePicker1->TabIndex = 46;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -2112,9 +2123,11 @@ namespace ProjetPOOGroupe6 {
 	}
 	private: System::Void displayOrder_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_ord->Refresh();
-		this->oDs_orders = this->oSVCorders->displayOrders("Rsl", "");
+		this->oDs_orders = this->oSVCorders->displayOrders("Rsl");
 		this->dgv_ord->DataSource = this->oDs_orders;
 		this->dgv_ord->DataMember = "Rsl";
 	}
+private: System::Void addOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
