@@ -11,7 +11,7 @@ System::Data::DataSet^ NS_svc::CLstock::displayProducts(System::String^ dataTabl
 {
 	System::String^ sql;
 
-	sql = this->oProd->selectProducts();
+	sql = this->oProd->selectProduct();
 
 	return this->oCad->getRows(sql, dataTableName);
 }
