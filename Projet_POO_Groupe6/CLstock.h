@@ -2,7 +2,7 @@
 #include "CLcad.h"
 #include "CLmapPRODUCT.h"
 
-namespace NS_svc
+namespace NS_Svc
 {
 	ref class CLstock
 	{

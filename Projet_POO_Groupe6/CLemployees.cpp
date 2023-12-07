@@ -1,13 +1,13 @@
 #include "pch.h"
 #include "CLemployees.h"
 
-NS_svc::CLemployees::CLemployees(void)
+NS_Svc::CLemployees::CLemployees(void)
 {
 	this->oCad = gcnew NS_Comp_Data::CLcad();
 	this->oEmp = gcnew NS_Comp::CLmapEMP();
 }
 
-System::Data::DataSet^ NS_svc::CLemployees::displayEmployees(System::String^ dataTableName)
+System::Data::DataSet^ NS_Svc::CLemployees::displayEmp(System::String^ dataTableName)
 {
 	System::String^ sql;
 
@@ -16,11 +16,10 @@ System::Data::DataSet^ NS_svc::CLemployees::displayEmployees(System::String^ dat
 	return this->oCad-> getRows(sql, dataTableName);
 }
 
-void NS_svc::CLemployees::addEmployee(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
+void NS_Svc::CLemployees::addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
 {
 	System::String^ sql;
 
-	this->oEmp->setId(employeeID);
 	this->oEmp->setChiefId(chiefID);
 	this->oEmp->setFirstName(firstName);
 	this->oEmp->setLastName(lastName);
@@ -35,7 +34,7 @@ void NS_svc::CLemployees::addEmployee(int employeeID, System::String^ chiefID, S
 	this->oCad->actionRows(sql);
 }
 
-void NS_svc::CLemployees::eraseEmployee(System::String^ firstName, System::String^ lastName, System::String^ hireDate)
+void NS_Svc::CLemployees::eraseEmp(System::String^ firstName, System::String^ lastName, System::String^ hireDate)
 {
 	System::String^ sql;
 
@@ -48,7 +47,7 @@ void NS_svc::CLemployees::eraseEmployee(System::String^ firstName, System::Strin
 	this->oCad->actionRows(sql);
 }
 
-void NS_svc::CLemployees::updateEmployee(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
+void NS_Svc::CLemployees::updateEmp(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
 {
 	System::String^ sql;
 

@@ -3,22 +3,45 @@
 
 System::String^ NS_Comp::CLmapEMP::selectEmployees(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "SELECT [empID], [chiefID], [lastName], [firstName], [hireDate], [streetNumber], [StreetName], [cityName], [cityZipCode] FROM [Projet_POO_G6].[dbo].[Employees] LEFT JOIN [Projet_POO_G6].[dbo].[Addresses] ON [Projet_POO_G6].[dbo].[Employees].[addrID] = [Projet_POO_G6].[dbo].[Addresses].[addrID] LEFT JOIN [Projet_POO_G6].[dbo].[Cities] ON [Projet_POO_G6].[dbo].[Addresses].[cityID] = [Projet_POO_G6].[dbo].[Cities].[cityID]"; //A compléter avec la bonne requête SQL
 }
 
 System::String^ NS_Comp::CLmapEMP::insertEmployee(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	System::String^ query = "DECLARE @cityID INT; "
+                            "DECLARE @addrID INT; "
+                            "INSERT INTO Cities (cityZipCode, cityName) VALUES ('" + ZipCode + "', '" + cityName + "'); "
+                            "SET @cityID = SCOPE_IDENTITY(); "
+                            "INSERT INTO Addresses (streetNumber, StreetName, cityID) VALUES (" + streetNumber + ", '" + streetName + "', @cityID); "
+                            "SET @addrID = SCOPE_IDENTITY(); "
+                            "INSERT INTO Employees (lastName, firstName, hireDate, chiefID, addrID) VALUES ('" + lastName + "', '" + firstName + "', '" + hireDate + "', " + ChiefID + ", @addrID);";
+
+    return query;
 }
 
 System::String^ NS_Comp::CLmapEMP::deleteEmployee(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "DELETE FROM [Projet_POO_G6].[dbo].[Employees] WHERE [lastName] = '" + lastName + "' AND [firstName] = '" + firstName + "' AND [hireDate] = '" + hireDate + "';             \
+            DELETE FROM [Projet_POO_G6].[dbo].[Addresses] WHERE [addrID] IN (SELECT [addrID] FROM [Projet_POO_G6].[dbo].[Employees] WHERE [lastName] = '" + lastName + "' AND [firstName] = '" + firstName + "' AND [hireDate] = '" + hireDate + "');    \
+            DELETE FROM [Projet_POO_G6].[dbo].[Cities] WHERE [cityID] IN (SELECT [cityID] FROM [Projet_POO_G6].[dbo].[Addresses] WHERE [addrID] IN (SELECT [addrID] FROM [Projet_POO_G6].[dbo].[Employees] WHERE [lastName] = '" + lastName + "' AND [firstName] = '" + firstName + "' AND [hireDate] = '" + hireDate + "'));";
 }
 
 System::String^ NS_Comp::CLmapEMP::updateEmployee(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "UPDATE [Projet_POO_G6].[dbo].[Employees] SET "
+		"[chiefID] = " + ChiefID + ", "
+		"[firstName] = '" + firstName + "', "
+		"[lastName] = '" + lastName + "', "
+		"[hireDate] = '" + hireDate + "' "
+		"WHERE [empID] = " + Id + "; "
+		"UPDATE [Projet_POO_G6].[dbo].[Addresses] SET "
+		"[streetNumber] = " + streetNumber + ", "
+		"[streetName] = '" + streetName + "' "
+		"WHERE [addrID] = (SELECT [addrID] FROM [Projet_POO_G6].[dbo].[Employees] WHERE [empID] = " + Id + "); "
+		"UPDATE [Projet_POO_G6].[dbo].[Cities] SET "
+		"[cityName] = '" + cityName + "', "
+		"[cityZipCode] = '" + ZipCode + "' "
+		"WHERE [cityID] = (SELECT [cityID] FROM [Projet_POO_G6].[dbo].[Addresses] WHERE [addrID] = (SELECT [addrID] FROM [Projet_POO_G6].[dbo].[Employees] WHERE [empID] = " + Id + "));";
 }
 
 void NS_Comp::CLmapEMP::setId(int id)

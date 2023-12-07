@@ -2,7 +2,7 @@
 #include "CLcad.h"
 #include "CLmapEMP.h"
 
-namespace NS_svc
+namespace NS_Svc
 {
 	ref class CLemployees
 	{
@@ -11,9 +11,9 @@ namespace NS_svc
 		NS_Comp::CLmapEMP^ oEmp;
 	public :
 		CLemployees(void);
-		System::Data::DataSet^ displayEmployees(System::String^ dataTableName);
-		void addEmployee(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
-		void eraseEmployee(System::String^ firstName, System::String^lastName, System::String^hireDate);
-		void updateEmployee(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
+		System::Data::DataSet^ displayEmp(System::String^ dataTableName);
+		void addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
+		void eraseEmp(System::String^ firstName, System::String^lastName, System::String^hireDate);
+		void updateEmp(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
 	};
 }

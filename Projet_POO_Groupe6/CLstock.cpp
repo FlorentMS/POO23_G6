@@ -1,13 +1,13 @@
 #include "pch.h"
 #include "CLstock.h"
 
-NS_svc::CLstock::CLstock(void)
+NS_Svc::CLstock::CLstock(void)
 {
 	this->oCad = gcnew NS_Comp_Data::CLcad();
 	this->oProd = gcnew NS_Comp::CLmapPRODUCT();
 }
 
-System::Data::DataSet^ NS_svc::CLstock::displayProducts(System::String^ dataTableName)
+System::Data::DataSet^ NS_Svc::CLstock::displayProducts(System::String^ dataTableName)
 {
 	System::String^ sql;
 
@@ -16,7 +16,7 @@ System::Data::DataSet^ NS_svc::CLstock::displayProducts(System::String^ dataTabl
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-System::Data::DataSet^ NS_svc::CLstock::displayProduct(System::String^ dataTableName, int ID)
+System::Data::DataSet^ NS_Svc::CLstock::displayProduct(System::String^ dataTableName, int ID)
 {
 	System::String^ sql;
 
@@ -25,7 +25,7 @@ System::Data::DataSet^ NS_svc::CLstock::displayProduct(System::String^ dataTable
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_svc::CLstock::addProduct(System::String^ name, System::String^ color, float priceET, int reorderThreshold, float VATrate, int quantity)
+void NS_Svc::CLstock::addProduct(System::String^ name, System::String^ color, float priceET, int reorderThreshold, float VATrate, int quantity)
 {
 	System::String^ sql;
 
@@ -41,7 +41,7 @@ void NS_svc::CLstock::addProduct(System::String^ name, System::String^ color, fl
 	this->oCad->actionRows(sql);
 }
 
-void NS_svc::CLstock::eraseProduct(int ID)
+void NS_Svc::CLstock::eraseProduct(int ID)
 {
 	System::String^ sql;
 
@@ -52,7 +52,7 @@ void NS_svc::CLstock::eraseProduct(int ID)
 	this->oCad->actionRows(sql);
 }
 
-void NS_svc::CLstock::changeProduct(int ID, System::String^ name, System::String^ color, float priceET, int reorderThreshold, float VATrate, int quantity)
+void NS_Svc::CLstock::changeProduct(int ID, System::String^ name, System::String^ color, float priceET, int reorderThreshold, float VATrate, int quantity)
 {
 	System::String^ sql;
 

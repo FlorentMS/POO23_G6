@@ -47,7 +47,7 @@ namespace ProjetPOOGroupe6 {
 	/// Own creation objects
 	/// </summary>
 	private: NS_Svc::CLorders^ oSVCorders;
-	//private: NS_Svc::CLemployees^ oSVCemployees;
+	private: NS_Svc::CLemployees^ oSVCemployees;
 	//private: NS_Svc::CLcustomers^ oSVCcustomers;
 	//private: NS_Svc::CLstock^ oSVCstock;
 	//private: NS_Svc::CLstatistics^ oSVCstatistics;
@@ -173,7 +173,7 @@ namespace ProjetPOOGroupe6 {
 	//Buttons
 	private: System::Windows::Forms::Button^ displayProducts;
 	private: System::Windows::Forms::Button^ changeProduct;
-	private: System::Windows::Forms::Button^ ereaseProduct;
+	private: System::Windows::Forms::Button^ eraseProduct;
 	private: System::Windows::Forms::Button^ addProduct;
 
 
@@ -918,6 +918,7 @@ namespace ProjetPOOGroupe6 {
 			this->displayEmp->TabIndex = 36;
 			this->displayEmp->Text = L"Display employees";
 			this->displayEmp->UseVisualStyleBackColor = true;
+			this->displayEmp->Click += gcnew System::EventHandler(this, &MyForm::displayEmp_Click);
 			// 
 			// changeEmp
 			// 
@@ -927,6 +928,7 @@ namespace ProjetPOOGroupe6 {
 			this->changeEmp->TabIndex = 35;
 			this->changeEmp->Text = L"Change employee";
 			this->changeEmp->UseVisualStyleBackColor = true;
+			this->changeEmp->Click += gcnew System::EventHandler(this, &MyForm::changeEmp_Click);
 			// 
 			// eraseEmp
 			// 
@@ -936,6 +938,7 @@ namespace ProjetPOOGroupe6 {
 			this->eraseEmp->TabIndex = 34;
 			this->eraseEmp->Text = L"Erase employee";
 			this->eraseEmp->UseVisualStyleBackColor = true;
+			this->eraseEmp->Click += gcnew System::EventHandler(this, &MyForm::eraseEmp_Click);
 			// 
 			// addEmp
 			// 
@@ -945,6 +948,7 @@ namespace ProjetPOOGroupe6 {
 			this->addEmp->TabIndex = 33;
 			this->addEmp->Text = L"Add employee";
 			this->addEmp->UseVisualStyleBackColor = true;
+			this->addEmp->Click += gcnew System::EventHandler(this, &MyForm::addEmp_Click);
 			// 
 			// empAdressGroupBox
 			// 
@@ -2105,7 +2109,7 @@ namespace ProjetPOOGroupe6 {
 	{
 		this->oSVCorders = gcnew NS_Svc::CLorders();
 		//this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
-		//this->oSVCemployees = gcnew NS_Svc::CLemployees();
+		this->oSVCemployees = gcnew NS_Svc::CLemployees();
 		//this->oSVCstock = gcnew NS_Svc::CLstock();
 		//this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
 		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();
@@ -2116,5 +2120,35 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_ord->DataSource = this->oDs_orders;
 		this->dgv_ord->DataMember = "Rsl";
 	}
+private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dgv_emp->Refresh();
+	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
+	this->dgv_emp->DataSource = this->oDs_employees;
+	this->dgv_emp->DataMember = "Rsl";
+}
+private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+	int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
+	this->dgv_emp->Refresh();
+	this->oSVCemployees->addEmp(this->text_chiefID->Text, this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text, streetNumber, this->text_streetName->Text, this->text_cityName->Text, this->text_ZIPcode->Text);
+	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
+	this->dgv_emp->DataSource = this->oDs_employees;
+	this->dgv_emp->DataMember = "Rsl";
+}
+private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dgv_emp->Refresh();
+	this->oSVCemployees->eraseEmp(this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text);
+	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
+	this->dgv_emp->DataSource = this->oDs_employees;
+	this->dgv_emp->DataMember = "Rsl";
+}
+private: System::Void changeEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+	int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
+	int employeeID = System::Convert::ToInt64(this->text_employeeID->Text);
+	this->dgv_emp->Refresh();
+	this->oSVCemployees->updateEmp(employeeID, this->text_chiefID->Text, this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text, streetNumber, this->text_streetName->Text, this->text_cityName->Text, this->text_ZIPcode->Text);
+	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
+	this->dgv_emp->DataSource = this->oDs_employees;
+	this->dgv_emp->DataMember = "Rsl";
+}
 };
 }
