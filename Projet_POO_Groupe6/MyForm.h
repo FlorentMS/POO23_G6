@@ -434,8 +434,8 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::Button^ changeEmp;
 	private: System::Windows::Forms::Button^ eraseEmp;
 	private: System::Windows::Forms::Button^ addEmp;
-private: System::Windows::Forms::Label^ label2;
-private: System::Windows::Forms::Label^ label1;
+
+
 
 
 
@@ -538,9 +538,7 @@ private: System::Windows::Forms::Label^ label1;
 			this->streetNameDel = (gcnew System::Windows::Forms::Label());
 			this->dgv_cust = (gcnew System::Windows::Forms::DataGridView());
 			this->employeesTab = (gcnew System::Windows::Forms::TabPage());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->AddressChangeEmp_groupBox = (gcnew System::Windows::Forms::GroupBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->text_ZipCodeChangeEmp = (gcnew System::Windows::Forms::TextBox());
 			this->text_cityNameChangeEmp = (gcnew System::Windows::Forms::TextBox());
 			this->text_streetNameChangeEmp = (gcnew System::Windows::Forms::TextBox());
@@ -1513,7 +1511,6 @@ private: System::Windows::Forms::Label^ label1;
 			// 
 			// employeesTab
 			// 
-			this->employeesTab->Controls->Add(this->label2);
 			this->employeesTab->Controls->Add(this->AddressChangeEmp_groupBox);
 			this->employeesTab->Controls->Add(this->InfoChangeEmp_groupBox);
 			this->employeesTab->Controls->Add(this->SearchCust_groupBox);
@@ -1530,18 +1527,8 @@ private: System::Windows::Forms::Label^ label1;
 			this->employeesTab->Text = L"Employees";
 			this->employeesTab->UseVisualStyleBackColor = true;
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(790, 290);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(44, 16);
-			this->label2->TabIndex = 42;
-			this->label2->Text = L"label2";
-			// 
 			// AddressChangeEmp_groupBox
 			// 
-			this->AddressChangeEmp_groupBox->Controls->Add(this->label1);
 			this->AddressChangeEmp_groupBox->Controls->Add(this->text_ZipCodeChangeEmp);
 			this->AddressChangeEmp_groupBox->Controls->Add(this->text_cityNameChangeEmp);
 			this->AddressChangeEmp_groupBox->Controls->Add(this->text_streetNameChangeEmp);
@@ -1556,15 +1543,6 @@ private: System::Windows::Forms::Label^ label1;
 			this->AddressChangeEmp_groupBox->TabIndex = 41;
 			this->AddressChangeEmp_groupBox->TabStop = false;
 			this->AddressChangeEmp_groupBox->Text = L"Address";
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(3, 18);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(44, 16);
-			this->label1->TabIndex = 41;
-			this->label1->Text = L"label1";
 			// 
 			// text_ZipCodeChangeEmp
 			// 
@@ -3417,7 +3395,6 @@ private: System::Windows::Forms::Label^ label1;
 			this->deliveryGroupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_cust))->EndInit();
 			this->employeesTab->ResumeLayout(false);
-			this->employeesTab->PerformLayout();
 			this->AddressChangeEmp_groupBox->ResumeLayout(false);
 			this->AddressChangeEmp_groupBox->PerformLayout();
 			this->InfoChangeEmp_groupBox->ResumeLayout(false);
