@@ -3,7 +3,12 @@
 
 System::String^ NS_Comp::CLmapORDER::selectOrders(void)
 {
-	return "";
+	return "Select orderRef					as Reference,		\
+		orderDate				as order_at,					\
+		deliveryDate			as deliver_at,					\
+		totalET					as total_exlucing_taxes,		\
+		completPaymentDate		as total_payment_at				\
+		From Projet_POO_G6.dbo.Orders; ";
 }
 
 System::String^ NS_Comp::CLmapORDER::selectOrder(void)

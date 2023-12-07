@@ -40,6 +40,9 @@ namespace ProjetPOOGroupe6 {
 				delete components;
 			}
 		}
+
+
+
 	/// <summary>
 	/// Own creation objects
 	/// </summary>
@@ -49,6 +52,9 @@ namespace ProjetPOOGroupe6 {
 	//private: NS_Svc::CLstock^ oSVCstock;
 	//private: NS_Svc::CLstatistics^ oSVCstatistics;
 	//priavte: NS_Svc::CLsimulations^oSVCsimulations;
+
+	private: System::Data::DataSet^ oDs_orders;
+
 
 	
 	/// <summary>
@@ -71,7 +77,7 @@ namespace ProjetPOOGroupe6 {
 	/// <summary>
 	/// Buttons on tab Simulation
 	/// </summary>
-	private: System::Windows::Forms::DataGridView^ SimulationsDataGridView;
+	private: System::Windows::Forms::DataGridView^ dgv_simu;
 	
 	//Groups
 	private: System::Windows::Forms::GroupBox^ VAT_groupBox;
@@ -103,7 +109,8 @@ namespace ProjetPOOGroupe6 {
 	/// <summary>
 	/// Buttons on tab Statistics
 	/// </summary>
-	private: System::Windows::Forms::DataGridView^ StatisticsDataGridView;
+	private: System::Windows::Forms::DataGridView^ dgv_stat;
+
 
 	//Groups
 	private: System::Windows::Forms::GroupBox^ DateStatistics_groupBox;
@@ -138,7 +145,8 @@ namespace ProjetPOOGroupe6 {
 	/// <summary>
 	/// Buttons on tab Stock
 	/// </summary>
-	private: System::Windows::Forms::DataGridView^ stockDataGridView;
+	private: System::Windows::Forms::DataGridView^ dgv_stock;
+
 	
 	//Groups
 	private: System::Windows::Forms::GroupBox^ ItemStock_GroupBox;
@@ -166,10 +174,12 @@ namespace ProjetPOOGroupe6 {
 
 
 
+
 	/// <summary>
 	/// Buttons on tab Orders
 	/// </summary>
-	private: System::Windows::Forms::DataGridView^ ordersDataGridView;
+	private: System::Windows::Forms::DataGridView^ dgv_ord;
+
 	
 	//Groups
 	private: System::Windows::Forms::GroupBox^ GlobalInfoOrder_GroupBox;
@@ -209,7 +219,8 @@ namespace ProjetPOOGroupe6 {
 	/// <summary>
 	/// Buttons on tab Customers
 	/// </summary>
-	private: System::Windows::Forms::DataGridView^ CustomersDataGridView;
+	private: System::Windows::Forms::DataGridView^ dgv_cust;
+
 	
 	//Groups
 	private: System::Windows::Forms::GroupBox^ customerGroupBox;
@@ -260,7 +271,8 @@ namespace ProjetPOOGroupe6 {
 	/// <summary>
 	/// Buttons on tab Employees
 	/// </summary>
-	private: System::Windows::Forms::DataGridView^ employeesDataGridView;
+	private: System::Windows::Forms::DataGridView^ dgv_emp;
+
 
 	//Groups
 	private: System::Windows::Forms::GroupBox^ empAdressGroupBox;
@@ -349,7 +361,7 @@ namespace ProjetPOOGroupe6 {
 			this->ZipCodeDel = (gcnew System::Windows::Forms::Label());
 			this->streetNumDel = (gcnew System::Windows::Forms::Label());
 			this->streetNameDel = (gcnew System::Windows::Forms::Label());
-			this->CustomersDataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->dgv_cust = (gcnew System::Windows::Forms::DataGridView());
 			this->employeesTab = (gcnew System::Windows::Forms::TabPage());
 			this->displayEmp = (gcnew System::Windows::Forms::Button());
 			this->changeEmp = (gcnew System::Windows::Forms::Button());
@@ -375,7 +387,7 @@ namespace ProjetPOOGroupe6 {
 			this->firstNameEmp = (gcnew System::Windows::Forms::Label());
 			this->IDemp = (gcnew System::Windows::Forms::Label());
 			this->text_employeeID = (gcnew System::Windows::Forms::TextBox());
-			this->employeesDataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->dgv_emp = (gcnew System::Windows::Forms::DataGridView());
 			this->ordersTab = (gcnew System::Windows::Forms::TabPage());
 			this->addItem = (gcnew System::Windows::Forms::Button());
 			this->addPayment = (gcnew System::Windows::Forms::Button());
@@ -402,7 +414,7 @@ namespace ProjetPOOGroupe6 {
 			this->changeOrder = (gcnew System::Windows::Forms::Button());
 			this->eraseOrder = (gcnew System::Windows::Forms::Button());
 			this->addOrder = (gcnew System::Windows::Forms::Button());
-			this->ordersDataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->dgv_ord = (gcnew System::Windows::Forms::DataGridView());
 			this->stockTab = (gcnew System::Windows::Forms::TabPage());
 			this->ItemStock_GroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->text_articleColor = (gcnew System::Windows::Forms::TextBox());
@@ -419,7 +431,7 @@ namespace ProjetPOOGroupe6 {
 			this->quantityStock = (gcnew System::Windows::Forms::Label());
 			this->itemIdStock = (gcnew System::Windows::Forms::Label());
 			this->text_stockArticleID = (gcnew System::Windows::Forms::TextBox());
-			this->stockDataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->dgv_stock = (gcnew System::Windows::Forms::DataGridView());
 			this->displayProducts = (gcnew System::Windows::Forms::Button());
 			this->changeProduct = (gcnew System::Windows::Forms::Button());
 			this->ereaseProduct = (gcnew System::Windows::Forms::Button());
@@ -447,7 +459,7 @@ namespace ProjetPOOGroupe6 {
 			this->button_lowestSelling = (gcnew System::Windows::Forms::Button());
 			this->button_averageCart = (gcnew System::Windows::Forms::Button());
 			this->button_underReorderThreshold = (gcnew System::Windows::Forms::Button());
-			this->StatisticsDataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->dgv_stat = (gcnew System::Windows::Forms::DataGridView());
 			this->simulationsTab = (gcnew System::Windows::Forms::TabPage());
 			this->markdown_groupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->markdown2 = (gcnew System::Windows::Forms::RadioButton());
@@ -464,7 +476,7 @@ namespace ProjetPOOGroupe6 {
 			this->VAT3 = (gcnew System::Windows::Forms::RadioButton());
 			this->VAT2 = (gcnew System::Windows::Forms::RadioButton());
 			this->VAT1 = (gcnew System::Windows::Forms::RadioButton());
-			this->SimulationsDataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->dgv_simu = (gcnew System::Windows::Forms::DataGridView());
 			this->execution_button = (gcnew System::Windows::Forms::Button());
 			this->mainTabControl->SuspendLayout();
 			this->customersTab->SuspendLayout();
@@ -472,31 +484,31 @@ namespace ProjetPOOGroupe6 {
 			this->customerGroupBox->SuspendLayout();
 			this->BillingGroupBox->SuspendLayout();
 			this->deliveryGroupBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomersDataGridView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_cust))->BeginInit();
 			this->employeesTab->SuspendLayout();
 			this->empAdressGroupBox->SuspendLayout();
 			this->infoEmpGroupBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->employeesDataGridView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_emp))->BeginInit();
 			this->ordersTab->SuspendLayout();
 			this->meanOfPaymentGroupBox->SuspendLayout();
 			this->ItemOrder_GroupeBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityItemOrders))->BeginInit();
 			this->GlobalInfoOrder_GroupBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ordersDataGridView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_ord))->BeginInit();
 			this->stockTab->SuspendLayout();
 			this->ItemStock_GroupBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityProductStock))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->stockDataGridView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_stock))->BeginInit();
 			this->statisticTab->SuspendLayout();
 			this->DateStatistics_groupBox->SuspendLayout();
 			this->CustomerStatistics_groupBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->StatisticsDataGridView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_stat))->BeginInit();
 			this->simulationsTab->SuspendLayout();
 			this->markdown_groupBox->SuspendLayout();
 			this->dicount_groupBox->SuspendLayout();
 			this->margin_groupBox->SuspendLayout();
 			this->VAT_groupBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SimulationsDataGridView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_simu))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// mainTabControl
@@ -535,7 +547,7 @@ namespace ProjetPOOGroupe6 {
 			this->customersTab->Controls->Add(this->custID);
 			this->customersTab->Controls->Add(this->BillingGroupBox);
 			this->customersTab->Controls->Add(this->deliveryGroupBox);
-			this->customersTab->Controls->Add(this->CustomersDataGridView);
+			this->customersTab->Controls->Add(this->dgv_cust);
 			this->customersTab->Location = System::Drawing::Point(4, 25);
 			this->customersTab->Name = L"customersTab";
 			this->customersTab->Padding = System::Windows::Forms::Padding(3);
@@ -866,15 +878,15 @@ namespace ProjetPOOGroupe6 {
 			this->streetNameDel->TabIndex = 24;
 			this->streetNameDel->Text = L"street name";
 			// 
-			// CustomersDataGridView
+			// dgv_cust
 			// 
-			this->CustomersDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CustomersDataGridView->Location = System::Drawing::Point(24, 20);
-			this->CustomersDataGridView->Name = L"CustomersDataGridView";
-			this->CustomersDataGridView->RowHeadersWidth = 51;
-			this->CustomersDataGridView->RowTemplate->Height = 24;
-			this->CustomersDataGridView->Size = System::Drawing::Size(672, 229);
-			this->CustomersDataGridView->TabIndex = 18;
+			this->dgv_cust->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_cust->Location = System::Drawing::Point(24, 20);
+			this->dgv_cust->Name = L"dgv_cust";
+			this->dgv_cust->RowHeadersWidth = 51;
+			this->dgv_cust->RowTemplate->Height = 24;
+			this->dgv_cust->Size = System::Drawing::Size(672, 229);
+			this->dgv_cust->TabIndex = 18;
 			// 
 			// employeesTab
 			// 
@@ -884,7 +896,7 @@ namespace ProjetPOOGroupe6 {
 			this->employeesTab->Controls->Add(this->addEmp);
 			this->employeesTab->Controls->Add(this->empAdressGroupBox);
 			this->employeesTab->Controls->Add(this->infoEmpGroupBox);
-			this->employeesTab->Controls->Add(this->employeesDataGridView);
+			this->employeesTab->Controls->Add(this->dgv_emp);
 			this->employeesTab->Location = System::Drawing::Point(4, 25);
 			this->employeesTab->Name = L"employeesTab";
 			this->employeesTab->Padding = System::Windows::Forms::Padding(3);
@@ -1109,15 +1121,15 @@ namespace ProjetPOOGroupe6 {
 			this->text_employeeID->Size = System::Drawing::Size(124, 22);
 			this->text_employeeID->TabIndex = 29;
 			// 
-			// employeesDataGridView
+			// dgv_emp
 			// 
-			this->employeesDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->employeesDataGridView->Location = System::Drawing::Point(49, 39);
-			this->employeesDataGridView->Name = L"employeesDataGridView";
-			this->employeesDataGridView->RowHeadersWidth = 51;
-			this->employeesDataGridView->RowTemplate->Height = 24;
-			this->employeesDataGridView->Size = System::Drawing::Size(672, 229);
-			this->employeesDataGridView->TabIndex = 18;
+			this->dgv_emp->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_emp->Location = System::Drawing::Point(49, 39);
+			this->dgv_emp->Name = L"dgv_emp";
+			this->dgv_emp->RowHeadersWidth = 51;
+			this->dgv_emp->RowTemplate->Height = 24;
+			this->dgv_emp->Size = System::Drawing::Size(672, 229);
+			this->dgv_emp->TabIndex = 18;
 			// 
 			// ordersTab
 			// 
@@ -1130,7 +1142,7 @@ namespace ProjetPOOGroupe6 {
 			this->ordersTab->Controls->Add(this->changeOrder);
 			this->ordersTab->Controls->Add(this->eraseOrder);
 			this->ordersTab->Controls->Add(this->addOrder);
-			this->ordersTab->Controls->Add(this->ordersDataGridView);
+			this->ordersTab->Controls->Add(this->dgv_ord);
 			this->ordersTab->Location = System::Drawing::Point(4, 25);
 			this->ordersTab->Name = L"ordersTab";
 			this->ordersTab->Size = System::Drawing::Size(768, 581);
@@ -1344,6 +1356,7 @@ namespace ProjetPOOGroupe6 {
 			this->displayOrder->TabIndex = 40;
 			this->displayOrder->Text = L"Display order";
 			this->displayOrder->UseVisualStyleBackColor = true;
+			this->displayOrder->Click += gcnew System::EventHandler(this, &MyForm::displayOrder_Click);
 			// 
 			// changeOrder
 			// 
@@ -1372,20 +1385,20 @@ namespace ProjetPOOGroupe6 {
 			this->addOrder->Text = L"Add order";
 			this->addOrder->UseVisualStyleBackColor = true;
 			// 
-			// ordersDataGridView
+			// dgv_ord
 			// 
-			this->ordersDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->ordersDataGridView->Location = System::Drawing::Point(49, 39);
-			this->ordersDataGridView->Name = L"ordersDataGridView";
-			this->ordersDataGridView->RowHeadersWidth = 51;
-			this->ordersDataGridView->RowTemplate->Height = 24;
-			this->ordersDataGridView->Size = System::Drawing::Size(672, 229);
-			this->ordersDataGridView->TabIndex = 18;
+			this->dgv_ord->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_ord->Location = System::Drawing::Point(49, 39);
+			this->dgv_ord->Name = L"dgv_ord";
+			this->dgv_ord->RowHeadersWidth = 51;
+			this->dgv_ord->RowTemplate->Height = 24;
+			this->dgv_ord->Size = System::Drawing::Size(672, 229);
+			this->dgv_ord->TabIndex = 18;
 			// 
 			// stockTab
 			// 
 			this->stockTab->Controls->Add(this->ItemStock_GroupBox);
-			this->stockTab->Controls->Add(this->stockDataGridView);
+			this->stockTab->Controls->Add(this->dgv_stock);
 			this->stockTab->Controls->Add(this->displayProducts);
 			this->stockTab->Controls->Add(this->changeProduct);
 			this->stockTab->Controls->Add(this->ereaseProduct);
@@ -1540,15 +1553,15 @@ namespace ProjetPOOGroupe6 {
 			this->text_stockArticleID->Size = System::Drawing::Size(236, 22);
 			this->text_stockArticleID->TabIndex = 33;
 			// 
-			// stockDataGridView
+			// dgv_stock
 			// 
-			this->stockDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->stockDataGridView->Location = System::Drawing::Point(51, 32);
-			this->stockDataGridView->Name = L"stockDataGridView";
-			this->stockDataGridView->RowHeadersWidth = 51;
-			this->stockDataGridView->RowTemplate->Height = 24;
-			this->stockDataGridView->Size = System::Drawing::Size(672, 229);
-			this->stockDataGridView->TabIndex = 41;
+			this->dgv_stock->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_stock->Location = System::Drawing::Point(51, 32);
+			this->dgv_stock->Name = L"dgv_stock";
+			this->dgv_stock->RowHeadersWidth = 51;
+			this->dgv_stock->RowTemplate->Height = 24;
+			this->dgv_stock->Size = System::Drawing::Size(672, 229);
+			this->dgv_stock->TabIndex = 41;
 			// 
 			// displayProducts
 			// 
@@ -1598,7 +1611,7 @@ namespace ProjetPOOGroupe6 {
 			this->statisticTab->Controls->Add(this->button_lowestSelling);
 			this->statisticTab->Controls->Add(this->button_averageCart);
 			this->statisticTab->Controls->Add(this->button_underReorderThreshold);
-			this->statisticTab->Controls->Add(this->StatisticsDataGridView);
+			this->statisticTab->Controls->Add(this->dgv_stat);
 			this->statisticTab->Location = System::Drawing::Point(4, 25);
 			this->statisticTab->Name = L"statisticTab";
 			this->statisticTab->Size = System::Drawing::Size(768, 581);
@@ -1804,15 +1817,15 @@ namespace ProjetPOOGroupe6 {
 			this->button_underReorderThreshold->Text = L"Products under the reorder threshold";
 			this->button_underReorderThreshold->UseVisualStyleBackColor = true;
 			// 
-			// StatisticsDataGridView
+			// dgv_stat
 			// 
-			this->StatisticsDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->StatisticsDataGridView->Location = System::Drawing::Point(51, 47);
-			this->StatisticsDataGridView->Name = L"StatisticsDataGridView";
-			this->StatisticsDataGridView->RowHeadersWidth = 51;
-			this->StatisticsDataGridView->RowTemplate->Height = 24;
-			this->StatisticsDataGridView->Size = System::Drawing::Size(672, 194);
-			this->StatisticsDataGridView->TabIndex = 18;
+			this->dgv_stat->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_stat->Location = System::Drawing::Point(51, 47);
+			this->dgv_stat->Name = L"dgv_stat";
+			this->dgv_stat->RowHeadersWidth = 51;
+			this->dgv_stat->RowTemplate->Height = 24;
+			this->dgv_stat->Size = System::Drawing::Size(672, 194);
+			this->dgv_stat->TabIndex = 18;
 			// 
 			// simulationsTab
 			// 
@@ -1820,7 +1833,7 @@ namespace ProjetPOOGroupe6 {
 			this->simulationsTab->Controls->Add(this->dicount_groupBox);
 			this->simulationsTab->Controls->Add(this->margin_groupBox);
 			this->simulationsTab->Controls->Add(this->VAT_groupBox);
-			this->simulationsTab->Controls->Add(this->SimulationsDataGridView);
+			this->simulationsTab->Controls->Add(this->dgv_simu);
 			this->simulationsTab->Controls->Add(this->execution_button);
 			this->simulationsTab->Location = System::Drawing::Point(4, 25);
 			this->simulationsTab->Name = L"simulationsTab";
@@ -1997,15 +2010,15 @@ namespace ProjetPOOGroupe6 {
 			this->VAT1->Text = L"5 %";
 			this->VAT1->UseVisualStyleBackColor = true;
 			// 
-			// SimulationsDataGridView
+			// dgv_simu
 			// 
-			this->SimulationsDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->SimulationsDataGridView->Location = System::Drawing::Point(51, 47);
-			this->SimulationsDataGridView->Name = L"SimulationsDataGridView";
-			this->SimulationsDataGridView->RowHeadersWidth = 51;
-			this->SimulationsDataGridView->RowTemplate->Height = 24;
-			this->SimulationsDataGridView->Size = System::Drawing::Size(672, 229);
-			this->SimulationsDataGridView->TabIndex = 17;
+			this->dgv_simu->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_simu->Location = System::Drawing::Point(51, 47);
+			this->dgv_simu->Name = L"dgv_simu";
+			this->dgv_simu->RowHeadersWidth = 51;
+			this->dgv_simu->RowTemplate->Height = 24;
+			this->dgv_simu->Size = System::Drawing::Size(672, 229);
+			this->dgv_simu->TabIndex = 17;
 			// 
 			// execution_button
 			// 
@@ -2028,6 +2041,7 @@ namespace ProjetPOOGroupe6 {
 			this->MinimumSize = System::Drawing::Size(790, 655);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->mainTabControl->ResumeLayout(false);
 			this->customersTab->ResumeLayout(false);
 			this->customersTab->PerformLayout();
@@ -2039,13 +2053,13 @@ namespace ProjetPOOGroupe6 {
 			this->BillingGroupBox->PerformLayout();
 			this->deliveryGroupBox->ResumeLayout(false);
 			this->deliveryGroupBox->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomersDataGridView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_cust))->EndInit();
 			this->employeesTab->ResumeLayout(false);
 			this->empAdressGroupBox->ResumeLayout(false);
 			this->empAdressGroupBox->PerformLayout();
 			this->infoEmpGroupBox->ResumeLayout(false);
 			this->infoEmpGroupBox->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->employeesDataGridView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_emp))->EndInit();
 			this->ordersTab->ResumeLayout(false);
 			this->meanOfPaymentGroupBox->ResumeLayout(false);
 			this->meanOfPaymentGroupBox->PerformLayout();
@@ -2054,18 +2068,18 @@ namespace ProjetPOOGroupe6 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityItemOrders))->EndInit();
 			this->GlobalInfoOrder_GroupBox->ResumeLayout(false);
 			this->GlobalInfoOrder_GroupBox->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ordersDataGridView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_ord))->EndInit();
 			this->stockTab->ResumeLayout(false);
 			this->ItemStock_GroupBox->ResumeLayout(false);
 			this->ItemStock_GroupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_quantityProductStock))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->stockDataGridView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_stock))->EndInit();
 			this->statisticTab->ResumeLayout(false);
 			this->DateStatistics_groupBox->ResumeLayout(false);
 			this->DateStatistics_groupBox->PerformLayout();
 			this->CustomerStatistics_groupBox->ResumeLayout(false);
 			this->CustomerStatistics_groupBox->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->StatisticsDataGridView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_stat))->EndInit();
 			this->simulationsTab->ResumeLayout(false);
 			this->markdown_groupBox->ResumeLayout(false);
 			this->markdown_groupBox->PerformLayout();
@@ -2075,11 +2089,27 @@ namespace ProjetPOOGroupe6 {
 			this->margin_groupBox->PerformLayout();
 			this->VAT_groupBox->ResumeLayout(false);
 			this->VAT_groupBox->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SimulationsDataGridView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_simu))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	
 
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oSVCorders = gcnew NS_Svc::CLorders();
+		//this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
+		//this->oSVCemployees = gcnew NS_Svc::CLemployees();
+		//this->oSVCstock = gcnew NS_Svc::CLstock();
+		//this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
+		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();
+	}
+	private: System::Void displayOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_ord->Refresh();
+		this->oDs_orders = this->oSVCorders->displayOrders("Rsl", "");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "Rsl";
+	}
 };
 }
