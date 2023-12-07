@@ -1,5 +1,43 @@
 #pragma once
-ref class CLmapORDER
-{
-};
 
+namespace NS_Comp
+{
+	ref class CLmapORDER
+	{
+	private:
+		System::String^ sSql;
+		int custID;
+		System::String^ orderRef;
+		System::String^ deliveryDate;
+		System::String^ completePaymentDate;
+		System::String^ meanOfPayment;
+		System::String^ paymentDate;
+		int productRef;
+		int copyNumber;
+	public:
+		System::String^ selectOrders(void);
+		System::String^ selectOrder(void);
+		System::String^ insertOrder(void);
+		System::String^ insertItem(void);
+		System::String^ insertPayment(void);
+		System::String^ deleteOrder(void);
+		System::String^ updateOrder(void);
+		void setCustID(int);
+		void setOrderRef(System::String^);
+		void setDeliveryDate(System::String^);
+		void setCompletePaymentDate(System::String^);
+		void setMeanOfPayment(System::String^);
+		void setPaymentDate(System::String^);
+		void setProductRef(int);
+		void setCopyNumber(int);
+		int getCustID(void);
+		System::String^ getOrderRef(void);
+		System::String^ getDeliveryDate(void);
+		System::String^ getCompletePaymentDate(void);
+		System::String^ getMeanOfPayment(void);
+		System::String^ getPaymentDate(void);
+		int getProductRef(void);
+		int getCopyNumber(void);
+
+	};
+}

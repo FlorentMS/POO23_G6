@@ -140,7 +140,7 @@ private: System::Windows::Forms::Button^ addOrder;
 private: System::Windows::Forms::DataGridView^ dataGridView6;
 private: System::Windows::Forms::Button^ displayProducts;
 private: System::Windows::Forms::Button^ changeProduct;
-private: System::Windows::Forms::Button^ ereaseProduct;
+private: System::Windows::Forms::Button^ eraseProduct;
 
 
 
@@ -443,7 +443,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->dataGridView6 = (gcnew System::Windows::Forms::DataGridView());
 			this->displayProducts = (gcnew System::Windows::Forms::Button());
 			this->changeProduct = (gcnew System::Windows::Forms::Button());
-			this->ereaseProduct = (gcnew System::Windows::Forms::Button());
+			this->eraseProduct = (gcnew System::Windows::Forms::Button());
 			this->addProduct = (gcnew System::Windows::Forms::Button());
 			this->statisticTab = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
@@ -1415,7 +1415,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->stockTab->Controls->Add(this->dataGridView6);
 			this->stockTab->Controls->Add(this->displayProducts);
 			this->stockTab->Controls->Add(this->changeProduct);
-			this->stockTab->Controls->Add(this->ereaseProduct);
+			this->stockTab->Controls->Add(this->eraseProduct);
 			this->stockTab->Controls->Add(this->addProduct);
 			this->stockTab->Location = System::Drawing::Point(4, 25);
 			this->stockTab->Name = L"stockTab";
@@ -1597,14 +1597,14 @@ private: System::Windows::Forms::Label^ label5;
 			this->changeProduct->Text = L"Change product";
 			this->changeProduct->UseVisualStyleBackColor = true;
 			// 
-			// ereaseProduct
+			// eraseProduct
 			// 
-			this->ereaseProduct->Location = System::Drawing::Point(590, 514);
-			this->ereaseProduct->Name = L"ereaseProduct";
-			this->ereaseProduct->Size = System::Drawing::Size(151, 33);
-			this->ereaseProduct->TabIndex = 38;
-			this->ereaseProduct->Text = L"Erase product";
-			this->ereaseProduct->UseVisualStyleBackColor = true;
+			this->eraseProduct->Location = System::Drawing::Point(590, 514);
+			this->eraseProduct->Name = L"eraseProduct";
+			this->eraseProduct->Size = System::Drawing::Size(151, 33);
+			this->eraseProduct->TabIndex = 38;
+			this->eraseProduct->Text = L"Erase product";
+			this->eraseProduct->UseVisualStyleBackColor = true;
 			// 
 			// addProduct
 			// 

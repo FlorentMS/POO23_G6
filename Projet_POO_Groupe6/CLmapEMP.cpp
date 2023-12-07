@@ -56,7 +56,7 @@ void NS_Comp::CLmapEMP::setCityName(System::String^ CityName)
 	this->cityName = CityName;
 }
 
-void NS_Comp::CLmapEMP::setHireName(System::String^ HireDate)
+void NS_Comp::CLmapEMP::setHireDate(System::String^ HireDate)
 {
 	this->hireDate = HireDate;
 }
