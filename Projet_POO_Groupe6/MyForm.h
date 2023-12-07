@@ -54,6 +54,11 @@ namespace ProjetPOOGroupe6 {
 	//priavte: NS_Svc::CLsimulations^oSVCsimulations;
 
 	private: System::Data::DataSet^ oDs_orders;
+	private: System::Data::DataSet^ oDs_employees;
+	private: System::Data::DataSet^ oDs_customers;
+	private: System::Data::DataSet^ oDs_stock;
+	private: System::Data::DataSet^ oDs_statistics;
+	private: System::Data::DataSet^ oDs_simulations;
 
 
 	
