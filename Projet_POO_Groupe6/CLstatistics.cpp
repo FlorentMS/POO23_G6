@@ -45,10 +45,13 @@ System::Data::DataSet^ NS_Svc::CLstatistics::moreSellProducts(System::String^ da
 	return this->oCad->getRows(sql, dataTable);
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::lessSellProducts(System::String^, System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::lessSellProducts(System::String^ dataTable)
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	System::String^ sql;
+
+	sql = this->oSTAT->selectLessSellProducts();
+
+	return this->oCad->getRows(sql, dataTable);
 }
 
 System::Data::DataSet^ NS_Svc::CLstatistics::totalAmount(System::String^, System::String^, System::String^, System::String^)

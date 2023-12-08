@@ -3058,6 +3058,7 @@ namespace ProjetPOOGroupe6 {
 			this->button_lowestSelling->TabIndex = 22;
 			this->button_lowestSelling->Text = L"10 lowest-selling items";
 			this->button_lowestSelling->UseVisualStyleBackColor = true;
+			this->button_lowestSelling->Click += gcnew System::EventHandler(this, &MyForm::button_lowestSelling_Click);
 			// 
 			// button_averageCart
 			// 
@@ -3584,6 +3585,13 @@ private: System::Void button_bestSelling_Click(System::Object^ sender, System::E
 
 	this->dgv_stat->Refresh();
 	this->oDs_statistics = this->oSVCstatistics->moreSellProducts("Rsl");
+	this->dgv_stat->DataSource = this->oDs_statistics;
+	this->dgv_stat->DataMember = "Rsl";
+}
+private: System::Void button_lowestSelling_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->dgv_stat->Refresh();
+	this->oDs_statistics = this->oSVCstatistics->lessSellProducts("Rsl");
 	this->dgv_stat->DataSource = this->oDs_statistics;
 	this->dgv_stat->DataMember = "Rsl";
 }
