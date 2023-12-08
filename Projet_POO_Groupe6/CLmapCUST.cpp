@@ -4,21 +4,20 @@
 System::String^ NS_Comp::CLmapCUST::selectCustomers()
 {
 	return "SELECT [Projet_POO_G6].[dbo].[Customers].[custNumber], [lastName], [firstName], [birthDate], [firstBuyDate],\
-		[Projet_POO_G6].[dbo].[Socities].[socityID], [socity],\
 		[addrDel].[streetNumber] AS[delStreetNumber],\
 		[addrDel].[StreetName] AS[delStreetName],\
 		[CitiesDel].[cityZipCode] AS[delCityZipCode],\
 		[CitiesDel].[cityName] AS[delCityName],\
-		[addrBill].[streetNumber] AS[billStreetNumber],\
-		[addrBill].[StreetName] AS[billStreetName],\
+		[addrBil].[streetNumber] AS[billStreetNumber],\
+		[addrBil].[StreetName] AS[billStreetName],\
 		[CitiesBill].[cityZipCode] AS[billCityZipCode],\
 		[CitiesBill].[cityName] AS[billCityName]\
 		FROM[Projet_POO_G6].[dbo].[Customers]\
-		JOIN[Projet_POO_G6].[dbo].[Socities] ON[Projet_POO_G6].[dbo].[Customers].[socityID] = [Projet_POO_G6].[dbo].[Socities].[socityID]\
+		LEFT JOIN[Projet_POO_G6].[dbo].[Socities] ON[Projet_POO_G6].[dbo].[Customers].[socityID] = [Projet_POO_G6].[dbo].[Socities].[socityID]\
 		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrDel] ON[Projet_POO_G6].[dbo].[Customers].[addrDel] = [addrDel].[addrID]\
 		JOIN[Projet_POO_G6].[dbo].[Cities] AS[CitiesDel] ON[addrDel].[cityID] = [CitiesDel].[cityID]\
-		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrBill] ON[Projet_POO_G6].[dbo].[Customers].[addrBill] = [addrBill].[addrID]\
-		JOIN[Projet_POO_G6].[dbo].[Cities] AS[CitiesBill] ON[addrBill].[cityID] = [CitiesBill].[cityID]";
+		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrBil] ON[Projet_POO_G6].[dbo].[Customers].[addrBil] = [addrBil].[addrID]\
+		JOIN[Projet_POO_G6].[dbo].[Cities] AS[CitiesBill] ON[addrBil].[cityID] = [CitiesBill].[cityID]";
 }
 
 System::String^ NS_Comp::CLmapCUST::insertCustomer()
@@ -35,14 +34,30 @@ System::String^ NS_Comp::CLmapCUST::insertCustomer()
 			INSERT INTO Addresses(streetNumber, streetName, cityID) VALUES\
 			(" + this->streetNumberBil + ", '" + this->streetNameBil + "', @cityIDbil);\
 			SET @addrIDbil = SCOPE_IDENTITY();\
-			INSERT INTO Customers(lastName, firstName, birthDate, addrBill, addrDel) VALUES\
+			INSERT INTO Customers(lastName, firstName, birthDate, addrBil, addrDel) VALUES\
 			('" + this->lastName + "', '" + this->firstName + "', '" + this->birthDate + "', @addrIDbil, @addrIDdel);\
 	";
 }
 
 System::String^ NS_Comp::CLmapCUST::deleteCustomer()
 {
-	return "";
+	return "DECLARE @BiladdrID INT = (SELECT addrID FROM Addresses a JOIN Customers c ON  a.addrID = c.addrBil \
+			WHERE lastName = '" + this->lastName + "' AND firstName = '" + this->firstName + "' AND birthDate = '" + this->birthDate + "');\
+			\
+			DECLARE @DeladdrID INT = (SELECT addrID FROM Addresses a JOIN Customers c ON  a.addrID = c.addrDel\
+			WHERE lastName = '" + this->lastName + "' AND firstName = '" + this->firstName + "' AND birthDate = '" + this->birthDate + "');\
+			\
+			--Suppression de la ligne dans la table Customers\
+				DELETE FROM Customers\
+				WHERE lastName = '" + this->lastName + "' AND firstName = '" + this->firstName + "' AND birthDate = '" + this->birthDate + "';\
+			\
+			--Suppression de l'adresse de facturation\
+				DELETE FROM Addresses\
+				WHERE addrID = @BiladdrID;\
+			\
+			--Suppression de l'adresse de livraison\
+				DELETE FROM Addresses\
+				WHERE addrID = @DeladdrID; ";
 }
 
 System::String^ NS_Comp::CLmapCUST::updateCustomer()

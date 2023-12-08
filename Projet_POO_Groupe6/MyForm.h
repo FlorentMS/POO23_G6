@@ -1221,6 +1221,7 @@ namespace ProjetPOOGroupe6 {
 			this->addCust->TabIndex = 29;
 			this->addCust->Text = L"Add customer";
 			this->addCust->UseVisualStyleBackColor = true;
+			this->addCust->Click += gcnew System::EventHandler(this, &MyForm::addCust_Click);
 			// 
 			// socityGroupBox
 			// 
@@ -3465,8 +3466,6 @@ namespace ProjetPOOGroupe6 {
 	{
 		this->oSVCorders = gcnew NS_Svc::CLorders();
 		this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
-		//this->oSVCemployees = gcnew NS_Svc::CLemployees();
-		//this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
 		this->oSVCemployees = gcnew NS_Svc::CLemployees();
 		//this->oSVCstock = gcnew NS_Svc::CLstock();
 		//this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
@@ -3505,7 +3504,7 @@ namespace ProjetPOOGroupe6 {
 	}
 	private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_emp->Refresh();
-		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd");
+		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
@@ -3519,5 +3518,14 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
 	}
+private: System::Void addCust_Click(System::Object^ sender, System::EventArgs^ e) {
+	int bilingStreetN = System::Convert::ToInt32(this->text_bilingStreetN->Text);
+	int deliveryStreetN = System::Convert::ToInt32(this->text_deliveryStreetN->Text);
+	this->oSVCcustomers->addCustomers(this->text_custLastName->Text, this->text_custFirstName->Text, (this->birthDateCust_datePicker->Value).ToString("yyy-MM-dd"), bilingStreetN, deliveryStreetN, this->text_bilingStreetName->Text, this->text_deliveryStreetName->Text, this->text_bilingCityName->Text, this->text_deliveryCityName->Text, this->text_bilingZIPcode->Text, this->text_deliveryZIPcode->Text);
+	this->dgv_cust->Refresh();
+	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
+	this->dgv_cust->DataSource = this->oDs_customers;
+	this->dgv_cust->DataMember = "Rsl";
+}
 };
 }
