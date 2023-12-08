@@ -58,7 +58,23 @@ void NS_Svc::CLcustomers::eraseCustomers(System::String^ lastname, System::Strin
 	this->oCad->actionRows(sql);
 }
 
-void NS_Svc::CLcustomers::updateCustomers(System::String^ lastname, System::String^ firstname, System::String^ birthdate, int SnuBil, int SnuDel, System::String^ SnaBil, System::String^ SnaDel, System::String^ CnBil, System::String^ CnDel, System::String^ ZcBil, System::String^ ZcDel)
+void NS_Svc::CLcustomers::updateCustomers(int custNum, System::String^ lastname, System::String^ firstname, System::String^ birthdate, int SnuBil, int SnuDel, System::String^ SnaBil, System::String^ SnaDel, System::String^ CnBil, System::String^ CnDel, System::String^ ZcBil, System::String^ ZcDel)
 {
-	throw gcnew System::NotImplementedException();
+	System::String^ sql;
+
+	this->oCUST->setCustNumber(custNum);
+	this->oCUST->setLastName(lastname);
+	this->oCUST->setFirstName(firstname);
+	this->oCUST->setBirthDate(birthdate);
+	this->oCUST->setstreetNumberBil(SnuBil);
+	this->oCUST->setstreetNumberDel(SnuDel);
+	this->oCUST->setStreetNameBil(SnaBil);
+	this->oCUST->setStreetNameDel(SnaDel);
+	this->oCUST->setCityNameBil(CnBil);
+	this->oCUST->setCityNameDel(CnDel);
+	this->oCUST->setZipCodeBil(ZcBil);
+	this->oCUST->setZipCodeDel(ZcDel);
+	sql = this->oCUST->updateCustomer();
+
+	this->oCad->actionRows(sql);
 }

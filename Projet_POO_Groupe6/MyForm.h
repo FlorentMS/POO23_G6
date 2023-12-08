@@ -1126,6 +1126,7 @@ namespace ProjetPOOGroupe6 {
 			this->changeCust->TabIndex = 31;
 			this->changeCust->Text = L"Change customer";
 			this->changeCust->UseVisualStyleBackColor = true;
+			this->changeCust->Click += gcnew System::EventHandler(this, &MyForm::changeCust_Click);
 			// 
 			// DelChangeCust_groupBox
 			// 
@@ -3539,6 +3540,16 @@ private: System::Void eraseCust_Click(System::Object^ sender, System::EventArgs^
 private: System::Void displayCust_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dgv_cust->Refresh();
 	this->oDs_customers = this->oSVCcustomers->displayCustomer("Rsl", this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
+	this->dgv_cust->DataSource = this->oDs_customers;
+	this->dgv_cust->DataMember = "Rsl";
+}
+private: System::Void changeCust_Click(System::Object^ sender, System::EventArgs^ e) {
+	int bilingStreetNchange = System::Convert::ToInt32(this->text_streetNumDelChangeCust->Text);
+	int deliveryStreetNchange = System::Convert::ToInt32(this->text_streetNumBillingChangeCust->Text);
+	int custNum = System::Convert::ToInt32(this->text_customerIdChangeCust->Text);
+	this->oSVCcustomers->updateCustomers(custNum, this->text_lastNameChangeCust->Text, this->text_firstNameChangeCust->Text, (this->birthChangeCust_datePicker->Value).ToString("yyy-MM-dd"), bilingStreetNchange, deliveryStreetNchange, this->text_streetNameBillingChangeCust->Text, this->text_streetNameDelChangeCust->Text, this->text_cityNameBillingChangeCust->Text, this->text_cityNameDelChangeCust->Text, this->text_ZipCodeBillingChangeCust->Text, this->text_ZipCodeDelChangeCust->Text);
+	this->dgv_cust->Refresh();
+	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
 	this->dgv_cust->DataSource = this->oDs_customers;
 	this->dgv_cust->DataMember = "Rsl";
 }

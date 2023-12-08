@@ -4,14 +4,14 @@
 System::String^ NS_Comp::CLmapCUST::selectCustomers()
 {
 	return "SELECT [Projet_POO_G6].[dbo].[Customers].[custNumber], [lastName], [firstName], [birthDate], [firstBuyDate],\
-		[addrDel].[streetNumber] AS[delStreetNumber],\
-		[addrDel].[StreetName] AS[delStreetName],\
-		[CitiesDel].[cityZipCode] AS[delCityZipCode],\
-		[CitiesDel].[cityName] AS[delCityName],\
 		[addrBil].[streetNumber] AS[billStreetNumber],\
 		[addrBil].[StreetName] AS[billStreetName],\
 		[CitiesBill].[cityZipCode] AS[billCityZipCode],\
-		[CitiesBill].[cityName] AS[billCityName]\
+		[CitiesBill].[cityName] AS[billCityName],\
+		[addrDel].[streetNumber] AS[delStreetNumber],\
+		[addrDel].[StreetName] AS[delStreetName],\
+		[CitiesDel].[cityZipCode] AS[delCityZipCode],\
+		[CitiesDel].[cityName] AS[delCityName]\
 		FROM[Projet_POO_G6].[dbo].[Customers]\
 		LEFT JOIN[Projet_POO_G6].[dbo].[Socities] ON[Projet_POO_G6].[dbo].[Customers].[socityID] = [Projet_POO_G6].[dbo].[Socities].[socityID]\
 		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrDel] ON[Projet_POO_G6].[dbo].[Customers].[addrDel] = [addrDel].[addrID]\
@@ -23,14 +23,14 @@ System::String^ NS_Comp::CLmapCUST::selectCustomers()
 System::String^ NS_Comp::CLmapCUST::selectCustomer()
 {
 	return "SELECT [Projet_POO_G6].[dbo].[Customers].[custNumber], [lastName], [firstName], [birthDate], [firstBuyDate],\
-		[addrDel].[streetNumber] AS[delStreetNumber],\
-		[addrDel].[StreetName] AS[delStreetName],\
-		[CitiesDel].[cityZipCode] AS[delCityZipCode],\
-		[CitiesDel].[cityName] AS[delCityName],\
 		[addrBil].[streetNumber] AS[billStreetNumber],\
 		[addrBil].[StreetName] AS[billStreetName],\
 		[CitiesBill].[cityZipCode] AS[billCityZipCode],\
-		[CitiesBill].[cityName] AS[billCityName]\
+		[CitiesBill].[cityName] AS[billCityName],\
+		[addrDel].[streetNumber] AS[delStreetNumber],\
+		[addrDel].[StreetName] AS[delStreetName],\
+		[CitiesDel].[cityZipCode] AS[delCityZipCode],\
+		[CitiesDel].[cityName] AS[delCityName]\
 		FROM[Projet_POO_G6].[dbo].[Customers]\
 		LEFT JOIN[Projet_POO_G6].[dbo].[Socities] ON[Projet_POO_G6].[dbo].[Customers].[socityID] = [Projet_POO_G6].[dbo].[Socities].[socityID]\
 		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrDel] ON[Projet_POO_G6].[dbo].[Customers].[addrDel] = [addrDel].[addrID]\
@@ -79,7 +79,32 @@ System::String^ NS_Comp::CLmapCUST::deleteCustomer()
 
 System::String^ NS_Comp::CLmapCUST::updateCustomer()
 {
-	return "";
+	return "UPDATE Customers\
+			SET\
+			lastName = '" + this->lastName + "',\
+			firstName = '" + this->firstName + "',\
+			birthDate = '" + this->birthDate + "',\
+			firstBuyDate = NULL,\
+			addrBil = (SELECT addrBil FROM Customers WHERE custNumber = " + this->custNumber + "),\
+			addrDel = (SELECT addrDel FROM Customers WHERE custNumber = " + this->custNumber + ")\
+			WHERE\
+			custNumber = " + this->custNumber + ";\
+			\
+			UPDATE Addresses\
+			SET\
+			streetNumber = " + this->streetNumberDel + ",\
+			StreetName = '" + this->streetNameDel + "',\
+			cityID = (SELECT cityID FROM Cities WHERE cityName = '" + this->cityNameDel + "')\
+			WHERE\
+			addrID = (SELECT addrDel FROM Customers WHERE custNumber = " + this->custNumber + ")\
+			\
+			UPDATE Addresses\
+			SET\
+			streetNumber = " + this->streetNumberBil + ",\
+			StreetName = '" + this->streetNameBil + "',\
+			cityID = (SELECT cityID FROM Cities WHERE cityName = '" + this->cityNameBil + "')\
+			WHERE\
+			addrID = (SELECT addrBil FROM Customers WHERE custNumber = " + this->custNumber + ")";
 }
 
 
