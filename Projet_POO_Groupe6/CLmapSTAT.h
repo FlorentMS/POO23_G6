@@ -8,12 +8,13 @@ namespace NS_Comp
 		//System::String^ sSql;
 	public :
 		System::String^ selecAverageBasket(void);
-		System::String^ selectInventoryCostValue(void);
-		System::String^ selectInventorySellValue(void);
-		System::String^ selectProductsMoreSell(void);
-		System::String^ selectProductsLessSell(void);
-		System::String^ selectTotalAmountID(void);
-		System::String^ selectTotalAmount(void);
+		System::String^ selectCalculateTurnover(void);
 		System::String^ selectProductUnderThreshold(void);
+		System::String^ selectMoreSellProducts(void);
+		System::String^ selectLessSellProducts(void);
+		System::String^ selectTotalAmount(void);
+		System::String^ selectRetailValueInventory(void);
+		System::String^ selectPurchaseValueInventory(void);
+
 	};
 }
