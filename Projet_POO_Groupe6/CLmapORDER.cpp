@@ -32,14 +32,10 @@ System::String^ NS_Comp::CLmapORDER::selectOrder(void)
 
 System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 {
-	return "/*declare @IdCust as int; set @IdCust = "+ this->custID +";																																									\
+	return "declare @IdCust as int; set @IdCust = "+ this->custID +";																																									\
 			declare @Refprod as int; set @Refprod = "+ this->productRef +";																																								\
 			declare @nbcopy as int; set @nbcopy = "+ this->copyNumber +";																																								\
-			declare @colorProd as char(12); set @colorProd = '" + this->colorProd + "';*/																																				\
-			declare @IdCust as int; set @IdCust = 3;																																													\
-			declare @Refprod as int; set @Refprod = 6;																																													\
-			declare @nbcopy as int; set @nbcopy = 1;																																													\
-			declare @colorProd as char(12); set @colorProd = 'Bleu';																																									\
+			declare @colorProd as char(12); set @colorProd = '" + this->colorProd + "';																																				\
 																																																										\
 			declare @NumberOrderCust as int; set @NumberOrderCust = (select CONVERT(int, SUBSTRING(orderRef, 12, 3))																													\
 				From Projet_POO_G6.dbo.Orders																																															\
@@ -79,20 +75,6 @@ System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 			where Products.productRef = @Refprod);																																														\
 																																																										\
 			Insert into[Projet_POO_G6].[dbo].[Orders](orderRef, deliveryDate, orderDate, completPaymentDate, custNumber)																												\
-				values(@orderID, '2021-12-21', GETDATE(), '2021-02-11', @IdCust);																																						\
-																																																										\
-			Insert into[Projet_POO_G6].[dbo].[Payments](orderRef, meanOfPayment, paymentDate)																																			\
-				values(@orderID, 'cash', '2022-01-02');																																													\
-																																																										\
-			Insert into[Projet_POO_G6].[dbo].[order_product](orderRef, colorProductID, productVAT, reduceProductPrice, copyNumber)																										\
-				values(@orderID, @colorID, @VAT, @reducePrice, @nbcopy);																																								\
-																																																										\
-																																																										\
-			Update Projet_POO_G6.dbo.Orders																																																\
-				set Orders.totalET = (Select SUM(reduceProductPrice) From Projet_POO_G6.dbo.order_product where orderRef = @orderID group by orderRef)																					\
-			where orderRef = @orderID;																																												\
-																																																										\
-			/*Insert into[Projet_POO_G6].[dbo].[Orders](orderRef, deliveryDate, orderDate, completPaymentDate, custNumber)																												\
 				values(@orderID, '" + this->deliveryDate + "', GETDATE(), '"+ this->completePaymentDate +"', @IdCust);																														\
 																																																										\
 			Insert into[Projet_POO_G6].[dbo].[Payments](orderRef, meanOfPayment, paymentDate)																																			\
@@ -104,7 +86,7 @@ System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 																																																										\
 			Update Projet_POO_G6.dbo.Orders																																																\
 				set Orders.totalET = (Select SUM(reduceProductPrice) From Projet_POO_G6.dbo.order_product where orderRef = @orderID group by orderRef)																					\
-			where orderRef = @orderID; */";
+			where orderRef = @orderID;";
 }
 
 System::String^ NS_Comp::CLmapORDER::insertItem(void)
@@ -194,9 +176,9 @@ void NS_Comp::CLmapORDER::setProductColor(System::String^ color)
 	this->colorProd = color;
 }
 
-void NS_Comp::CLmapORDER::setProductRef(int CpNbr)
+void NS_Comp::CLmapORDER::setProductRef(int prodRef)
 {
-    this->copyNumber = CpNbr;
+    this->productRef = prodRef;
 }
 
 void NS_Comp::CLmapORDER::setCopyNumber(int CpNbr)

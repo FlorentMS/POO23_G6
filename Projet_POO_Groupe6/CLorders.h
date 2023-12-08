@@ -23,7 +23,7 @@ namespace NS_Svc {
 		
 		void addItem(System::String^ ProductRef, System::String^ color, System::String^ copyNum);
 		
-		void addPayment(System::String^, System::String^);
+		void addPayment(System::String^ MeanOfPay, System::String^ PayDate);
 
 
 		void eraseOrder(System::String^);

@@ -2262,9 +2262,9 @@ namespace ProjetPOOGroupe6 {
 			this->orderIdChangeOrder->AutoSize = true;
 			this->orderIdChangeOrder->Location = System::Drawing::Point(21, 18);
 			this->orderIdChangeOrder->Name = L"orderIdChangeOrder";
-			this->orderIdChangeOrder->Size = System::Drawing::Size(55, 16);
+			this->orderIdChangeOrder->Size = System::Drawing::Size(99, 16);
 			this->orderIdChangeOrder->TabIndex = 28;
-			this->orderIdChangeOrder->Text = L"order ID";
+			this->orderIdChangeOrder->Text = L"order reference";
 			// 
 			// searchOrder_groupBox
 			// 
@@ -2324,6 +2324,7 @@ namespace ProjetPOOGroupe6 {
 			this->addItem->TabIndex = 45;
 			this->addItem->Text = L"Add another item";
 			this->addItem->UseVisualStyleBackColor = true;
+			this->addItem->Click += gcnew System::EventHandler(this, &MyForm::addItem_Click);
 			// 
 			// addPayment
 			// 
@@ -2333,6 +2334,7 @@ namespace ProjetPOOGroupe6 {
 			this->addPayment->TabIndex = 44;
 			this->addPayment->Text = L"Add another payment";
 			this->addPayment->UseVisualStyleBackColor = true;
+			this->addPayment->Click += gcnew System::EventHandler(this, &MyForm::addPayment_Click);
 			// 
 			// GlobalInfoAddOrder_GroupBox
 			// 
@@ -3498,9 +3500,13 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_ord->DataMember = "RslSpe";
 	}
 	private: System::Void addOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_ord->Refresh(); 
 		this->oSVCorders->addOrder((this->deliveryAddOrder_DatePicker->Value).ToString("yyyy-MM-dd"), (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
 			this->text_customerIdAddOrders->Text,this->comboBox_meanOfPaymentAddOrder->Text, (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
 			this->text_ItemIdAddOrder->Text,this->ItemColorAddOrder_comboBox->Text, this->UpDown_quantityItemAddOrders->Text);
+		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslAll";
 	}
 	private: System::Void eraseOrder_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_ord->Refresh(); 
@@ -3509,6 +3515,33 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_ord->DataSource = this->oDs_orders;
 		this->dgv_ord->DataMember = "RslAll";
 	}
+	private: System::Void addItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_ord->Refresh();
+		this->oSVCorders->addItem(this->text_ItemIdAddOrder->Text, this->ItemColorAddOrder_comboBox->Text, this->UpDown_quantityItemAddOrders->Text);
+		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslAll";
+	}
+	private: System::Void addPayment_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_ord->Refresh();
+		this->oSVCorders->addPayment(this->comboBox_meanOfPaymentAddOrder->Text, this->PaymentDueDateAddOrder_datePicker->Text);
+		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslAll";
+	}
+		   /*		private: System::Windows::Forms::GroupBox^ meanOfPaymentAddOrder_GroupBox;
+			private: System::Windows::Forms::Label^ meanOfPaymentAddOrder;
+			private: System::Windows::Forms::Label^ paymentDueDateAddOrder;
+			private: System::Windows::Forms::ComboBox^ comboBox_meanOfPaymentAddOrder;
+			private: System::Windows::Forms::DateTimePicker^ PaymentDueDateAddOrder_datePicker;
+
+		private: System::Windows::Forms::GroupBox^ ItemAddOrder_GroupeBox;
+			private: System::Windows::Forms::Label^ ItemColorAddOrder;
+			private: System::Windows::Forms::Label^ itemIDAddOrder;
+			private: System::Windows::Forms::Label^ quantityItemsAddOrder;
+			private: System::Windows::Forms::ComboBox^ ItemColorAddOrder_comboBox;
+			private: System::Windows::Forms::TextBox^ text_ItemIdAddOrder;
+			private: System::Windows::Forms::NumericUpDown^ UpDown_quantityItemAddOrders;*/
 
 
 
