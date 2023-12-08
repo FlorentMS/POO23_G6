@@ -29,7 +29,13 @@ System::String^ NS_Comp::CLmapSTAT::selectProductUnderThreshold(void)
 
 System::String^ NS_Comp::CLmapSTAT::selectMoreSellProducts(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "SELECT TOP 10 p.productRef, p.productName, ISNULL(SUM(op.copyNumber), 0) AS TotalVentes\
+			FROM Products p\
+			LEFT JOIN characteristicsProd cp ON p.productRef = cp.productRef\
+			LEFT JOIN order_product op ON cp.colorProductID = op.colorProductID\
+			LEFT JOIN Orders o ON op.orderRef = o.orderRef\
+			GROUP BY p.productRef, p.productName\
+			ORDER BY TotalVentes DESC; ";
 }
 
 System::String^ NS_Comp::CLmapSTAT::selectLessSellProducts(void)

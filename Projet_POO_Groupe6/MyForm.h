@@ -3039,6 +3039,7 @@ namespace ProjetPOOGroupe6 {
 			this->button_bestSelling->TabIndex = 25;
 			this->button_bestSelling->Text = L"10 best-selling items";
 			this->button_bestSelling->UseVisualStyleBackColor = true;
+			this->button_bestSelling->Click += gcnew System::EventHandler(this, &MyForm::button_bestSelling_Click);
 			// 
 			// button_purchaseValueStock
 			// 
@@ -3576,6 +3577,13 @@ private: System::Void button_underReorderThreshold_Click(System::Object^ sender,
 
 	this->dgv_stat->Refresh();
 	this->oDs_statistics = this->oSVCstatistics->productUnderThreshold("Rsl");
+	this->dgv_stat->DataSource = this->oDs_statistics;
+	this->dgv_stat->DataMember = "Rsl";
+}
+private: System::Void button_bestSelling_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->dgv_stat->Refresh();
+	this->oDs_statistics = this->oSVCstatistics->moreSellProducts("Rsl");
 	this->dgv_stat->DataSource = this->oDs_statistics;
 	this->dgv_stat->DataMember = "Rsl";
 }

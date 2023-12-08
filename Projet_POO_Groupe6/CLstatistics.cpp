@@ -36,13 +36,16 @@ System::Data::DataSet^ NS_Svc::CLstatistics::productUnderThreshold(System::Strin
 	return this->oCad->getRows(sql, dataTable);
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::lessSellProducts(System::String^, System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::moreSellProducts(System::String^ dataTable)
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	System::String^ sql;
+
+	sql = this->oSTAT->selectMoreSellProducts();
+
+	return this->oCad->getRows(sql, dataTable);
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::moreSellProducts(System::String^, System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::lessSellProducts(System::String^, System::String^)
 {
 	throw gcnew System::NotImplementedException();
 	// TODO: insert return statement here

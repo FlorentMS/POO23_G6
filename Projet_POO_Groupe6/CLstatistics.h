@@ -15,7 +15,7 @@ namespace NS_Svc
 		System::Data::DataSet^ calculateTurnover(System::String^, int, int);
 		System::Data::DataSet^ productUnderThreshold(System::String^);
 		System::Data::DataSet^ lessSellProducts(System::String^, System::String^);
-		System::Data::DataSet^ moreSellProducts(System::String^, System::String^);
+		System::Data::DataSet^ moreSellProducts(System::String^);
 		System::Data::DataSet^ totalAmount(System::String^, System::String^, System::String^, System::String^);
 		System::Data::DataSet^ retailValueInventory(System::String^);
 		System::Data::DataSet^ purchaseValueInventory(System::String^);
