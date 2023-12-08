@@ -49,7 +49,7 @@ namespace ProjetPOOGroupe6 {
 	private: NS_Svc::CLorders^ oSVCorders;
 	private: NS_Svc::CLemployees^ oSVCemployees;
 	//private: NS_Svc::CLcustomers^ oSVCcustomers;
-	//private: NS_Svc::CLstock^ oSVCstock;
+	private: NS_Svc::CLstock^ oSVCstock;
 	//private: NS_Svc::CLstatistics^ oSVCstatistics;
 	//priavte: NS_Svc::CLsimulations^oSVCsimulations;
 
@@ -2577,6 +2577,7 @@ namespace ProjetPOOGroupe6 {
 			this->eraseProduct->TabIndex = 38;
 			this->eraseProduct->Text = L"Erase";
 			this->eraseProduct->UseVisualStyleBackColor = true;
+			this->eraseProduct->Click += gcnew System::EventHandler(this, &MyForm::eraseProduct_Click);
 			// 
 			// displayProducts
 			// 
@@ -2586,6 +2587,7 @@ namespace ProjetPOOGroupe6 {
 			this->displayProducts->TabIndex = 40;
 			this->displayProducts->Text = L"Display";
 			this->displayProducts->UseVisualStyleBackColor = true;
+			this->displayProducts->Click += gcnew System::EventHandler(this, &MyForm::displayProducts_Click);
 			// 
 			// ItemCHangeSotck_groupBox
 			// 
@@ -2859,6 +2861,7 @@ namespace ProjetPOOGroupe6 {
 			this->changeProduct->TabIndex = 39;
 			this->changeProduct->Text = L"Change product";
 			this->changeProduct->UseVisualStyleBackColor = true;
+			this->changeProduct->Click += gcnew System::EventHandler(this, &MyForm::changeProduct_Click);
 			// 
 			// addProduct
 			// 
@@ -2868,6 +2871,7 @@ namespace ProjetPOOGroupe6 {
 			this->addProduct->TabIndex = 37;
 			this->addProduct->Text = L"Add product";
 			this->addProduct->UseVisualStyleBackColor = true;
+			this->addProduct->Click += gcnew System::EventHandler(this, &MyForm::addProduct_Click);
 			// 
 			// statisticTab
 			// 
@@ -3464,9 +3468,14 @@ namespace ProjetPOOGroupe6 {
 		this->oSVCorders = gcnew NS_Svc::CLorders();
 		//this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
 		this->oSVCemployees = gcnew NS_Svc::CLemployees();
-		//this->oSVCstock = gcnew NS_Svc::CLstock();
+		this->oSVCstock = gcnew NS_Svc::CLstock();
 		//this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
 		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();
+
+		this->dgv_stock->Refresh();
+		this->oDs_stock = this->oSVCstock->displayProducts("RslAll");
+		this->dgv_stock->DataSource = this->oDs_stock;
+		this->dgv_stock->DataMember = "RslAll";
 
 		this->dgv_emp->Refresh();
 		this->oDs_employees = this->oSVCemployees->displayAllEmp("RslAll");
@@ -3486,7 +3495,7 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_emp->DataMember = "Rsl";
 	}
 	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-		int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
+		int streetNumber = System::Convert::ToInt32(this->text_streetNumber->Text);
 		this->dgv_emp->Refresh();
 		this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl", (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
@@ -3501,13 +3510,51 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_emp->DataMember = "Rsl";
 	}
 	private: System::Void changeEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-		int streetNumber = System::Convert::ToInt64(this->StreetNumChangeEmp->Text);
-		int employeeID = System::Convert::ToInt64(this->text_EmpIdChangeEmp->Text);
+		int streetNumber = System::Convert::ToInt32(this->StreetNumChangeEmp->Text);
+		int employeeID = System::Convert::ToInt32(this->text_EmpIdChangeEmp->Text);
 		this->dgv_emp->Refresh();
 		this->oSVCemployees->updateEmp(employeeID, this->text_chiefIdChangeEmp->Text, this->text_fistNameChangeEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameChangeEmp->Text, this->text_cityNameChangeEmp->Text, this->text_ZipCodeChangeEmp->Text);
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl", (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"));
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
 	}
+private: System::Void displayProducts_Click(System::Object^ sender, System::EventArgs^ e) {
+	int ID = System::Convert::ToInt32(this->text_itemIdSearchStock->Text);
+	this->dgv_stock->Refresh();
+	this->oDs_stock = this->oSVCstock->displayProduct("Rsl", ID);
+	this->dgv_stock->DataSource = this->oDs_stock;
+	this->dgv_stock->DataMember = "Rsl";
+}
+private: System::Void eraseProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+	int ID = System::Convert::ToInt32(this->text_itemIdSearchStock->Text);
+	this->dgv_stock->Refresh();
+	this->oSVCstock->eraseProduct(ID);
+	this->oDs_stock = this->oSVCstock->displayProducts("Rsl");
+	this->dgv_stock->DataSource = this->oDs_stock;
+	this->dgv_stock->DataMember = "Rsl";
+}
+private: System::Void addProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+	float priceET = System::Convert::ToDouble(this->text_ItemPriceExcludingTaxesAddStock->Text);
+	int reorderThreshold = System::Convert::ToInt32(this->text_reorderThresholdAddStock->Text);
+	float VATrate = System::Convert::ToDouble(this->text_vatRateAddStock->Text);
+	int quantity = System::Convert::ToInt32(this->UpDown_quantityAddStock->Text);
+	this->dgv_stock->Refresh();
+	this->oSVCstock->addProduct(this->text_ItemNameAddStock->Text, this->itemColorAddStock_comboBox->Text, priceET, reorderThreshold, VATrate, quantity);
+	this->oDs_stock = this->oSVCstock->displayProducts("Rsl");
+	this->dgv_stock->DataSource = this->oDs_stock;
+	this->dgv_stock->DataMember = "Rsl";
+}
+private: System::Void changeProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+	int ID = System::Convert::ToInt32(this->text_itemIdSearchStock->Text);
+	float priceET = System::Convert::ToDouble(this->text_ItemPriceExcludingTaxesAddStock->Text);
+	int reorderThreshold = System::Convert::ToInt32(this->text_reorderThresholdAddStock->Text);
+	float VATrate = System::Convert::ToDouble(this->text_vatRateAddStock->Text);
+	int quantity = System::Convert::ToInt32(this->UpDown_quantityAddStock->Text);
+	this->dgv_stock->Refresh();
+	this->oSVCstock->changeProduct(ID, this->text_ItemNameAddStock->Text, this->itemColorAddStock_comboBox->Text, priceET, reorderThreshold, VATrate, quantity);
+	this->oDs_stock = this->oSVCstock->displayProducts("Rsl");
+	this->dgv_stock->DataSource = this->oDs_stock;
+	this->dgv_stock->DataMember = "Rsl";
+}
 };
 }

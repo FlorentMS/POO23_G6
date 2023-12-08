@@ -11,7 +11,7 @@ System::Data::DataSet^ NS_Svc::CLstock::displayProducts(System::String^ dataTabl
 {
 	System::String^ sql;
 
-	sql = this->oProd->selectProduct();
+	sql = this->oProd->selectProducts();
 
 	return this->oCad->getRows(sql, dataTableName);
 }
@@ -20,6 +20,7 @@ System::Data::DataSet^ NS_Svc::CLstock::displayProduct(System::String^ dataTable
 {
 	System::String^ sql;
 
+	this->oProd->setProductRef(ID);
 	sql = this->oProd->selectProduct();
 
 	return this->oCad->getRows(sql, dataTableName);
