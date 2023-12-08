@@ -2129,23 +2129,23 @@ private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs
 private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 	int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
 	this->dgv_emp->Refresh();
-	this->oSVCemployees->addEmp(this->text_chiefID->Text, this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text, streetNumber, this->text_streetName->Text, this->text_cityName->Text, this->text_ZIPcode->Text);
+	this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, this->hireChangeEmp_datePicker->Text, streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
 	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 	this->dgv_emp->DataSource = this->oDs_employees;
 	this->dgv_emp->DataMember = "Rsl";
 }
 private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dgv_emp->Refresh();
-	this->oSVCemployees->eraseEmp(this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text);
+	this->oSVCemployees->eraseEmp(this->text_lastNameSearchEmp->Text, this->text_firstNameSearchEmp->Text, this->hireDateSearchEmp_datePicker->Text);
 	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 	this->dgv_emp->DataSource = this->oDs_employees;
 	this->dgv_emp->DataMember = "Rsl";
 }
 private: System::Void changeEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 	int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
-	int employeeID = System::Convert::ToInt64(this->text_employeeID->Text);
+	int employeeID = System::Convert::ToInt64(this->text_chiefIdChangeEmp->Text);
 	this->dgv_emp->Refresh();
-	this->oSVCemployees->updateEmp(employeeID, this->text_chiefID->Text, this->text_empFirstName->Text, this->text_empLastName->Text, this->text_hireDate->Text, streetNumber, this->text_streetName->Text, this->text_cityName->Text, this->text_ZIPcode->Text);
+	this->oSVCemployees->updateEmp(employeeID, this->text_chiefIdChangeEmp->Text, this->text_fistNameChangeEmp->Text, this->text_lastNameChangeEmp->Text, this->hireChangeEmp_datePicker->Text, streetNumber, this->text_streetNameChangeEmp->Text, this->text_cityNameChangeEmp->Text, this->text_ZipCodeChangeEmp->Text);
 	this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 	this->dgv_emp->DataSource = this->oDs_employees;
 	this->dgv_emp->DataMember = "Rsl";
