@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "CLmapPRODUCT.h"
 
+System::String^ NS_Comp::CLmapPRODUCT::selectProducts(void)
+{
+    return ""; //Compléter avec la bonne requete SQL
+}
+
 System::String^ NS_Comp::CLmapPRODUCT::selectProduct(void)
 {
     return "SELECT [Projet_POO_G6].[dbo].[Products].[productRef], [productName], \
@@ -13,20 +18,17 @@ System::String^ NS_Comp::CLmapPRODUCT::selectProduct(void)
 
 System::String^ NS_Comp::CLmapPRODUCT::insertProduct(void)
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return ""; //Compléter avec la bonne requete SQL
 }
 
 System::String^ NS_Comp::CLmapPRODUCT::deleteProduct(void)
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return ""; //Compléter avec la bonne requete SQL
 }
 
 System::String^ NS_Comp::CLmapPRODUCT::updateProduct(void)
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return ""; //Compléter avec la bonne requete SQL
 }
 
 void NS_Comp::CLmapPRODUCT::setProductRef(int pref)
@@ -64,11 +66,11 @@ void NS_Comp::CLmapPRODUCT::setColor(System::String^ color)
     this->color = color;
 }
 
-int NS_Comp::CLmapPRODUCT::getProductRef(void) { return this->productRef;  }
+int NS_Comp::CLmapPRODUCT::getProductRef(void) { return this->productRef; }
 
-System::String^ NS_Comp::CLmapPRODUCT::getProductName(void) { return this->productName;  }
+System::String^ NS_Comp::CLmapPRODUCT::getProductName(void) { return this->productName; }
 
-float NS_Comp::CLmapPRODUCT::getPriceET(void) { return this->PriceET;  }
+float NS_Comp::CLmapPRODUCT::getPriceET(void) { return this->PriceET; }
 
 int NS_Comp::CLmapPRODUCT::getStockQuantity(void) { return this->stockQuantity; }
 

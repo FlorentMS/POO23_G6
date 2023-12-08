@@ -27,7 +27,7 @@ namespace NS_Comp
 		void setStreetName(System::String^ streetName);
 		void setZipCode(System::String^ ZipCode);
 		void setCityName(System::String^ CityName);
-		void setHireName(System::String^ HireDate);
+		void setHireDate(System::String^ HireDate);
 		void setChiefId(System::String^ ChiefId);
 		int getId(void);
 		System::String^ getLastName(void);
