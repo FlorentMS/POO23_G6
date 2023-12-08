@@ -13,8 +13,8 @@ namespace NS_Comp
 		System::String^ birthDate;
 
 		//Date
-		System::String^ month;
-		System::String^ year;
+		int month;
+		int year;
 
 	public :
 		System::String^ selecAverageBasket(void);
@@ -30,14 +30,14 @@ namespace NS_Comp
 		void setLastName(System::String^);
 		void setFirstName(System::String^);
 		void setBirthDate(System::String^);
-		void setMonth(System::String^);
-		void setYear(System::String^);
+		void setMonth(int);
+		void setYear(int);
 
 		//Getters
 		System::String^ getLastName(void);
 		System::String^ getFirstName(void);
 		System::String^ getBirthDate(void);
-		System::String^ getMonth(void);
-		System::String^ getYear(void);
+		int getMonth(void);
+		int getYear(void);
 	};
 }

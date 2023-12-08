@@ -12,7 +12,7 @@ namespace NS_Svc
 	public:
 		CLstatistics(void);
 		System::Data::DataSet^ averageBasket(System::String^);
-		System::Data::DataSet^ calculateTurnover(System::String^, System::String^);
+		System::Data::DataSet^ calculateTurnover(System::String^, int, int);
 		System::Data::DataSet^ productUnderThreshold(System::String^);
 		System::Data::DataSet^ lessSellProducts(System::String^, System::String^);
 		System::Data::DataSet^ moreSellProducts(System::String^, System::String^);

@@ -13,12 +13,18 @@ System::String^ NS_Comp::CLmapSTAT::selecAverageBasket(void)
 
 System::String^ NS_Comp::CLmapSTAT::selectCalculateTurnover(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "SELECT \
+			SUM(CAST(o.totalET AS DECIMAL(15, 2))) AS ChiffreAffaires\
+			FROM Orders o\
+			WHERE MONTH(o.orderDate) = " + this->month + " AND YEAR(o.orderDate) = " + this->year + "; ";
 }
 
 System::String^ NS_Comp::CLmapSTAT::selectProductUnderThreshold(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "SELECT cp.colorProductID, p.productRef, p.productName, cp.color, cp.stockQuantity, p.reorderThreshold\
+			FROM Products p\
+			JOIN characteristicsProd cp ON p.productRef = cp.productRef\
+			WHERE cp.stockQuantity < p.reorderThreshold; ";
 }
 
 System::String^ NS_Comp::CLmapSTAT::selectMoreSellProducts(void)
@@ -61,12 +67,12 @@ void NS_Comp::CLmapSTAT::setBirthDate(System::String^ Bdate)
 	this->birthDate = Bdate;
 }
 
-void NS_Comp::CLmapSTAT::setMonth(System::String^ month)
+void NS_Comp::CLmapSTAT::setMonth(int month)
 {
 	this->month = month;
 }
 
-void NS_Comp::CLmapSTAT::setYear(System::String^ year)
+void NS_Comp::CLmapSTAT::setYear(int year)
 {
 	this->year = year;
 }
@@ -86,12 +92,12 @@ System::String^ NS_Comp::CLmapSTAT::getBirthDate(void)
 	return this->birthDate;
 }
 
-System::String^ NS_Comp::CLmapSTAT::getMonth(void)
+int NS_Comp::CLmapSTAT::getMonth(void)
 {
 	return this->month;
 }
 
-System::String^ NS_Comp::CLmapSTAT::getYear(void)
+int NS_Comp::CLmapSTAT::getYear(void)
 {
 	return this->year;
 }

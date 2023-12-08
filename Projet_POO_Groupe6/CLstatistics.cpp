@@ -7,25 +7,33 @@ NS_Svc::CLstatistics::CLstatistics(void)
 	this->oSTAT = gcnew NS_Comp::CLmapSTAT();
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::averageBasket(System::String^ A)
+System::Data::DataSet^ NS_Svc::CLstatistics::averageBasket(System::String^ dataTable)
 {
 	System::String^ sql;
 
 	sql = this->oSTAT->selecAverageBasket();
 
-	return this->oCad->getRows(sql, A);
+	return this->oCad->getRows(sql, dataTable);
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::calculateTurnover(System::String^, System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::calculateTurnover(System::String^ dataTable, int month, int year)
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	System::String^ sql;
+
+	this->oSTAT->setMonth(month);
+	this->oSTAT->setYear(year);
+	sql = this->oSTAT->selectCalculateTurnover();
+
+	return this->oCad->getRows(sql, dataTable);
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::productUnderThreshold(System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::productUnderThreshold(System::String^ dataTable)
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	System::String^ sql;
+
+	sql = this->oSTAT->selectProductUnderThreshold();
+
+	return this->oCad->getRows(sql, dataTable);
 }
 
 System::Data::DataSet^ NS_Svc::CLstatistics::lessSellProducts(System::String^, System::String^)

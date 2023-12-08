@@ -2947,6 +2947,7 @@ namespace ProjetPOOGroupe6 {
 			this->button_turnover->TabIndex = 19;
 			this->button_turnover->Text = L"Calculate turnover for a month";
 			this->button_turnover->UseVisualStyleBackColor = true;
+			this->button_turnover->Click += gcnew System::EventHandler(this, &MyForm::button_turnover_Click);
 			// 
 			// CustomerStatistics_groupBox
 			// 
@@ -3075,6 +3076,7 @@ namespace ProjetPOOGroupe6 {
 			this->button_underReorderThreshold->TabIndex = 20;
 			this->button_underReorderThreshold->Text = L"Products under the reorder threshold";
 			this->button_underReorderThreshold->UseVisualStyleBackColor = true;
+			this->button_underReorderThreshold->Click += gcnew System::EventHandler(this, &MyForm::button_underReorderThreshold_Click);
 			// 
 			// dgv_stat
 			// 
@@ -3558,6 +3560,22 @@ private: System::Void button_averageCart_Click(System::Object^ sender, System::E
 	
 	this->dgv_stat->Refresh();
 	this->oDs_statistics = this->oSVCstatistics->averageBasket("Rsl");
+	this->dgv_stat->DataSource = this->oDs_statistics;
+	this->dgv_stat->DataMember = "Rsl";
+}
+private: System::Void button_turnover_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	int month = System::Convert::ToInt32(this->text_turnoverMonth->Text);
+	int year = System::Convert::ToInt32(this->text_turnoverYear->Text);
+	this->dgv_stat->Refresh();
+	this->oDs_statistics = this->oSVCstatistics->calculateTurnover("Rsl", month, year);
+	this->dgv_stat->DataSource = this->oDs_statistics;
+	this->dgv_stat->DataMember = "Rsl";
+}
+private: System::Void button_underReorderThreshold_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->dgv_stat->Refresh();
+	this->oDs_statistics = this->oSVCstatistics->productUnderThreshold("Rsl");
 	this->dgv_stat->DataSource = this->oDs_statistics;
 	this->dgv_stat->DataMember = "Rsl";
 }
