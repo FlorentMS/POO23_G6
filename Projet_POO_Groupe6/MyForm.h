@@ -52,7 +52,7 @@ namespace ProjetPOOGroupe6 {
 	private: NS_Svc::CLemployees^ oSVCemployees;
 	//private: NS_Svc::CLcustomers^ oSVCcustomers;
 	//private: NS_Svc::CLstock^ oSVCstock;
-	//private: NS_Svc::CLstatistics^ oSVCstatistics;
+	private: NS_Svc::CLstatistics^ oSVCstatistics;
 	//priavte: NS_Svc::CLsimulations^oSVCsimulations;
 
 	private: System::Data::DataSet^ oDs_orders;
@@ -3065,6 +3065,7 @@ namespace ProjetPOOGroupe6 {
 			this->button_averageCart->TabIndex = 21;
 			this->button_averageCart->Text = L"Calculate average cart after discount";
 			this->button_averageCart->UseVisualStyleBackColor = true;
+			this->button_averageCart->Click += gcnew System::EventHandler(this, &MyForm::button_averageCart_Click);
 			// 
 			// button_underReorderThreshold
 			// 
@@ -3471,7 +3472,7 @@ namespace ProjetPOOGroupe6 {
 		this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
 		this->oSVCemployees = gcnew NS_Svc::CLemployees();
 		//this->oSVCstock = gcnew NS_Svc::CLstock();
-		//this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
+		this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
 		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();	
 		
 		this->dgv_cust->Refresh();
@@ -3552,6 +3553,13 @@ private: System::Void changeCust_Click(System::Object^ sender, System::EventArgs
 	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
 	this->dgv_cust->DataSource = this->oDs_customers;
 	this->dgv_cust->DataMember = "Rsl";
+}
+private: System::Void button_averageCart_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	this->dgv_stat->Refresh();
+	this->oDs_statistics = this->oSVCstatistics->averageBasket("Rsl");
+	this->dgv_stat->DataSource = this->oDs_statistics;
+	this->dgv_stat->DataMember = "Rsl";
 }
 };
 }

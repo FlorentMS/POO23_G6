@@ -3,13 +3,17 @@
 
 NS_Svc::CLstatistics::CLstatistics(void)
 {
-	throw gcnew System::NotImplementedException();
+	this->oCad = gcnew NS_Comp_Data::CLcad();
+	this->oSTAT = gcnew NS_Comp::CLmapSTAT();
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::averageBasket(System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::averageBasket(System::String^ A)
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	System::String^ sql;
+
+	sql = this->oSTAT->selecAverageBasket();
+
+	return this->oCad->getRows(sql, A);
 }
 
 System::Data::DataSet^ NS_Svc::CLstatistics::calculateTurnover(System::String^, System::String^)
