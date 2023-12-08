@@ -1,13 +1,14 @@
 #include "pch.h"
 #include "CLorders.h"
+#include "CLcad.h"
 
 NS_Svc::CLorders::CLorders()
 {
-	//this->oCad = &Cnx;
+	this->oCad = gcnew NS_Comp_Data::CLcad;
 	this->oOrder = gcnew NS_Comp::CLmapORDER;
 }
 
-System::Data::DataSet^ NS_Svc::CLorders::displayOrders(System::String^ dataTableName, System::String^ OrderRef)
+System::Data::DataSet^ NS_Svc::CLorders::displayOrders(System::String^ dataTableName)
 {
 	System::String^ sql;
 
@@ -16,6 +17,16 @@ System::Data::DataSet^ NS_Svc::CLorders::displayOrders(System::String^ dataTable
 }
 
 
+
+System::Data::DataSet^ NS_Svc::CLorders::displayOrder(System::String^ dataTableName, System::String^ orderRef)
+{
+	System::String^ sql;
+
+	this->oOrder->setOrderRef(orderRef);
+
+	sql = this->oOrder->selectOrder();
+	return this->oCad->getRows(sql, dataTableName);
+}
 
 void NS_Svc::CLorders::addOrder(System::String^ orderRef, System::String^ deliveryDate, System::String^ CompletePayDate, System::String^ CustID,
 	System::String^ MeanOfPay, System::String^ PayDate, System::String^ ProductRef, System::String^ color, System::String^ copyNum)
@@ -86,8 +97,23 @@ void NS_Svc::CLorders::eraseOrder(System::String^ orderRefrence)
 	this->oCad->actionRows(sql);
 }
 
-void NS_Svc::CLorders::changeOrder(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^)
+void NS_Svc::CLorders::changeOrder(System::String^ orderRef, System::String^ deliveryDate, System::String^ CompletePayDate, System::String^ CustID,
+	System::String^ MeanOfPay, System::String^ PayDate, System::String^ ProductRef, System::String^ color, System::String^ copyNum)
 {
-	throw gcnew System::NotImplementedException();
+	System::String^ sql;
+
+	this->oOrder->setOrderRef(orderRef);
+	this->oOrder->setCustID(System::Convert::ToInt32(CustID));
+	this->oOrder->setDeliveryDate(deliveryDate);
+	this->oOrder->setCompletePaymentDate(CompletePayDate); //May be can be delete
+	this->oOrder->setMeanOfPayment(MeanOfPay);
+	this->oOrder->setPaymentDate(PayDate);
+	this->oOrder->setProductRef(System::Convert::ToInt32(ProductRef));
+	this->oOrder->setProductColor(color);
+	this->oOrder->setCopyNumber(System::Convert::ToInt32(copyNum));
+
+	sql = this->oOrder->updateOrder();
+
+	this->oCad->actionRows(sql);
 }
 

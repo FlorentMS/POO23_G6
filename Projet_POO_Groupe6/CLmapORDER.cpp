@@ -13,7 +13,22 @@ System::String^ NS_Comp::CLmapORDER::selectOrders(void)
 
 System::String^ NS_Comp::CLmapORDER::selectOrder(void)
 {
-    return "";
+    return "-- Select order																	\
+		Select  Orders.orderRef				as order_reference,								\
+		Orders.orderDate			as order_at,											\
+		Orders.deliveryDate			as deliver_at,											\
+		Products.productRef			as product_reference,									\
+		Products.productName		as product_name,										\
+		characteristicsProd.color,															\
+		Orders.totalET				as total_exlucing_taxes,								\
+		Orders.completPaymentDate	as total_payment_at										\
+		From Projet_POO_G6.dbo.Orders INNER JOIN Projet_POO_G6.dbo.order_product			\
+		on(Orders.orderRef = order_product.orderRef)										\
+		INNER JOIN Projet_POO_G6.dbo.characteristicsProd									\
+		on(order_product.colorProductID = characteristicsProd.colorProductID)				\
+		INNER JOIN Projet_POO_G6.dbo.Products												\
+		on(characteristicsProd.productRef = Products.productRef)							\
+		Where custNumber = "+ this->custID +";";
 }
 
 System::String^ NS_Comp::CLmapORDER::insertOrder(void)
