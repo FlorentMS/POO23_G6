@@ -13,7 +13,7 @@ namespace NS_Svc
 		CLemployees(void);
 		System::Data::DataSet^ displayEmp(System::String^ dataTableName, System::String^ hireDate);
 		System::Data::DataSet^ displayAllEmp(System::String^ dataTableName);
-		void addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
+		void addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
 		void eraseEmp(System::String^ firstName, System::String^lastName, System::String^hireDate);
 		void updateEmp(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
 	};

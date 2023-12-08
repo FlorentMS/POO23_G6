@@ -3488,10 +3488,7 @@ namespace ProjetPOOGroupe6 {
 	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
 		this->dgv_emp->Refresh();
-////////
-/*Attention le hire date doit être pris automatiquement dans la requête sql avec un GETDATE() car plus aucun champs ne permet de le rentrer*/
-////////
-		this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
+		this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl", (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
@@ -3499,7 +3496,7 @@ namespace ProjetPOOGroupe6 {
 	private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_emp->Refresh();
 		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
-		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl", (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
+		this->oDs_employees = this->oSVCemployees->displayAllEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
 	}
@@ -3508,7 +3505,7 @@ namespace ProjetPOOGroupe6 {
 		int employeeID = System::Convert::ToInt64(this->text_EmpIdChangeEmp->Text);
 		this->dgv_emp->Refresh();
 		this->oSVCemployees->updateEmp(employeeID, this->text_chiefIdChangeEmp->Text, this->text_fistNameChangeEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameChangeEmp->Text, this->text_cityNameChangeEmp->Text, this->text_ZipCodeChangeEmp->Text);
-		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl", (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
+		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl", (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"));
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
 	}

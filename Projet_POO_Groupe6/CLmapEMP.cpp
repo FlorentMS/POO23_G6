@@ -19,38 +19,45 @@ System::String^ NS_Comp::CLmapEMP::insertEmployee(void)
 {
 	System::String^ query = "DECLARE @cityID INT; "
                             "DECLARE @addrID INT; "
-                            "INSERT INTO Cities (cityZipCode, cityName) VALUES ('" + ZipCode + "', '" + cityName + "'); "
-                            "SET @cityID = SCOPE_IDENTITY(); "
+                            "SET @cityID = (Select cityID From cities WHERE cityZipCode= '" + ZipCode + "' and cityName='" + cityName + "'); "
                             "INSERT INTO Addresses (streetNumber, StreetName, cityID) VALUES (" + streetNumber + ", '" + streetName + "', @cityID); "
                             "SET @addrID = SCOPE_IDENTITY(); "
-                            "INSERT INTO Employees (lastName, firstName, hireDate, chiefID, addrID) VALUES ('" + lastName + "', '" + firstName + "', '" + hireDate + "', " + ChiefID + ", @addrID);";
+                            "INSERT INTO Employees (lastName, firstName, hireDate, chiefID, addrID) VALUES ('" + lastName + "', '" + firstName + "', GETDATE(), " + ChiefID + ", @addrID);";
 
     return query;
 }
 
 System::String^ NS_Comp::CLmapEMP::deleteEmployee(void)
 {
-	return "DELETE FROM [Projet_POO_G6].[dbo].[Employees] WHERE [lastName] = '" + lastName + "' AND [firstName] = '" + firstName + "' AND [hireDate] = '" + hireDate + "';             \
-            DELETE FROM [Projet_POO_G6].[dbo].[Addresses] WHERE [addrID] IN (SELECT [addrID] FROM [Projet_POO_G6].[dbo].[Employees] WHERE [lastName] = '" + lastName + "' AND [firstName] = '" + firstName + "' AND [hireDate] = '" + hireDate + "');    \
-            DELETE FROM [Projet_POO_G6].[dbo].[Cities] WHERE [cityID] IN (SELECT [cityID] FROM [Projet_POO_G6].[dbo].[Addresses] WHERE [addrID] IN (SELECT [addrID] FROM [Projet_POO_G6].[dbo].[Employees] WHERE [lastName] = '" + lastName + "' AND [firstName] = '" + firstName + "' AND [hireDate] = '" + hireDate + "'));";
+	return "DECLARE @AddrID INT; \
+			set @AddrID = ( \
+			SELECT e.addrID as addrID \
+			FROM Employees e \
+			JOIN Addresses a ON e.addrID = a.addrID \
+			WHERE lastName = '" + lastName + "' AND firstName = '" + firstName + "' AND hireDate = '" + hireDate + "'); \
+			DELETE FROM Employees WHERE lastName = '" + lastName + "' AND firstName = '" + firstName + "' AND hireDate = '" + hireDate + "'; \
+			DELETE FROM Addresses WHERE addrID = @AddrID;";
 }
 
 System::String^ NS_Comp::CLmapEMP::updateEmployee(void)
 {
-	return "UPDATE [Projet_POO_G6].[dbo].[Employees] SET "
-		"[chiefID] = " + ChiefID + ", "
-		"[firstName] = '" + firstName + "', "
-		"[lastName] = '" + lastName + "', "
-		"[hireDate] = '" + hireDate + "' "
-		"WHERE [empID] = " + Id + "; "
-		"UPDATE [Projet_POO_G6].[dbo].[Addresses] SET "
-		"[streetNumber] = " + streetNumber + ", "
-		"[streetName] = '" + streetName + "' "
-		"WHERE [addrID] = (SELECT [addrID] FROM [Projet_POO_G6].[dbo].[Employees] WHERE [empID] = " + Id + "); "
-		"UPDATE [Projet_POO_G6].[dbo].[Cities] SET "
-		"[cityName] = '" + cityName + "', "
-		"[cityZipCode] = '" + ZipCode + "' "
-		"WHERE [cityID] = (SELECT [cityID] FROM [Projet_POO_G6].[dbo].[Addresses] WHERE [addrID] = (SELECT [addrID] FROM [Projet_POO_G6].[dbo].[Employees] WHERE [empID] = " + Id + "));";
+	System::String^ query = "DECLARE @cityID INT; "
+							"DECLARE @addrID INT; "
+							"SET @cityID = (SELECT cityID FROM Cities WHERE cityZipCode = '" + ZipCode + "' AND cityName = '" + cityName + "'); "
+							"UPDATE Addresses SET "
+							"    streetNumber = " + streetNumber + ", "
+							"    StreetName = '" + streetName + "', "
+							"    cityID = @cityID "
+							"WHERE addrID = (SELECT addrID FROM Employees WHERE empID = " + Id + "); "
+							"UPDATE Employees SET "
+							"    lastName = '" + lastName + "', "
+							"    firstName = '" + firstName + "', "
+							"    hireDate = GETDATE(), "
+							"    chiefID = " + ChiefID + ", "
+							"    addrID = (SELECT addrID FROM Addresses WHERE addrID = (SELECT addrID FROM Employees WHERE empID = " + Id + ")) "
+							"WHERE empID = " + Id + ";";
+
+	return query;
 }
 
 void NS_Comp::CLmapEMP::setId(int id)

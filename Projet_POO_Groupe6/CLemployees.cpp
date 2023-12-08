@@ -26,14 +26,13 @@ System::Data::DataSet^ NS_Svc::CLemployees::displayAllEmp(System::String^ dataTa
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Svc::CLemployees::addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
+void NS_Svc::CLemployees::addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
 {
 	System::String^ sql;
 
 	this->oEmp->setChiefId(chiefID);
 	this->oEmp->setFirstName(firstName);
 	this->oEmp->setLastName(lastName);
-	this->oEmp->setHireDate(hireDate);
 	this->oEmp->setStreetNumber(streetNumber);
 	this->oEmp->setStreetName(streetName);
 	this->oEmp->setCityName(cityName);
