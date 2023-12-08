@@ -67,15 +67,12 @@ System::String^ NS_Comp::CLmapCUST::deleteCustomer()
 			DECLARE @DeladdrID INT = (SELECT addrID FROM Addresses a JOIN Customers c ON  a.addrID = c.addrDel\
 			WHERE lastName = '" + this->lastName + "' AND firstName = '" + this->firstName + "' AND birthDate = '" + this->birthDate + "');\
 			\
-			--Suppression de la ligne dans la table Customers\
 				DELETE FROM Customers\
 				WHERE lastName = '" + this->lastName + "' AND firstName = '" + this->firstName + "' AND birthDate = '" + this->birthDate + "';\
 			\
-			--Suppression de l'adresse de facturation\
 				DELETE FROM Addresses\
 				WHERE addrID = @BiladdrID;\
 			\
-			--Suppression de l'adresse de livraison\
 				DELETE FROM Addresses\
 				WHERE addrID = @DeladdrID; ";
 }
