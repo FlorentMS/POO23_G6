@@ -51,7 +51,11 @@ System::String^ NS_Comp::CLmapSTAT::selectLessSellProducts(void)
 
 System::String^ NS_Comp::CLmapSTAT::selectTotalAmount(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "SELECT c.lastName, c.firstName, SUM(CAST(o.totalET AS DECIMAL(15, 2))) AS MontantTotalDesAchats\
+			FROM Orders o\
+			INNER JOIN Customers c ON o.custNumber = c.custNumber\
+			WHERE c.lastName = '" + this->lastName + "' AND c.firstName = '" + this->firstName + "' AND c.birthDate = '" + this->birthDate + "'\
+			GROUP BY c.lastName, c.firstName; ";
 }
 
 System::String^ NS_Comp::CLmapSTAT::selectRetailValueInventory(void)

@@ -3005,6 +3005,7 @@ namespace ProjetPOOGroupe6 {
 			this->button_customerTotalAmount->TabIndex = 24;
 			this->button_customerTotalAmount->Text = L"Calculate total amout for customer";
 			this->button_customerTotalAmount->UseVisualStyleBackColor = true;
+			this->button_customerTotalAmount->Click += gcnew System::EventHandler(this, &MyForm::button_customerTotalAmount_Click);
 			// 
 			// text_statisticsCustFirstName
 			// 
@@ -3592,6 +3593,13 @@ private: System::Void button_lowestSelling_Click(System::Object^ sender, System:
 
 	this->dgv_stat->Refresh();
 	this->oDs_statistics = this->oSVCstatistics->lessSellProducts("Rsl");
+	this->dgv_stat->DataSource = this->oDs_statistics;
+	this->dgv_stat->DataMember = "Rsl";
+}
+private: System::Void button_customerTotalAmount_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->dgv_stat->Refresh();
+	this->oDs_statistics = this->oSVCstatistics->totalAmount("Rsl", this->text_statisticsCustLastName->Text, this->text_statisticsCustFirstName->Text, (this->birthStatisitcs_datePicker->Value).ToString("yyyy-MM-dd"));
 	this->dgv_stat->DataSource = this->oDs_statistics;
 	this->dgv_stat->DataMember = "Rsl";
 }

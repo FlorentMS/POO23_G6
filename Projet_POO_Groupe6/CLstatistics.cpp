@@ -54,10 +54,16 @@ System::Data::DataSet^ NS_Svc::CLstatistics::lessSellProducts(System::String^ da
 	return this->oCad->getRows(sql, dataTable);
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::totalAmount(System::String^, System::String^, System::String^, System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::totalAmount(System::String^ dataTable, System::String^ lName, System::String^fName, System::String^ bDate)
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	System::String^ sql;
+
+	this->oSTAT->setLastName(lName);
+	this->oSTAT->setFirstName(fName);
+	this->oSTAT->setBirthDate(bDate);
+	sql = this->oSTAT->selectTotalAmount();
+
+	return this->oCad->getRows(sql, dataTable);
 }
 
 System::Data::DataSet^ NS_Svc::CLstatistics::retailValueInventory(System::String^)
