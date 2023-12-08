@@ -1,9 +1,18 @@
 #include "pch.h"
 #include "CLmapEMP.h"
 
+System::String^ NS_Comp::CLmapEMP::selectAllEmployees(void)
+{
+	return "SELECT [empID], [chiefID], [lastName], [firstName], [hireDate], [streetNumber], [StreetName], [cityName], [cityZipCode] FROM [Projet_POO_G6].[dbo].[Employees] LEFT JOIN [Projet_POO_G6].[dbo].[Addresses] ON [Projet_POO_G6].[dbo].[Employees].[addrID] = [Projet_POO_G6].[dbo].[Addresses].[addrID] LEFT JOIN [Projet_POO_G6].[dbo].[Cities] ON [Projet_POO_G6].[dbo].[Addresses].[cityID] = [Projet_POO_G6].[dbo].[Cities].[cityID]";
+}
+
 System::String^ NS_Comp::CLmapEMP::selectEmployees(void)
 {
-	return "SELECT [empID], [chiefID], [lastName], [firstName], [hireDate], [streetNumber], [StreetName], [cityName], [cityZipCode] FROM [Projet_POO_G6].[dbo].[Employees] LEFT JOIN [Projet_POO_G6].[dbo].[Addresses] ON [Projet_POO_G6].[dbo].[Employees].[addrID] = [Projet_POO_G6].[dbo].[Addresses].[addrID] LEFT JOIN [Projet_POO_G6].[dbo].[Cities] ON [Projet_POO_G6].[dbo].[Addresses].[cityID] = [Projet_POO_G6].[dbo].[Cities].[cityID]"; //A compléter avec la bonne requête SQL
+    return "SELECT [empID], [chiefID], [lastName], [firstName], [hireDate], [streetNumber], [StreetName], [cityName], [cityZipCode] \
+FROM [Projet_POO_G6].[dbo].[Employees] \
+LEFT JOIN [Projet_POO_G6].[dbo].[Addresses] ON [Projet_POO_G6].[dbo].[Employees].[addrID] = [Projet_POO_G6].[dbo].[Addresses].[addrID] \
+LEFT JOIN [Projet_POO_G6].[dbo].[Cities] ON [Projet_POO_G6].[dbo].[Addresses].[cityID] = [Projet_POO_G6].[dbo].[Cities].[cityID] \
+WHERE [lastName] = '" + lastName + "' OR [firstName] = '" + firstName + "' OR [hireDate] = '" + hireDate + "'";
 }
 
 System::String^ NS_Comp::CLmapEMP::insertEmployee(void)

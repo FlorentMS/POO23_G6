@@ -16,6 +16,7 @@ namespace NS_Comp
 		System::String^ hireDate;
 		System::String^ ChiefID;
 	public :
+		System::String^ selectAllEmployees(void);
 		System::String^ selectEmployees(void);
 		System::String^ insertEmployee(void);
 		System::String^ deleteEmployee(void);

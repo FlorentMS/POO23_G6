@@ -7,13 +7,23 @@ NS_Svc::CLemployees::CLemployees(void)
 	this->oEmp = gcnew NS_Comp::CLmapEMP();
 }
 
-System::Data::DataSet^ NS_Svc::CLemployees::displayEmp(System::String^ dataTableName)
+System::Data::DataSet^ NS_Svc::CLemployees::displayEmp(System::String^ dataTableName, System::String^ hireDate)
 {
 	System::String^ sql;
 
+	this->oEmp->setHireDate(hireDate);
 	sql = this->oEmp->selectEmployees();
 
 	return this->oCad-> getRows(sql, dataTableName);
+}
+
+System::Data::DataSet^ NS_Svc::CLemployees::displayAllEmp(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oEmp->selectAllEmployees();
+
+	return this->oCad->getRows(sql, dataTableName);
 }
 
 void NS_Svc::CLemployees::addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
