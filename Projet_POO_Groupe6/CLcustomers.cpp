@@ -41,7 +41,7 @@ void NS_Svc::CLcustomers::eraseCustomers(System::String^ lastname, System::Strin
 
 	this->oCUST->setLastName(lastname);
 	this->oCUST->setFirstName(firstname);
-	this->oCUST->setBirthDate(birthdate);
+	//this->oCUST->setBirthDate(birthdate);
 	sql = this->oCUST->deleteCustomer();
 
 	this->oCad->actionRows(sql);

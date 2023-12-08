@@ -937,6 +937,7 @@ namespace ProjetPOOGroupe6 {
 			this->eraseCust->TabIndex = 30;
 			this->eraseCust->Text = L"Erase";
 			this->eraseCust->UseVisualStyleBackColor = true;
+			this->eraseCust->Click += gcnew System::EventHandler(this, &MyForm::eraseCust_Click);
 			// 
 			// lastNameSearchCust
 			// 
@@ -3522,6 +3523,13 @@ private: System::Void addCust_Click(System::Object^ sender, System::EventArgs^ e
 	int bilingStreetN = System::Convert::ToInt32(this->text_bilingStreetN->Text);
 	int deliveryStreetN = System::Convert::ToInt32(this->text_deliveryStreetN->Text);
 	this->oSVCcustomers->addCustomers(this->text_custLastName->Text, this->text_custFirstName->Text, (this->birthDateCust_datePicker->Value).ToString("yyy-MM-dd"), bilingStreetN, deliveryStreetN, this->text_bilingStreetName->Text, this->text_deliveryStreetName->Text, this->text_bilingCityName->Text, this->text_deliveryCityName->Text, this->text_bilingZIPcode->Text, this->text_deliveryZIPcode->Text);
+	this->dgv_cust->Refresh();
+	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
+	this->dgv_cust->DataSource = this->oDs_customers;
+	this->dgv_cust->DataMember = "Rsl";
+}
+private: System::Void eraseCust_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSVCcustomers->eraseCustomers(this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
 	this->dgv_cust->Refresh();
 	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
 	this->dgv_cust->DataSource = this->oDs_customers;
