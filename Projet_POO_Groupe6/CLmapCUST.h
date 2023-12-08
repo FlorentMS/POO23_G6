@@ -29,6 +29,7 @@ namespace NS_Comp {
 
 	public:
 		System::String^ selectCustomers();
+		System::String^ selectCustomer();
 		System::String^ insertCustomer();
 		System::String^ deleteCustomer();
 		System::String^ updateCustomer();

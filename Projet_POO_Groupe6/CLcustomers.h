@@ -12,6 +12,7 @@ namespace NS_Svc
 	public:
 		CLcustomers(void);
 		System::Data::DataSet^ displayCustomers(System::String^);
+		System::Data::DataSet^ displayCustomer(System::String^, System::String^, System::String^, System::String^);
 		void addCustomers(System::String^, System::String^, System::String^, int, int, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void eraseCustomers(System::String^, System::String^, System::String^);
 		void updateCustomers(System::String^, System::String^, System::String^, int, int, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);

@@ -20,6 +20,26 @@ System::String^ NS_Comp::CLmapCUST::selectCustomers()
 		JOIN[Projet_POO_G6].[dbo].[Cities] AS[CitiesBill] ON[addrBil].[cityID] = [CitiesBill].[cityID]";
 }
 
+System::String^ NS_Comp::CLmapCUST::selectCustomer()
+{
+	return "SELECT [Projet_POO_G6].[dbo].[Customers].[custNumber], [lastName], [firstName], [birthDate], [firstBuyDate],\
+		[addrDel].[streetNumber] AS[delStreetNumber],\
+		[addrDel].[StreetName] AS[delStreetName],\
+		[CitiesDel].[cityZipCode] AS[delCityZipCode],\
+		[CitiesDel].[cityName] AS[delCityName],\
+		[addrBil].[streetNumber] AS[billStreetNumber],\
+		[addrBil].[StreetName] AS[billStreetName],\
+		[CitiesBill].[cityZipCode] AS[billCityZipCode],\
+		[CitiesBill].[cityName] AS[billCityName]\
+		FROM[Projet_POO_G6].[dbo].[Customers]\
+		LEFT JOIN[Projet_POO_G6].[dbo].[Socities] ON[Projet_POO_G6].[dbo].[Customers].[socityID] = [Projet_POO_G6].[dbo].[Socities].[socityID]\
+		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrDel] ON[Projet_POO_G6].[dbo].[Customers].[addrDel] = [addrDel].[addrID]\
+		JOIN[Projet_POO_G6].[dbo].[Cities] AS[CitiesDel] ON[addrDel].[cityID] = [CitiesDel].[cityID]\
+		JOIN[Projet_POO_G6].[dbo].[Addresses] AS[addrBil] ON[Projet_POO_G6].[dbo].[Customers].[addrBil] = [addrBil].[addrID]\
+		JOIN[Projet_POO_G6].[dbo].[Cities] AS[CitiesBill] ON[addrBil].[cityID] = [CitiesBill].[cityID]\
+		WHERE lastName = '" + this->lastName + "' AND firstName = '" + this->firstName + "' AND birthDate = '" + this->birthDate + "';";
+}
+
 System::String^ NS_Comp::CLmapCUST::insertCustomer()
 {
 	return "DECLARE @cityIDdel INT;\

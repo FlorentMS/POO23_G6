@@ -903,6 +903,7 @@ namespace ProjetPOOGroupe6 {
 			this->displayCust->TabIndex = 32;
 			this->displayCust->Text = L"Display";
 			this->displayCust->UseVisualStyleBackColor = true;
+			this->displayCust->Click += gcnew System::EventHandler(this, &MyForm::displayCust_Click);
 			// 
 			// text_firstNameSearchCust
 			// 
@@ -3532,6 +3533,12 @@ private: System::Void eraseCust_Click(System::Object^ sender, System::EventArgs^
 	this->oSVCcustomers->eraseCustomers(this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
 	this->dgv_cust->Refresh();
 	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
+	this->dgv_cust->DataSource = this->oDs_customers;
+	this->dgv_cust->DataMember = "Rsl";
+}
+private: System::Void displayCust_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dgv_cust->Refresh();
+	this->oDs_customers = this->oSVCcustomers->displayCustomer("Rsl", this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
 	this->dgv_cust->DataSource = this->oDs_customers;
 	this->dgv_cust->DataMember = "Rsl";
 }

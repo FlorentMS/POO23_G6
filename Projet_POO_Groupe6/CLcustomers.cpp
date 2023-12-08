@@ -15,6 +15,17 @@ System::Data::DataSet^ NS_Svc::CLcustomers::displayCustomers(System::String^ dat
 	return this->oCad->getRows(sql, dataTableName);
 }
 
+System::Data::DataSet^ NS_Svc::CLcustomers::displayCustomer(System::String^ dataTableName, System::String^ lastname, System::String^ firstname, System::String^ birthdate)
+{
+	System::String^ sql;
+
+	this->oCUST->setLastName(lastname);
+	this->oCUST->setFirstName(firstname);
+	this->oCUST->setBirthDate(birthdate);
+	sql = this->oCUST->selectCustomer();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
 void NS_Svc::CLcustomers::addCustomers(System::String^ lastname, System::String^ firstname, System::String^ birthdate, int SnuBil, int SnuDel, System::String^ SnaBil, System::String^ SnaDel, System::String^ CnBil, System::String^ CnDel, System::String^ ZcBil, System::String^ ZcDel)
 {
 	System::String^ sql;
@@ -41,7 +52,7 @@ void NS_Svc::CLcustomers::eraseCustomers(System::String^ lastname, System::Strin
 
 	this->oCUST->setLastName(lastname);
 	this->oCUST->setFirstName(firstname);
-	//this->oCUST->setBirthDate(birthdate);
+	this->oCUST->setBirthDate(birthdate);
 	sql = this->oCUST->deleteCustomer();
 
 	this->oCad->actionRows(sql);
