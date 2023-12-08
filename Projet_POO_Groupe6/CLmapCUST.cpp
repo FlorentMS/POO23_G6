@@ -23,7 +23,21 @@ System::String^ NS_Comp::CLmapCUST::selectCustomers()
 
 System::String^ NS_Comp::CLmapCUST::insertCustomer()
 {
-	return "";
+	return "DECLARE @cityIDdel INT;\
+			DECLARE @addrIDdel INT;\
+			DECLARE @addrIDbil INT;\
+			DECLARE @cityIDbil INT;\
+			SET @cityIDdel = (SELECT cityID FROM Cities WHERE cityName = '" + this->cityNameDel + "' AND cityZipCode = '" + this->ZipCodeDel + "');\
+			SET @cityIDbil = (SELECT cityID FROM Cities WHERE cityName = '" + this->cityNameBil + "' AND cityZipCode = '" + this->ZipCodeBil + "');\
+			INSERT INTO Addresses(streetNumber, streetName, cityID) VALUES\
+			(" + this->streetNumberDel + ", '" + this->streetNameDel + "', @cityIDdel); \
+			SET @addrIDdel = SCOPE_IDENTITY();\
+			INSERT INTO Addresses(streetNumber, streetName, cityID) VALUES\
+			(" + this->streetNumberBil + ", '" + this->streetNameBil + "', @cityIDbil);\
+			SET @addrIDbil = SCOPE_IDENTITY();\
+			INSERT INTO Customers(lastName, firstName, birthDate, addrBill, addrDel) VALUES\
+			('" + this->lastName + "', '" + this->firstName + "', '" + this->birthDate + "', @addrIDbil, @addrIDdel);\
+	";
 }
 
 System::String^ NS_Comp::CLmapCUST::deleteCustomer()

@@ -48,7 +48,7 @@ namespace ProjetPOOGroupe6 {
 	/// </summary>
 	private: NS_Svc::CLorders^ oSVCorders;
 	//private: NS_Svc::CLemployees^ oSVCemployees;
-	//private: NS_Svc::CLcustomers^ oSVCcustomers;
+	private: NS_Svc::CLcustomers^ oSVCcustomers;
 	//private: NS_Svc::CLstock^ oSVCstock;
 	//private: NS_Svc::CLstatistics^ oSVCstatistics;
 	//priavte: NS_Svc::CLsimulations^oSVCsimulations;
@@ -310,99 +310,6 @@ namespace ProjetPOOGroupe6 {
 
 
 
-
-
-
-
-private: System::Windows::Forms::Label^ label10;
-private: System::Windows::Forms::NumericUpDown^ numericUpDown_quantityArticle;
-
-
-private: System::Windows::Forms::Label^ label11;
-private: System::Windows::Forms::Button^ addPayment;
-private: System::Windows::Forms::Button^ addArticle;
-
-
-private: System::Windows::Forms::Label^ label13;
-private: System::Windows::Forms::TextBox^ text_deliveryDate;
-
-private: System::Windows::Forms::Label^ label12;
-private: System::Windows::Forms::TextBox^ text_completPayementDate;
-private: System::Windows::Forms::Label^ label18;
-private: System::Windows::Forms::TextBox^ textBox_vatRate;
-
-private: System::Windows::Forms::Label^ label17;
-private: System::Windows::Forms::TextBox^ text_articlePriceExcludingTaxes;
-
-private: System::Windows::Forms::Label^ label16;
-private: System::Windows::Forms::TextBox^ text_articleName;
-private: System::Windows::Forms::NumericUpDown^ numericUpDown_quantityProduct;
-
-
-private: System::Windows::Forms::Label^ label14;
-private: System::Windows::Forms::Label^ label15;
-private: System::Windows::Forms::TextBox^ text_stockArticleID;
-
-
-private: System::Windows::Forms::Label^ label20;
-private: System::Windows::Forms::TextBox^ textBox_reorderThreshold;
-
-private: System::Windows::Forms::Label^ label19;
-private: System::Windows::Forms::TextBox^ text_articleColor;
-private: System::Windows::Forms::GroupBox^ groupBox6;
-private: System::Windows::Forms::Label^ label22;
-private: System::Windows::Forms::TextBox^ text_statisticsCustBirthDate;
-
-private: System::Windows::Forms::Label^ label23;
-private: System::Windows::Forms::TextBox^ text_statisticsCustLastName;
-private: System::Windows::Forms::TextBox^ text_statisticsCustFirstName;
-
-
-private: System::Windows::Forms::Label^ label24;
-private: System::Windows::Forms::TextBox^ text_statisticsCustReference;
-
-private: System::Windows::Forms::Label^ label25;
-private: System::Windows::Forms::GroupBox^ groupBox7;
-private: System::Windows::Forms::TextBox^ text_turnoverYear;
-
-private: System::Windows::Forms::Label^ label4;
-private: System::Windows::Forms::TextBox^ text_turnoverMonth;
-
-
-private: System::Windows::Forms::Label^ label5;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	protected:
 
 	private:
@@ -421,7 +328,6 @@ private: System::Windows::Forms::Label^ label5;
 			this->mainTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->homeTab = (gcnew System::Windows::Forms::TabPage());
 			this->customersTab = (gcnew System::Windows::Forms::TabPage());
-			this->displayCust = (gcnew System::Windows::Forms::Button());
 			this->changeCust = (gcnew System::Windows::Forms::Button());
 			this->text_custRef = (gcnew System::Windows::Forms::TextBox());
 			this->eraseCust = (gcnew System::Windows::Forms::Button());
@@ -432,6 +338,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->serviceNum = (gcnew System::Windows::Forms::Label());
 			this->socityName = (gcnew System::Windows::Forms::Label());
 			this->customerGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->displayCust = (gcnew System::Windows::Forms::Button());
 			this->text_birthDate = (gcnew System::Windows::Forms::TextBox());
 			this->text_custFirstName = (gcnew System::Windows::Forms::TextBox());
 			this->birthDateCust = (gcnew System::Windows::Forms::Label());
@@ -651,16 +558,6 @@ private: System::Windows::Forms::Label^ label5;
 			this->customersTab->Text = L"Customers";
 			this->customersTab->UseVisualStyleBackColor = true;
 			// 
-			// displayCust
-			// 
-			this->displayCust->Location = System::Drawing::Point(279, 30);
-			this->displayCust->Name = L"displayCust";
-			this->displayCust->Size = System::Drawing::Size(141, 33);
-			this->displayCust->TabIndex = 32;
-			this->displayCust->Text = L"Display customers";
-			this->displayCust->UseVisualStyleBackColor = true;
-			this->displayCust->Click += gcnew System::EventHandler(this, &MyForm::displayCust_Click);
-			// 
 			// changeCust
 			// 
 			this->changeCust->Location = System::Drawing::Point(290, 523);
@@ -755,6 +652,16 @@ private: System::Windows::Forms::Label^ label5;
 			this->customerGroupBox->TabIndex = 27;
 			this->customerGroupBox->TabStop = false;
 			this->customerGroupBox->Text = L"Customers info";
+			// 
+			// displayCust
+			// 
+			this->displayCust->Location = System::Drawing::Point(279, 30);
+			this->displayCust->Name = L"displayCust";
+			this->displayCust->Size = System::Drawing::Size(141, 33);
+			this->displayCust->TabIndex = 32;
+			this->displayCust->Text = L"Display customers";
+			this->displayCust->UseVisualStyleBackColor = true;
+			this->displayCust->Click += gcnew System::EventHandler(this, &MyForm::displayCust_Click);
 			// 
 			// text_birthDate
 			// 
@@ -2132,7 +2039,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(775, 609);
+			this->ClientSize = System::Drawing::Size(772, 608);
 			this->Controls->Add(this->mainTabControl);
 			this->MaximumSize = System::Drawing::Size(790, 655);
 			this->MinimumSize = System::Drawing::Size(790, 655);
@@ -2196,11 +2103,16 @@ private: System::Windows::Forms::Label^ label5;
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oSVCorders = gcnew NS_Svc::CLorders();
-		//this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
+		this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
 		//this->oSVCemployees = gcnew NS_Svc::CLemployees();
 		//this->oSVCstock = gcnew NS_Svc::CLstock();
 		//this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
-		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();
+		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();	
+		
+		this->dgv_cust->Refresh();
+		this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
+		this->dgv_cust->DataSource = this->oDs_customers;
+		this->dgv_cust->DataMember = "Rsl";
 	}
 	private: System::Void displayOrder_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_ord->Refresh();
@@ -2208,5 +2120,7 @@ private: System::Windows::Forms::Label^ label5;
 		this->dgv_ord->DataSource = this->oDs_orders;
 		this->dgv_ord->DataMember = "Rsl";
 	}
+private: System::Void displayCust_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
