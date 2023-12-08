@@ -33,8 +33,8 @@ void NS_Svc::CLorders::addOrder(System::String^ deliveryDate, System::String^ Co
 {
 	System::String^ sql; 
 
-	if (MeanOfPay != "" && PayDate != "" && ProductRef != "" && copyNum != "" && color != "" && deliveryDate != "" && CompletePayDate != "" && CustID != "") {
-		this->oOrder->setCustID(System::Convert::ToInt32(CustID));
+	/*if (MeanOfPay != "" && PayDate != "" && ProductRef != "" && copyNum != "" && color != "" && deliveryDate != "" && CompletePayDate != "" && CustID != "") {
+		*/this->oOrder->setCustID(System::Convert::ToInt32(CustID));
 		this->oOrder->setDeliveryDate(deliveryDate);
 		this->oOrder->setCompletePaymentDate(CompletePayDate); //May be can be delete
 
@@ -60,8 +60,8 @@ void NS_Svc::CLorders::addOrder(System::String^ deliveryDate, System::String^ Co
 		sql = this->oOrder->insertOrder();
 
 		this->oCad->actionRows(sql);
-	}
-	else {}
+	/* }
+	else {}*/
 }
 
 void NS_Svc::CLorders::addItem(System::String^ ProductRef, System::String^ color, System::String^ copyNum)
@@ -95,7 +95,7 @@ void NS_Svc::CLorders::eraseOrder(System::String^ orderRefrence)
 
 	this->oOrder->setOrderRef(orderRefrence);
 
-	sql = this->oOrder->insertPayment();
+	sql = this->oOrder->deleteOrder();
 
 	this->oCad->actionRows(sql);
 }

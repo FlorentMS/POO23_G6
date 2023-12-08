@@ -222,8 +222,10 @@ namespace ProjetPOOGroupe6 {
 			private: System::Windows::Forms::DateTimePicker^ PaymentDueDateAddOrder_datePicker;
 
 		private: System::Windows::Forms::GroupBox^ ItemAddOrder_GroupeBox;
+			private: System::Windows::Forms::Label^ ItemColorAddOrder;
 			private: System::Windows::Forms::Label^ itemIDAddOrder;
 			private: System::Windows::Forms::Label^ quantityItemsAddOrder;
+			private: System::Windows::Forms::ComboBox^ ItemColorAddOrder_comboBox;
 			private: System::Windows::Forms::TextBox^ text_ItemIdAddOrder;
 			private: System::Windows::Forms::NumericUpDown^ UpDown_quantityItemAddOrders;
 
@@ -243,9 +245,7 @@ namespace ProjetPOOGroupe6 {
 
 	private: System::Windows::Forms::GroupBox^ searchOrder_groupBox;
 		private: System::Windows::Forms::Label^ orderIdSearchOrder;
-		private: System::Windows::Forms::Label^ ItemColorAddOrder;
 		private: System::Windows::Forms::TextBox^ text_orderIdSearchOrder;
-		private: System::Windows::Forms::ComboBox^ ItemColorAddOrder_comboBox;
 	
 
 	private: System::Windows::Forms::GroupBox^ infoChangeOrder_groupBox;
@@ -2314,6 +2314,7 @@ namespace ProjetPOOGroupe6 {
 			this->eraseOrder->TabIndex = 38;
 			this->eraseOrder->Text = L"Erase";
 			this->eraseOrder->UseVisualStyleBackColor = true;
+			this->eraseOrder->Click += gcnew System::EventHandler(this, &MyForm::eraseOrder_Click);
 			// 
 			// addItem
 			// 
@@ -3501,13 +3502,17 @@ namespace ProjetPOOGroupe6 {
 			this->text_customerIdAddOrders->Text,this->comboBox_meanOfPaymentAddOrder->Text, (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
 			this->text_ItemIdAddOrder->Text,this->ItemColorAddOrder_comboBox->Text, this->UpDown_quantityItemAddOrders->Text);
 	}
+	private: System::Void eraseOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_ord->Refresh(); 
+		this->oSVCorders->eraseOrder(this->text_orderIdSearchOrder->Text);
+		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslAll";
+	}
 
 
 
 	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-////////
-/*Faire un displayEmps pour le placer pour avoir tous et faire un displayEmp pour un employer à l'aide des données dans le search*/
-////////
 		this->dgv_emp->Refresh();
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
@@ -3516,9 +3521,6 @@ namespace ProjetPOOGroupe6 {
 	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int streetNumber = System::Convert::ToInt64(this->text_streetNumber->Text);
 		this->dgv_emp->Refresh();
-////////
-/*Attention le hire date doit être pris automatiquement dans la requête sql avec un GETDATE() car plus aucun champs ne permet de le rentrer*/
-////////
 		this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
