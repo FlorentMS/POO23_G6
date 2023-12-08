@@ -18,8 +18,8 @@ namespace NS_Svc {
 		System::Data::DataSet^ displayOrder(System::String^ dataTableName, System::String^ orderRef);
 
 
-		void addOrder(System::String^ orderRef, System::String^ deliveryDate, System::String^ CompletePayDate, System::String^ CustID,
-			System::String^ MeanOfPay, System::String^ PayDate, System::String^ ProductRef, System::String^ color, System::String^ copyNum);
+		void addOrder(System::String^ deliveryDate, System::String^ CompletePayDate, System::String^ CustID, System::String^ MeanOfPay, 
+			System::String^ PayDate, System::String^ ProductRef, System::String^ color, System::String^ copyNum);
 		
 		void addItem(System::String^ ProductRef, System::String^ color, System::String^ copyNum);
 		

@@ -458,6 +458,7 @@ namespace ProjetPOOGroupe6 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->mainTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->homeTab = (gcnew System::Windows::Forms::TabPage());
 			this->customersTab = (gcnew System::Windows::Forms::TabPage());
@@ -2068,15 +2069,18 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// ItemColorAddItemOrder_comboBox
 			// 
-			this->ItemColorAddItemOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(3) {
-				L"Cash",
-					L"Credit card", L"Bank transfer"
+			this->ItemColorAddItemOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(5) {
+				L"Blanc",
+					L"Noir", L"Vert", L"Bleu", L"Rouge"
 			});
 			this->ItemColorAddItemOrder_comboBox->CausesValidation = false;
 			this->ItemColorAddItemOrder_comboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->ItemColorAddItemOrder_comboBox->FormattingEnabled = true;
 			this->ItemColorAddItemOrder_comboBox->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->ItemColorAddItemOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cash", L"Credit Card", L"Bank transfer" });
+			this->ItemColorAddItemOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Blanc", L"Noir", L"Vert",
+					L"Bleu", L"Rouge"
+			});
 			this->ItemColorAddItemOrder_comboBox->Location = System::Drawing::Point(33, 95);
 			this->ItemColorAddItemOrder_comboBox->Name = L"ItemColorAddItemOrder_comboBox";
 			this->ItemColorAddItemOrder_comboBox->Size = System::Drawing::Size(127, 24);
@@ -2170,15 +2174,18 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// itemColorChangeOrder_comboBox
 			// 
-			this->itemColorChangeOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(3) {
-				L"Cash",
-					L"Credit card", L"Bank transfer"
+			this->itemColorChangeOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(5) {
+				L"Blanc",
+					L"Noir", L"Vert", L"Bleu", L"Rouge"
 			});
 			this->itemColorChangeOrder_comboBox->CausesValidation = false;
 			this->itemColorChangeOrder_comboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->itemColorChangeOrder_comboBox->FormattingEnabled = true;
 			this->itemColorChangeOrder_comboBox->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->itemColorChangeOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cash", L"Credit Card", L"Bank transfer" });
+			this->itemColorChangeOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Blanc", L"Noir", L"Vert",
+					L"Bleu", L"Rouge"
+			});
 			this->itemColorChangeOrder_comboBox->Location = System::Drawing::Point(33, 95);
 			this->itemColorChangeOrder_comboBox->Name = L"itemColorChangeOrder_comboBox";
 			this->itemColorChangeOrder_comboBox->Size = System::Drawing::Size(127, 24);
@@ -2284,18 +2291,20 @@ namespace ProjetPOOGroupe6 {
 			this->orderIdSearchOrder->AutoSize = true;
 			this->orderIdSearchOrder->Location = System::Drawing::Point(21, 27);
 			this->orderIdSearchOrder->Name = L"orderIdSearchOrder";
-			this->orderIdSearchOrder->Size = System::Drawing::Size(55, 16);
+			this->orderIdSearchOrder->Size = System::Drawing::Size(63, 16);
 			this->orderIdSearchOrder->TabIndex = 28;
-			this->orderIdSearchOrder->Text = L"order ID";
+			this->orderIdSearchOrder->Text = L"order Ref";
 			// 
 			// displayOrder
 			// 
+			this->displayOrder->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"displayOrder.Image")));
 			this->displayOrder->Location = System::Drawing::Point(165, 87);
 			this->displayOrder->Name = L"displayOrder";
 			this->displayOrder->Size = System::Drawing::Size(86, 33);
 			this->displayOrder->TabIndex = 40;
 			this->displayOrder->Text = L"Display";
 			this->displayOrder->UseVisualStyleBackColor = true;
+			this->displayOrder->Click += gcnew System::EventHandler(this, &MyForm::displayOrder_Click);
 			// 
 			// eraseOrder
 			// 
@@ -2442,15 +2451,18 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// ItemColorAddOrder_comboBox
 			// 
-			this->ItemColorAddOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(3) {
-				L"Cash", L"Credit card",
-					L"Bank transfer"
+			this->ItemColorAddOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(5) {
+				L"Blanc", L"Noir",
+					L"Vert", L"Bleu", L"Rouge"
 			});
 			this->ItemColorAddOrder_comboBox->CausesValidation = false;
 			this->ItemColorAddOrder_comboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->ItemColorAddOrder_comboBox->FormattingEnabled = true;
 			this->ItemColorAddOrder_comboBox->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->ItemColorAddOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cash", L"Credit Card", L"Bank transfer" });
+			this->ItemColorAddOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Blanc", L"Noir", L"Vert", L"Bleu",
+					L"Rouge"
+			});
 			this->ItemColorAddOrder_comboBox->Location = System::Drawing::Point(33, 95);
 			this->ItemColorAddOrder_comboBox->Name = L"ItemColorAddOrder_comboBox";
 			this->ItemColorAddOrder_comboBox->Size = System::Drawing::Size(127, 24);
@@ -2508,12 +2520,13 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// addOrder
 			// 
-			this->addOrder->Location = System::Drawing::Point(49, 677);
+			this->addOrder->Location = System::Drawing::Point(109, 677);
 			this->addOrder->Name = L"addOrder";
 			this->addOrder->Size = System::Drawing::Size(150, 33);
 			this->addOrder->TabIndex = 37;
 			this->addOrder->Text = L"Add order";
 			this->addOrder->UseVisualStyleBackColor = true;
+			this->addOrder->Click += gcnew System::EventHandler(this, &MyForm::addOrder_Click);
 			// 
 			// dgv_ord
 			// 
@@ -3467,13 +3480,30 @@ namespace ProjetPOOGroupe6 {
 		//this->oSVCstock = gcnew NS_Svc::CLstock();
 		//this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
 		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();
+
+		this->dgv_ord->Refresh();
+		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslAll";
+
 	}
+
+
+
 	private: System::Void displayOrder_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_ord->Refresh();
-		this->oDs_orders = this->oSVCorders->displayOrders("Rsl");
+		this->oDs_orders = this->oSVCorders->displayOrder("RslSpe",this->text_orderIdSearchOrder->Text);
 		this->dgv_ord->DataSource = this->oDs_orders;
-		this->dgv_ord->DataMember = "Rsl";
+		this->dgv_ord->DataMember = "RslSpe";
 	}
+	private: System::Void addOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSVCorders->addOrder((this->deliveryAddOrder_DatePicker->Value).ToString("yyyy-MM-dd"), (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
+			this->text_customerIdAddOrders->Text,this->comboBox_meanOfPaymentAddOrder->Text, (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
+			this->text_ItemIdAddOrder->Text,this->ItemColorAddOrder_comboBox->Text, this->UpDown_quantityItemAddOrders->Text);
+	}
+
+
+
 	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 ////////
 /*Faire un displayEmps pour le placer pour avoir tous et faire un displayEmp pour un employer à l'aide des données dans le search*/
@@ -3496,7 +3526,7 @@ namespace ProjetPOOGroupe6 {
 	}
 	private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_emp->Refresh();
-		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd");
+		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
@@ -3510,5 +3540,6 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
 	}
+
 };
 }
