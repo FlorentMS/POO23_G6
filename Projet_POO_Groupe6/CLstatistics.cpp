@@ -66,14 +66,20 @@ System::Data::DataSet^ NS_Svc::CLstatistics::totalAmount(System::String^ dataTab
 	return this->oCad->getRows(sql, dataTable);
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::retailValueInventory(System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::retailValueInventory(System::String^ dataTable)
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	System::String^ sql;
+
+	sql = this->oSTAT->selectRetailValueInventory();
+
+	return this->oCad->getRows(sql, dataTable);
 }
 
-System::Data::DataSet^ NS_Svc::CLstatistics::purchaseValueInventory(System::String^)
+System::Data::DataSet^ NS_Svc::CLstatistics::purchaseValueInventory(System::String^ dataTable)
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	System::String^ sql;
+
+	sql = this->oSTAT->selectPurchaseValueInventory();
+
+	return this->oCad->getRows(sql, dataTable);
 }

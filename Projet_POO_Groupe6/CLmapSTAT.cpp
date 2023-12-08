@@ -60,12 +60,16 @@ System::String^ NS_Comp::CLmapSTAT::selectTotalAmount(void)
 
 System::String^ NS_Comp::CLmapSTAT::selectRetailValueInventory(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "SELECT  SUM(p.priceET * cp.stockQuantity) AS ValeurCommercialeDuStock\
+			FROM Products p\
+			JOIN characteristicsProd cp ON p.productRef = cp.productRef; ";
 }
 
 System::String^ NS_Comp::CLmapSTAT::selectPurchaseValueInventory(void)
 {
-	return ""; //A compléter avec la bonne requête SQL
+	return "SELECT  SUM(p.priceET * (1 + p.VATrate) * cp.stockQuantity) AS ValeurAchatDuStock\
+			FROM Products p\
+			JOIN characteristicsProd cp ON p.productRef = cp.productRef; ";
 }
 
 void NS_Comp::CLmapSTAT::setLastName(System::String^ LName)
