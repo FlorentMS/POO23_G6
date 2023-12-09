@@ -3433,12 +3433,20 @@ namespace ProjetPOOGroupe6 {
 
 
 
+	private: void DisplayAllOrder(void) {
+		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslAll";
+	}
+	private: void DisplayOneOrder(void) {
+		this->oDs_orders = this->oSVCorders->displayOrder("RslSpe", this->text_orderIdSearchOrder->Text);
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslSpe";
+	}
 	private: System::Void displayOrder_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text)) {
 			this->dgv_ord->Refresh();
-			this->oDs_orders = this->oSVCorders->displayOrder("RslSpe", this->text_orderIdSearchOrder->Text);
-			this->dgv_ord->DataSource = this->oDs_orders;
-			this->dgv_ord->DataMember = "RslSpe";
+			DisplayOneOrder();
 		}
 		else{ MessageBox::Show("Be carefull ! Please put an order refrence ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3446,9 +3454,7 @@ namespace ProjetPOOGroupe6 {
 		if (!System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text)) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->eraseOrder(this->text_orderIdSearchOrder->Text);
-			this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
-			this->dgv_ord->DataSource = this->oDs_orders;
-			this->dgv_ord->DataMember = "RslAll";
+			DisplayAllOrder();
 		}
 		else{ MessageBox::Show("Be carefull ! You missed to file the order reference ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3456,9 +3462,7 @@ namespace ProjetPOOGroupe6 {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) ||  System::String::IsNullOrWhiteSpace(this->text_itemIdAddItemOrder->Text) || System::String::IsNullOrWhiteSpace(this->ItemColorAddItemOrder_comboBox->Text) || this->UpDown_quanityAddItemOrder->Text == "0")) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->addItem(this->text_orderIdSearchOrder->Text, this->text_itemIdAddItemOrder->Text, this->ItemColorAddItemOrder_comboBox->Text, this->UpDown_quanityAddItemOrder->Text);
-			this->oDs_orders = this->oSVCorders->displayOrder("RslSpe", this->text_orderIdSearchOrder->Text);
-			this->dgv_ord->DataSource = this->oDs_orders;
-			this->dgv_ord->DataMember = "RslSpe";
+			DisplayOneOrder();
 		}
 		else{ MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3467,9 +3471,7 @@ namespace ProjetPOOGroupe6 {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || this->meanOfPaymentAddPayOrder_comboBox->Text == "")) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->addPayment(this->text_orderIdSearchOrder->Text, this->meanOfPaymentAddPayOrder_comboBox->Text, this->paymentDueAddPayOrder_datePicker->Text);
-			this->oDs_orders = this->oSVCorders->displayOrder("RslSpe", this->text_orderIdSearchOrder->Text);
-			this->dgv_ord->DataSource = this->oDs_orders;
-			this->dgv_ord->DataMember = "RslSpe";
+			DisplayOneOrder();
 		}
 		else{ MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3477,9 +3479,7 @@ namespace ProjetPOOGroupe6 {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || System::String::IsNullOrWhiteSpace(this->text_itemIdAddItemOrder->Text) || System::String::IsNullOrWhiteSpace(this->ItemColorAddItemOrder_comboBox->Text))) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->eraseItem(this->text_orderIdSearchOrder->Text, this->text_itemIdAddItemOrder->Text, this->ItemColorAddItemOrder_comboBox->Text);
-			this->oDs_orders = this->oSVCorders->displayOrder("RslSpe", this->text_orderIdSearchOrder->Text);
-			this->dgv_ord->DataSource = this->oDs_orders;
-			this->dgv_ord->DataMember = "RslSpe";
+			DisplayOneOrder();
 		}
 		else { MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3487,9 +3487,7 @@ namespace ProjetPOOGroupe6 {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || this->meanOfPaymentAddPayOrder_comboBox->Text == "")) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->erasePayment(this->text_orderIdSearchOrder->Text, this->meanOfPaymentAddPayOrder_comboBox->Text, this->paymentDueAddPayOrder_datePicker->Text);
-			this->oDs_orders = this->oSVCorders->displayOrder("RslSpe", this->text_orderIdSearchOrder->Text);
-			this->dgv_ord->DataSource = this->oDs_orders;
-			this->dgv_ord->DataMember = "RslSpe";
+			DisplayOneOrder();
 		}
 		else { MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3501,9 +3499,7 @@ namespace ProjetPOOGroupe6 {
 			this->oSVCorders->addOrder((this->deliveryAddOrder_DatePicker->Value).ToString("yyyy-MM-dd"), (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
 				this->text_customerIdAddOrders->Text,this->comboBox_meanOfPaymentAddOrder->Text, (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
 				this->text_ItemIdAddOrder->Text,this->ItemColorAddOrder_comboBox->Text, this->UpDown_quantityItemAddOrders->Text);
-			this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
-			this->dgv_ord->DataSource = this->oDs_orders;
-			this->dgv_ord->DataMember = "RslAll";
+			DisplayAllOrder();
 		}
 		else {MessageBox::Show("Be carefull ! You missed to file some informations ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);}
 	}
@@ -3511,9 +3507,7 @@ namespace ProjetPOOGroupe6 {
 		if (!System::String::IsNullOrWhiteSpace(this->text_orderIdChangeOrder->Text)) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->changeOrder(this->text_orderIdChangeOrder->Text,(this->deliveryChangeOrder_datePicker->Value).ToString("yyyy-MM-dd"), (this->completePayChangeOrder_datePicker->Value).ToString("yyyy-MM-dd"));
-			this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
-			this->dgv_ord->DataSource = this->oDs_orders;
-			this->dgv_ord->DataMember = "RslAll";
+			DisplayAllOrder();
 		}
 		else { MessageBox::Show("Be carefull ! You missed to file some informations ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
