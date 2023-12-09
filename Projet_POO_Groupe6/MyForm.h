@@ -437,6 +437,9 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::Button^ eraseEmp;
 	private: System::Windows::Forms::Button^ addEmp;
 
+private: System::Windows::Forms::Label^ home_page;
+
+
 
 
 
@@ -460,8 +463,21 @@ namespace ProjetPOOGroupe6 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle17 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle18 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle19 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle20 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle21 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle22 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle23 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle24 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->mainTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->homeTab = (gcnew System::Windows::Forms::TabPage());
+			this->home_page = (gcnew System::Windows::Forms::Label());
 			this->customersTab = (gcnew System::Windows::Forms::TabPage());
 			this->socityChangeCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->text_serviceNumberChangeCust = (gcnew System::Windows::Forms::TextBox());
@@ -728,6 +744,7 @@ namespace ProjetPOOGroupe6 {
 			this->dgv_simu = (gcnew System::Windows::Forms::DataGridView());
 			this->execution_button = (gcnew System::Windows::Forms::Button());
 			this->mainTabControl->SuspendLayout();
+			this->homeTab->SuspendLayout();
 			this->customersTab->SuspendLayout();
 			this->socityChangeCust_groupBox->SuspendLayout();
 			this->InfoSearchCust_groupBox->SuspendLayout();
@@ -780,6 +797,7 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// mainTabControl
 			// 
+			this->mainTabControl->Appearance = System::Windows::Forms::TabAppearance::FlatButtons;
 			this->mainTabControl->Controls->Add(this->homeTab);
 			this->mainTabControl->Controls->Add(this->customersTab);
 			this->mainTabControl->Controls->Add(this->employeesTab);
@@ -787,20 +805,37 @@ namespace ProjetPOOGroupe6 {
 			this->mainTabControl->Controls->Add(this->stockTab);
 			this->mainTabControl->Controls->Add(this->statisticTab);
 			this->mainTabControl->Controls->Add(this->simulationsTab);
+			this->mainTabControl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->mainTabControl->ItemSize = System::Drawing::Size(49, 27);
 			this->mainTabControl->Location = System::Drawing::Point(-1, 2);
+			this->mainTabControl->Multiline = true;
 			this->mainTabControl->Name = L"mainTabControl";
+			this->mainTabControl->Padding = System::Drawing::Point(20, 3);
 			this->mainTabControl->SelectedIndex = 0;
 			this->mainTabControl->Size = System::Drawing::Size(1112, 757);
 			this->mainTabControl->TabIndex = 0;
 			// 
 			// homeTab
 			// 
-			this->homeTab->Location = System::Drawing::Point(4, 25);
+			this->homeTab->BackColor = System::Drawing::Color::Transparent;
+			this->homeTab->Controls->Add(this->home_page);
+			this->homeTab->Location = System::Drawing::Point(4, 31);
 			this->homeTab->Name = L"homeTab";
-			this->homeTab->Size = System::Drawing::Size(1104, 728);
+			this->homeTab->Size = System::Drawing::Size(1104, 722);
 			this->homeTab->TabIndex = 6;
 			this->homeTab->Text = L"Home";
-			this->homeTab->UseVisualStyleBackColor = true;
+			// 
+			// home_page
+			// 
+			this->home_page->AutoSize = true;
+			this->home_page->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.22F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->home_page->Location = System::Drawing::Point(191, 257);
+			this->home_page->Name = L"home_page";
+			this->home_page->Size = System::Drawing::Size(709, 39);
+			this->home_page->TabIndex = 0;
+			this->home_page->Text = L"Welcome to your management application !";
 			// 
 			// customersTab
 			// 
@@ -818,10 +853,10 @@ namespace ProjetPOOGroupe6 {
 			this->customersTab->Controls->Add(this->BillingGroupBox);
 			this->customersTab->Controls->Add(this->deliveryGroupBox);
 			this->customersTab->Controls->Add(this->dgv_cust);
-			this->customersTab->Location = System::Drawing::Point(4, 25);
+			this->customersTab->Location = System::Drawing::Point(4, 31);
 			this->customersTab->Name = L"customersTab";
 			this->customersTab->Padding = System::Windows::Forms::Padding(3);
-			this->customersTab->Size = System::Drawing::Size(1104, 728);
+			this->customersTab->Size = System::Drawing::Size(1104, 722);
 			this->customersTab->TabIndex = 0;
 			this->customersTab->Text = L"Customers";
 			this->customersTab->UseVisualStyleBackColor = true;
@@ -1507,7 +1542,25 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// dgv_cust
 			// 
+			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgv_cust->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
 			this->dgv_cust->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle14->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgv_cust->DefaultCellStyle = dataGridViewCellStyle14;
 			this->dgv_cust->Location = System::Drawing::Point(24, 29);
 			this->dgv_cust->Name = L"dgv_cust";
 			this->dgv_cust->RowHeadersWidth = 51;
@@ -1525,10 +1578,10 @@ namespace ProjetPOOGroupe6 {
 			this->employeesTab->Controls->Add(this->empAdressAdd_GroupBox);
 			this->employeesTab->Controls->Add(this->infoAddEmp_GroupBox);
 			this->employeesTab->Controls->Add(this->dgv_emp);
-			this->employeesTab->Location = System::Drawing::Point(4, 25);
+			this->employeesTab->Location = System::Drawing::Point(4, 31);
 			this->employeesTab->Name = L"employeesTab";
 			this->employeesTab->Padding = System::Windows::Forms::Padding(3);
-			this->employeesTab->Size = System::Drawing::Size(1104, 728);
+			this->employeesTab->Size = System::Drawing::Size(1104, 722);
 			this->employeesTab->TabIndex = 1;
 			this->employeesTab->Text = L"Employees";
 			this->employeesTab->UseVisualStyleBackColor = true;
@@ -1973,7 +2026,25 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// dgv_emp
 			// 
+			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle15->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle15->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle15->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgv_emp->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
 			this->dgv_emp->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			dataGridViewCellStyle16->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle16->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle16->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle16->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle16->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle16->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgv_emp->DefaultCellStyle = dataGridViewCellStyle16;
 			this->dgv_emp->Location = System::Drawing::Point(21, 30);
 			this->dgv_emp->Name = L"dgv_emp";
 			this->dgv_emp->RowHeadersWidth = 51;
@@ -1993,9 +2064,9 @@ namespace ProjetPOOGroupe6 {
 			this->ordersTab->Controls->Add(this->changeOrder);
 			this->ordersTab->Controls->Add(this->addOrder);
 			this->ordersTab->Controls->Add(this->dgv_ord);
-			this->ordersTab->Location = System::Drawing::Point(4, 25);
+			this->ordersTab->Location = System::Drawing::Point(4, 31);
 			this->ordersTab->Name = L"ordersTab";
-			this->ordersTab->Size = System::Drawing::Size(1104, 728);
+			this->ordersTab->Size = System::Drawing::Size(1104, 722);
 			this->ordersTab->TabIndex = 2;
 			this->ordersTab->Text = L"Orders";
 			this->ordersTab->UseVisualStyleBackColor = true;
@@ -2523,7 +2594,25 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// dgv_ord
 			// 
+			dataGridViewCellStyle17->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle17->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle17->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle17->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle17->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle17->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgv_ord->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
 			this->dgv_ord->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			dataGridViewCellStyle18->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle18->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle18->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle18->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle18->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle18->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgv_ord->DefaultCellStyle = dataGridViewCellStyle18;
 			this->dgv_ord->Location = System::Drawing::Point(22, 31);
 			this->dgv_ord->Name = L"dgv_ord";
 			this->dgv_ord->RowHeadersWidth = 51;
@@ -2539,9 +2628,9 @@ namespace ProjetPOOGroupe6 {
 			this->stockTab->Controls->Add(this->dgv_stock);
 			this->stockTab->Controls->Add(this->changeProduct);
 			this->stockTab->Controls->Add(this->addProduct);
-			this->stockTab->Location = System::Drawing::Point(4, 25);
+			this->stockTab->Location = System::Drawing::Point(4, 31);
 			this->stockTab->Name = L"stockTab";
-			this->stockTab->Size = System::Drawing::Size(1104, 728);
+			this->stockTab->Size = System::Drawing::Size(1104, 722);
 			this->stockTab->TabIndex = 5;
 			this->stockTab->Text = L"Stock";
 			this->stockTab->UseVisualStyleBackColor = true;
@@ -2849,7 +2938,25 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// dgv_stock
 			// 
+			dataGridViewCellStyle19->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle19->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle19->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle19->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle19->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle19->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgv_stock->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
 			this->dgv_stock->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			dataGridViewCellStyle20->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle20->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle20->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle20->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle20->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle20->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgv_stock->DefaultCellStyle = dataGridViewCellStyle20;
 			this->dgv_stock->Location = System::Drawing::Point(21, 27);
 			this->dgv_stock->Name = L"dgv_stock";
 			this->dgv_stock->RowHeadersWidth = 51;
@@ -2886,9 +2993,9 @@ namespace ProjetPOOGroupe6 {
 			this->statisticTab->Controls->Add(this->button_averageCart);
 			this->statisticTab->Controls->Add(this->button_underReorderThreshold);
 			this->statisticTab->Controls->Add(this->dgv_stat);
-			this->statisticTab->Location = System::Drawing::Point(4, 25);
+			this->statisticTab->Location = System::Drawing::Point(4, 31);
 			this->statisticTab->Name = L"statisticTab";
-			this->statisticTab->Size = System::Drawing::Size(1104, 728);
+			this->statisticTab->Size = System::Drawing::Size(1104, 722);
 			this->statisticTab->TabIndex = 3;
 			this->statisticTab->Text = L"Statistics";
 			this->statisticTab->UseVisualStyleBackColor = true;
@@ -3085,7 +3192,25 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// dgv_stat
 			// 
+			dataGridViewCellStyle21->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle21->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle21->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle21->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle21->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle21->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgv_stat->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
 			this->dgv_stat->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			dataGridViewCellStyle22->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle22->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle22->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle22->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle22->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle22->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgv_stat->DefaultCellStyle = dataGridViewCellStyle22;
 			this->dgv_stat->Location = System::Drawing::Point(51, 47);
 			this->dgv_stat->Name = L"dgv_stat";
 			this->dgv_stat->RowHeadersWidth = 51;
@@ -3101,9 +3226,9 @@ namespace ProjetPOOGroupe6 {
 			this->simulationsTab->Controls->Add(this->VAT_groupBox);
 			this->simulationsTab->Controls->Add(this->dgv_simu);
 			this->simulationsTab->Controls->Add(this->execution_button);
-			this->simulationsTab->Location = System::Drawing::Point(4, 25);
+			this->simulationsTab->Location = System::Drawing::Point(4, 31);
 			this->simulationsTab->Name = L"simulationsTab";
-			this->simulationsTab->Size = System::Drawing::Size(1104, 728);
+			this->simulationsTab->Size = System::Drawing::Size(1104, 722);
 			this->simulationsTab->TabIndex = 4;
 			this->simulationsTab->Text = L"Simulations";
 			this->simulationsTab->UseVisualStyleBackColor = true;
@@ -3358,7 +3483,25 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// dgv_simu
 			// 
+			dataGridViewCellStyle23->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle23->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle23->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle23->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle23->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle23->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgv_simu->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
 			this->dgv_simu->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			dataGridViewCellStyle24->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle24->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle24->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle24->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle24->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle24->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgv_simu->DefaultCellStyle = dataGridViewCellStyle24;
 			this->dgv_simu->Location = System::Drawing::Point(51, 47);
 			this->dgv_simu->Name = L"dgv_simu";
 			this->dgv_simu->RowHeadersWidth = 51;
@@ -3387,6 +3530,8 @@ namespace ProjetPOOGroupe6 {
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->mainTabControl->ResumeLayout(false);
+			this->homeTab->ResumeLayout(false);
+			this->homeTab->PerformLayout();
 			this->customersTab->ResumeLayout(false);
 			this->customersTab->PerformLayout();
 			this->socityChangeCust_groupBox->ResumeLayout(false);
