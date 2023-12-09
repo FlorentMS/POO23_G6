@@ -8,6 +8,7 @@ namespace NS_Comp
 		System::String^ sSql;
 		int custID;
 		System::String^ orderRef;
+		System::String^ orderDate;
 		System::String^ deliveryDate;
 		System::String^ completePaymentDate;
 		System::String^ meanOfPayment;
@@ -18,14 +19,18 @@ namespace NS_Comp
 	public:
 		System::String^ selectOrders(void);
 		System::String^ selectOrder(void);
+		System::String^ selectOrderPay(void);
 		System::String^ insertOrder(void);
 		System::String^ insertItem(void);
 		System::String^ insertPayment(void);
 		System::String^ deleteOrder(void);
+		System::String^ deleteItem(void);
+		System::String^ deletePayment(void);
 		System::String^ updateOrder(void);
 
 		void setCustID(int);
 		void setOrderRef(System::String^);
+		void setOrderDate(System::String^);
 		void setDeliveryDate(System::String^);
 		void setCompletePaymentDate(System::String^);
 		void setMeanOfPayment(System::String^);
@@ -36,6 +41,7 @@ namespace NS_Comp
 
 		int getCustID(void);
 		System::String^ getOrderRef(void);
+		System::String^ getOrderDate(void);
 		System::String^ getDeliveryDate(void);
 		System::String^ getCompletePaymentDate(void);
 		System::String^ getMeanOfPayment(void);

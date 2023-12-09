@@ -6,6 +6,7 @@
 #include "CLstatistics.h"
 #include "CLsimulations.h"
 
+
 namespace ProjetPOOGroupe6 {
 
 	using namespace System;
@@ -26,7 +27,7 @@ namespace ProjetPOOGroupe6 {
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
-			//
+			// 
 		}
 
 	protected:
@@ -40,7 +41,6 @@ namespace ProjetPOOGroupe6 {
 				delete components;
 			}
 		}
-
 
 
 	/// <summary>
@@ -224,8 +224,10 @@ namespace ProjetPOOGroupe6 {
 			private: System::Windows::Forms::DateTimePicker^ PaymentDueDateAddOrder_datePicker;
 
 		private: System::Windows::Forms::GroupBox^ ItemAddOrder_GroupeBox;
+			private: System::Windows::Forms::Label^ ItemColorAddOrder;
 			private: System::Windows::Forms::Label^ itemIDAddOrder;
 			private: System::Windows::Forms::Label^ quantityItemsAddOrder;
+			private: System::Windows::Forms::ComboBox^ ItemColorAddOrder_comboBox;
 			private: System::Windows::Forms::TextBox^ text_ItemIdAddOrder;
 			private: System::Windows::Forms::NumericUpDown^ UpDown_quantityItemAddOrders;
 
@@ -245,9 +247,7 @@ namespace ProjetPOOGroupe6 {
 
 	private: System::Windows::Forms::GroupBox^ searchOrder_groupBox;
 		private: System::Windows::Forms::Label^ orderIdSearchOrder;
-		private: System::Windows::Forms::Label^ ItemColorAddOrder;
 		private: System::Windows::Forms::TextBox^ text_orderIdSearchOrder;
-		private: System::Windows::Forms::ComboBox^ ItemColorAddOrder_comboBox;
 	
 
 	private: System::Windows::Forms::GroupBox^ infoChangeOrder_groupBox;
@@ -258,13 +258,6 @@ namespace ProjetPOOGroupe6 {
 		private: System::Windows::Forms::DateTimePicker^ deliveryChangeOrder_datePicker;
 		private: System::Windows::Forms::DateTimePicker^ completePayChangeOrder_datePicker;
 
-		private: System::Windows::Forms::GroupBox^ ItemChangeOrder_groupBox;
-			private: System::Windows::Forms::ComboBox^ itemColorChangeOrder_comboBox;
-			private: System::Windows::Forms::Label^ itemColorChangeOrder;
-			private: System::Windows::Forms::NumericUpDown^ UpDown_quantityChangeOrder;
-			private: System::Windows::Forms::Label^ quantityChangeOrder;
-			private: System::Windows::Forms::Label^ itemIdItemChangeOrder;
-			private: System::Windows::Forms::TextBox^ text_itemIdItemChangeOrder;
 
 
 
@@ -276,6 +269,10 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::Button^ addOrder;
 	private: System::Windows::Forms::Button^ addPayment;
 	private: System::Windows::Forms::Button^ addItem;
+	private: System::Windows::Forms::Button^ ErasePaymentOrder;
+	private: System::Windows::Forms::Button^ EraseItemOrder;
+	private: System::Windows::Forms::RadioButton^ Item_radioButton;
+	private: System::Windows::Forms::RadioButton^ Pay_radioButton;
 
 
 
@@ -446,8 +443,6 @@ private: System::Windows::Forms::Label^ home_page;
 
 
 
-
-
 	protected:
 
 	private:
@@ -605,28 +600,27 @@ private: System::Windows::Forms::Label^ home_page;
 			this->firstNameAddEmp = (gcnew System::Windows::Forms::Label());
 			this->dgv_emp = (gcnew System::Windows::Forms::DataGridView());
 			this->ordersTab = (gcnew System::Windows::Forms::TabPage());
+			this->Item_radioButton = (gcnew System::Windows::Forms::RadioButton());
+			this->Pay_radioButton = (gcnew System::Windows::Forms::RadioButton());
 			this->meanOfPaymentAddPayOrder_GroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->ErasePaymentOrder = (gcnew System::Windows::Forms::Button());
 			this->paymentDueAddPayOrder_datePicker = (gcnew System::Windows::Forms::DateTimePicker());
 			this->meanOfPaymentAddPayOrder = (gcnew System::Windows::Forms::Label());
 			this->paymentDueDateAddPayOrder = (gcnew System::Windows::Forms::Label());
 			this->meanOfPaymentAddPayOrder_comboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->addPayment = (gcnew System::Windows::Forms::Button());
 			this->ItemAddItemOrder_GroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->EraseItemOrder = (gcnew System::Windows::Forms::Button());
 			this->ItemColorAddItemOrder_comboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->ItemColorAddItemOrder = (gcnew System::Windows::Forms::Label());
 			this->UpDown_quanityAddItemOrder = (gcnew System::Windows::Forms::NumericUpDown());
 			this->quantityAddItemOrder = (gcnew System::Windows::Forms::Label());
+			this->addItem = (gcnew System::Windows::Forms::Button());
 			this->itemIdAddItemOrder = (gcnew System::Windows::Forms::Label());
 			this->text_itemIdAddItemOrder = (gcnew System::Windows::Forms::TextBox());
 			this->infoChangeOrder_groupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->deliveryChangeOrder_datePicker = (gcnew System::Windows::Forms::DateTimePicker());
 			this->completePayChangeOrder_datePicker = (gcnew System::Windows::Forms::DateTimePicker());
-			this->ItemChangeOrder_groupBox = (gcnew System::Windows::Forms::GroupBox());
-			this->itemColorChangeOrder_comboBox = (gcnew System::Windows::Forms::ComboBox());
-			this->itemColorChangeOrder = (gcnew System::Windows::Forms::Label());
-			this->UpDown_quantityChangeOrder = (gcnew System::Windows::Forms::NumericUpDown());
-			this->quantityChangeOrder = (gcnew System::Windows::Forms::Label());
-			this->itemIdItemChangeOrder = (gcnew System::Windows::Forms::Label());
-			this->text_itemIdItemChangeOrder = (gcnew System::Windows::Forms::TextBox());
 			this->deliveryDateChangeOrder = (gcnew System::Windows::Forms::Label());
 			this->completePayDateChangeOrder = (gcnew System::Windows::Forms::Label());
 			this->text_orderIdChangeOrder = (gcnew System::Windows::Forms::TextBox());
@@ -636,8 +630,6 @@ private: System::Windows::Forms::Label^ home_page;
 			this->orderIdSearchOrder = (gcnew System::Windows::Forms::Label());
 			this->displayOrder = (gcnew System::Windows::Forms::Button());
 			this->eraseOrder = (gcnew System::Windows::Forms::Button());
-			this->addItem = (gcnew System::Windows::Forms::Button());
-			this->addPayment = (gcnew System::Windows::Forms::Button());
 			this->GlobalInfoAddOrder_GroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->deliveryAddOrder_DatePicker = (gcnew System::Windows::Forms::DateTimePicker());
 			this->deliveryDateAddOrder = (gcnew System::Windows::Forms::Label());
@@ -768,8 +760,6 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ItemAddItemOrder_GroupBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->UpDown_quanityAddItemOrder))->BeginInit();
 			this->infoChangeOrder_groupBox->SuspendLayout();
-			this->ItemChangeOrder_groupBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->UpDown_quantityChangeOrder))->BeginInit();
 			this->searchOrder_groupBox->SuspendLayout();
 			this->GlobalInfoAddOrder_GroupBox->SuspendLayout();
 			this->meanOfPaymentAddOrder_GroupBox->SuspendLayout();
@@ -2054,12 +2044,12 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			// ordersTab
 			// 
+			this->ordersTab->Controls->Add(this->Item_radioButton);
+			this->ordersTab->Controls->Add(this->Pay_radioButton);
 			this->ordersTab->Controls->Add(this->meanOfPaymentAddPayOrder_GroupBox);
 			this->ordersTab->Controls->Add(this->ItemAddItemOrder_GroupBox);
 			this->ordersTab->Controls->Add(this->infoChangeOrder_groupBox);
 			this->ordersTab->Controls->Add(this->searchOrder_groupBox);
-			this->ordersTab->Controls->Add(this->addItem);
-			this->ordersTab->Controls->Add(this->addPayment);
 			this->ordersTab->Controls->Add(this->GlobalInfoAddOrder_GroupBox);
 			this->ordersTab->Controls->Add(this->changeOrder);
 			this->ordersTab->Controls->Add(this->addOrder);
@@ -2071,24 +2061,58 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ordersTab->Text = L"Orders";
 			this->ordersTab->UseVisualStyleBackColor = true;
 			// 
+			// Item_radioButton
+			// 
+			this->Item_radioButton->AutoSize = true;
+			this->Item_radioButton->Checked = true;
+			this->Item_radioButton->Location = System::Drawing::Point(841, 56);
+			this->Item_radioButton->Name = L"Item_radioButton";
+			this->Item_radioButton->Size = System::Drawing::Size(60, 20);
+			this->Item_radioButton->TabIndex = 52;
+			this->Item_radioButton->TabStop = true;
+			this->Item_radioButton->Text = L"Items";
+			this->Item_radioButton->UseVisualStyleBackColor = true;
+			// 
+			// Pay_radioButton
+			// 
+			this->Pay_radioButton->AutoSize = true;
+			this->Pay_radioButton->Location = System::Drawing::Point(926, 56);
+			this->Pay_radioButton->Name = L"Pay_radioButton";
+			this->Pay_radioButton->Size = System::Drawing::Size(137, 20);
+			this->Pay_radioButton->TabIndex = 51;
+			this->Pay_radioButton->Text = L"Methode Payment";
+			this->Pay_radioButton->UseVisualStyleBackColor = true;
+			// 
 			// meanOfPaymentAddPayOrder_GroupBox
 			// 
+			this->meanOfPaymentAddPayOrder_GroupBox->Controls->Add(this->ErasePaymentOrder);
 			this->meanOfPaymentAddPayOrder_GroupBox->Controls->Add(this->paymentDueAddPayOrder_datePicker);
 			this->meanOfPaymentAddPayOrder_GroupBox->Controls->Add(this->meanOfPaymentAddPayOrder);
 			this->meanOfPaymentAddPayOrder_GroupBox->Controls->Add(this->paymentDueDateAddPayOrder);
 			this->meanOfPaymentAddPayOrder_GroupBox->Controls->Add(this->meanOfPaymentAddPayOrder_comboBox);
-			this->meanOfPaymentAddPayOrder_GroupBox->Location = System::Drawing::Point(379, 511);
+			this->meanOfPaymentAddPayOrder_GroupBox->Controls->Add(this->addPayment);
+			this->meanOfPaymentAddPayOrder_GroupBox->Location = System::Drawing::Point(806, 478);
 			this->meanOfPaymentAddPayOrder_GroupBox->Name = L"meanOfPaymentAddPayOrder_GroupBox";
-			this->meanOfPaymentAddPayOrder_GroupBox->Size = System::Drawing::Size(268, 133);
+			this->meanOfPaymentAddPayOrder_GroupBox->Size = System::Drawing::Size(280, 181);
 			this->meanOfPaymentAddPayOrder_GroupBox->TabIndex = 49;
 			this->meanOfPaymentAddPayOrder_GroupBox->TabStop = false;
 			this->meanOfPaymentAddPayOrder_GroupBox->Text = L"mean of payment";
 			// 
+			// ErasePaymentOrder
+			// 
+			this->ErasePaymentOrder->Location = System::Drawing::Point(32, 135);
+			this->ErasePaymentOrder->Name = L"ErasePaymentOrder";
+			this->ErasePaymentOrder->Size = System::Drawing::Size(101, 33);
+			this->ErasePaymentOrder->TabIndex = 51;
+			this->ErasePaymentOrder->Text = L"Delete";
+			this->ErasePaymentOrder->UseVisualStyleBackColor = true;
+			this->ErasePaymentOrder->Click += gcnew System::EventHandler(this, &MyForm::ErasePaymentOrder_Click);
+			// 
 			// paymentDueAddPayOrder_datePicker
 			// 
-			this->paymentDueAddPayOrder_datePicker->Location = System::Drawing::Point(20, 96);
+			this->paymentDueAddPayOrder_datePicker->Location = System::Drawing::Point(33, 98);
 			this->paymentDueAddPayOrder_datePicker->Name = L"paymentDueAddPayOrder_datePicker";
-			this->paymentDueAddPayOrder_datePicker->Size = System::Drawing::Size(200, 22);
+			this->paymentDueAddPayOrder_datePicker->Size = System::Drawing::Size(224, 22);
 			this->paymentDueAddPayOrder_datePicker->TabIndex = 48;
 			// 
 			// meanOfPaymentAddPayOrder
@@ -2103,7 +2127,7 @@ private: System::Windows::Forms::Label^ home_page;
 			// paymentDueDateAddPayOrder
 			// 
 			this->paymentDueDateAddPayOrder->AutoSize = true;
-			this->paymentDueDateAddPayOrder->Location = System::Drawing::Point(1, 72);
+			this->paymentDueDateAddPayOrder->Location = System::Drawing::Point(14, 74);
 			this->paymentDueDateAddPayOrder->Name = L"paymentDueDateAddPayOrder";
 			this->paymentDueDateAddPayOrder->Size = System::Drawing::Size(115, 16);
 			this->paymentDueDateAddPayOrder->TabIndex = 29;
@@ -2125,44 +2149,69 @@ private: System::Windows::Forms::Label^ home_page;
 			});
 			this->meanOfPaymentAddPayOrder_comboBox->Location = System::Drawing::Point(33, 41);
 			this->meanOfPaymentAddPayOrder_comboBox->Name = L"meanOfPaymentAddPayOrder_comboBox";
-			this->meanOfPaymentAddPayOrder_comboBox->Size = System::Drawing::Size(200, 24);
+			this->meanOfPaymentAddPayOrder_comboBox->Size = System::Drawing::Size(224, 24);
 			this->meanOfPaymentAddPayOrder_comboBox->TabIndex = 0;
+			// 
+			// addPayment
+			// 
+			this->addPayment->Location = System::Drawing::Point(156, 136);
+			this->addPayment->Name = L"addPayment";
+			this->addPayment->Size = System::Drawing::Size(101, 33);
+			this->addPayment->TabIndex = 44;
+			this->addPayment->Text = L"Add another";
+			this->addPayment->UseVisualStyleBackColor = true;
+			this->addPayment->Click += gcnew System::EventHandler(this, &MyForm::addPayment_Click);
 			// 
 			// ItemAddItemOrder_GroupBox
 			// 
+			this->ItemAddItemOrder_GroupBox->Controls->Add(this->EraseItemOrder);
 			this->ItemAddItemOrder_GroupBox->Controls->Add(this->ItemColorAddItemOrder_comboBox);
 			this->ItemAddItemOrder_GroupBox->Controls->Add(this->ItemColorAddItemOrder);
 			this->ItemAddItemOrder_GroupBox->Controls->Add(this->UpDown_quanityAddItemOrder);
 			this->ItemAddItemOrder_GroupBox->Controls->Add(this->quantityAddItemOrder);
+			this->ItemAddItemOrder_GroupBox->Controls->Add(this->addItem);
 			this->ItemAddItemOrder_GroupBox->Controls->Add(this->itemIdAddItemOrder);
 			this->ItemAddItemOrder_GroupBox->Controls->Add(this->text_itemIdAddItemOrder);
-			this->ItemAddItemOrder_GroupBox->Location = System::Drawing::Point(379, 316);
+			this->ItemAddItemOrder_GroupBox->Location = System::Drawing::Point(806, 259);
 			this->ItemAddItemOrder_GroupBox->Name = L"ItemAddItemOrder_GroupBox";
-			this->ItemAddItemOrder_GroupBox->Size = System::Drawing::Size(268, 133);
+			this->ItemAddItemOrder_GroupBox->Size = System::Drawing::Size(280, 191);
 			this->ItemAddItemOrder_GroupBox->TabIndex = 50;
 			this->ItemAddItemOrder_GroupBox->TabStop = false;
 			this->ItemAddItemOrder_GroupBox->Text = L"Item";
 			// 
+			// EraseItemOrder
+			// 
+			this->EraseItemOrder->Location = System::Drawing::Point(28, 142);
+			this->EraseItemOrder->Name = L"EraseItemOrder";
+			this->EraseItemOrder->Size = System::Drawing::Size(101, 33);
+			this->EraseItemOrder->TabIndex = 50;
+			this->EraseItemOrder->Text = L"Delete";
+			this->EraseItemOrder->UseVisualStyleBackColor = true;
+			this->EraseItemOrder->Click += gcnew System::EventHandler(this, &MyForm::EraseItemOrder_Click);
+			// 
 			// ItemColorAddItemOrder_comboBox
 			// 
-			this->ItemColorAddItemOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(3) {
-				L"Cash",
-					L"Credit card", L"Bank transfer"
+			this->ItemColorAddItemOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(5) {
+				L"Blanc",
+					L"Noir", L"Vert", L"Bleu", L"Rouge"
 			});
 			this->ItemColorAddItemOrder_comboBox->CausesValidation = false;
 			this->ItemColorAddItemOrder_comboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->ItemColorAddItemOrder_comboBox->FormattingEnabled = true;
 			this->ItemColorAddItemOrder_comboBox->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->ItemColorAddItemOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cash", L"Credit Card", L"Bank transfer" });
+			this->ItemColorAddItemOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Blanc", L"Noir", L"Vert",
+					L"Bleu", L"Rouge"
+			});
 			this->ItemColorAddItemOrder_comboBox->Location = System::Drawing::Point(33, 95);
 			this->ItemColorAddItemOrder_comboBox->Name = L"ItemColorAddItemOrder_comboBox";
-			this->ItemColorAddItemOrder_comboBox->Size = System::Drawing::Size(127, 24);
+			this->ItemColorAddItemOrder_comboBox->Size = System::Drawing::Size(137, 24);
 			this->ItemColorAddItemOrder_comboBox->TabIndex = 49;
 			// 
 			// ItemColorAddItemOrder
 			// 
 			this->ItemColorAddItemOrder->AutoSize = true;
-			this->ItemColorAddItemOrder->Location = System::Drawing::Point(17, 76);
+			this->ItemColorAddItemOrder->Location = System::Drawing::Point(21, 76);
 			this->ItemColorAddItemOrder->Name = L"ItemColorAddItemOrder";
 			this->ItemColorAddItemOrder->Size = System::Drawing::Size(65, 16);
 			this->ItemColorAddItemOrder->TabIndex = 33;
@@ -2170,7 +2219,7 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			// UpDown_quanityAddItemOrder
 			// 
-			this->UpDown_quanityAddItemOrder->Location = System::Drawing::Point(198, 97);
+			this->UpDown_quanityAddItemOrder->Location = System::Drawing::Point(205, 95);
 			this->UpDown_quanityAddItemOrder->Name = L"UpDown_quanityAddItemOrder";
 			this->UpDown_quanityAddItemOrder->Size = System::Drawing::Size(46, 22);
 			this->UpDown_quanityAddItemOrder->TabIndex = 32;
@@ -2178,16 +2227,26 @@ private: System::Windows::Forms::Label^ home_page;
 			// quantityAddItemOrder
 			// 
 			this->quantityAddItemOrder->AutoSize = true;
-			this->quantityAddItemOrder->Location = System::Drawing::Point(183, 79);
+			this->quantityAddItemOrder->Location = System::Drawing::Point(186, 76);
 			this->quantityAddItemOrder->Name = L"quantityAddItemOrder";
 			this->quantityAddItemOrder->Size = System::Drawing::Size(53, 16);
 			this->quantityAddItemOrder->TabIndex = 31;
 			this->quantityAddItemOrder->Text = L"quantity";
 			// 
+			// addItem
+			// 
+			this->addItem->Location = System::Drawing::Point(150, 142);
+			this->addItem->Name = L"addItem";
+			this->addItem->Size = System::Drawing::Size(101, 33);
+			this->addItem->TabIndex = 45;
+			this->addItem->Text = L"Add another";
+			this->addItem->UseVisualStyleBackColor = true;
+			this->addItem->Click += gcnew System::EventHandler(this, &MyForm::addItem_Click);
+			// 
 			// itemIdAddItemOrder
 			// 
 			this->itemIdAddItemOrder->AutoSize = true;
-			this->itemIdAddItemOrder->Location = System::Drawing::Point(17, 20);
+			this->itemIdAddItemOrder->Location = System::Drawing::Point(21, 20);
 			this->itemIdAddItemOrder->Name = L"itemIdAddItemOrder";
 			this->itemIdAddItemOrder->Size = System::Drawing::Size(116, 16);
 			this->itemIdAddItemOrder->TabIndex = 29;
@@ -2197,21 +2256,20 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			this->text_itemIdAddItemOrder->Location = System::Drawing::Point(33, 39);
 			this->text_itemIdAddItemOrder->Name = L"text_itemIdAddItemOrder";
-			this->text_itemIdAddItemOrder->Size = System::Drawing::Size(216, 22);
+			this->text_itemIdAddItemOrder->Size = System::Drawing::Size(218, 22);
 			this->text_itemIdAddItemOrder->TabIndex = 0;
 			// 
 			// infoChangeOrder_groupBox
 			// 
 			this->infoChangeOrder_groupBox->Controls->Add(this->deliveryChangeOrder_datePicker);
 			this->infoChangeOrder_groupBox->Controls->Add(this->completePayChangeOrder_datePicker);
-			this->infoChangeOrder_groupBox->Controls->Add(this->ItemChangeOrder_groupBox);
 			this->infoChangeOrder_groupBox->Controls->Add(this->deliveryDateChangeOrder);
 			this->infoChangeOrder_groupBox->Controls->Add(this->completePayDateChangeOrder);
 			this->infoChangeOrder_groupBox->Controls->Add(this->text_orderIdChangeOrder);
 			this->infoChangeOrder_groupBox->Controls->Add(this->orderIdChangeOrder);
-			this->infoChangeOrder_groupBox->Location = System::Drawing::Point(722, 325);
+			this->infoChangeOrder_groupBox->Location = System::Drawing::Point(472, 391);
 			this->infoChangeOrder_groupBox->Name = L"infoChangeOrder_groupBox";
-			this->infoChangeOrder_groupBox->Size = System::Drawing::Size(335, 329);
+			this->infoChangeOrder_groupBox->Size = System::Drawing::Size(276, 187);
 			this->infoChangeOrder_groupBox->TabIndex = 48;
 			this->infoChangeOrder_groupBox->TabStop = false;
 			this->infoChangeOrder_groupBox->Text = L"Global info";
@@ -2220,87 +2278,15 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			this->deliveryChangeOrder_datePicker->Location = System::Drawing::Point(39, 138);
 			this->deliveryChangeOrder_datePicker->Name = L"deliveryChangeOrder_datePicker";
-			this->deliveryChangeOrder_datePicker->Size = System::Drawing::Size(200, 22);
+			this->deliveryChangeOrder_datePicker->Size = System::Drawing::Size(220, 22);
 			this->deliveryChangeOrder_datePicker->TabIndex = 47;
 			// 
 			// completePayChangeOrder_datePicker
 			// 
 			this->completePayChangeOrder_datePicker->Location = System::Drawing::Point(39, 87);
 			this->completePayChangeOrder_datePicker->Name = L"completePayChangeOrder_datePicker";
-			this->completePayChangeOrder_datePicker->Size = System::Drawing::Size(200, 22);
+			this->completePayChangeOrder_datePicker->Size = System::Drawing::Size(220, 22);
 			this->completePayChangeOrder_datePicker->TabIndex = 46;
-			// 
-			// ItemChangeOrder_groupBox
-			// 
-			this->ItemChangeOrder_groupBox->Controls->Add(this->itemColorChangeOrder_comboBox);
-			this->ItemChangeOrder_groupBox->Controls->Add(this->itemColorChangeOrder);
-			this->ItemChangeOrder_groupBox->Controls->Add(this->UpDown_quantityChangeOrder);
-			this->ItemChangeOrder_groupBox->Controls->Add(this->quantityChangeOrder);
-			this->ItemChangeOrder_groupBox->Controls->Add(this->itemIdItemChangeOrder);
-			this->ItemChangeOrder_groupBox->Controls->Add(this->text_itemIdItemChangeOrder);
-			this->ItemChangeOrder_groupBox->Location = System::Drawing::Point(24, 180);
-			this->ItemChangeOrder_groupBox->Name = L"ItemChangeOrder_groupBox";
-			this->ItemChangeOrder_groupBox->Size = System::Drawing::Size(276, 134);
-			this->ItemChangeOrder_groupBox->TabIndex = 50;
-			this->ItemChangeOrder_groupBox->TabStop = false;
-			this->ItemChangeOrder_groupBox->Text = L"Item";
-			// 
-			// itemColorChangeOrder_comboBox
-			// 
-			this->itemColorChangeOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(3) {
-				L"Cash",
-					L"Credit card", L"Bank transfer"
-			});
-			this->itemColorChangeOrder_comboBox->CausesValidation = false;
-			this->itemColorChangeOrder_comboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->itemColorChangeOrder_comboBox->FormattingEnabled = true;
-			this->itemColorChangeOrder_comboBox->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->itemColorChangeOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cash", L"Credit Card", L"Bank transfer" });
-			this->itemColorChangeOrder_comboBox->Location = System::Drawing::Point(33, 95);
-			this->itemColorChangeOrder_comboBox->Name = L"itemColorChangeOrder_comboBox";
-			this->itemColorChangeOrder_comboBox->Size = System::Drawing::Size(127, 24);
-			this->itemColorChangeOrder_comboBox->TabIndex = 49;
-			// 
-			// itemColorChangeOrder
-			// 
-			this->itemColorChangeOrder->AutoSize = true;
-			this->itemColorChangeOrder->Location = System::Drawing::Point(17, 76);
-			this->itemColorChangeOrder->Name = L"itemColorChangeOrder";
-			this->itemColorChangeOrder->Size = System::Drawing::Size(65, 16);
-			this->itemColorChangeOrder->TabIndex = 33;
-			this->itemColorChangeOrder->Text = L"Item color";
-			// 
-			// UpDown_quantityChangeOrder
-			// 
-			this->UpDown_quantityChangeOrder->Location = System::Drawing::Point(206, 94);
-			this->UpDown_quantityChangeOrder->Name = L"UpDown_quantityChangeOrder";
-			this->UpDown_quantityChangeOrder->Size = System::Drawing::Size(46, 22);
-			this->UpDown_quantityChangeOrder->TabIndex = 32;
-			// 
-			// quantityChangeOrder
-			// 
-			this->quantityChangeOrder->AutoSize = true;
-			this->quantityChangeOrder->Location = System::Drawing::Point(191, 76);
-			this->quantityChangeOrder->Name = L"quantityChangeOrder";
-			this->quantityChangeOrder->Size = System::Drawing::Size(53, 16);
-			this->quantityChangeOrder->TabIndex = 31;
-			this->quantityChangeOrder->Text = L"quantity";
-			// 
-			// itemIdItemChangeOrder
-			// 
-			this->itemIdItemChangeOrder->AutoSize = true;
-			this->itemIdItemChangeOrder->Location = System::Drawing::Point(17, 20);
-			this->itemIdItemChangeOrder->Name = L"itemIdItemChangeOrder";
-			this->itemIdItemChangeOrder->Size = System::Drawing::Size(116, 16);
-			this->itemIdItemChangeOrder->TabIndex = 29;
-			this->itemIdItemChangeOrder->Text = L"item ID (reference)";
-			// 
-			// text_itemIdItemChangeOrder
-			// 
-			this->text_itemIdItemChangeOrder->Location = System::Drawing::Point(33, 39);
-			this->text_itemIdItemChangeOrder->Name = L"text_itemIdItemChangeOrder";
-			this->text_itemIdItemChangeOrder->Size = System::Drawing::Size(127, 22);
-			this->text_itemIdItemChangeOrder->TabIndex = 0;
 			// 
 			// deliveryDateChangeOrder
 			// 
@@ -2332,9 +2318,9 @@ private: System::Windows::Forms::Label^ home_page;
 			this->orderIdChangeOrder->AutoSize = true;
 			this->orderIdChangeOrder->Location = System::Drawing::Point(21, 18);
 			this->orderIdChangeOrder->Name = L"orderIdChangeOrder";
-			this->orderIdChangeOrder->Size = System::Drawing::Size(55, 16);
+			this->orderIdChangeOrder->Size = System::Drawing::Size(99, 16);
 			this->orderIdChangeOrder->TabIndex = 28;
-			this->orderIdChangeOrder->Text = L"order ID";
+			this->orderIdChangeOrder->Text = L"order reference";
 			// 
 			// searchOrder_groupBox
 			// 
@@ -2361,18 +2347,20 @@ private: System::Windows::Forms::Label^ home_page;
 			this->orderIdSearchOrder->AutoSize = true;
 			this->orderIdSearchOrder->Location = System::Drawing::Point(21, 27);
 			this->orderIdSearchOrder->Name = L"orderIdSearchOrder";
-			this->orderIdSearchOrder->Size = System::Drawing::Size(55, 16);
+			this->orderIdSearchOrder->Size = System::Drawing::Size(63, 16);
 			this->orderIdSearchOrder->TabIndex = 28;
-			this->orderIdSearchOrder->Text = L"order ID";
+			this->orderIdSearchOrder->Text = L"order Ref";
 			// 
 			// displayOrder
 			// 
+			this->displayOrder->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"displayOrder.Image")));
 			this->displayOrder->Location = System::Drawing::Point(165, 87);
 			this->displayOrder->Name = L"displayOrder";
 			this->displayOrder->Size = System::Drawing::Size(86, 33);
 			this->displayOrder->TabIndex = 40;
 			this->displayOrder->Text = L"Display";
 			this->displayOrder->UseVisualStyleBackColor = true;
+			this->displayOrder->Click += gcnew System::EventHandler(this, &MyForm::displayOrder_Click);
 			// 
 			// eraseOrder
 			// 
@@ -2382,24 +2370,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->eraseOrder->TabIndex = 38;
 			this->eraseOrder->Text = L"Erase";
 			this->eraseOrder->UseVisualStyleBackColor = true;
-			// 
-			// addItem
-			// 
-			this->addItem->Location = System::Drawing::Point(432, 462);
-			this->addItem->Name = L"addItem";
-			this->addItem->Size = System::Drawing::Size(150, 33);
-			this->addItem->TabIndex = 45;
-			this->addItem->Text = L"Add another item";
-			this->addItem->UseVisualStyleBackColor = true;
-			// 
-			// addPayment
-			// 
-			this->addPayment->Location = System::Drawing::Point(432, 652);
-			this->addPayment->Name = L"addPayment";
-			this->addPayment->Size = System::Drawing::Size(150, 33);
-			this->addPayment->TabIndex = 44;
-			this->addPayment->Text = L"Add another payment";
-			this->addPayment->UseVisualStyleBackColor = true;
+			this->eraseOrder->Click += gcnew System::EventHandler(this, &MyForm::eraseOrder_Click);
 			// 
 			// GlobalInfoAddOrder_GroupBox
 			// 
@@ -2411,7 +2382,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->GlobalInfoAddOrder_GroupBox->Controls->Add(this->ItemAddOrder_GroupeBox);
 			this->GlobalInfoAddOrder_GroupBox->Location = System::Drawing::Point(25, 300);
 			this->GlobalInfoAddOrder_GroupBox->Name = L"GlobalInfoAddOrder_GroupBox";
-			this->GlobalInfoAddOrder_GroupBox->Size = System::Drawing::Size(348, 370);
+			this->GlobalInfoAddOrder_GroupBox->Size = System::Drawing::Size(408, 370);
 			this->GlobalInfoAddOrder_GroupBox->TabIndex = 41;
 			this->GlobalInfoAddOrder_GroupBox->TabStop = false;
 			this->GlobalInfoAddOrder_GroupBox->Text = L"Global info";
@@ -2420,8 +2391,9 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			this->deliveryAddOrder_DatePicker->Location = System::Drawing::Point(128, 44);
 			this->deliveryAddOrder_DatePicker->Name = L"deliveryAddOrder_DatePicker";
-			this->deliveryAddOrder_DatePicker->Size = System::Drawing::Size(208, 22);
+			this->deliveryAddOrder_DatePicker->Size = System::Drawing::Size(220, 22);
 			this->deliveryAddOrder_DatePicker->TabIndex = 47;
+			this->deliveryAddOrder_DatePicker->Value = System::DateTime(2023, 12, 9, 17, 39, 0, 0);
 			// 
 			// deliveryDateAddOrder
 			// 
@@ -2454,18 +2426,18 @@ private: System::Windows::Forms::Label^ home_page;
 			this->meanOfPaymentAddOrder_GroupBox->Controls->Add(this->meanOfPaymentAddOrder);
 			this->meanOfPaymentAddOrder_GroupBox->Controls->Add(this->paymentDueDateAddOrder);
 			this->meanOfPaymentAddOrder_GroupBox->Controls->Add(this->comboBox_meanOfPaymentAddOrder);
-			this->meanOfPaymentAddOrder_GroupBox->Location = System::Drawing::Point(39, 226);
+			this->meanOfPaymentAddOrder_GroupBox->Location = System::Drawing::Point(47, 226);
 			this->meanOfPaymentAddOrder_GroupBox->Name = L"meanOfPaymentAddOrder_GroupBox";
-			this->meanOfPaymentAddOrder_GroupBox->Size = System::Drawing::Size(268, 133);
+			this->meanOfPaymentAddOrder_GroupBox->Size = System::Drawing::Size(285, 133);
 			this->meanOfPaymentAddOrder_GroupBox->TabIndex = 43;
 			this->meanOfPaymentAddOrder_GroupBox->TabStop = false;
 			this->meanOfPaymentAddOrder_GroupBox->Text = L"mean of payment";
 			// 
 			// PaymentDueDateAddOrder_datePicker
 			// 
-			this->PaymentDueDateAddOrder_datePicker->Location = System::Drawing::Point(20, 96);
+			this->PaymentDueDateAddOrder_datePicker->Location = System::Drawing::Point(33, 96);
 			this->PaymentDueDateAddOrder_datePicker->Name = L"PaymentDueDateAddOrder_datePicker";
-			this->PaymentDueDateAddOrder_datePicker->Size = System::Drawing::Size(200, 22);
+			this->PaymentDueDateAddOrder_datePicker->Size = System::Drawing::Size(229, 22);
 			this->PaymentDueDateAddOrder_datePicker->TabIndex = 48;
 			// 
 			// meanOfPaymentAddOrder
@@ -2480,7 +2452,7 @@ private: System::Windows::Forms::Label^ home_page;
 			// paymentDueDateAddOrder
 			// 
 			this->paymentDueDateAddOrder->AutoSize = true;
-			this->paymentDueDateAddOrder->Location = System::Drawing::Point(1, 72);
+			this->paymentDueDateAddOrder->Location = System::Drawing::Point(14, 72);
 			this->paymentDueDateAddOrder->Name = L"paymentDueDateAddOrder";
 			this->paymentDueDateAddOrder->Size = System::Drawing::Size(115, 16);
 			this->paymentDueDateAddOrder->TabIndex = 29;
@@ -2499,7 +2471,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->comboBox_meanOfPaymentAddOrder->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cash", L"Credit Card", L"Bank transfer" });
 			this->comboBox_meanOfPaymentAddOrder->Location = System::Drawing::Point(33, 41);
 			this->comboBox_meanOfPaymentAddOrder->Name = L"comboBox_meanOfPaymentAddOrder";
-			this->comboBox_meanOfPaymentAddOrder->Size = System::Drawing::Size(200, 24);
+			this->comboBox_meanOfPaymentAddOrder->Size = System::Drawing::Size(229, 24);
 			this->comboBox_meanOfPaymentAddOrder->TabIndex = 0;
 			// 
 			// ItemAddOrder_GroupeBox
@@ -2510,27 +2482,30 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ItemAddOrder_GroupeBox->Controls->Add(this->quantityItemsAddOrder);
 			this->ItemAddOrder_GroupeBox->Controls->Add(this->itemIDAddOrder);
 			this->ItemAddOrder_GroupeBox->Controls->Add(this->text_ItemIdAddOrder);
-			this->ItemAddOrder_GroupeBox->Location = System::Drawing::Point(39, 79);
+			this->ItemAddOrder_GroupeBox->Location = System::Drawing::Point(47, 79);
 			this->ItemAddOrder_GroupeBox->Name = L"ItemAddOrder_GroupeBox";
-			this->ItemAddOrder_GroupeBox->Size = System::Drawing::Size(268, 133);
+			this->ItemAddOrder_GroupeBox->Size = System::Drawing::Size(285, 133);
 			this->ItemAddOrder_GroupeBox->TabIndex = 42;
 			this->ItemAddOrder_GroupeBox->TabStop = false;
 			this->ItemAddOrder_GroupeBox->Text = L"Item";
 			// 
 			// ItemColorAddOrder_comboBox
 			// 
-			this->ItemColorAddOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(3) {
-				L"Cash", L"Credit card",
-					L"Bank transfer"
+			this->ItemColorAddOrder_comboBox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(5) {
+				L"Blanc", L"Noir",
+					L"Vert", L"Bleu", L"Rouge"
 			});
 			this->ItemColorAddOrder_comboBox->CausesValidation = false;
 			this->ItemColorAddOrder_comboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->ItemColorAddOrder_comboBox->FormattingEnabled = true;
 			this->ItemColorAddOrder_comboBox->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->ItemColorAddOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cash", L"Credit Card", L"Bank transfer" });
+			this->ItemColorAddOrder_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Blanc", L"Noir", L"Vert", L"Bleu",
+					L"Rouge"
+			});
 			this->ItemColorAddOrder_comboBox->Location = System::Drawing::Point(33, 95);
 			this->ItemColorAddOrder_comboBox->Name = L"ItemColorAddOrder_comboBox";
-			this->ItemColorAddOrder_comboBox->Size = System::Drawing::Size(127, 24);
+			this->ItemColorAddOrder_comboBox->Size = System::Drawing::Size(141, 24);
 			this->ItemColorAddOrder_comboBox->TabIndex = 49;
 			// 
 			// ItemColorAddOrder
@@ -2544,7 +2519,7 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			// UpDown_quantityItemAddOrders
 			// 
-			this->UpDown_quantityItemAddOrders->Location = System::Drawing::Point(198, 97);
+			this->UpDown_quantityItemAddOrders->Location = System::Drawing::Point(213, 94);
 			this->UpDown_quantityItemAddOrders->Name = L"UpDown_quantityItemAddOrders";
 			this->UpDown_quantityItemAddOrders->Size = System::Drawing::Size(46, 22);
 			this->UpDown_quantityItemAddOrders->TabIndex = 32;
@@ -2552,7 +2527,7 @@ private: System::Windows::Forms::Label^ home_page;
 			// quantityItemsAddOrder
 			// 
 			this->quantityItemsAddOrder->AutoSize = true;
-			this->quantityItemsAddOrder->Location = System::Drawing::Point(183, 79);
+			this->quantityItemsAddOrder->Location = System::Drawing::Point(198, 76);
 			this->quantityItemsAddOrder->Name = L"quantityItemsAddOrder";
 			this->quantityItemsAddOrder->Size = System::Drawing::Size(53, 16);
 			this->quantityItemsAddOrder->TabIndex = 31;
@@ -2571,26 +2546,28 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			this->text_ItemIdAddOrder->Location = System::Drawing::Point(33, 39);
 			this->text_ItemIdAddOrder->Name = L"text_ItemIdAddOrder";
-			this->text_ItemIdAddOrder->Size = System::Drawing::Size(216, 22);
+			this->text_ItemIdAddOrder->Size = System::Drawing::Size(122, 22);
 			this->text_ItemIdAddOrder->TabIndex = 0;
 			// 
 			// changeOrder
 			// 
-			this->changeOrder->Location = System::Drawing::Point(806, 677);
+			this->changeOrder->Location = System::Drawing::Point(552, 590);
 			this->changeOrder->Name = L"changeOrder";
 			this->changeOrder->Size = System::Drawing::Size(127, 33);
 			this->changeOrder->TabIndex = 39;
 			this->changeOrder->Text = L"Change order";
 			this->changeOrder->UseVisualStyleBackColor = true;
+			this->changeOrder->Click += gcnew System::EventHandler(this, &MyForm::changeOrder_Click);
 			// 
 			// addOrder
 			// 
-			this->addOrder->Location = System::Drawing::Point(49, 677);
+			this->addOrder->Location = System::Drawing::Point(109, 677);
 			this->addOrder->Name = L"addOrder";
 			this->addOrder->Size = System::Drawing::Size(150, 33);
 			this->addOrder->TabIndex = 37;
 			this->addOrder->Text = L"Add order";
 			this->addOrder->UseVisualStyleBackColor = true;
+			this->addOrder->Click += gcnew System::EventHandler(this, &MyForm::addOrder_Click);
 			// 
 			// dgv_ord
 			// 
@@ -3566,6 +3543,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->infoAddEmp_GroupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_emp))->EndInit();
 			this->ordersTab->ResumeLayout(false);
+			this->ordersTab->PerformLayout();
 			this->meanOfPaymentAddPayOrder_GroupBox->ResumeLayout(false);
 			this->meanOfPaymentAddPayOrder_GroupBox->PerformLayout();
 			this->ItemAddItemOrder_GroupBox->ResumeLayout(false);
@@ -3573,9 +3551,6 @@ private: System::Windows::Forms::Label^ home_page;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->UpDown_quanityAddItemOrder))->EndInit();
 			this->infoChangeOrder_groupBox->ResumeLayout(false);
 			this->infoChangeOrder_groupBox->PerformLayout();
-			this->ItemChangeOrder_groupBox->ResumeLayout(false);
-			this->ItemChangeOrder_groupBox->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->UpDown_quantityChangeOrder))->EndInit();
 			this->searchOrder_groupBox->ResumeLayout(false);
 			this->searchOrder_groupBox->PerformLayout();
 			this->GlobalInfoAddOrder_GroupBox->ResumeLayout(false);
@@ -3625,23 +3600,114 @@ private: System::Windows::Forms::Label^ home_page;
 		this->oSVCemployees = gcnew NS_Svc::CLemployees();
 		//this->oSVCstock = gcnew NS_Svc::CLstock();
 		this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
-		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();	
-		
+		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();
+
+		this->dgv_ord->Refresh();
+		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslAll";
+
 		this->dgv_cust->Refresh();
 		this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
 		this->dgv_cust->DataSource = this->oDs_customers;
 		this->dgv_cust->DataMember = "Rsl";
+
+	}
+
+
+	
+	private: void DisplayOrder(void){
+		if (this->Item_radioButton->Checked == true) { DisplayOneOrderItem(); }
+		else { DisplayOneOrderPay(); }
+	}
+	private: void DisplayAllOrder(void) {
+		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslAll";
+	}
+	public: void DisplayOneOrderItem(void) {
+		this->oDs_orders = this->oSVCorders->displayOrder("RslItem", this->text_orderIdSearchOrder->Text);
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslItem";
+	}
+	public: void DisplayOneOrderPay(void) {
+		this->oDs_orders = this->oSVCorders->displayOrderPay("RslPay", this->text_orderIdSearchOrder->Text);
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslPay";
 	}
 	private: System::Void displayOrder_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dgv_ord->Refresh();
-		this->oDs_orders = this->oSVCorders->displayOrders("Rsl");
-		this->dgv_ord->DataSource = this->oDs_orders;
-		this->dgv_ord->DataMember = "Rsl";
+		if (!System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text)) {
+			this->dgv_ord->Refresh();
+			DisplayOrder();
+		}
+		else{ MessageBox::Show("Be carefull ! Please put an order refrence ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
+	private: System::Void eraseOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text)) {
+			this->dgv_ord->Refresh();
+			this->oSVCorders->eraseOrder(this->text_orderIdSearchOrder->Text);
+			DisplayAllOrder();
+		}
+		else{ MessageBox::Show("Be carefull ! You missed to file the order reference ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	}
+	private: System::Void addItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) ||  System::String::IsNullOrWhiteSpace(this->text_itemIdAddItemOrder->Text) || System::String::IsNullOrWhiteSpace(this->ItemColorAddItemOrder_comboBox->Text) || this->UpDown_quanityAddItemOrder->Text == "0")) {
+			this->dgv_ord->Refresh();
+			this->oSVCorders->addItem(this->text_orderIdSearchOrder->Text, this->text_itemIdAddItemOrder->Text, this->ItemColorAddItemOrder_comboBox->Text, this->UpDown_quanityAddItemOrder->Text);
+			DisplayOrder();
+		}
+		else{ MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	}
+
+	private: System::Void addPayment_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || this->meanOfPaymentAddPayOrder_comboBox->Text == "")) {
+			this->dgv_ord->Refresh();
+			this->oSVCorders->addPayment(this->text_orderIdSearchOrder->Text, this->meanOfPaymentAddPayOrder_comboBox->Text, this->paymentDueAddPayOrder_datePicker->Text);
+			DisplayOrder();
+		}
+		else{ MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	}
+	private: System::Void EraseItemOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || System::String::IsNullOrWhiteSpace(this->text_itemIdAddItemOrder->Text) || System::String::IsNullOrWhiteSpace(this->ItemColorAddItemOrder_comboBox->Text))) {
+			this->dgv_ord->Refresh();
+			this->oSVCorders->eraseItem(this->text_orderIdSearchOrder->Text, this->text_itemIdAddItemOrder->Text, this->ItemColorAddItemOrder_comboBox->Text);
+			DisplayOrder();
+		}
+		else { MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	}
+	private: System::Void ErasePaymentOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || this->meanOfPaymentAddPayOrder_comboBox->Text == "")) {
+			this->dgv_ord->Refresh();
+			this->oSVCorders->erasePayment(this->text_orderIdSearchOrder->Text, this->meanOfPaymentAddPayOrder_comboBox->Text, this->paymentDueAddPayOrder_datePicker->Text);
+			DisplayOrder();
+		}
+		else { MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	}
+	private: System::Void addOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!(System::String::IsNullOrWhiteSpace(this->text_customerIdAddOrders->Text) || this->comboBox_meanOfPaymentAddOrder->Text=="" 
+			|| System::String::IsNullOrWhiteSpace(this->text_ItemIdAddOrder->Text) || this->ItemColorAddOrder_comboBox->Text==""
+			|| this->UpDown_quantityItemAddOrders->Text=="0")) {
+			this->dgv_ord->Refresh();
+			this->oSVCorders->addOrder((this->deliveryAddOrder_DatePicker->Value).ToString("yyyy-MM-dd"), (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
+				this->text_customerIdAddOrders->Text,this->comboBox_meanOfPaymentAddOrder->Text, (this->PaymentDueDateAddOrder_datePicker->Value).ToString("yyyy-MM-dd"),
+				this->text_ItemIdAddOrder->Text,this->ItemColorAddOrder_comboBox->Text, this->UpDown_quantityItemAddOrders->Text);
+			DisplayAllOrder();
+		}
+		else {MessageBox::Show("Be carefull ! You missed to file some informations ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);}
+	}
+	private: System::Void changeOrder_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!System::String::IsNullOrWhiteSpace(this->text_orderIdChangeOrder->Text)) {
+			this->dgv_ord->Refresh();
+			this->oSVCorders->changeOrder(this->text_orderIdChangeOrder->Text,(this->deliveryChangeOrder_datePicker->Value).ToString("yyyy-MM-dd"), (this->completePayChangeOrder_datePicker->Value).ToString("yyyy-MM-dd"));
+			DisplayAllOrder();
+		}
+		else { MessageBox::Show("Be carefull ! You missed to file some informations ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	}
+
+
+
+
 	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-////////
-/*Faire un displayEmps pour le placer pour avoir tous et faire un displayEmp pour un employer à l'aide des données dans le search*/
-////////
 		this->dgv_emp->Refresh();
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
@@ -3650,9 +3716,6 @@ private: System::Windows::Forms::Label^ home_page;
 	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int streetNumber = System::Convert::ToInt32(this->text_streetNumber->Text);
 		this->dgv_emp->Refresh();
-////////
-/*Attention le hire date doit être pris automatiquement dans la requête sql avec un GETDATE() car plus aucun champs ne permet de le rentrer*/
-////////
 		this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
@@ -3660,7 +3723,7 @@ private: System::Windows::Forms::Label^ home_page;
 	}
 	private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_emp->Refresh();
-		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
+		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd");
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
