@@ -29,6 +29,16 @@ System::Data::DataSet^ NS_Svc::CLorders::displayOrder(System::String^ dataTableN
 	return this->oCad->getRows(sql, dataTableName);
 }
 
+System::Data::DataSet^ NS_Svc::CLorders::displayOrderPay(System::String^ dataTableName, System::String^ orderRef)
+{
+	System::String^ sql;
+
+	this->oOrder->setOrderRef(orderRef);
+
+	sql = this->oOrder->selectOrderPay();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
 void NS_Svc::CLorders::addOrder(System::String^ deliveryDate, System::String^ CompletePayDate, System::String^ CustID, 
 	System::String^ MeanOfPay, System::String^ PayDate, System::String^ ProductRef, System::String^ color, System::String^ copyNum)
 {

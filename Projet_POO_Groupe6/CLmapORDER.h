@@ -19,6 +19,7 @@ namespace NS_Comp
 	public:
 		System::String^ selectOrders(void);
 		System::String^ selectOrder(void);
+		System::String^ selectOrderPay(void);
 		System::String^ insertOrder(void);
 		System::String^ insertItem(void);
 		System::String^ insertPayment(void);

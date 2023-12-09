@@ -6,6 +6,7 @@
 #include "CLstatistics.h"
 #include "CLsimulations.h"
 
+
 namespace ProjetPOOGroupe6 {
 
 	using namespace System;
@@ -26,7 +27,7 @@ namespace ProjetPOOGroupe6 {
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
-			//
+			// 
 		}
 
 	protected:
@@ -40,7 +41,6 @@ namespace ProjetPOOGroupe6 {
 				delete components;
 			}
 		}
-
 
 
 	/// <summary>
@@ -276,6 +276,8 @@ namespace ProjetPOOGroupe6 {
 	private: System::Windows::Forms::Button^ addItem;
 	private: System::Windows::Forms::Button^ ErasePaymentOrder;
 	private: System::Windows::Forms::Button^ EraseItemOrder;
+	private: System::Windows::Forms::RadioButton^ Item_radioButton;
+	private: System::Windows::Forms::RadioButton^ Pay_radioButton;
 
 
 
@@ -445,6 +447,8 @@ namespace ProjetPOOGroupe6 {
 
 
 
+
+
 	protected:
 
 	private:
@@ -590,6 +594,8 @@ namespace ProjetPOOGroupe6 {
 			this->firstNameAddEmp = (gcnew System::Windows::Forms::Label());
 			this->dgv_emp = (gcnew System::Windows::Forms::DataGridView());
 			this->ordersTab = (gcnew System::Windows::Forms::TabPage());
+			this->Item_radioButton = (gcnew System::Windows::Forms::RadioButton());
+			this->Pay_radioButton = (gcnew System::Windows::Forms::RadioButton());
 			this->meanOfPaymentAddPayOrder_GroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->ErasePaymentOrder = (gcnew System::Windows::Forms::Button());
 			this->paymentDueAddPayOrder_datePicker = (gcnew System::Windows::Forms::DateTimePicker());
@@ -1973,6 +1979,8 @@ namespace ProjetPOOGroupe6 {
 			// 
 			// ordersTab
 			// 
+			this->ordersTab->Controls->Add(this->Item_radioButton);
+			this->ordersTab->Controls->Add(this->Pay_radioButton);
 			this->ordersTab->Controls->Add(this->meanOfPaymentAddPayOrder_GroupBox);
 			this->ordersTab->Controls->Add(this->ItemAddItemOrder_GroupBox);
 			this->ordersTab->Controls->Add(this->infoChangeOrder_groupBox);
@@ -1987,6 +1995,28 @@ namespace ProjetPOOGroupe6 {
 			this->ordersTab->TabIndex = 2;
 			this->ordersTab->Text = L"Orders";
 			this->ordersTab->UseVisualStyleBackColor = true;
+			// 
+			// Item_radioButton
+			// 
+			this->Item_radioButton->AutoSize = true;
+			this->Item_radioButton->Checked = true;
+			this->Item_radioButton->Location = System::Drawing::Point(841, 56);
+			this->Item_radioButton->Name = L"Item_radioButton";
+			this->Item_radioButton->Size = System::Drawing::Size(60, 20);
+			this->Item_radioButton->TabIndex = 52;
+			this->Item_radioButton->TabStop = true;
+			this->Item_radioButton->Text = L"Items";
+			this->Item_radioButton->UseVisualStyleBackColor = true;
+			// 
+			// Pay_radioButton
+			// 
+			this->Pay_radioButton->AutoSize = true;
+			this->Pay_radioButton->Location = System::Drawing::Point(926, 56);
+			this->Pay_radioButton->Name = L"Pay_radioButton";
+			this->Pay_radioButton->Size = System::Drawing::Size(137, 20);
+			this->Pay_radioButton->TabIndex = 51;
+			this->Pay_radioButton->Text = L"Methode Payment";
+			this->Pay_radioButton->UseVisualStyleBackColor = true;
 			// 
 			// meanOfPaymentAddPayOrder_GroupBox
 			// 
@@ -2298,7 +2328,7 @@ namespace ProjetPOOGroupe6 {
 			this->deliveryAddOrder_DatePicker->Name = L"deliveryAddOrder_DatePicker";
 			this->deliveryAddOrder_DatePicker->Size = System::Drawing::Size(220, 22);
 			this->deliveryAddOrder_DatePicker->TabIndex = 47;
-			this->deliveryAddOrder_DatePicker->Value = System::DateTime(2023, 12, 8, 23, 8, 49, 0);
+			this->deliveryAddOrder_DatePicker->Value = System::DateTime(2023, 12, 9, 17, 39, 0, 0);
 			// 
 			// deliveryDateAddOrder
 			// 
@@ -3366,6 +3396,7 @@ namespace ProjetPOOGroupe6 {
 			this->infoAddEmp_GroupBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_emp))->EndInit();
 			this->ordersTab->ResumeLayout(false);
+			this->ordersTab->PerformLayout();
 			this->meanOfPaymentAddPayOrder_GroupBox->ResumeLayout(false);
 			this->meanOfPaymentAddPayOrder_GroupBox->PerformLayout();
 			this->ItemAddItemOrder_GroupBox->ResumeLayout(false);
@@ -3432,21 +3463,30 @@ namespace ProjetPOOGroupe6 {
 	}
 
 
-
+	
+	private: void DisplayOrder(void){
+		if (this->Item_radioButton->Checked == true) { DisplayOneOrderItem(); }
+		else { DisplayOneOrderPay(); }
+	}
 	private: void DisplayAllOrder(void) {
 		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
 		this->dgv_ord->DataSource = this->oDs_orders;
 		this->dgv_ord->DataMember = "RslAll";
 	}
-	private: void DisplayOneOrder(void) {
-		this->oDs_orders = this->oSVCorders->displayOrder("RslSpe", this->text_orderIdSearchOrder->Text);
+	public: void DisplayOneOrderItem(void) {
+		this->oDs_orders = this->oSVCorders->displayOrder("RslItem", this->text_orderIdSearchOrder->Text);
 		this->dgv_ord->DataSource = this->oDs_orders;
-		this->dgv_ord->DataMember = "RslSpe";
+		this->dgv_ord->DataMember = "RslItem";
+	}
+	public: void DisplayOneOrderPay(void) {
+		this->oDs_orders = this->oSVCorders->displayOrderPay("RslPay", this->text_orderIdSearchOrder->Text);
+		this->dgv_ord->DataSource = this->oDs_orders;
+		this->dgv_ord->DataMember = "RslPay";
 	}
 	private: System::Void displayOrder_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text)) {
 			this->dgv_ord->Refresh();
-			DisplayOneOrder();
+			DisplayOrder();
 		}
 		else{ MessageBox::Show("Be carefull ! Please put an order refrence ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3462,7 +3502,7 @@ namespace ProjetPOOGroupe6 {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) ||  System::String::IsNullOrWhiteSpace(this->text_itemIdAddItemOrder->Text) || System::String::IsNullOrWhiteSpace(this->ItemColorAddItemOrder_comboBox->Text) || this->UpDown_quanityAddItemOrder->Text == "0")) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->addItem(this->text_orderIdSearchOrder->Text, this->text_itemIdAddItemOrder->Text, this->ItemColorAddItemOrder_comboBox->Text, this->UpDown_quanityAddItemOrder->Text);
-			DisplayOneOrder();
+			DisplayOrder();
 		}
 		else{ MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3471,7 +3511,7 @@ namespace ProjetPOOGroupe6 {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || this->meanOfPaymentAddPayOrder_comboBox->Text == "")) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->addPayment(this->text_orderIdSearchOrder->Text, this->meanOfPaymentAddPayOrder_comboBox->Text, this->paymentDueAddPayOrder_datePicker->Text);
-			DisplayOneOrder();
+			DisplayOrder();
 		}
 		else{ MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3479,7 +3519,7 @@ namespace ProjetPOOGroupe6 {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || System::String::IsNullOrWhiteSpace(this->text_itemIdAddItemOrder->Text) || System::String::IsNullOrWhiteSpace(this->ItemColorAddItemOrder_comboBox->Text))) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->eraseItem(this->text_orderIdSearchOrder->Text, this->text_itemIdAddItemOrder->Text, this->ItemColorAddItemOrder_comboBox->Text);
-			DisplayOneOrder();
+			DisplayOrder();
 		}
 		else { MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3487,7 +3527,7 @@ namespace ProjetPOOGroupe6 {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || this->meanOfPaymentAddPayOrder_comboBox->Text == "")) {
 			this->dgv_ord->Refresh();
 			this->oSVCorders->erasePayment(this->text_orderIdSearchOrder->Text, this->meanOfPaymentAddPayOrder_comboBox->Text, this->paymentDueAddPayOrder_datePicker->Text);
-			DisplayOneOrder();
+			DisplayOrder();
 		}
 		else { MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
@@ -3545,6 +3585,5 @@ namespace ProjetPOOGroupe6 {
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
 	}
-
 };
 }

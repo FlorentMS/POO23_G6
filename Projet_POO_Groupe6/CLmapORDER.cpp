@@ -31,6 +31,14 @@ System::String^ NS_Comp::CLmapORDER::selectOrder(void)
 		Where Orders.orderRef = '"+ this->orderRef +"';";
 }
 
+System::String^ NS_Comp::CLmapORDER::selectOrderPay(void)
+{
+	return "Select orders.orderRef as order_reference, orders.orderDate as order_the, orders.deliveryDate as deliver_the, meanOfPayment as mean_of_payment,		\
+			paymentDate as payed_the, totalET as total																											\
+			From[Projet_POO_G6].[dbo].Payments inner join[Projet_POO_G6].[dbo].orders on(orders.orderRef = Payments.orderRef)									\
+			Where orders.orderRef = '"+ this->orderRef +"'; ";
+}
+
 System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 {
 	return "declare @IdCust as int; set @IdCust = "+ this->custID +";																																									\
@@ -47,7 +55,8 @@ System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 			IF @NumberOrderCust is null																																																	\
 				begin																																																					\
 				set @NumberOrderCust = 1;																																																\
-			end																																																							\
+				update Projet_POO_G6.dbo.Customers set firstBuyDate = GETDATE() where custNumber = @IdCust;																																\
+				end																																																						\	\
 																																																										\
 				declare @orderID as varchar(20);																																														\
 			set  @orderID = (Select CONCAT(upper(substring(firstName, 1, 2)), upper(substring(lastName, 1, 2)), Convert(CHAR(4), GETDATE(), 112), upper(substring(Cities.cityName, 1, 3)), format(@NumberOrderCust, '000'))				\

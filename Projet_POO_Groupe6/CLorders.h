@@ -16,6 +16,7 @@ namespace NS_Svc {
 
 		System::Data::DataSet^ displayOrders(System::String^ dataTableName);
 		System::Data::DataSet^ displayOrder(System::String^ dataTableName, System::String^ orderRef);
+		System::Data::DataSet^ displayOrderPay(System::String^ dataTableName, System::String^ orderRef);
 
 
 		void addOrder(System::String^ deliveryDate, System::String^ CompletePayDate, System::String^ CustID, System::String^ MeanOfPay, 
