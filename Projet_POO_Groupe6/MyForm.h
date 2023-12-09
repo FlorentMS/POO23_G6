@@ -3602,15 +3602,12 @@ private: System::Windows::Forms::Label^ home_page;
 		//this->oSVCsimulations = gcnew NS_Svc::CLsimulations();
 
 		this->dgv_ord->Refresh();
-		this->oDs_orders = this->oSVCorders->displayOrders("RslAll");
-		this->dgv_ord->DataSource = this->oDs_orders;
-		this->dgv_ord->DataMember = "RslAll";
-
+		DisplayAllOrder();
+		
 		this->dgv_cust->Refresh();
 		this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
 		this->dgv_cust->DataSource = this->oDs_customers;
 		this->dgv_cust->DataMember = "Rsl";
-
 	}
 
 
@@ -3657,7 +3654,6 @@ private: System::Windows::Forms::Label^ home_page;
 		}
 		else{ MessageBox::Show("Be carefull ! You missed to file some informations. \n Don't forget to add an order reference", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
-
 	private: System::Void addPayment_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!(System::String::IsNullOrWhiteSpace(this->text_orderIdSearchOrder->Text) || this->meanOfPaymentAddPayOrder_comboBox->Text == "")) {
 			this->dgv_ord->Refresh();
@@ -3705,127 +3701,128 @@ private: System::Windows::Forms::Label^ home_page;
 
 
 
-
-	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dgv_emp->Refresh();
+	
+	private: void DisplayEmployee(void) {
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
+	}
+	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_emp->Refresh();
+		DisplayEmployee();
 	}
 	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int streetNumber = System::Convert::ToInt32(this->text_streetNumber->Text);
 		this->dgv_emp->Refresh();
 		this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
-		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
-		this->dgv_emp->DataSource = this->oDs_employees;
-		this->dgv_emp->DataMember = "Rsl";
+		DisplayEmployee();
 	}
 	private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_emp->Refresh();
 		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
-		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
-		this->dgv_emp->DataSource = this->oDs_employees;
-		this->dgv_emp->DataMember = "Rsl";
+		DisplayEmployee();
 	}
 	private: System::Void changeEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int streetNumber = System::Convert::ToInt32(this->StreetNumChangeEmp->Text);
 		int employeeID = System::Convert::ToInt32(this->text_EmpIdChangeEmp->Text);
 		this->dgv_emp->Refresh();
 		this->oSVCemployees->updateEmp(employeeID, this->text_chiefIdChangeEmp->Text, this->text_fistNameChangeEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameChangeEmp->Text, this->text_cityNameChangeEmp->Text, this->text_ZipCodeChangeEmp->Text);
-		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
-		this->dgv_emp->DataSource = this->oDs_employees;
-		this->dgv_emp->DataMember = "Rsl";
+		DisplayEmployee();
 	}
-private: System::Void addCust_Click(System::Object^ sender, System::EventArgs^ e) {
-	int bilingStreetN = System::Convert::ToInt32(this->text_bilingStreetN->Text);
-	int deliveryStreetN = System::Convert::ToInt32(this->text_deliveryStreetN->Text);
-	this->oSVCcustomers->addCustomers(this->text_custLastName->Text, this->text_custFirstName->Text, (this->birthDateCust_datePicker->Value).ToString("yyy-MM-dd"), bilingStreetN, deliveryStreetN, this->text_bilingStreetName->Text, this->text_deliveryStreetName->Text, this->text_bilingCityName->Text, this->text_deliveryCityName->Text, this->text_bilingZIPcode->Text, this->text_deliveryZIPcode->Text);
-	this->dgv_cust->Refresh();
-	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
-	this->dgv_cust->DataSource = this->oDs_customers;
-	this->dgv_cust->DataMember = "Rsl";
-}
-private: System::Void eraseCust_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSVCcustomers->eraseCustomers(this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
-	this->dgv_cust->Refresh();
-	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
-	this->dgv_cust->DataSource = this->oDs_customers;
-	this->dgv_cust->DataMember = "Rsl";
-}
-private: System::Void displayCust_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->dgv_cust->Refresh();
-	this->oDs_customers = this->oSVCcustomers->displayCustomer("Rsl", this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
-	this->dgv_cust->DataSource = this->oDs_customers;
-	this->dgv_cust->DataMember = "Rsl";
-}
-private: System::Void changeCust_Click(System::Object^ sender, System::EventArgs^ e) {
-	int bilingStreetNchange = System::Convert::ToInt32(this->text_streetNumDelChangeCust->Text);
-	int deliveryStreetNchange = System::Convert::ToInt32(this->text_streetNumBillingChangeCust->Text);
-	int custNum = System::Convert::ToInt32(this->text_customerIdChangeCust->Text);
-	this->oSVCcustomers->updateCustomers(custNum, this->text_lastNameChangeCust->Text, this->text_firstNameChangeCust->Text, (this->birthChangeCust_datePicker->Value).ToString("yyy-MM-dd"), bilingStreetNchange, deliveryStreetNchange, this->text_streetNameBillingChangeCust->Text, this->text_streetNameDelChangeCust->Text, this->text_cityNameBillingChangeCust->Text, this->text_cityNameDelChangeCust->Text, this->text_ZipCodeBillingChangeCust->Text, this->text_ZipCodeDelChangeCust->Text);
-	this->dgv_cust->Refresh();
-	this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
-	this->dgv_cust->DataSource = this->oDs_customers;
-	this->dgv_cust->DataMember = "Rsl";
-}
-private: System::Void button_averageCart_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
 	
-	this->dgv_stat->Refresh();
-	this->oDs_statistics = this->oSVCstatistics->averageBasket("Rsl");
-	this->dgv_stat->DataSource = this->oDs_statistics;
-	this->dgv_stat->DataMember = "Rsl";
-}
-private: System::Void button_turnover_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: void DisplayCustomers(void) {
+		this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
+		this->dgv_cust->DataSource = this->oDs_customers;
+		this->dgv_cust->DataMember = "Rsl";
+	}
+	private: System::Void addCust_Click(System::Object^ sender, System::EventArgs^ e) {
+		int bilingStreetN = System::Convert::ToInt32(this->text_bilingStreetN->Text);
+		int deliveryStreetN = System::Convert::ToInt32(this->text_deliveryStreetN->Text);
+		this->oSVCcustomers->addCustomers(this->text_custLastName->Text, this->text_custFirstName->Text, (this->birthDateCust_datePicker->Value).ToString("yyy-MM-dd"), bilingStreetN, deliveryStreetN, this->text_bilingStreetName->Text, this->text_deliveryStreetName->Text, this->text_bilingCityName->Text, this->text_deliveryCityName->Text, this->text_bilingZIPcode->Text, this->text_deliveryZIPcode->Text);
+		this->dgv_cust->Refresh();
+		DisplayCustomers();
+	}
+	private: System::Void eraseCust_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSVCcustomers->eraseCustomers(this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
+		this->dgv_cust->Refresh();
+		DisplayCustomers();
+	}
+	private: System::Void displayCust_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_cust->Refresh();
+		this->oDs_customers = this->oSVCcustomers->displayCustomer("RslSpe", this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
+		this->dgv_cust->DataSource = this->oDs_customers;
+		this->dgv_cust->DataMember = "RslSpe";
+	}
+	private: System::Void changeCust_Click(System::Object^ sender, System::EventArgs^ e) {
+		int bilingStreetNchange = System::Convert::ToInt32(this->text_streetNumDelChangeCust->Text);
+		int deliveryStreetNchange = System::Convert::ToInt32(this->text_streetNumBillingChangeCust->Text);
+		int custNum = System::Convert::ToInt32(this->text_customerIdChangeCust->Text);
+		this->dgv_cust->Refresh();
+		this->oSVCcustomers->updateCustomers(custNum, this->text_lastNameChangeCust->Text, this->text_firstNameChangeCust->Text, (this->birthChangeCust_datePicker->Value).ToString("yyy-MM-dd"), bilingStreetNchange, deliveryStreetNchange, this->text_streetNameBillingChangeCust->Text, this->text_streetNameDelChangeCust->Text, this->text_cityNameBillingChangeCust->Text, this->text_cityNameDelChangeCust->Text, this->text_ZipCodeBillingChangeCust->Text, this->text_ZipCodeDelChangeCust->Text);
+		DisplayCustomers();
+	}
 
-	int month = System::Convert::ToInt32(this->text_turnoverMonth->Text);
-	int year = System::Convert::ToInt32(this->text_turnoverYear->Text);
-	this->dgv_stat->Refresh();
-	this->oDs_statistics = this->oSVCstatistics->calculateTurnover("Rsl", month, year);
-	this->dgv_stat->DataSource = this->oDs_statistics;
-	this->dgv_stat->DataMember = "Rsl";
-}
-private: System::Void button_underReorderThreshold_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->dgv_stat->Refresh();
-	this->oDs_statistics = this->oSVCstatistics->productUnderThreshold("Rsl");
-	this->dgv_stat->DataSource = this->oDs_statistics;
-	this->dgv_stat->DataMember = "Rsl";
-}
-private: System::Void button_bestSelling_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->dgv_stat->Refresh();
-	this->oDs_statistics = this->oSVCstatistics->moreSellProducts("Rsl");
-	this->dgv_stat->DataSource = this->oDs_statistics;
-	this->dgv_stat->DataMember = "Rsl";
-}
-private: System::Void button_lowestSelling_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button_averageCart_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+		this->dgv_stat->Refresh();
+		this->oDs_statistics = this->oSVCstatistics->averageBasket("Rsl");
+		this->dgv_stat->DataSource = this->oDs_statistics;
+		this->dgv_stat->DataMember = "Rsl";
+	}
+	private: System::Void button_turnover_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->dgv_stat->Refresh();
-	this->oDs_statistics = this->oSVCstatistics->lessSellProducts("Rsl");
-	this->dgv_stat->DataSource = this->oDs_statistics;
-	this->dgv_stat->DataMember = "Rsl";
-}
-private: System::Void button_customerTotalAmount_Click(System::Object^ sender, System::EventArgs^ e) {
+		int month = System::Convert::ToInt32(this->text_turnoverMonth->Text);
+		int year = System::Convert::ToInt32(this->text_turnoverYear->Text);
+		this->dgv_stat->Refresh();
+		this->oDs_statistics = this->oSVCstatistics->calculateTurnover("Rsl", month, year);
+		this->dgv_stat->DataSource = this->oDs_statistics;
+		this->dgv_stat->DataMember = "Rsl";
+	}
+	private: System::Void button_underReorderThreshold_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->dgv_stat->Refresh();
-	this->oDs_statistics = this->oSVCstatistics->totalAmount("Rsl", this->text_statisticsCustLastName->Text, this->text_statisticsCustFirstName->Text, (this->birthStatisitcs_datePicker->Value).ToString("yyyy-MM-dd"));
-	this->dgv_stat->DataSource = this->oDs_statistics;
-	this->dgv_stat->DataMember = "Rsl";
-}
-private: System::Void button_commercialValueStock_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_stat->Refresh();
+		this->oDs_statistics = this->oSVCstatistics->productUnderThreshold("Rsl");
+		this->dgv_stat->DataSource = this->oDs_statistics;
+		this->dgv_stat->DataMember = "Rsl";
+	}
+	private: System::Void button_bestSelling_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->dgv_stat->Refresh();
-	this->oDs_statistics = this->oSVCstatistics->retailValueInventory("Rsl");
-	this->dgv_stat->DataSource = this->oDs_statistics;
-	this->dgv_stat->DataMember = "Rsl";
-}
+		this->dgv_stat->Refresh();
+		this->oDs_statistics = this->oSVCstatistics->moreSellProducts("Rsl");
+		this->dgv_stat->DataSource = this->oDs_statistics;
+		this->dgv_stat->DataMember = "Rsl";
+	}
+	private: System::Void button_lowestSelling_Click(System::Object^ sender, System::EventArgs^ e) {
 
-private: System::Void button_purchaseValueStock_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_stat->Refresh();
+		this->oDs_statistics = this->oSVCstatistics->lessSellProducts("Rsl");
+		this->dgv_stat->DataSource = this->oDs_statistics;
+		this->dgv_stat->DataMember = "Rsl";
+	}
+	private: System::Void button_customerTotalAmount_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->dgv_stat->Refresh();
-	this->oDs_statistics = this->oSVCstatistics->purchaseValueInventory("Rsl");
-	this->dgv_stat->DataSource = this->oDs_statistics;
-	this->dgv_stat->DataMember = "Rsl";
-}
+		this->dgv_stat->Refresh();
+		this->oDs_statistics = this->oSVCstatistics->totalAmount("Rsl", this->text_statisticsCustLastName->Text, this->text_statisticsCustFirstName->Text, (this->birthStatisitcs_datePicker->Value).ToString("yyyy-MM-dd"));
+		this->dgv_stat->DataSource = this->oDs_statistics;
+		this->dgv_stat->DataMember = "Rsl";
+	}
+	private: System::Void button_commercialValueStock_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		this->dgv_stat->Refresh();
+		this->oDs_statistics = this->oSVCstatistics->retailValueInventory("Rsl");
+		this->dgv_stat->DataSource = this->oDs_statistics;
+		this->dgv_stat->DataMember = "Rsl";
+	}
+	private: System::Void button_purchaseValueStock_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		this->dgv_stat->Refresh();
+		this->oDs_statistics = this->oSVCstatistics->purchaseValueInventory("Rsl");
+		this->dgv_stat->DataSource = this->oDs_statistics;
+		this->dgv_stat->DataMember = "Rsl";
+	}
 };
 }
