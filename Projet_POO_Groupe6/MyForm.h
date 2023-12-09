@@ -2353,7 +2353,6 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			// displayOrder
 			// 
-			this->displayOrder->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"displayOrder.Image")));
 			this->displayOrder->Location = System::Drawing::Point(165, 87);
 			this->displayOrder->Name = L"displayOrder";
 			this->displayOrder->Size = System::Drawing::Size(86, 33);
@@ -3723,7 +3722,7 @@ private: System::Windows::Forms::Label^ home_page;
 	}
 	private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_emp->Refresh();
-		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd");
+		this->oSVCemployees->eraseEmp(this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
