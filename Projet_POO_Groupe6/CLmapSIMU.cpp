@@ -1,11 +1,28 @@
 #include "pch.h"
 #include "CLmapSIMU.h"
+#include <string>
 
 System::String^ NS_Comp::CLmapSIMU::selectTotalPriceATI(void)
 {
-    return "Select SUM(p.priceET*cp.stockQuantity)*"+ this->UnknowMarkdown +"*"+ this->TradDiscount +"*"+ this->TVArate +"*"+ this->Margin +" as stock_market_value         \
-        From Projet_POO_G6.dbo.Products as p inner join Projet_POO_G6.dbo.characteristicsProd  as cp                                                                        \
-        on(p.productRef = cp.productRef); ";
+    System::String^ sqlQuery = "Select ( SUM(p.priceET*cp.stockQuantity)";
+    
+    System::String^ s1 = System::Convert::ToString(this->UnknowMarkdown);
+    sqlQuery += "*(" + s1->Substring(0, s1->IndexOf(",")) + "." + s1->Substring(s1->IndexOf(",")+1,  (s1->Length-1) - s1->IndexOf(","));
+    
+    s1 = System::Convert::ToString(this->TradDiscount);
+    sqlQuery += ")*(" + s1->Substring(0, s1->IndexOf(",")) + "." + s1->Substring(s1->IndexOf(",")+1, (s1->Length - 1) - s1->IndexOf(","));
+
+    s1 = System::Convert::ToString(this->TVArate);
+    sqlQuery += ")*(" + s1->Substring(0, s1->IndexOf(",")) + "." + s1->Substring(s1->IndexOf(",")+1, (s1->Length - 1) - s1->IndexOf(","));
+
+    s1 = System::Convert::ToString(this->Margin); 
+    sqlQuery += ")*(" + s1->Substring(0, s1->IndexOf(",")) + "." + s1->Substring(s1->IndexOf(",")+1, (s1->Length - 1) - s1->IndexOf(","));
+
+    sqlQuery += ") ) as stock_market_value                                                                                                                           \
+                  From Projet_POO_G6.dbo.Products as p inner join Projet_POO_G6.dbo.characteristicsProd  as cp                                                                        \
+                    on(p.productRef = cp.productRef); ";
+    System::Console::WriteLine(sqlQuery);
+    return sqlQuery;
 }
 
 void NS_Comp::CLmapSIMU::setTVArate(float TVA)

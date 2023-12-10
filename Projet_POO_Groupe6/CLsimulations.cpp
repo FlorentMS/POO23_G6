@@ -19,19 +19,23 @@ System::Data::DataSet^ NS_Svc::CLsimulations::makeSimulation(System::String^ dat
 void NS_Svc::CLsimulations::changeTVA(float percentage)
 {
 	this->oSimu->setTVArate(1 + percentage);
+	System::Console::WriteLine(this->oSimu->getTVArate());
 }
 
 void NS_Svc::CLsimulations::changeMargin(float percentage)
 {
 	this->oSimu->setMargin(1 + percentage);
+	System::Console::WriteLine(this->oSimu->getMargin());
 }
 
 void NS_Svc::CLsimulations::changeUnknowMarkdown(float percentage)
 {
 	this->oSimu->setUnknowMarkdown(1 - percentage);
+	System::Console::WriteLine(this->oSimu->getUnknowMarkdown());
 }
 
 void NS_Svc::CLsimulations::changeTradDiscount(float percentage)
 {
 	this->oSimu->setTradDiscount(1 - percentage);
+	System::Console::WriteLine(this->oSimu->getTradDiscount());
 }

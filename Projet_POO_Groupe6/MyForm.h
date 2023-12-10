@@ -884,7 +884,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->serviceNumberChangeCust->AutoSize = true;
 			this->serviceNumberChangeCust->Location = System::Drawing::Point(287, 25);
 			this->serviceNumberChangeCust->Name = L"serviceNumberChangeCust";
-			this->serviceNumberChangeCust->Size = System::Drawing::Size(105, 17);
+			this->serviceNumberChangeCust->Size = System::Drawing::Size(99, 16);
 			this->serviceNumberChangeCust->TabIndex = 25;
 			this->serviceNumberChangeCust->Text = L"service number";
 			// 
@@ -893,7 +893,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->socityNameChangeCust->AutoSize = true;
 			this->socityNameChangeCust->Location = System::Drawing::Point(23, 24);
 			this->socityNameChangeCust->Name = L"socityNameChangeCust";
-			this->socityNameChangeCust->Size = System::Drawing::Size(83, 17);
+			this->socityNameChangeCust->Size = System::Drawing::Size(79, 16);
 			this->socityNameChangeCust->TabIndex = 24;
 			this->socityNameChangeCust->Text = L"socity name";
 			// 
@@ -943,7 +943,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->birthDateSearchCust->AutoSize = true;
 			this->birthDateSearchCust->Location = System::Drawing::Point(24, 141);
 			this->birthDateSearchCust->Name = L"birthDateSearchCust";
-			this->birthDateSearchCust->Size = System::Drawing::Size(68, 17);
+			this->birthDateSearchCust->Size = System::Drawing::Size(62, 16);
 			this->birthDateSearchCust->TabIndex = 23;
 			this->birthDateSearchCust->Text = L"birth date";
 			// 
@@ -952,7 +952,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->firstNameSearchCust->AutoSize = true;
 			this->firstNameSearchCust->Location = System::Drawing::Point(23, 83);
 			this->firstNameSearchCust->Name = L"firstNameSearchCust";
-			this->firstNameSearchCust->Size = System::Drawing::Size(65, 17);
+			this->firstNameSearchCust->Size = System::Drawing::Size(60, 16);
 			this->firstNameSearchCust->TabIndex = 22;
 			this->firstNameSearchCust->Text = L"fist name";
 			// 
@@ -971,7 +971,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->lastNameSearchCust->AutoSize = true;
 			this->lastNameSearchCust->Location = System::Drawing::Point(23, 30);
 			this->lastNameSearchCust->Name = L"lastNameSearchCust";
-			this->lastNameSearchCust->Size = System::Drawing::Size(69, 17);
+			this->lastNameSearchCust->Size = System::Drawing::Size(65, 16);
 			this->lastNameSearchCust->TabIndex = 21;
 			this->lastNameSearchCust->Text = L"last name";
 			// 
@@ -1004,7 +1004,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->customerIdChangeCust->AutoSize = true;
 			this->customerIdChangeCust->Location = System::Drawing::Point(297, 24);
 			this->customerIdChangeCust->Name = L"customerIdChangeCust";
-			this->customerIdChangeCust->Size = System::Drawing::Size(83, 17);
+			this->customerIdChangeCust->Size = System::Drawing::Size(78, 16);
 			this->customerIdChangeCust->TabIndex = 28;
 			this->customerIdChangeCust->Text = L"customer ID";
 			// 
@@ -1034,7 +1034,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->birthDateChangeCust->AutoSize = true;
 			this->birthDateChangeCust->Location = System::Drawing::Point(235, 71);
 			this->birthDateChangeCust->Name = L"birthDateChangeCust";
-			this->birthDateChangeCust->Size = System::Drawing::Size(68, 17);
+			this->birthDateChangeCust->Size = System::Drawing::Size(62, 16);
 			this->birthDateChangeCust->TabIndex = 23;
 			this->birthDateChangeCust->Text = L"birth date";
 			// 
@@ -1043,7 +1043,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->firstNameChangeCust->AutoSize = true;
 			this->firstNameChangeCust->Location = System::Drawing::Point(4, 73);
 			this->firstNameChangeCust->Name = L"firstNameChangeCust";
-			this->firstNameChangeCust->Size = System::Drawing::Size(65, 17);
+			this->firstNameChangeCust->Size = System::Drawing::Size(60, 16);
 			this->firstNameChangeCust->TabIndex = 22;
 			this->firstNameChangeCust->Text = L"fist name";
 			// 
@@ -1052,7 +1052,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->lastNameChangeCust->AutoSize = true;
 			this->lastNameChangeCust->Location = System::Drawing::Point(6, 24);
 			this->lastNameChangeCust->Name = L"lastNameChangeCust";
-			this->lastNameChangeCust->Size = System::Drawing::Size(69, 17);
+			this->lastNameChangeCust->Size = System::Drawing::Size(65, 16);
 			this->lastNameChangeCust->TabIndex = 21;
 			this->lastNameChangeCust->Text = L"last name";
 			// 
@@ -1099,7 +1099,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->cityNameBillingChangeCust->AutoSize = true;
 			this->cityNameBillingChangeCust->Location = System::Drawing::Point(310, 21);
 			this->cityNameBillingChangeCust->Name = L"cityNameBillingChangeCust";
-			this->cityNameBillingChangeCust->Size = System::Drawing::Size(68, 17);
+			this->cityNameBillingChangeCust->Size = System::Drawing::Size(64, 16);
 			this->cityNameBillingChangeCust->TabIndex = 26;
 			this->cityNameBillingChangeCust->Text = L"city name";
 			// 
@@ -1115,7 +1115,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ZipCodeBillingChangeCust->AutoSize = true;
 			this->ZipCodeBillingChangeCust->Location = System::Drawing::Point(235, 21);
 			this->ZipCodeBillingChangeCust->Name = L"ZipCodeBillingChangeCust";
-			this->ZipCodeBillingChangeCust->Size = System::Drawing::Size(64, 17);
+			this->ZipCodeBillingChangeCust->Size = System::Drawing::Size(61, 16);
 			this->ZipCodeBillingChangeCust->TabIndex = 25;
 			this->ZipCodeBillingChangeCust->Text = L"ZIP code";
 			// 
@@ -1131,7 +1131,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNumBillingChangeCust->AutoSize = true;
 			this->streetNumBillingChangeCust->Location = System::Drawing::Point(8, 21);
 			this->streetNumBillingChangeCust->Name = L"streetNumBillingChangeCust";
-			this->streetNumBillingChangeCust->Size = System::Drawing::Size(62, 17);
+			this->streetNumBillingChangeCust->Size = System::Drawing::Size(54, 16);
 			this->streetNumBillingChangeCust->TabIndex = 23;
 			this->streetNumBillingChangeCust->Text = L"street n°";
 			// 
@@ -1140,7 +1140,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNameBillingChangeCust->AutoSize = true;
 			this->streetNameBillingChangeCust->Location = System::Drawing::Point(77, 21);
 			this->streetNameBillingChangeCust->Name = L"streetNameBillingChangeCust";
-			this->streetNameBillingChangeCust->Size = System::Drawing::Size(83, 17);
+			this->streetNameBillingChangeCust->Size = System::Drawing::Size(77, 16);
 			this->streetNameBillingChangeCust->TabIndex = 24;
 			this->streetNameBillingChangeCust->Text = L"street name";
 			// 
@@ -1204,7 +1204,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->cityNameDelChangeCust->AutoSize = true;
 			this->cityNameDelChangeCust->Location = System::Drawing::Point(305, 21);
 			this->cityNameDelChangeCust->Name = L"cityNameDelChangeCust";
-			this->cityNameDelChangeCust->Size = System::Drawing::Size(68, 17);
+			this->cityNameDelChangeCust->Size = System::Drawing::Size(64, 16);
 			this->cityNameDelChangeCust->TabIndex = 26;
 			this->cityNameDelChangeCust->Text = L"city name";
 			// 
@@ -1213,7 +1213,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ZipCodeDelChangeCust->AutoSize = true;
 			this->ZipCodeDelChangeCust->Location = System::Drawing::Point(235, 21);
 			this->ZipCodeDelChangeCust->Name = L"ZipCodeDelChangeCust";
-			this->ZipCodeDelChangeCust->Size = System::Drawing::Size(64, 17);
+			this->ZipCodeDelChangeCust->Size = System::Drawing::Size(61, 16);
 			this->ZipCodeDelChangeCust->TabIndex = 25;
 			this->ZipCodeDelChangeCust->Text = L"ZIP code";
 			// 
@@ -1222,7 +1222,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNumDelChangeCust->AutoSize = true;
 			this->streetNumDelChangeCust->Location = System::Drawing::Point(3, 21);
 			this->streetNumDelChangeCust->Name = L"streetNumDelChangeCust";
-			this->streetNumDelChangeCust->Size = System::Drawing::Size(62, 17);
+			this->streetNumDelChangeCust->Size = System::Drawing::Size(54, 16);
 			this->streetNumDelChangeCust->TabIndex = 23;
 			this->streetNumDelChangeCust->Text = L"street n°";
 			// 
@@ -1231,7 +1231,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNameDelChangeCust->AutoSize = true;
 			this->streetNameDelChangeCust->Location = System::Drawing::Point(77, 21);
 			this->streetNameDelChangeCust->Name = L"streetNameDelChangeCust";
-			this->streetNameDelChangeCust->Size = System::Drawing::Size(83, 17);
+			this->streetNameDelChangeCust->Size = System::Drawing::Size(77, 16);
 			this->streetNameDelChangeCust->TabIndex = 24;
 			this->streetNameDelChangeCust->Text = L"street name";
 			// 
@@ -1284,7 +1284,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->serviceNum->AutoSize = true;
 			this->serviceNum->Location = System::Drawing::Point(287, 25);
 			this->serviceNum->Name = L"serviceNum";
-			this->serviceNum->Size = System::Drawing::Size(105, 17);
+			this->serviceNum->Size = System::Drawing::Size(99, 16);
 			this->serviceNum->TabIndex = 25;
 			this->serviceNum->Text = L"service number";
 			// 
@@ -1293,7 +1293,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->socityName->AutoSize = true;
 			this->socityName->Location = System::Drawing::Point(23, 24);
 			this->socityName->Name = L"socityName";
-			this->socityName->Size = System::Drawing::Size(83, 17);
+			this->socityName->Size = System::Drawing::Size(79, 16);
 			this->socityName->TabIndex = 24;
 			this->socityName->Text = L"socity name";
 			// 
@@ -1331,7 +1331,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->birthDateCust->AutoSize = true;
 			this->birthDateCust->Location = System::Drawing::Point(235, 71);
 			this->birthDateCust->Name = L"birthDateCust";
-			this->birthDateCust->Size = System::Drawing::Size(68, 17);
+			this->birthDateCust->Size = System::Drawing::Size(62, 16);
 			this->birthDateCust->TabIndex = 23;
 			this->birthDateCust->Text = L"birth date";
 			// 
@@ -1340,7 +1340,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->firstNameCust->AutoSize = true;
 			this->firstNameCust->Location = System::Drawing::Point(4, 73);
 			this->firstNameCust->Name = L"firstNameCust";
-			this->firstNameCust->Size = System::Drawing::Size(65, 17);
+			this->firstNameCust->Size = System::Drawing::Size(60, 16);
 			this->firstNameCust->TabIndex = 22;
 			this->firstNameCust->Text = L"fist name";
 			// 
@@ -1349,7 +1349,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->lastNameCust->AutoSize = true;
 			this->lastNameCust->Location = System::Drawing::Point(6, 24);
 			this->lastNameCust->Name = L"lastNameCust";
-			this->lastNameCust->Size = System::Drawing::Size(69, 17);
+			this->lastNameCust->Size = System::Drawing::Size(65, 16);
 			this->lastNameCust->TabIndex = 21;
 			this->lastNameCust->Text = L"last name";
 			// 
@@ -1365,7 +1365,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->custID->AutoSize = true;
 			this->custID->Location = System::Drawing::Point(931, 745);
 			this->custID->Name = L"custID";
-			this->custID->Size = System::Drawing::Size(139, 17);
+			this->custID->Size = System::Drawing::Size(129, 16);
 			this->custID->TabIndex = 20;
 			this->custID->Text = L"customenr reference";
 			// 
@@ -1405,7 +1405,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->cityNameBil->AutoSize = true;
 			this->cityNameBil->Location = System::Drawing::Point(310, 21);
 			this->cityNameBil->Name = L"cityNameBil";
-			this->cityNameBil->Size = System::Drawing::Size(68, 17);
+			this->cityNameBil->Size = System::Drawing::Size(64, 16);
 			this->cityNameBil->TabIndex = 26;
 			this->cityNameBil->Text = L"city name";
 			// 
@@ -1421,7 +1421,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ZipCodeBil->AutoSize = true;
 			this->ZipCodeBil->Location = System::Drawing::Point(235, 21);
 			this->ZipCodeBil->Name = L"ZipCodeBil";
-			this->ZipCodeBil->Size = System::Drawing::Size(64, 17);
+			this->ZipCodeBil->Size = System::Drawing::Size(61, 16);
 			this->ZipCodeBil->TabIndex = 25;
 			this->ZipCodeBil->Text = L"ZIP code";
 			// 
@@ -1437,7 +1437,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNumBil->AutoSize = true;
 			this->streetNumBil->Location = System::Drawing::Point(8, 21);
 			this->streetNumBil->Name = L"streetNumBil";
-			this->streetNumBil->Size = System::Drawing::Size(62, 17);
+			this->streetNumBil->Size = System::Drawing::Size(54, 16);
 			this->streetNumBil->TabIndex = 23;
 			this->streetNumBil->Text = L"street n°";
 			// 
@@ -1446,7 +1446,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNameBil->AutoSize = true;
 			this->streetNameBil->Location = System::Drawing::Point(77, 21);
 			this->streetNameBil->Name = L"streetNameBil";
-			this->streetNameBil->Size = System::Drawing::Size(83, 17);
+			this->streetNameBil->Size = System::Drawing::Size(77, 16);
 			this->streetNameBil->TabIndex = 24;
 			this->streetNameBil->Text = L"street name";
 			// 
@@ -1500,7 +1500,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->cityNameDel->AutoSize = true;
 			this->cityNameDel->Location = System::Drawing::Point(305, 21);
 			this->cityNameDel->Name = L"cityNameDel";
-			this->cityNameDel->Size = System::Drawing::Size(68, 17);
+			this->cityNameDel->Size = System::Drawing::Size(64, 16);
 			this->cityNameDel->TabIndex = 26;
 			this->cityNameDel->Text = L"city name";
 			// 
@@ -1509,7 +1509,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ZipCodeDel->AutoSize = true;
 			this->ZipCodeDel->Location = System::Drawing::Point(235, 21);
 			this->ZipCodeDel->Name = L"ZipCodeDel";
-			this->ZipCodeDel->Size = System::Drawing::Size(64, 17);
+			this->ZipCodeDel->Size = System::Drawing::Size(61, 16);
 			this->ZipCodeDel->TabIndex = 25;
 			this->ZipCodeDel->Text = L"ZIP code";
 			// 
@@ -1518,7 +1518,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNumDel->AutoSize = true;
 			this->streetNumDel->Location = System::Drawing::Point(3, 21);
 			this->streetNumDel->Name = L"streetNumDel";
-			this->streetNumDel->Size = System::Drawing::Size(62, 17);
+			this->streetNumDel->Size = System::Drawing::Size(54, 16);
 			this->streetNumDel->TabIndex = 23;
 			this->streetNumDel->Text = L"street n°";
 			// 
@@ -1527,7 +1527,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNameDel->AutoSize = true;
 			this->streetNameDel->Location = System::Drawing::Point(77, 21);
 			this->streetNameDel->Name = L"streetNameDel";
-			this->streetNameDel->Size = System::Drawing::Size(83, 17);
+			this->streetNameDel->Size = System::Drawing::Size(77, 16);
 			this->streetNameDel->TabIndex = 24;
 			this->streetNameDel->Text = L"street name";
 			// 
@@ -1627,7 +1627,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->cityNameChangeEmp->AutoSize = true;
 			this->cityNameChangeEmp->Location = System::Drawing::Point(159, 76);
 			this->cityNameChangeEmp->Name = L"cityNameChangeEmp";
-			this->cityNameChangeEmp->Size = System::Drawing::Size(68, 17);
+			this->cityNameChangeEmp->Size = System::Drawing::Size(64, 16);
 			this->cityNameChangeEmp->TabIndex = 30;
 			this->cityNameChangeEmp->Text = L"city name";
 			// 
@@ -1636,7 +1636,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->StreetNameChangeEmp->AutoSize = true;
 			this->StreetNameChangeEmp->Location = System::Drawing::Point(156, 18);
 			this->StreetNameChangeEmp->Name = L"StreetNameChangeEmp";
-			this->StreetNameChangeEmp->Size = System::Drawing::Size(83, 17);
+			this->StreetNameChangeEmp->Size = System::Drawing::Size(77, 16);
 			this->StreetNameChangeEmp->TabIndex = 28;
 			this->StreetNameChangeEmp->Text = L"street name";
 			// 
@@ -1645,7 +1645,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ZipCodeChangeEmp->AutoSize = true;
 			this->ZipCodeChangeEmp->Location = System::Drawing::Point(17, 76);
 			this->ZipCodeChangeEmp->Name = L"ZipCodeChangeEmp";
-			this->ZipCodeChangeEmp->Size = System::Drawing::Size(64, 17);
+			this->ZipCodeChangeEmp->Size = System::Drawing::Size(61, 16);
 			this->ZipCodeChangeEmp->TabIndex = 29;
 			this->ZipCodeChangeEmp->Text = L"ZIP code";
 			// 
@@ -1654,7 +1654,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->StreetNumChangeEmp->AutoSize = true;
 			this->StreetNumChangeEmp->Location = System::Drawing::Point(20, 21);
 			this->StreetNumChangeEmp->Name = L"StreetNumChangeEmp";
-			this->StreetNumChangeEmp->Size = System::Drawing::Size(96, 17);
+			this->StreetNumChangeEmp->Size = System::Drawing::Size(88, 16);
 			this->StreetNumChangeEmp->TabIndex = 27;
 			this->StreetNumChangeEmp->Text = L"street number";
 			// 
@@ -1692,7 +1692,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->EmpIdChangeEmp->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->EmpIdChangeEmp->Location = System::Drawing::Point(313, 134);
 			this->EmpIdChangeEmp->Name = L"EmpIdChangeEmp";
-			this->EmpIdChangeEmp->Size = System::Drawing::Size(85, 17);
+			this->EmpIdChangeEmp->Size = System::Drawing::Size(83, 16);
 			this->EmpIdChangeEmp->TabIndex = 38;
 			this->EmpIdChangeEmp->Text = L"Employee Id";
 			// 
@@ -1731,7 +1731,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->lastNameChangeEmp->AutoSize = true;
 			this->lastNameChangeEmp->Location = System::Drawing::Point(21, 28);
 			this->lastNameChangeEmp->Name = L"lastNameChangeEmp";
-			this->lastNameChangeEmp->Size = System::Drawing::Size(69, 17);
+			this->lastNameChangeEmp->Size = System::Drawing::Size(65, 16);
 			this->lastNameChangeEmp->TabIndex = 25;
 			this->lastNameChangeEmp->Text = L"last name";
 			// 
@@ -1740,7 +1740,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->hireDateChangeEmp->AutoSize = true;
 			this->hireDateChangeEmp->Location = System::Drawing::Point(23, 134);
 			this->hireDateChangeEmp->Name = L"hireDateChangeEmp";
-			this->hireDateChangeEmp->Size = System::Drawing::Size(64, 17);
+			this->hireDateChangeEmp->Size = System::Drawing::Size(59, 16);
 			this->hireDateChangeEmp->TabIndex = 27;
 			this->hireDateChangeEmp->Text = L"hire date";
 			// 
@@ -1750,7 +1750,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->chiefIdChangeEmp->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->chiefIdChangeEmp->Location = System::Drawing::Point(313, 78);
 			this->chiefIdChangeEmp->Name = L"chiefIdChangeEmp";
-			this->chiefIdChangeEmp->Size = System::Drawing::Size(55, 17);
+			this->chiefIdChangeEmp->Size = System::Drawing::Size(51, 16);
 			this->chiefIdChangeEmp->TabIndex = 28;
 			this->chiefIdChangeEmp->Text = L"chief ID";
 			// 
@@ -1759,7 +1759,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->fistNameChangeEmp->AutoSize = true;
 			this->fistNameChangeEmp->Location = System::Drawing::Point(23, 78);
 			this->fistNameChangeEmp->Name = L"fistNameChangeEmp";
-			this->fistNameChangeEmp->Size = System::Drawing::Size(65, 17);
+			this->fistNameChangeEmp->Size = System::Drawing::Size(60, 16);
 			this->fistNameChangeEmp->TabIndex = 26;
 			this->fistNameChangeEmp->Text = L"fist name";
 			// 
@@ -1826,7 +1826,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->lastNameSearchEmp->AutoSize = true;
 			this->lastNameSearchEmp->Location = System::Drawing::Point(19, 28);
 			this->lastNameSearchEmp->Name = L"lastNameSearchEmp";
-			this->lastNameSearchEmp->Size = System::Drawing::Size(69, 17);
+			this->lastNameSearchEmp->Size = System::Drawing::Size(65, 16);
 			this->lastNameSearchEmp->TabIndex = 25;
 			this->lastNameSearchEmp->Text = L"last name";
 			// 
@@ -1835,7 +1835,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->hireDateSearchEmp->AutoSize = true;
 			this->hireDateSearchEmp->Location = System::Drawing::Point(21, 133);
 			this->hireDateSearchEmp->Name = L"hireDateSearchEmp";
-			this->hireDateSearchEmp->Size = System::Drawing::Size(64, 17);
+			this->hireDateSearchEmp->Size = System::Drawing::Size(59, 16);
 			this->hireDateSearchEmp->TabIndex = 27;
 			this->hireDateSearchEmp->Text = L"hire date";
 			// 
@@ -1844,7 +1844,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->firstNameSearchEmp->AutoSize = true;
 			this->firstNameSearchEmp->Location = System::Drawing::Point(21, 78);
 			this->firstNameSearchEmp->Name = L"firstNameSearchEmp";
-			this->firstNameSearchEmp->Size = System::Drawing::Size(65, 17);
+			this->firstNameSearchEmp->Size = System::Drawing::Size(60, 16);
 			this->firstNameSearchEmp->TabIndex = 26;
 			this->firstNameSearchEmp->Text = L"fist name";
 			// 
@@ -1918,7 +1918,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->cityNameAddEmp->AutoSize = true;
 			this->cityNameAddEmp->Location = System::Drawing::Point(165, 76);
 			this->cityNameAddEmp->Name = L"cityNameAddEmp";
-			this->cityNameAddEmp->Size = System::Drawing::Size(68, 17);
+			this->cityNameAddEmp->Size = System::Drawing::Size(64, 16);
 			this->cityNameAddEmp->TabIndex = 30;
 			this->cityNameAddEmp->Text = L"city name";
 			// 
@@ -1927,7 +1927,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNameAddEmp->AutoSize = true;
 			this->streetNameAddEmp->Location = System::Drawing::Point(163, 21);
 			this->streetNameAddEmp->Name = L"streetNameAddEmp";
-			this->streetNameAddEmp->Size = System::Drawing::Size(83, 17);
+			this->streetNameAddEmp->Size = System::Drawing::Size(77, 16);
 			this->streetNameAddEmp->TabIndex = 28;
 			this->streetNameAddEmp->Text = L"street name";
 			// 
@@ -1936,7 +1936,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ZIPcodeAddEmp->AutoSize = true;
 			this->ZIPcodeAddEmp->Location = System::Drawing::Point(21, 76);
 			this->ZIPcodeAddEmp->Name = L"ZIPcodeAddEmp";
-			this->ZIPcodeAddEmp->Size = System::Drawing::Size(64, 17);
+			this->ZIPcodeAddEmp->Size = System::Drawing::Size(61, 16);
 			this->ZIPcodeAddEmp->TabIndex = 29;
 			this->ZIPcodeAddEmp->Text = L"ZIP code";
 			// 
@@ -1945,7 +1945,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->streetNumAddEmp->AutoSize = true;
 			this->streetNumAddEmp->Location = System::Drawing::Point(19, 21);
 			this->streetNumAddEmp->Name = L"streetNumAddEmp";
-			this->streetNumAddEmp->Size = System::Drawing::Size(96, 17);
+			this->streetNumAddEmp->Size = System::Drawing::Size(88, 16);
 			this->streetNumAddEmp->TabIndex = 27;
 			this->streetNumAddEmp->Text = L"street number";
 			// 
@@ -1992,7 +1992,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->lastNameAddEmp->AutoSize = true;
 			this->lastNameAddEmp->Location = System::Drawing::Point(21, 28);
 			this->lastNameAddEmp->Name = L"lastNameAddEmp";
-			this->lastNameAddEmp->Size = System::Drawing::Size(69, 17);
+			this->lastNameAddEmp->Size = System::Drawing::Size(65, 16);
 			this->lastNameAddEmp->TabIndex = 25;
 			this->lastNameAddEmp->Text = L"last name";
 			// 
@@ -2002,7 +2002,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->chiefIdAddemp->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->chiefIdAddemp->Location = System::Drawing::Point(21, 136);
 			this->chiefIdAddemp->Name = L"chiefIdAddemp";
-			this->chiefIdAddemp->Size = System::Drawing::Size(55, 17);
+			this->chiefIdAddemp->Size = System::Drawing::Size(51, 16);
 			this->chiefIdAddemp->TabIndex = 28;
 			this->chiefIdAddemp->Text = L"chief ID";
 			// 
@@ -2011,7 +2011,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->firstNameAddEmp->AutoSize = true;
 			this->firstNameAddEmp->Location = System::Drawing::Point(23, 78);
 			this->firstNameAddEmp->Name = L"firstNameAddEmp";
-			this->firstNameAddEmp->Size = System::Drawing::Size(65, 17);
+			this->firstNameAddEmp->Size = System::Drawing::Size(60, 16);
 			this->firstNameAddEmp->TabIndex = 26;
 			this->firstNameAddEmp->Text = L"fist name";
 			// 
@@ -2068,7 +2068,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->Item_radioButton->Checked = true;
 			this->Item_radioButton->Location = System::Drawing::Point(841, 56);
 			this->Item_radioButton->Name = L"Item_radioButton";
-			this->Item_radioButton->Size = System::Drawing::Size(62, 21);
+			this->Item_radioButton->Size = System::Drawing::Size(60, 20);
 			this->Item_radioButton->TabIndex = 52;
 			this->Item_radioButton->TabStop = true;
 			this->Item_radioButton->Text = L"Items";
@@ -2079,7 +2079,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->Pay_radioButton->AutoSize = true;
 			this->Pay_radioButton->Location = System::Drawing::Point(926, 56);
 			this->Pay_radioButton->Name = L"Pay_radioButton";
-			this->Pay_radioButton->Size = System::Drawing::Size(143, 21);
+			this->Pay_radioButton->Size = System::Drawing::Size(137, 20);
 			this->Pay_radioButton->TabIndex = 51;
 			this->Pay_radioButton->Text = L"Methode Payment";
 			this->Pay_radioButton->UseVisualStyleBackColor = true;
@@ -2121,7 +2121,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->meanOfPaymentAddPayOrder->AutoSize = true;
 			this->meanOfPaymentAddPayOrder->Location = System::Drawing::Point(16, 24);
 			this->meanOfPaymentAddPayOrder->Name = L"meanOfPaymentAddPayOrder";
-			this->meanOfPaymentAddPayOrder->Size = System::Drawing::Size(117, 17);
+			this->meanOfPaymentAddPayOrder->Size = System::Drawing::Size(110, 16);
 			this->meanOfPaymentAddPayOrder->TabIndex = 31;
 			this->meanOfPaymentAddPayOrder->Text = L"mean of payment";
 			// 
@@ -2130,7 +2130,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->paymentDueDateAddPayOrder->AutoSize = true;
 			this->paymentDueDateAddPayOrder->Location = System::Drawing::Point(14, 74);
 			this->paymentDueDateAddPayOrder->Name = L"paymentDueDateAddPayOrder";
-			this->paymentDueDateAddPayOrder->Size = System::Drawing::Size(122, 17);
+			this->paymentDueDateAddPayOrder->Size = System::Drawing::Size(115, 16);
 			this->paymentDueDateAddPayOrder->TabIndex = 29;
 			this->paymentDueDateAddPayOrder->Text = L"payment due date";
 			// 
@@ -2214,7 +2214,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ItemColorAddItemOrder->AutoSize = true;
 			this->ItemColorAddItemOrder->Location = System::Drawing::Point(21, 76);
 			this->ItemColorAddItemOrder->Name = L"ItemColorAddItemOrder";
-			this->ItemColorAddItemOrder->Size = System::Drawing::Size(69, 17);
+			this->ItemColorAddItemOrder->Size = System::Drawing::Size(65, 16);
 			this->ItemColorAddItemOrder->TabIndex = 33;
 			this->ItemColorAddItemOrder->Text = L"Item color";
 			// 
@@ -2230,7 +2230,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->quantityAddItemOrder->AutoSize = true;
 			this->quantityAddItemOrder->Location = System::Drawing::Point(186, 76);
 			this->quantityAddItemOrder->Name = L"quantityAddItemOrder";
-			this->quantityAddItemOrder->Size = System::Drawing::Size(58, 17);
+			this->quantityAddItemOrder->Size = System::Drawing::Size(53, 16);
 			this->quantityAddItemOrder->TabIndex = 31;
 			this->quantityAddItemOrder->Text = L"quantity";
 			// 
@@ -2249,7 +2249,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemIdAddItemOrder->AutoSize = true;
 			this->itemIdAddItemOrder->Location = System::Drawing::Point(21, 20);
 			this->itemIdAddItemOrder->Name = L"itemIdAddItemOrder";
-			this->itemIdAddItemOrder->Size = System::Drawing::Size(126, 17);
+			this->itemIdAddItemOrder->Size = System::Drawing::Size(116, 16);
 			this->itemIdAddItemOrder->TabIndex = 29;
 			this->itemIdAddItemOrder->Text = L"item ID (reference)";
 			// 
@@ -2294,7 +2294,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->deliveryDateChangeOrder->AutoSize = true;
 			this->deliveryDateChangeOrder->Location = System::Drawing::Point(20, 116);
 			this->deliveryDateChangeOrder->Name = L"deliveryDateChangeOrder";
-			this->deliveryDateChangeOrder->Size = System::Drawing::Size(89, 17);
+			this->deliveryDateChangeOrder->Size = System::Drawing::Size(85, 16);
 			this->deliveryDateChangeOrder->TabIndex = 35;
 			this->deliveryDateChangeOrder->Text = L"delivery date";
 			// 
@@ -2303,7 +2303,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->completePayDateChangeOrder->AutoSize = true;
 			this->completePayDateChangeOrder->Location = System::Drawing::Point(20, 68);
 			this->completePayDateChangeOrder->Name = L"completePayDateChangeOrder";
-			this->completePayDateChangeOrder->Size = System::Drawing::Size(163, 17);
+			this->completePayDateChangeOrder->Size = System::Drawing::Size(156, 16);
 			this->completePayDateChangeOrder->TabIndex = 32;
 			this->completePayDateChangeOrder->Text = L"complete payement date";
 			// 
@@ -2319,7 +2319,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->orderIdChangeOrder->AutoSize = true;
 			this->orderIdChangeOrder->Location = System::Drawing::Point(21, 18);
 			this->orderIdChangeOrder->Name = L"orderIdChangeOrder";
-			this->orderIdChangeOrder->Size = System::Drawing::Size(107, 17);
+			this->orderIdChangeOrder->Size = System::Drawing::Size(99, 16);
 			this->orderIdChangeOrder->TabIndex = 28;
 			this->orderIdChangeOrder->Text = L"order reference";
 			// 
@@ -2348,7 +2348,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->orderIdSearchOrder->AutoSize = true;
 			this->orderIdSearchOrder->Location = System::Drawing::Point(21, 27);
 			this->orderIdSearchOrder->Name = L"orderIdSearchOrder";
-			this->orderIdSearchOrder->Size = System::Drawing::Size(68, 17);
+			this->orderIdSearchOrder->Size = System::Drawing::Size(63, 16);
 			this->orderIdSearchOrder->TabIndex = 28;
 			this->orderIdSearchOrder->Text = L"order Ref";
 			// 
@@ -2400,7 +2400,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->deliveryDateAddOrder->AutoSize = true;
 			this->deliveryDateAddOrder->Location = System::Drawing::Point(109, 20);
 			this->deliveryDateAddOrder->Name = L"deliveryDateAddOrder";
-			this->deliveryDateAddOrder->Size = System::Drawing::Size(89, 17);
+			this->deliveryDateAddOrder->Size = System::Drawing::Size(85, 16);
 			this->deliveryDateAddOrder->TabIndex = 35;
 			this->deliveryDateAddOrder->Text = L"delivery date";
 			// 
@@ -2416,7 +2416,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->customerIdAddOrders->AutoSize = true;
 			this->customerIdAddOrders->Location = System::Drawing::Point(21, 25);
 			this->customerIdAddOrders->Name = L"customerIdAddOrders";
-			this->customerIdAddOrders->Size = System::Drawing::Size(83, 17);
+			this->customerIdAddOrders->Size = System::Drawing::Size(78, 16);
 			this->customerIdAddOrders->TabIndex = 33;
 			this->customerIdAddOrders->Text = L"customer ID";
 			// 
@@ -2445,7 +2445,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->meanOfPaymentAddOrder->AutoSize = true;
 			this->meanOfPaymentAddOrder->Location = System::Drawing::Point(16, 24);
 			this->meanOfPaymentAddOrder->Name = L"meanOfPaymentAddOrder";
-			this->meanOfPaymentAddOrder->Size = System::Drawing::Size(117, 17);
+			this->meanOfPaymentAddOrder->Size = System::Drawing::Size(110, 16);
 			this->meanOfPaymentAddOrder->TabIndex = 31;
 			this->meanOfPaymentAddOrder->Text = L"mean of payment";
 			// 
@@ -2454,7 +2454,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->paymentDueDateAddOrder->AutoSize = true;
 			this->paymentDueDateAddOrder->Location = System::Drawing::Point(14, 72);
 			this->paymentDueDateAddOrder->Name = L"paymentDueDateAddOrder";
-			this->paymentDueDateAddOrder->Size = System::Drawing::Size(122, 17);
+			this->paymentDueDateAddOrder->Size = System::Drawing::Size(115, 16);
 			this->paymentDueDateAddOrder->TabIndex = 29;
 			this->paymentDueDateAddOrder->Text = L"payment due date";
 			// 
@@ -2513,7 +2513,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->ItemColorAddOrder->AutoSize = true;
 			this->ItemColorAddOrder->Location = System::Drawing::Point(17, 76);
 			this->ItemColorAddOrder->Name = L"ItemColorAddOrder";
-			this->ItemColorAddOrder->Size = System::Drawing::Size(69, 17);
+			this->ItemColorAddOrder->Size = System::Drawing::Size(65, 16);
 			this->ItemColorAddOrder->TabIndex = 33;
 			this->ItemColorAddOrder->Text = L"Item color";
 			// 
@@ -2529,7 +2529,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->quantityItemsAddOrder->AutoSize = true;
 			this->quantityItemsAddOrder->Location = System::Drawing::Point(198, 76);
 			this->quantityItemsAddOrder->Name = L"quantityItemsAddOrder";
-			this->quantityItemsAddOrder->Size = System::Drawing::Size(58, 17);
+			this->quantityItemsAddOrder->Size = System::Drawing::Size(53, 16);
 			this->quantityItemsAddOrder->TabIndex = 31;
 			this->quantityItemsAddOrder->Text = L"quantity";
 			// 
@@ -2538,7 +2538,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemIDAddOrder->AutoSize = true;
 			this->itemIDAddOrder->Location = System::Drawing::Point(17, 20);
 			this->itemIDAddOrder->Name = L"itemIDAddOrder";
-			this->itemIDAddOrder->Size = System::Drawing::Size(126, 17);
+			this->itemIDAddOrder->Size = System::Drawing::Size(116, 16);
 			this->itemIDAddOrder->TabIndex = 29;
 			this->itemIDAddOrder->Text = L"item ID (reference)";
 			// 
@@ -2630,7 +2630,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemIdSearchStock->AutoSize = true;
 			this->itemIdSearchStock->Location = System::Drawing::Point(20, 36);
 			this->itemIdSearchStock->Name = L"itemIdSearchStock";
-			this->itemIdSearchStock->Size = System::Drawing::Size(126, 17);
+			this->itemIdSearchStock->Size = System::Drawing::Size(116, 16);
 			this->itemIdSearchStock->TabIndex = 34;
 			this->itemIdSearchStock->Text = L"item ID (reference)";
 			// 
@@ -2695,7 +2695,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->thresholdChangeStock->AutoSize = true;
 			this->thresholdChangeStock->Location = System::Drawing::Point(33, 142);
 			this->thresholdChangeStock->Name = L"thresholdChangeStock";
-			this->thresholdChangeStock->Size = System::Drawing::Size(118, 17);
+			this->thresholdChangeStock->Size = System::Drawing::Size(109, 16);
 			this->thresholdChangeStock->TabIndex = 46;
 			this->thresholdChangeStock->Text = L"reorder threshold";
 			// 
@@ -2711,7 +2711,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemColorChangeSotck->AutoSize = true;
 			this->itemColorChangeSotck->Location = System::Drawing::Point(318, 79);
 			this->itemColorChangeSotck->Name = L"itemColorChangeSotck";
-			this->itemColorChangeSotck->Size = System::Drawing::Size(69, 17);
+			this->itemColorChangeSotck->Size = System::Drawing::Size(65, 16);
 			this->itemColorChangeSotck->TabIndex = 44;
 			this->itemColorChangeSotck->Text = L"item color";
 			// 
@@ -2720,7 +2720,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->VATChangeStock->AutoSize = true;
 			this->VATChangeStock->Location = System::Drawing::Point(318, 206);
 			this->VATChangeStock->Name = L"VATChangeStock";
-			this->VATChangeStock->Size = System::Drawing::Size(90, 17);
+			this->VATChangeStock->Size = System::Drawing::Size(83, 16);
 			this->VATChangeStock->TabIndex = 42;
 			this->VATChangeStock->Text = L"VAT rate (%)";
 			// 
@@ -2736,7 +2736,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->priceChangeStock->AutoSize = true;
 			this->priceChangeStock->Location = System::Drawing::Point(37, 206);
 			this->priceChangeStock->Name = L"priceChangeStock";
-			this->priceChangeStock->Size = System::Drawing::Size(169, 17);
+			this->priceChangeStock->Size = System::Drawing::Size(160, 16);
 			this->priceChangeStock->TabIndex = 40;
 			this->priceChangeStock->Text = L"item price excluding taxes";
 			// 
@@ -2752,7 +2752,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemNameChangeSotck->AutoSize = true;
 			this->itemNameChangeSotck->Location = System::Drawing::Point(37, 79);
 			this->itemNameChangeSotck->Name = L"itemNameChangeSotck";
-			this->itemNameChangeSotck->Size = System::Drawing::Size(73, 17);
+			this->itemNameChangeSotck->Size = System::Drawing::Size(69, 16);
 			this->itemNameChangeSotck->TabIndex = 38;
 			this->itemNameChangeSotck->Text = L"item name";
 			// 
@@ -2775,7 +2775,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->quantityChangeStock->AutoSize = true;
 			this->quantityChangeStock->Location = System::Drawing::Point(318, 143);
 			this->quantityChangeStock->Name = L"quantityChangeStock";
-			this->quantityChangeStock->Size = System::Drawing::Size(58, 17);
+			this->quantityChangeStock->Size = System::Drawing::Size(53, 16);
 			this->quantityChangeStock->TabIndex = 35;
 			this->quantityChangeStock->Text = L"quantity";
 			// 
@@ -2784,7 +2784,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemIdChangeSotck->AutoSize = true;
 			this->itemIdChangeSotck->Location = System::Drawing::Point(37, 18);
 			this->itemIdChangeSotck->Name = L"itemIdChangeSotck";
-			this->itemIdChangeSotck->Size = System::Drawing::Size(126, 17);
+			this->itemIdChangeSotck->Size = System::Drawing::Size(116, 16);
 			this->itemIdChangeSotck->TabIndex = 34;
 			this->itemIdChangeSotck->Text = L"item ID (reference)";
 			// 
@@ -2829,7 +2829,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->reorderThresholdAddStock->AutoSize = true;
 			this->reorderThresholdAddStock->Location = System::Drawing::Point(44, 151);
 			this->reorderThresholdAddStock->Name = L"reorderThresholdAddStock";
-			this->reorderThresholdAddStock->Size = System::Drawing::Size(118, 17);
+			this->reorderThresholdAddStock->Size = System::Drawing::Size(109, 16);
 			this->reorderThresholdAddStock->TabIndex = 46;
 			this->reorderThresholdAddStock->Text = L"reorder threshold";
 			// 
@@ -2845,7 +2845,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemColorAddStock->AutoSize = true;
 			this->itemColorAddStock->Location = System::Drawing::Point(44, 88);
 			this->itemColorAddStock->Name = L"itemColorAddStock";
-			this->itemColorAddStock->Size = System::Drawing::Size(69, 17);
+			this->itemColorAddStock->Size = System::Drawing::Size(65, 16);
 			this->itemColorAddStock->TabIndex = 44;
 			this->itemColorAddStock->Text = L"item color";
 			// 
@@ -2854,7 +2854,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->VATrateAddStock->AutoSize = true;
 			this->VATrateAddStock->Location = System::Drawing::Point(260, 215);
 			this->VATrateAddStock->Name = L"VATrateAddStock";
-			this->VATrateAddStock->Size = System::Drawing::Size(90, 17);
+			this->VATrateAddStock->Size = System::Drawing::Size(83, 16);
 			this->VATrateAddStock->TabIndex = 42;
 			this->VATrateAddStock->Text = L"VAT rate (%)";
 			// 
@@ -2870,7 +2870,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemPriceETAddStock->AutoSize = true;
 			this->itemPriceETAddStock->Location = System::Drawing::Point(44, 215);
 			this->itemPriceETAddStock->Name = L"itemPriceETAddStock";
-			this->itemPriceETAddStock->Size = System::Drawing::Size(169, 17);
+			this->itemPriceETAddStock->Size = System::Drawing::Size(160, 16);
 			this->itemPriceETAddStock->TabIndex = 40;
 			this->itemPriceETAddStock->Text = L"item price excluding taxes";
 			// 
@@ -2886,7 +2886,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->itemNameAddStock->AutoSize = true;
 			this->itemNameAddStock->Location = System::Drawing::Point(44, 27);
 			this->itemNameAddStock->Name = L"itemNameAddStock";
-			this->itemNameAddStock->Size = System::Drawing::Size(73, 17);
+			this->itemNameAddStock->Size = System::Drawing::Size(69, 16);
 			this->itemNameAddStock->TabIndex = 38;
 			this->itemNameAddStock->Text = L"item name";
 			// 
@@ -2909,7 +2909,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->quantityAddStock->AutoSize = true;
 			this->quantityAddStock->Location = System::Drawing::Point(260, 88);
 			this->quantityAddStock->Name = L"quantityAddStock";
-			this->quantityAddStock->Size = System::Drawing::Size(58, 17);
+			this->quantityAddStock->Size = System::Drawing::Size(53, 16);
 			this->quantityAddStock->TabIndex = 35;
 			this->quantityAddStock->Text = L"quantity";
 			// 
@@ -3003,7 +3003,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->yearStatistics->AutoSize = true;
 			this->yearStatistics->Location = System::Drawing::Point(210, 38);
 			this->yearStatistics->Name = L"yearStatistics";
-			this->yearStatistics->Size = System::Drawing::Size(36, 17);
+			this->yearStatistics->Size = System::Drawing::Size(34, 16);
 			this->yearStatistics->TabIndex = 33;
 			this->yearStatistics->Text = L"year";
 			// 
@@ -3019,7 +3019,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->monthStatistics->AutoSize = true;
 			this->monthStatistics->Location = System::Drawing::Point(37, 38);
 			this->monthStatistics->Name = L"monthStatistics";
-			this->monthStatistics->Size = System::Drawing::Size(47, 17);
+			this->monthStatistics->Size = System::Drawing::Size(43, 16);
 			this->monthStatistics->TabIndex = 28;
 			this->monthStatistics->Text = L"month";
 			// 
@@ -3061,7 +3061,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->birthDateStatistics->AutoSize = true;
 			this->birthDateStatistics->Location = System::Drawing::Point(23, 118);
 			this->birthDateStatistics->Name = L"birthDateStatistics";
-			this->birthDateStatistics->Size = System::Drawing::Size(68, 17);
+			this->birthDateStatistics->Size = System::Drawing::Size(62, 16);
 			this->birthDateStatistics->TabIndex = 35;
 			this->birthDateStatistics->Text = L"birth date";
 			// 
@@ -3070,7 +3070,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->firstNameStatistics->AutoSize = true;
 			this->firstNameStatistics->Location = System::Drawing::Point(21, 76);
 			this->firstNameStatistics->Name = L"firstNameStatistics";
-			this->firstNameStatistics->Size = System::Drawing::Size(70, 17);
+			this->firstNameStatistics->Size = System::Drawing::Size(64, 16);
 			this->firstNameStatistics->TabIndex = 32;
 			this->firstNameStatistics->Text = L"first name";
 			// 
@@ -3103,7 +3103,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->lastNameStatistics->AutoSize = true;
 			this->lastNameStatistics->Location = System::Drawing::Point(20, 36);
 			this->lastNameStatistics->Name = L"lastNameStatistics";
-			this->lastNameStatistics->Size = System::Drawing::Size(69, 17);
+			this->lastNameStatistics->Size = System::Drawing::Size(65, 16);
 			this->lastNameStatistics->TabIndex = 33;
 			this->lastNameStatistics->Text = L"last name";
 			// 
@@ -3230,54 +3230,55 @@ private: System::Windows::Forms::Label^ home_page;
 			this->text_CustomMarkdown->Name = L"text_CustomMarkdown";
 			this->text_CustomMarkdown->Size = System::Drawing::Size(122, 22);
 			this->text_CustomMarkdown->TabIndex = 11;
+			this->text_CustomMarkdown->Text = L"6";
 			// 
 			// customMarkdown_radioButton
 			// 
 			this->customMarkdown_radioButton->AutoSize = true;
 			this->customMarkdown_radioButton->Location = System::Drawing::Point(383, 21);
 			this->customMarkdown_radioButton->Name = L"customMarkdown_radioButton";
-			this->customMarkdown_radioButton->Size = System::Drawing::Size(76, 21);
+			this->customMarkdown_radioButton->Size = System::Drawing::Size(73, 20);
 			this->customMarkdown_radioButton->TabIndex = 11;
 			this->customMarkdown_radioButton->TabStop = true;
 			this->customMarkdown_radioButton->Text = L"Custom";
 			this->customMarkdown_radioButton->UseVisualStyleBackColor = true;
-			this->customMarkdown_radioButton->CheckedChanged += gcnew System::EventHandler(this, &MyForm::customMarkdown_radioButton_CheckedChanged);
+			this->customMarkdown_radioButton->Click += gcnew System::EventHandler(this, &MyForm::customMarkdown_radioButton_Click);
 			// 
 			// markdown2
 			// 
 			this->markdown2->AutoSize = true;
 			this->markdown2->Location = System::Drawing::Point(157, 21);
 			this->markdown2->Name = L"markdown2";
-			this->markdown2->Size = System::Drawing::Size(53, 21);
+			this->markdown2->Size = System::Drawing::Size(50, 20);
 			this->markdown2->TabIndex = 15;
 			this->markdown2->TabStop = true;
 			this->markdown2->Text = L"3 %";
 			this->markdown2->UseVisualStyleBackColor = true;
-			this->markdown2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::markdown2_CheckedChanged);
+			this->markdown2->Click += gcnew System::EventHandler(this, &MyForm::markdown2_Click);
 			// 
 			// markdown1
 			// 
 			this->markdown1->AutoSize = true;
 			this->markdown1->Location = System::Drawing::Point(61, 21);
 			this->markdown1->Name = L"markdown1";
-			this->markdown1->Size = System::Drawing::Size(53, 21);
+			this->markdown1->Size = System::Drawing::Size(50, 20);
 			this->markdown1->TabIndex = 14;
 			this->markdown1->TabStop = true;
 			this->markdown1->Text = L"2 %";
 			this->markdown1->UseVisualStyleBackColor = true;
-			this->markdown1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::markdown1_CheckedChanged);
+			this->markdown1->Click += gcnew System::EventHandler(this, &MyForm::markdown1_Click);
 			// 
 			// markdown3
 			// 
 			this->markdown3->AutoSize = true;
 			this->markdown3->Location = System::Drawing::Point(264, 21);
 			this->markdown3->Name = L"markdown3";
-			this->markdown3->Size = System::Drawing::Size(53, 21);
+			this->markdown3->Size = System::Drawing::Size(50, 20);
 			this->markdown3->TabIndex = 16;
 			this->markdown3->TabStop = true;
 			this->markdown3->Text = L"5 %";
 			this->markdown3->UseVisualStyleBackColor = true;
-			this->markdown3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::markdown3_CheckedChanged);
+			this->markdown3->Click += gcnew System::EventHandler(this, &MyForm::markdown3_Click);
 			// 
 			// dicount_groupBox
 			// 
@@ -3298,42 +3299,43 @@ private: System::Windows::Forms::Label^ home_page;
 			this->text_CustomDiscount->Name = L"text_CustomDiscount";
 			this->text_CustomDiscount->Size = System::Drawing::Size(122, 22);
 			this->text_CustomDiscount->TabIndex = 17;
+			this->text_CustomDiscount->Text = L"7";
 			// 
 			// CustomDiscount_radioButton
 			// 
 			this->CustomDiscount_radioButton->AutoSize = true;
 			this->CustomDiscount_radioButton->Location = System::Drawing::Point(264, 21);
 			this->CustomDiscount_radioButton->Name = L"CustomDiscount_radioButton";
-			this->CustomDiscount_radioButton->Size = System::Drawing::Size(76, 21);
+			this->CustomDiscount_radioButton->Size = System::Drawing::Size(73, 20);
 			this->CustomDiscount_radioButton->TabIndex = 17;
 			this->CustomDiscount_radioButton->TabStop = true;
 			this->CustomDiscount_radioButton->Text = L"Custom";
 			this->CustomDiscount_radioButton->UseVisualStyleBackColor = true;
-			this->CustomDiscount_radioButton->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CustomDiscount_radioButton_CheckedChanged);
+			this->CustomDiscount_radioButton->Click += gcnew System::EventHandler(this, &MyForm::CustomDiscount_radioButton_Click);
 			// 
 			// discount2
 			// 
 			this->discount2->AutoSize = true;
 			this->discount2->Location = System::Drawing::Point(185, 21);
 			this->discount2->Name = L"discount2";
-			this->discount2->Size = System::Drawing::Size(53, 21);
+			this->discount2->Size = System::Drawing::Size(50, 20);
 			this->discount2->TabIndex = 12;
 			this->discount2->TabStop = true;
 			this->discount2->Text = L"6 %";
 			this->discount2->UseVisualStyleBackColor = true;
-			this->discount2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::discount2_CheckedChanged);
+			this->discount2->Click += gcnew System::EventHandler(this, &MyForm::discount2_Click);
 			// 
 			// discount1
 			// 
 			this->discount1->AutoSize = true;
 			this->discount1->Location = System::Drawing::Point(72, 21);
 			this->discount1->Name = L"discount1";
-			this->discount1->Size = System::Drawing::Size(53, 21);
+			this->discount1->Size = System::Drawing::Size(50, 20);
 			this->discount1->TabIndex = 11;
 			this->discount1->TabStop = true;
 			this->discount1->Text = L"5 %";
 			this->discount1->UseVisualStyleBackColor = true;
-			this->discount1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::discount1_CheckedChanged);
+			this->discount1->Click += gcnew System::EventHandler(this, &MyForm::discount1_Click);
 			// 
 			// margin_groupBox
 			// 
@@ -3355,54 +3357,55 @@ private: System::Windows::Forms::Label^ home_page;
 			this->text_CustomMargin->Name = L"text_CustomMargin";
 			this->text_CustomMargin->Size = System::Drawing::Size(122, 22);
 			this->text_CustomMargin->TabIndex = 6;
+			this->text_CustomMargin->Text = L"20";
 			// 
 			// customMargin_radioButton
 			// 
 			this->customMargin_radioButton->AutoSize = true;
 			this->customMargin_radioButton->Location = System::Drawing::Point(383, 21);
 			this->customMargin_radioButton->Name = L"customMargin_radioButton";
-			this->customMargin_radioButton->Size = System::Drawing::Size(76, 21);
+			this->customMargin_radioButton->Size = System::Drawing::Size(73, 20);
 			this->customMargin_radioButton->TabIndex = 5;
 			this->customMargin_radioButton->TabStop = true;
 			this->customMargin_radioButton->Text = L"Custom";
 			this->customMargin_radioButton->UseVisualStyleBackColor = true;
-			this->customMargin_radioButton->CheckedChanged += gcnew System::EventHandler(this, &MyForm::customMargin_radioButton_CheckedChanged);
+			this->customMargin_radioButton->Click += gcnew System::EventHandler(this, &MyForm::customMargin_radioButton_Click);
 			// 
 			// grossMargin3
 			// 
 			this->grossMargin3->AutoSize = true;
 			this->grossMargin3->Location = System::Drawing::Point(264, 21);
 			this->grossMargin3->Name = L"grossMargin3";
-			this->grossMargin3->Size = System::Drawing::Size(61, 21);
+			this->grossMargin3->Size = System::Drawing::Size(57, 20);
 			this->grossMargin3->TabIndex = 10;
 			this->grossMargin3->TabStop = true;
 			this->grossMargin3->Text = L"15 %";
 			this->grossMargin3->UseVisualStyleBackColor = true;
-			this->grossMargin3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::grossMargin3_CheckedChanged);
+			this->grossMargin3->Click += gcnew System::EventHandler(this, &MyForm::grossMargin3_Click);
 			// 
 			// grossMargin1
 			// 
 			this->grossMargin1->AutoSize = true;
 			this->grossMargin1->Location = System::Drawing::Point(61, 21);
 			this->grossMargin1->Name = L"grossMargin1";
-			this->grossMargin1->Size = System::Drawing::Size(53, 21);
+			this->grossMargin1->Size = System::Drawing::Size(50, 20);
 			this->grossMargin1->TabIndex = 8;
 			this->grossMargin1->TabStop = true;
 			this->grossMargin1->Text = L"5 %";
 			this->grossMargin1->UseVisualStyleBackColor = true;
-			this->grossMargin1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::grossMargin1_CheckedChanged);
+			this->grossMargin1->Click += gcnew System::EventHandler(this, &MyForm::grossMargin1_Click);
 			// 
 			// grossMargin2
 			// 
 			this->grossMargin2->AutoSize = true;
 			this->grossMargin2->Location = System::Drawing::Point(157, 21);
 			this->grossMargin2->Name = L"grossMargin2";
-			this->grossMargin2->Size = System::Drawing::Size(61, 21);
+			this->grossMargin2->Size = System::Drawing::Size(57, 20);
 			this->grossMargin2->TabIndex = 9;
 			this->grossMargin2->TabStop = true;
 			this->grossMargin2->Text = L"10 %";
 			this->grossMargin2->UseVisualStyleBackColor = true;
-			this->grossMargin2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::grossMargin2_CheckedChanged);
+			this->grossMargin2->Click += gcnew System::EventHandler(this, &MyForm::grossMargin2_Click);
 			// 
 			// VAT_groupBox
 			// 
@@ -3424,54 +3427,55 @@ private: System::Windows::Forms::Label^ home_page;
 			this->text_CustomVAT->Name = L"text_CustomVAT";
 			this->text_CustomVAT->Size = System::Drawing::Size(122, 22);
 			this->text_CustomVAT->TabIndex = 5;
+			this->text_CustomVAT->Text = L"20";
 			// 
 			// CustomVAT_radioButton
 			// 
 			this->CustomVAT_radioButton->AutoSize = true;
 			this->CustomVAT_radioButton->Location = System::Drawing::Point(383, 21);
 			this->CustomVAT_radioButton->Name = L"CustomVAT_radioButton";
-			this->CustomVAT_radioButton->Size = System::Drawing::Size(76, 21);
+			this->CustomVAT_radioButton->Size = System::Drawing::Size(73, 20);
 			this->CustomVAT_radioButton->TabIndex = 4;
 			this->CustomVAT_radioButton->TabStop = true;
 			this->CustomVAT_radioButton->Text = L"Custom";
 			this->CustomVAT_radioButton->UseVisualStyleBackColor = true;
-			this->CustomVAT_radioButton->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CustomVAT_radioButton_CheckedChanged);
+			this->CustomVAT_radioButton->Click += gcnew System::EventHandler(this, &MyForm::CustomVAT_radioButton_Click);
 			// 
 			// VAT3
 			// 
 			this->VAT3->AutoSize = true;
 			this->VAT3->Location = System::Drawing::Point(264, 21);
 			this->VAT3->Name = L"VAT3";
-			this->VAT3->Size = System::Drawing::Size(61, 21);
+			this->VAT3->Size = System::Drawing::Size(57, 20);
 			this->VAT3->TabIndex = 3;
 			this->VAT3->TabStop = true;
 			this->VAT3->Text = L"15 %";
 			this->VAT3->UseVisualStyleBackColor = true;
-			this->VAT3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::VAT3_CheckedChanged);
+			this->VAT3->Click += gcnew System::EventHandler(this, &MyForm::VAT3_Click);
 			// 
 			// VAT2
 			// 
 			this->VAT2->AutoSize = true;
 			this->VAT2->Location = System::Drawing::Point(157, 21);
 			this->VAT2->Name = L"VAT2";
-			this->VAT2->Size = System::Drawing::Size(61, 21);
+			this->VAT2->Size = System::Drawing::Size(57, 20);
 			this->VAT2->TabIndex = 2;
 			this->VAT2->TabStop = true;
 			this->VAT2->Text = L"10 %";
 			this->VAT2->UseVisualStyleBackColor = true;
-			this->VAT2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::VAT2_CheckedChanged);
+			this->VAT2->Click += gcnew System::EventHandler(this, &MyForm::VAT2_Click);
 			// 
 			// VAT1
 			// 
 			this->VAT1->AutoSize = true;
 			this->VAT1->Location = System::Drawing::Point(61, 21);
 			this->VAT1->Name = L"VAT1";
-			this->VAT1->Size = System::Drawing::Size(53, 21);
+			this->VAT1->Size = System::Drawing::Size(50, 20);
 			this->VAT1->TabIndex = 1;
 			this->VAT1->TabStop = true;
 			this->VAT1->Text = L"5 %";
 			this->VAT1->UseVisualStyleBackColor = true;
-			this->VAT1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::VAT1_CheckedChanged);
+			this->VAT1->Click += gcnew System::EventHandler(this, &MyForm::VAT1_Click);
 			// 
 			// dgv_simu
 			// 
@@ -3794,13 +3798,15 @@ private: System::Windows::Forms::Label^ home_page;
 		this->dgv_stat->DataMember = "Rsl";
 	}
 	private: System::Void button_turnover_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		int month = System::Convert::ToInt32(this->text_turnoverMonth->Text);
-		int year = System::Convert::ToInt32(this->text_turnoverYear->Text);
-		this->dgv_stat->Refresh();
-		this->oDs_statistics = this->oSVCstatistics->calculateTurnover("Rsl", month, year);
-		this->dgv_stat->DataSource = this->oDs_statistics;
-		this->dgv_stat->DataMember = "Rsl";
+		if (!(System::String::IsNullOrWhiteSpace(this->text_turnoverMonth->Text) || System::String::IsNullOrWhiteSpace(this->text_turnoverYear->Text))) {
+			int month = System::Convert::ToInt32(this->text_turnoverMonth->Text);
+			int year = System::Convert::ToInt32(this->text_turnoverYear->Text);
+			this->dgv_stat->Refresh();
+			this->oDs_statistics = this->oSVCstatistics->calculateTurnover("Rsl", month, year);
+			this->dgv_stat->DataSource = this->oDs_statistics;
+			this->dgv_stat->DataMember = "Rsl";
+		}
+		else{ MessageBox::Show("Be carefull ! You missed to file some informations ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
 	private: System::Void button_underReorderThreshold_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -3824,11 +3830,13 @@ private: System::Windows::Forms::Label^ home_page;
 		this->dgv_stat->DataMember = "Rsl";
 	}
 	private: System::Void button_customerTotalAmount_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		this->dgv_stat->Refresh();
-		this->oDs_statistics = this->oSVCstatistics->totalAmount("Rsl", this->text_statisticsCustLastName->Text, this->text_statisticsCustFirstName->Text, (this->birthStatisitcs_datePicker->Value).ToString("yyyy-MM-dd"));
-		this->dgv_stat->DataSource = this->oDs_statistics;
-		this->dgv_stat->DataMember = "Rsl";
+		if (!(System::String::IsNullOrWhiteSpace(this->text_statisticsCustLastName->Text) || System::String::IsNullOrWhiteSpace(this->text_statisticsCustFirstName->Text))) {
+			this->dgv_stat->Refresh();
+			this->oDs_statistics = this->oSVCstatistics->totalAmount("Rsl", this->text_statisticsCustLastName->Text, this->text_statisticsCustFirstName->Text, (this->birthStatisitcs_datePicker->Value).ToString("yyyy-MM-dd"));
+			this->dgv_stat->DataSource = this->oDs_statistics;
+			this->dgv_stat->DataMember = "Rsl";
+		}
+		else{ MessageBox::Show("Be carefull ! You missed to file some informations ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
 	private: System::Void button_commercialValueStock_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -3847,50 +3855,50 @@ private: System::Windows::Forms::Label^ home_page;
 
 
 
-	private: System::Void VAT1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void VAT1_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[0]->Invoke(0.05);
 	}
-	private: System::Void VAT2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void VAT2_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[0]->Invoke(0.10);
 	}
-	private: System::Void VAT3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void VAT3_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[0]->Invoke(0.15);
 	}
-	private: System::Void CustomVAT_radioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		allPercentage[0]->Invoke(System::Convert::ToDouble(this->text_CustomVAT->Text)); 
+	private: System::Void CustomVAT_radioButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		allPercentage[0]->Invoke(System::Convert::ToSingle(this->text_CustomVAT->Text)/100); 
 	}
-	private: System::Void grossMargin1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void grossMargin1_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[1]->Invoke(0.05);
 	}
-	private: System::Void grossMargin2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void grossMargin2_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[1]->Invoke(0.10);
 	}
-	private: System::Void grossMargin3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void grossMargin3_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[1]->Invoke(0.15);
 	}
-	private: System::Void customMargin_radioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		allPercentage[1]->Invoke(System::Convert::ToDouble(this->text_CustomMargin->Text));
+	private: System::Void customMargin_radioButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		allPercentage[1]->Invoke(System::Convert::ToSingle(this->text_CustomMargin->Text)/100);
 	}
-	private: System::Void markdown1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void markdown1_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[3]->Invoke(0.02);
 	}
-	private: System::Void markdown2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void markdown2_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[3]->Invoke(0.03);
 	}
-	private: System::Void markdown3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void markdown3_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[3]->Invoke(0.05);
 	}
-	private: System::Void customMarkdown_radioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		allPercentage[3]->Invoke(System::Convert::ToDouble(this->text_CustomMarkdown->Text));
+	private: System::Void customMarkdown_radioButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		allPercentage[3]->Invoke(System::Convert::ToSingle(this->text_CustomMarkdown->Text)/100);
 	}
-	private: System::Void discount1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void discount1_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[2]->Invoke(0.05);
 	}
-	private: System::Void discount2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void discount2_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[2]->Invoke(0.06);
 	}
-	private: System::Void CustomDiscount_radioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		allPercentage[2]->Invoke(System::Convert::ToDouble(this->text_CustomDiscount->Text));
+	private: System::Void CustomDiscount_radioButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		allPercentage[2]->Invoke(System::Convert::ToSingle(this->text_CustomDiscount->Text)/100);
 	}
 	private: System::Void execution_button_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_simu->Refresh();
