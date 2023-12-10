@@ -47,7 +47,7 @@ void NS_Svc::CLstock::eraseProduct(int ID)
 {
 	System::String^ sql;
 
-	this->oProd->setProductRef(ID);
+	this->oProd->setcolorProductID(ID);
 
 	sql = this->oProd->deleteProduct();
 

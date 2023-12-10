@@ -24,12 +24,31 @@ System::String^ NS_Comp::CLmapPRODUCT::selectProducts(void)
 
 System::String^ NS_Comp::CLmapPRODUCT::insertProduct(void)
 {
-    return ""; //Compléter avec la bonne requete SQL
+    return "DECLARE @productRef INT;\
+        \
+            IF EXISTS(SELECT 1 FROM Products WHERE productName = '" + this->productName + "')\
+            BEGIN\
+                SET @productRef = (SELECT productRef FROM Products WHERE productName = '" + this->productName + "');\
+            END\
+            ELSE\
+            BEGIN\
+                INSERT INTO Products(productName, priceET, VATrate, reorderThreshold)\
+                VALUES('" + this->productName + "', '" + this->PriceET + "', '" + this->VATrate + "', '" + this->reorderThreshold + "');\
+                SET @productRef = SCOPE_IDENTITY();\
+            END\
+                \
+            INSERT INTO characteristicsProd(stockQuantity, color, productRef)\
+            VALUES('" + this->stockQuantity + "', '" + this->color + "', @productRef); "; //Compléter avec la bonne requete SQL
 }
 
 System::String^ NS_Comp::CLmapPRODUCT::deleteProduct(void)
 {
-    return ""; //Compléter avec la bonne requete SQL
+    return "DECLARE @pRefToDelete INT = (SELECT productRef FROM characteristicsProd WHERE colorProductID = " + this->colorProductID + ");\
+            DELETE FROM characteristicsProd WHERE colorProductID = " + this->colorProductID + ";\
+            IF NOT EXISTS(SELECT 1 FROM characteristicsProd WHERE productRef = @pRefToDelete)\
+            BEGIN\
+            DELETE FROM Products WHERE productRef = @pRefToDelete;\
+            END"; //Compléter avec la bonne requete SQL
 }
 
 System::String^ NS_Comp::CLmapPRODUCT::updateProduct(void)
@@ -40,6 +59,11 @@ System::String^ NS_Comp::CLmapPRODUCT::updateProduct(void)
 void NS_Comp::CLmapPRODUCT::setProductRef(int pref)
 {
     this->productRef = pref;
+}
+
+void NS_Comp::CLmapPRODUCT::setcolorProductID(int cpID)
+{
+    this->colorProductID = cpID;
 }
 
 void NS_Comp::CLmapPRODUCT::setProductName(System::String^ pname)
@@ -73,6 +97,8 @@ void NS_Comp::CLmapPRODUCT::setColor(System::String^ color)
 }
 
 int NS_Comp::CLmapPRODUCT::getProductRef(void) { return this->productRef; }
+
+int NS_Comp::CLmapPRODUCT::getcolorProductID(void) {  return this->colorProductID; }
 
 System::String^ NS_Comp::CLmapPRODUCT::getProductName(void) { return this->productName; }
 

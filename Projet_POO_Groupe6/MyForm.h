@@ -2656,6 +2656,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->eraseProduct->TabIndex = 38;
 			this->eraseProduct->Text = L"Erase";
 			this->eraseProduct->UseVisualStyleBackColor = true;
+			this->eraseProduct->Click += gcnew System::EventHandler(this, &MyForm::eraseProduct_Click);
 			// 
 			// displayProducts
 			// 
@@ -2966,6 +2967,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->addProduct->TabIndex = 37;
 			this->addProduct->Text = L"Add product";
 			this->addProduct->UseVisualStyleBackColor = true;
+			this->addProduct->Click += gcnew System::EventHandler(this, &MyForm::addProduct_Click);
 			// 
 			// statisticTab
 			// 
@@ -3835,6 +3837,25 @@ private: System::Windows::Forms::Label^ home_page;
 			this->dgv_stock->DataMember = "RslSpe";
 		}
 		
+	}
+	private: System::Void addProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		int Qte = System::Convert::ToInt32(this->UpDown_quantityAddStock->Text);
+		int Threshold = System::Convert::ToInt32(this->text_reorderThresholdAddStock->Text);
+		float priceET = System::Convert::ToSingle(this->text_ItemPriceExcludingTaxesAddStock->Text, System::Globalization::CultureInfo::InvariantCulture);
+		float VATrate = System::Convert::ToSingle(this->text_vatRateAddStock->Text, System::Globalization::CultureInfo::InvariantCulture);
+
+		this->dgv_stock->Refresh();
+		this->oSVCstock->addProduct(this->text_ItemNameAddStock->Text, this->itemColorAddStock_comboBox->Text, priceET, Threshold, VATrate, Qte);
+		this->dgv_stock->DataSource = this->oDs_stock;
+		DisplayStocks();
+	}
+	private: System::Void eraseProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		int IDprod = System::Convert::ToInt32(this->text_itemIdSearchStock->Text);
+		this->oSVCstock->eraseProduct(IDprod);
+		this->dgv_stock->Refresh();
+		DisplayStocks();
 	}
 
 		     //////////////////

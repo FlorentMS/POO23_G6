@@ -7,6 +7,7 @@ namespace NS_Comp
 	private:
 		System::String^ sSql;
 		int productRef;
+		int colorProductID;
 		System::String^ productName;
 		float PriceET;
 		int stockQuantity;
@@ -21,6 +22,7 @@ namespace NS_Comp
 		System::String^ deleteProduct(void);
 		System::String^ updateProduct(void);
 		void setProductRef(int);
+		void setcolorProductID(int);
 		void setProductName(System::String^);
 		void setPriceET(float);
 		void setStockQuantity(int);
@@ -28,6 +30,7 @@ namespace NS_Comp
 		void setVATrate(float);
 		void setColor(System::String^);
 		int getProductRef(void);
+		int getcolorProductID(void);
 		System::String^ getProductName(void);
 		float getPriceET(void);
 		int getStockQuantity(void);
