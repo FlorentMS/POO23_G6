@@ -16,7 +16,19 @@ System::Data::DataSet^ NS_Svc::CLemployees::displayEmp(System::String^ dataTable
 	return this->oCad-> getRows(sql, dataTableName);
 }
 
-void NS_Svc::CLemployees::addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
+System::Data::DataSet^ NS_Svc::CLemployees::displayemployee(System::String^ dataTableName, System::String^ firstName, System::String^ lastName, System::String^ hireDate)
+{
+	System::String^ sql;
+
+	this->oEmp->setFirstName(firstName);
+	this->oEmp->setLastName(lastName);
+	this->oEmp->setHireDate(hireDate);
+	sql = this->oEmp->selectEmployee();
+
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+void NS_Svc::CLemployees::addEmp(int chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
 {
 	System::String^ sql;
 
@@ -47,7 +59,7 @@ void NS_Svc::CLemployees::eraseEmp(System::String^ firstName, System::String^ la
 	this->oCad->actionRows(sql);
 }
 
-void NS_Svc::CLemployees::updateEmp(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
+void NS_Svc::CLemployees::updateEmp(int employeeID, int chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode)
 {
 	System::String^ sql;
 

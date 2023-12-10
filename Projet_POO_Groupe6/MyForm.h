@@ -402,9 +402,16 @@ namespace ProjetPOOGroupe6 {
 		private: System::Windows::Forms::Label^ hireDateSearchEmp;
 		private: System::Windows::Forms::Label^ firstNameSearchEmp;
 		private: System::Windows::Forms::Label^ lastNameSearchEmp;
-		private: System::Windows::Forms::DateTimePicker^ hireDateSearchEmp_datePicker;
-		private: System::Windows::Forms::TextBox^ text_firstNameSearchEmp;
-		private: System::Windows::Forms::TextBox^ text_lastNameSearchEmp;
+private: System::Windows::Forms::DateTimePicker^ hireDateSearchEmp_datePicker;
+private: System::Windows::Forms::TextBox^ text_firstNameSearchEmp;
+private: System::Windows::Forms::TextBox^ text_lastNameSearchEmp;
+
+
+
+
+
+
+
 
 	private: System::Windows::Forms::GroupBox^ InfoChangeEmp_groupBox;
 		private: System::Windows::Forms::Label^ lastNameChangeEmp;
@@ -458,10 +465,10 @@ private: System::Windows::Forms::Label^ home_page;
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle17 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle18 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle19 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
@@ -574,9 +581,9 @@ private: System::Windows::Forms::Label^ home_page;
 			this->SearchCust_groupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->hireDateSearchEmp_datePicker = (gcnew System::Windows::Forms::DateTimePicker());
 			this->displayEmp = (gcnew System::Windows::Forms::Button());
-			this->text_firstNameSearchEmp = (gcnew System::Windows::Forms::TextBox());
-			this->eraseEmp = (gcnew System::Windows::Forms::Button());
 			this->text_lastNameSearchEmp = (gcnew System::Windows::Forms::TextBox());
+			this->eraseEmp = (gcnew System::Windows::Forms::Button());
+			this->text_firstNameSearchEmp = (gcnew System::Windows::Forms::TextBox());
 			this->lastNameSearchEmp = (gcnew System::Windows::Forms::Label());
 			this->hireDateSearchEmp = (gcnew System::Windows::Forms::Label());
 			this->firstNameSearchEmp = (gcnew System::Windows::Forms::Label());
@@ -1532,25 +1539,25 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			// dgv_cust
 			// 
-			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle15->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgv_cust->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle15->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle15->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgv_cust->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
 			this->dgv_cust->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle14->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle16->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle16->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dgv_cust->DefaultCellStyle = dataGridViewCellStyle14;
+			dataGridViewCellStyle16->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle16->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle16->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle16->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgv_cust->DefaultCellStyle = dataGridViewCellStyle16;
 			this->dgv_cust->Location = System::Drawing::Point(24, 29);
 			this->dgv_cust->Name = L"dgv_cust";
 			this->dgv_cust->RowHeadersWidth = 51;
@@ -1766,9 +1773,9 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			this->SearchCust_groupBox->Controls->Add(this->hireDateSearchEmp_datePicker);
 			this->SearchCust_groupBox->Controls->Add(this->displayEmp);
-			this->SearchCust_groupBox->Controls->Add(this->text_firstNameSearchEmp);
-			this->SearchCust_groupBox->Controls->Add(this->eraseEmp);
 			this->SearchCust_groupBox->Controls->Add(this->text_lastNameSearchEmp);
+			this->SearchCust_groupBox->Controls->Add(this->eraseEmp);
+			this->SearchCust_groupBox->Controls->Add(this->text_firstNameSearchEmp);
 			this->SearchCust_groupBox->Controls->Add(this->lastNameSearchEmp);
 			this->SearchCust_groupBox->Controls->Add(this->hireDateSearchEmp);
 			this->SearchCust_groupBox->Controls->Add(this->firstNameSearchEmp);
@@ -1796,12 +1803,12 @@ private: System::Windows::Forms::Label^ home_page;
 			this->displayEmp->UseVisualStyleBackColor = true;
 			this->displayEmp->Click += gcnew System::EventHandler(this, &MyForm::displayEmp_Click);
 			// 
-			// text_firstNameSearchEmp
+			// text_lastNameSearchEmp
 			// 
-			this->text_firstNameSearchEmp->Location = System::Drawing::Point(33, 47);
-			this->text_firstNameSearchEmp->Name = L"text_firstNameSearchEmp";
-			this->text_firstNameSearchEmp->Size = System::Drawing::Size(232, 22);
-			this->text_firstNameSearchEmp->TabIndex = 32;
+			this->text_lastNameSearchEmp->Location = System::Drawing::Point(33, 47);
+			this->text_lastNameSearchEmp->Name = L"text_lastNameSearchEmp";
+			this->text_lastNameSearchEmp->Size = System::Drawing::Size(232, 22);
+			this->text_lastNameSearchEmp->TabIndex = 32;
 			// 
 			// eraseEmp
 			// 
@@ -1813,12 +1820,12 @@ private: System::Windows::Forms::Label^ home_page;
 			this->eraseEmp->UseVisualStyleBackColor = true;
 			this->eraseEmp->Click += gcnew System::EventHandler(this, &MyForm::eraseEmp_Click);
 			// 
-			// text_lastNameSearchEmp
+			// text_firstNameSearchEmp
 			// 
-			this->text_lastNameSearchEmp->Location = System::Drawing::Point(33, 97);
-			this->text_lastNameSearchEmp->Name = L"text_lastNameSearchEmp";
-			this->text_lastNameSearchEmp->Size = System::Drawing::Size(232, 22);
-			this->text_lastNameSearchEmp->TabIndex = 31;
+			this->text_firstNameSearchEmp->Location = System::Drawing::Point(33, 97);
+			this->text_firstNameSearchEmp->Name = L"text_firstNameSearchEmp";
+			this->text_firstNameSearchEmp->Size = System::Drawing::Size(232, 22);
+			this->text_firstNameSearchEmp->TabIndex = 31;
 			// 
 			// lastNameSearchEmp
 			// 
@@ -2016,25 +2023,25 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			// dgv_emp
 			// 
-			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle15->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle15->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle15->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgv_emp->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgv_emp->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
 			this->dgv_emp->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			dataGridViewCellStyle16->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle16->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle14->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle16->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle16->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle16->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle16->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dgv_emp->DefaultCellStyle = dataGridViewCellStyle16;
+			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgv_emp->DefaultCellStyle = dataGridViewCellStyle14;
 			this->dgv_emp->Location = System::Drawing::Point(21, 30);
 			this->dgv_emp->Name = L"dgv_emp";
 			this->dgv_emp->RowHeadersWidth = 51;
@@ -3605,9 +3612,10 @@ private: System::Windows::Forms::Label^ home_page;
 		DisplayAllOrder();
 		
 		this->dgv_cust->Refresh();
-		this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
-		this->dgv_cust->DataSource = this->oDs_customers;
-		this->dgv_cust->DataMember = "Rsl";
+		DisplayCustomers();
+
+		this->dgv_emp->Refresh();
+		DisplayEmployee();
 	}
 
 
@@ -3709,12 +3717,15 @@ private: System::Windows::Forms::Label^ home_page;
 	}
 	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_emp->Refresh();
-		DisplayEmployee();
+		this->oDs_employees = this->oSVCemployees->displayemployee("Rsl", this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
+		this->dgv_emp->DataSource = this->oDs_employees;
+		this->dgv_emp->DataMember = "Rsl";
 	}
 	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int streetNumber = System::Convert::ToInt32(this->text_streetNumber->Text);
+		int chiefID = System::Convert::ToInt32(this->text_chiefIdAddEmp->Text);
 		this->dgv_emp->Refresh();
-		this->oSVCemployees->addEmp(this->text_chiefIdAddEmp->Text, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
+		this->oSVCemployees->addEmp(chiefID, this->text_FirstNameAddEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameAddEmp->Text, this->text_cityNameAddEmp->Text, this->text_ZIPcodeAddEmp->Text);
 		DisplayEmployee();
 	}
 	private: System::Void eraseEmp_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -3723,10 +3734,11 @@ private: System::Windows::Forms::Label^ home_page;
 		DisplayEmployee();
 	}
 	private: System::Void changeEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-		int streetNumber = System::Convert::ToInt32(this->StreetNumChangeEmp->Text);
+		int streetNumb = System::Convert::ToInt32(this->text_streetNumChangeEmp->Text);
 		int employeeID = System::Convert::ToInt32(this->text_EmpIdChangeEmp->Text);
+		int chiefID = System::Convert::ToInt32(this->text_chiefIdChangeEmp->Text);
 		this->dgv_emp->Refresh();
-		this->oSVCemployees->updateEmp(employeeID, this->text_chiefIdChangeEmp->Text, this->text_fistNameChangeEmp->Text, this->text_empLastName->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumber, this->text_streetNameChangeEmp->Text, this->text_cityNameChangeEmp->Text, this->text_ZipCodeChangeEmp->Text);
+		this->oSVCemployees->updateEmp(employeeID, chiefID, this->text_fistNameChangeEmp->Text, this->text_lastNameChangeEmp->Text, (this->hireChangeEmp_datePicker->Value).ToString("yyyy-MM-dd"), streetNumb, this->text_streetNameChangeEmp->Text, this->text_cityNameChangeEmp->Text, this->text_ZipCodeChangeEmp->Text);
 		DisplayEmployee();
 	}
 
