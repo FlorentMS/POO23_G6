@@ -1,19 +1,25 @@
 #include "pch.h"
 #include "CLmapPRODUCT.h"
 
-System::String^ NS_Comp::CLmapPRODUCT::selectProducts(void)
-{
-    return ""; //Compléter avec la bonne requete SQL
-}
-
 System::String^ NS_Comp::CLmapPRODUCT::selectProduct(void)
 {
     return "SELECT [Projet_POO_G6].[dbo].[Products].[productRef], [productName], \
-        [Projet_POO_G6].[dbo].[characteristicsProd].[color], [colorProductID] AS specificID, [stockQuantity],\
-        [Projet_POO_G6].[dbo].[Products].[reorderThreshold], [VATrate], [priceET]\
-        FROM[Projet_POO_G6].[dbo].[Products]\
-        RIGHT JOIN[Projet_POO_G6].[dbo].[characteristicsProd]\
-        ON[Projet_POO_G6].[dbo].[Products].[productRef] = [Projet_POO_G6].[dbo].[characteristicsProd].[productRef]; ";
+            [Projet_POO_G6].[dbo].[characteristicsProd].[color], [colorProductID] AS specificID, [stockQuantity],\
+            [Projet_POO_G6].[dbo].[Products].[reorderThreshold], [VATrate], [priceET]\
+            FROM[Projet_POO_G6].[dbo].[Products]\
+            RIGHT JOIN[Projet_POO_G6].[dbo].[characteristicsProd]\
+            ON[Projet_POO_G6].[dbo].[Products].[productRef] = [Projet_POO_G6].[dbo].[characteristicsProd].[productRef]\
+            WHERE[Projet_POO_G6].[dbo].[Products].[productRef] = " + this->productRef + "; "; //Compléter avec la bonne requete SQL
+}
+
+System::String^ NS_Comp::CLmapPRODUCT::selectProducts(void)
+{
+    return "SELECT [Projet_POO_G6].[dbo].[Products].[productRef], [productName], \
+            [Projet_POO_G6].[dbo].[characteristicsProd].[color], [colorProductID] AS specificID, [stockQuantity],\
+            [Projet_POO_G6].[dbo].[Products].[reorderThreshold], [VATrate], [priceET]\
+            FROM[Projet_POO_G6].[dbo].[Products]\
+            RIGHT JOIN[Projet_POO_G6].[dbo].[characteristicsProd]\
+            ON[Projet_POO_G6].[dbo].[Products].[productRef] = [Projet_POO_G6].[dbo].[characteristicsProd].[productRef]; ";
 }
 
 System::String^ NS_Comp::CLmapPRODUCT::insertProduct(void)
