@@ -7,7 +7,7 @@ System::String^ NS_Comp::CLmapORDER::selectOrders(void)
 		Orders.orderDate				as order_at,					\
 		Orders.deliveryDate			as deliver_at,					\
 		Orders.totalET					as total_exlucing_taxes,		\
-		Orders.completPaymentDate		as total_payment_at				\
+		Orders.completePaymentDate		as total_payment_at				\
 		From Projet_POO_G6.dbo.Orders; ";
 }
 
@@ -20,7 +20,7 @@ System::String^ NS_Comp::CLmapORDER::selectOrder(void)
 		Products.productName				as product_name,							\
 		characteristicsProd.color			as color,									\
 		Orders.totalET						as total_exlucing_taxes,					\
-		Orders.completPaymentDate			as total_payment_at	,						\
+		Orders.completePaymentDate			as total_payment_at	,						\
 		order_product.copyNumber			as Item_Number								\
 		From Projet_POO_G6.dbo.Orders INNER JOIN Projet_POO_G6.dbo.order_product		\
 		on(Orders.orderRef = order_product.orderRef)									\
@@ -79,7 +79,7 @@ System::String^ NS_Comp::CLmapORDER::insertOrder(void)
 				From Projet_POO_G6.dbo.Products																																															\
 			where Products.productRef = @Refprod);																																														\
 																																																										\
-			Insert into[Projet_POO_G6].[dbo].[Orders](orderRef, deliveryDate, orderDate, completPaymentDate, custNumber)																												\
+			Insert into[Projet_POO_G6].[dbo].[Orders](orderRef, deliveryDate, orderDate, completePaymentDate, custNumber)																												\
 				values(@orderID, '" + this->deliveryDate + "', GETDATE(), '"+ this->completePaymentDate +"', @IdCust);																													\
 																																																										\
 			Insert into[Projet_POO_G6].[dbo].[Payments](orderRef, meanOfPayment, paymentDate)																																			\
@@ -150,7 +150,7 @@ System::String^ NS_Comp::CLmapORDER::deletePayment(void)
 System::String^ NS_Comp::CLmapORDER::updateOrder(void)
 {
     return "Update Projet_POO_G6.dbo.Orders																													\
-		Set deliveryDate = '"+ this->deliveryDate +"', orderDate = '" + this->orderDate+ "', completPaymentDate = '"+this->completePaymentDate+"'			\
+		Set deliveryDate = '"+ this->deliveryDate +"', orderDate = '" + this->orderDate+ "', completePaymentDate = '"+this->completePaymentDate+"'			\
 		Where orderRef = '"+ this->orderRef +"'; ";
 }
 

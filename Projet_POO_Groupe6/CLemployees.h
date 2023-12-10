@@ -11,9 +11,10 @@ namespace NS_Svc
 		NS_Comp::CLmapEMP^ oEmp;
 	public :
 		CLemployees(void);
-		System::Data::DataSet^ displayEmp(System::String^ dataTableName);
-		void addEmp(System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
-		void eraseEmp(System::String^ firstName, System::String^lastName, System::String^hireDate);
-		void updateEmp(int employeeID, System::String^ chiefID, System::String^ firstName, System::String^ lastName, System::String^ hireDate, int streetNumber, System::String^ streetName, System::String^ cityName, System::String^ ZipCode);
+		System::Data::DataSet^ displayEmp(System::String^ );
+		System::Data::DataSet^ displayemployee(System::String^, System::String^, System::String^, System::String^);
+		void addEmp(int , System::String^ , System::String^ , System::String^ , int , System::String^ , System::String^ , System::String^ );
+		void eraseEmp(System::String^ , System::String^, System::String^);
+		void updateEmp(int , int , System::String^ , System::String^ , System::String^ , int , System::String^ , System::String^ , System::String^ );
 	};
 }
