@@ -44,10 +44,15 @@ The architecture is divised in three parts with an only interface make of severa
 ![sequencediagram2](https://github.com/FlorentMS/POO23_G6/assets/150123348/62e8ac2a-6506-4e14-914e-98ce2d3fe956)
 
 ### Activity diagrams :
+![image](https://github.com/FlorentMS/POO23_G6/assets/150123348/63902f3c-8148-452a-b91a-5f1a9cf85154)
 ![activiteclient](https://github.com/FlorentMS/POO23_G6/assets/150123348/0870dfab-40f9-4944-be3e-39b3a97a388d)
 ![activitécommande](https://github.com/FlorentMS/POO23_G6/assets/150123348/3b0066e3-f7a9-4f6b-bc86-1017b4f8311e)
 ![activitépersonnel](https://github.com/FlorentMS/POO23_G6/assets/150123348/d0e9fdff-60e8-4b5d-abfa-f23f9a6ce151)
 ![activitéstock](https://github.com/FlorentMS/POO23_G6/assets/150123348/a98289be-a5dd-49a5-b657-6210433b29c2)
 
-
+## Data Base :
+### CDM :
+![image](https://github.com/FlorentMS/POO23_G6/assets/150123348/0d9b3acc-1cae-44fa-bb6e-2f9997ee1ca7)
+### LDM :
+![image](https://github.com/FlorentMS/POO23_G6/assets/150123348/c016c914-6e03-4984-9388-f516095b9b25)
 
