@@ -58,7 +58,7 @@ void NS_Svc::CLstock::changeProduct(int ID, System::String^ name, System::String
 {
 	System::String^ sql;
 
-	this->oProd->setProductRef(ID);
+	this->oProd->setcolorProductID(ID);
 	this->oProd->setProductName(name);
 	this->oProd->setColor(color);
 	this->oProd->setPriceET(priceET);

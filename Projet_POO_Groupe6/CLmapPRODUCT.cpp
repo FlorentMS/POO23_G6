@@ -53,7 +53,21 @@ System::String^ NS_Comp::CLmapPRODUCT::deleteProduct(void)
 
 System::String^ NS_Comp::CLmapPRODUCT::updateProduct(void)
 {
-    return ""; //Compléter avec la bonne requete SQL
+    return "UPDATE characteristicsProd\
+            SET\
+            stockQuantity = " + this->stockQuantity + ",\
+            color = '" + this->color + "'\
+            WHERE\
+            colorProductID = " + this->colorProductID + ";\
+    \
+            UPDATE Products\
+            SET\
+            productName = '" + this->productName + "',\
+            priceET = " + this->PriceET + ",\
+            VATrate = " + this->VATrate + ",\
+            reorderThreshold = " + this->reorderThreshold + "\
+            WHERE\
+            productRef = (SELECT productRef FROM characteristicsProd WHERE colorProductID = " + this->colorProductID + "); "; //Compléter avec la bonne requete SQL
 }
 
 void NS_Comp::CLmapPRODUCT::setProductRef(int pref)

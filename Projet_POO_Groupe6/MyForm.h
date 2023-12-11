@@ -2958,6 +2958,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->changeProduct->TabIndex = 39;
 			this->changeProduct->Text = L"Change product";
 			this->changeProduct->UseVisualStyleBackColor = true;
+			this->changeProduct->Click += gcnew System::EventHandler(this, &MyForm::changeProduct_Click);
 			// 
 			// addProduct
 			// 
@@ -3755,10 +3756,19 @@ private: System::Windows::Forms::Label^ home_page;
 		this->dgv_emp->DataMember = "Rsl";
 	}
 	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dgv_emp->Refresh();
+		
+		if (String::IsNullOrEmpty(this->text_firstNameSearchEmp->Text) && String::IsNullOrEmpty(this->text_lastNameSearchEmp->Text)) {
+			this->dgv_emp->Refresh();
+			DisplayEmployee();
+		}
+		else {
+			this->dgv_emp->Refresh();
 		this->oDs_employees = this->oSVCemployees->displayemployee("Rsl", this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
+		}
+		
+		
 	}
 	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int streetNumber = System::Convert::ToInt32(this->text_streetNumber->Text);
@@ -3802,10 +3812,18 @@ private: System::Windows::Forms::Label^ home_page;
 		DisplayCustomers();
 	}
 	private: System::Void displayCust_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dgv_cust->Refresh();
+		
+		if (String::IsNullOrEmpty(this->text_lastNameSearchCust->Text) && String::IsNullOrEmpty(this->text_firstNameSearchCust->Text)) {
+			this->dgv_cust->Refresh();
+			DisplayCustomers();
+		}
+		else {
+			this->dgv_cust->Refresh();
 		this->oDs_customers = this->oSVCcustomers->displayCustomer("RslSpe", this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
 		this->dgv_cust->DataSource = this->oDs_customers;
 		this->dgv_cust->DataMember = "RslSpe";
+		}
+		
 	}
 	private: System::Void changeCust_Click(System::Object^ sender, System::EventArgs^ e) {
 		int bilingStreetNchange = System::Convert::ToInt32(this->text_streetNumDelChangeCust->Text);
@@ -3842,8 +3860,8 @@ private: System::Windows::Forms::Label^ home_page;
 
 		int Qte = System::Convert::ToInt32(this->UpDown_quantityAddStock->Text);
 		int Threshold = System::Convert::ToInt32(this->text_reorderThresholdAddStock->Text);
-		float priceET = System::Convert::ToSingle(this->text_ItemPriceExcludingTaxesAddStock->Text, System::Globalization::CultureInfo::InvariantCulture);
-		float VATrate = System::Convert::ToSingle(this->text_vatRateAddStock->Text, System::Globalization::CultureInfo::InvariantCulture);
+		float priceET = System::Convert::ToSingle(this->text_ItemPriceExcludingTaxesAddStock->Text);
+		float VATrate = System::Convert::ToSingle(this->text_vatRateAddStock->Text);
 
 		this->dgv_stock->Refresh();
 		this->oSVCstock->addProduct(this->text_ItemNameAddStock->Text, this->itemColorAddStock_comboBox->Text, priceET, Threshold, VATrate, Qte);
@@ -3855,6 +3873,19 @@ private: System::Windows::Forms::Label^ home_page;
 		int IDprod = System::Convert::ToInt32(this->text_itemIdSearchStock->Text);
 		this->oSVCstock->eraseProduct(IDprod);
 		this->dgv_stock->Refresh();
+		DisplayStocks();
+	}
+	private: System::Void changeProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		int IDcolorprod = System::Convert::ToInt32(this->text_itemIdChangeSotck->Text);
+		int Qte = System::Convert::ToInt32(this->UpDown_quantityChangeStock->Text);
+		int Threshold = System::Convert::ToInt32(this->text_thresholdChangeStock->Text);
+		float priceET = System::Convert::ToSingle(this->text_priceChangeStock->Text);
+		float VATrate = System::Convert::ToSingle(this->text_VATChangeStock->Text);
+
+		this->dgv_stock->Refresh();
+		this->oSVCstock->changeProduct(IDcolorprod, this->text_itemNameChangeSotck->Text, this->itemColorChangeStock_comboBox->Text, priceET, Threshold, VATrate, Qte);
+		this->dgv_stock->DataSource = this->oDs_stock;
 		DisplayStocks();
 	}
 
