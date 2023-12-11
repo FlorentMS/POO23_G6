@@ -11,7 +11,7 @@ System::Data::DataSet^ NS_Svc::CLstock::displayProducts(System::String^ dataTabl
 {
 	System::String^ sql;
 
-	sql = this->oProd->selectProduct();
+	sql = this->oProd->selectProducts();
 
 	return this->oCad->getRows(sql, dataTableName);
 }
@@ -19,6 +19,8 @@ System::Data::DataSet^ NS_Svc::CLstock::displayProducts(System::String^ dataTabl
 System::Data::DataSet^ NS_Svc::CLstock::displayProduct(System::String^ dataTableName, int ID)
 {
 	System::String^ sql;
+
+	this->oProd->setProductRef(ID);
 
 	sql = this->oProd->selectProduct();
 
@@ -45,7 +47,7 @@ void NS_Svc::CLstock::eraseProduct(int ID)
 {
 	System::String^ sql;
 
-	this->oProd->setProductRef(ID);
+	this->oProd->setcolorProductID(ID);
 
 	sql = this->oProd->deleteProduct();
 
@@ -56,7 +58,7 @@ void NS_Svc::CLstock::changeProduct(int ID, System::String^ name, System::String
 {
 	System::String^ sql;
 
-	this->oProd->setProductRef(ID);
+	this->oProd->setcolorProductID(ID);
 	this->oProd->setProductName(name);
 	this->oProd->setColor(color);
 	this->oProd->setPriceET(priceET);

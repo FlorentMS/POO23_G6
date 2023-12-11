@@ -50,7 +50,7 @@ namespace ProjetPOOGroupe6 {
 	private: NS_Svc::CLorders^ oSVCorders;
 	private: NS_Svc::CLcustomers^ oSVCcustomers;
 	private: NS_Svc::CLemployees^ oSVCemployees;
-	//private: NS_Svc::CLstock^ oSVCstock;
+	private: NS_Svc::CLstock^ oSVCstock;
 	private: NS_Svc::CLstatistics^ oSVCstatistics;
 	private: NS_Svc::CLsimulations^oSVCsimulations; 
 
@@ -1542,8 +1542,8 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
 			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
@@ -1552,8 +1552,8 @@ private: System::Windows::Forms::Label^ home_page;
 			this->dgv_cust->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
 			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
 			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
@@ -2026,8 +2026,8 @@ private: System::Windows::Forms::Label^ home_page;
 			// 
 			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle3->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
 			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
@@ -2036,8 +2036,8 @@ private: System::Windows::Forms::Label^ home_page;
 			this->dgv_emp->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::ControlText;
 			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
 			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
@@ -2656,6 +2656,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->eraseProduct->TabIndex = 38;
 			this->eraseProduct->Text = L"Erase";
 			this->eraseProduct->UseVisualStyleBackColor = true;
+			this->eraseProduct->Click += gcnew System::EventHandler(this, &MyForm::eraseProduct_Click);
 			// 
 			// displayProducts
 			// 
@@ -2665,6 +2666,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->displayProducts->TabIndex = 40;
 			this->displayProducts->Text = L"Display";
 			this->displayProducts->UseVisualStyleBackColor = true;
+			this->displayProducts->Click += gcnew System::EventHandler(this, &MyForm::displayProducts_Click);
 			// 
 			// ItemCHangeSotck_groupBox
 			// 
@@ -2956,6 +2958,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->changeProduct->TabIndex = 39;
 			this->changeProduct->Text = L"Change product";
 			this->changeProduct->UseVisualStyleBackColor = true;
+			this->changeProduct->Click += gcnew System::EventHandler(this, &MyForm::changeProduct_Click);
 			// 
 			// addProduct
 			// 
@@ -2965,6 +2968,7 @@ private: System::Windows::Forms::Label^ home_page;
 			this->addProduct->TabIndex = 37;
 			this->addProduct->Text = L"Add product";
 			this->addProduct->UseVisualStyleBackColor = true;
+			this->addProduct->Click += gcnew System::EventHandler(this, &MyForm::addProduct_Click);
 			// 
 			// statisticTab
 			// 
@@ -3620,12 +3624,15 @@ private: System::Windows::Forms::Label^ home_page;
 #pragma endregion
 	
 
+			//////////////////
+		   ///// MyForm /////
+		  //////////////////
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oSVCorders = gcnew NS_Svc::CLorders();
 		this->oSVCcustomers = gcnew NS_Svc::CLcustomers();
 		this->oSVCemployees = gcnew NS_Svc::CLemployees();
-		//this->oSVCstock = gcnew NS_Svc::CLstock();
+		this->oSVCstock = gcnew NS_Svc::CLstock();
 		this->oSVCstatistics = gcnew NS_Svc::CLstatistics();
 		this->oSVCsimulations = gcnew NS_Svc::CLsimulations();
 
@@ -3643,10 +3650,15 @@ private: System::Windows::Forms::Label^ home_page;
 
 		this->dgv_emp->Refresh();
 		DisplayEmployee();
+
+		this->dgv_stock->Refresh();
+		DisplayStocks();
 	}
 
 
-	
+		     //////////////////
+		    ///// Orders /////
+		   //////////////////
 	private: void DisplayOrder(void){
 		if (this->Item_radioButton->Checked == true) { DisplayOneOrderItem(); }
 		else { DisplayOneOrderPay(); }
@@ -3735,18 +3747,28 @@ private: System::Windows::Forms::Label^ home_page;
 	}
 
 
-
-	
+			  //////////////////
+			 //// Employees ///
+			//////////////////
 	private: void DisplayEmployee(void) {
 		this->oDs_employees = this->oSVCemployees->displayEmp("Rsl");
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
 	}
 	private: System::Void displayEmp_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dgv_emp->Refresh();
+		
+		if (String::IsNullOrEmpty(this->text_firstNameSearchEmp->Text) && String::IsNullOrEmpty(this->text_lastNameSearchEmp->Text)) {
+			this->dgv_emp->Refresh();
+			DisplayEmployee();
+		}
+		else {
+			this->dgv_emp->Refresh();
 		this->oDs_employees = this->oSVCemployees->displayemployee("Rsl", this->text_firstNameSearchEmp->Text, this->text_lastNameSearchEmp->Text, (this->hireDateSearchEmp_datePicker->Value).ToString("yyyy-MM-dd"));
 		this->dgv_emp->DataSource = this->oDs_employees;
 		this->dgv_emp->DataMember = "Rsl";
+		}
+		
+		
 	}
 	private: System::Void addEmp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int streetNumber = System::Convert::ToInt32(this->text_streetNumber->Text);
@@ -3769,8 +3791,9 @@ private: System::Windows::Forms::Label^ home_page;
 		DisplayEmployee();
 	}
 
-
-	
+			  //////////////////
+			 /// Customers ////
+			//////////////////
 	private: void DisplayCustomers(void) {
 		this->oDs_customers = this->oSVCcustomers->displayCustomers("Rsl");
 		this->dgv_cust->DataSource = this->oDs_customers;
@@ -3789,10 +3812,18 @@ private: System::Windows::Forms::Label^ home_page;
 		DisplayCustomers();
 	}
 	private: System::Void displayCust_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dgv_cust->Refresh();
+		
+		if (String::IsNullOrEmpty(this->text_lastNameSearchCust->Text) && String::IsNullOrEmpty(this->text_firstNameSearchCust->Text)) {
+			this->dgv_cust->Refresh();
+			DisplayCustomers();
+		}
+		else {
+			this->dgv_cust->Refresh();
 		this->oDs_customers = this->oSVCcustomers->displayCustomer("RslSpe", this->text_lastNameSearchCust->Text, this->text_firstNameSearchCust->Text, (this->birthSearchCust_datePicker->Value).ToString("yyy-MM-dd"));
 		this->dgv_cust->DataSource = this->oDs_customers;
 		this->dgv_cust->DataMember = "RslSpe";
+		}
+		
 	}
 	private: System::Void changeCust_Click(System::Object^ sender, System::EventArgs^ e) {
 		int bilingStreetNchange = System::Convert::ToInt32(this->text_streetNumDelChangeCust->Text);
@@ -3803,8 +3834,64 @@ private: System::Windows::Forms::Label^ home_page;
 		DisplayCustomers();
 	}
 
+		     //////////////////
+		    ///// Stocks /////
+		   //////////////////
+	private: void DisplayStocks(void) {
+		this->oDs_stock = this->oSVCstock->displayProducts("Rsl");
+		this->dgv_stock->DataSource = this->oDs_stock;
+		this->dgv_stock->DataMember = "Rsl";
+	}
+	private: System::Void displayProducts_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (String::IsNullOrEmpty(this->text_itemIdSearchStock->Text)) {
+			this->dgv_stock->Refresh();
+			DisplayStocks();
+		}
+		else {
+			int IdProd = System::Convert::ToInt32(this->text_itemIdSearchStock->Text);
+			this->dgv_stock->Refresh();
+			this->oDs_stock = this->oSVCstock->displayProduct("RslSpe", IdProd);
+			this->dgv_stock->DataSource = this->oDs_stock;
+			this->dgv_stock->DataMember = "RslSpe";
+		}
+		
+	}
+	private: System::Void addProduct_Click(System::Object^ sender, System::EventArgs^ e) {
 
+		int Qte = System::Convert::ToInt32(this->UpDown_quantityAddStock->Text);
+		int Threshold = System::Convert::ToInt32(this->text_reorderThresholdAddStock->Text);
+		float priceET = System::Convert::ToSingle(this->text_ItemPriceExcludingTaxesAddStock->Text);
+		float VATrate = System::Convert::ToSingle(this->text_vatRateAddStock->Text);
 
+		this->dgv_stock->Refresh();
+		this->oSVCstock->addProduct(this->text_ItemNameAddStock->Text, this->itemColorAddStock_comboBox->Text, priceET, Threshold, VATrate, Qte);
+		this->dgv_stock->DataSource = this->oDs_stock;
+		DisplayStocks();
+	}
+	private: System::Void eraseProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		int IDprod = System::Convert::ToInt32(this->text_itemIdSearchStock->Text);
+		this->oSVCstock->eraseProduct(IDprod);
+		this->dgv_stock->Refresh();
+		DisplayStocks();
+	}
+	private: System::Void changeProduct_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		int IDcolorprod = System::Convert::ToInt32(this->text_itemIdChangeSotck->Text);
+		int Qte = System::Convert::ToInt32(this->UpDown_quantityChangeStock->Text);
+		int Threshold = System::Convert::ToInt32(this->text_thresholdChangeStock->Text);
+		float priceET = System::Convert::ToSingle(this->text_priceChangeStock->Text);
+		float VATrate = System::Convert::ToSingle(this->text_VATChangeStock->Text);
+
+		this->dgv_stock->Refresh();
+		this->oSVCstock->changeProduct(IDcolorprod, this->text_itemNameChangeSotck->Text, this->itemColorChangeStock_comboBox->Text, priceET, Threshold, VATrate, Qte);
+		this->dgv_stock->DataSource = this->oDs_stock;
+		DisplayStocks();
+	}
+
+		     //////////////////
+		    /// Statistics ///
+		   //////////////////
 	private: System::Void button_averageCart_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 		this->dgv_stat->Refresh();
@@ -3869,7 +3956,9 @@ private: System::Windows::Forms::Label^ home_page;
 	}
 
 
-
+		    ///////////////////
+		   /// Simulations ///
+		  ///////////////////
 	private: System::Void VAT1_Click(System::Object^ sender, System::EventArgs^ e) {
 		allPercentage[0]->Invoke(0.05);
 	}
@@ -3921,5 +4010,6 @@ private: System::Windows::Forms::Label^ home_page;
 		this->dgv_simu->DataSource = this->oDs_simulations;
 		this->dgv_simu->DataMember = "Rsl";
 	}
+
 };
 }
