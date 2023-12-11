@@ -27,4 +27,27 @@ The architecture is divised in three parts with an only interface make of severa
 > >&nbsp;&nbsp;&nbsp; CLcad  
 
 ## Diagrammes
+### Use case diagrams :
+![usecase1](https://github.com/FlorentMS/POO23_G6/assets/150123348/adfd4812-b9de-4ea4-9132-1d59df65e22f)
+
+![usecase2](https://github.com/FlorentMS/POO23_G6/assets/150123348/ea67fdb1-9ede-4c76-b13a-d369d02b8c61)
+
+### Class diagram :
+![classdiagram](https://github.com/FlorentMS/POO23_G6/assets/150123348/9edf6fa1-436a-445f-8dba-6f7ac1a3523f)
+![ihmclasses](https://github.com/FlorentMS/POO23_G6/assets/150123348/d1f1b272-89b0-4f8f-8157-5967461c436e)
+![svcclasses](https://github.com/FlorentMS/POO23_G6/assets/150123348/fa51976f-3fc0-4b88-8cb9-22f5d9e2daf0)
+![compclasses](https://github.com/FlorentMS/POO23_G6/assets/150123348/b94554c2-b767-4b60-ac54-400439ebd460)
+![clcadclasses](https://github.com/FlorentMS/POO23_G6/assets/150123348/f603d697-6f0c-466d-bef1-350235dd90ab)
+
+### Sequence diagrams :
+![sequence diagram](https://github.com/FlorentMS/POO23_G6/assets/150123348/a3b36773-604a-439b-b146-1583c3fc1374)
+![sequencediagram2](https://github.com/FlorentMS/POO23_G6/assets/150123348/62e8ac2a-6506-4e14-914e-98ce2d3fe956)
+
+### Activity diagrams :
+![activiteclient](https://github.com/FlorentMS/POO23_G6/assets/150123348/0870dfab-40f9-4944-be3e-39b3a97a388d)
+![activitécommande](https://github.com/FlorentMS/POO23_G6/assets/150123348/3b0066e3-f7a9-4f6b-bc86-1017b4f8311e)
+![activitépersonnel](https://github.com/FlorentMS/POO23_G6/assets/150123348/d0e9fdff-60e8-4b5d-abfa-f23f9a6ce151)
+![activitéstock](https://github.com/FlorentMS/POO23_G6/assets/150123348/a98289be-a5dd-49a5-b657-6210433b29c2)
+
+
 
